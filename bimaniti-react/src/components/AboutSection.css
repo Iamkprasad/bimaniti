@@ -1,0 +1,43 @@
+.about-section {
+  background-color: var(--bg-primary);
+  padding: 6rem 1.5rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.about-eyebrow {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.about-desc {
+  color: var(--text-secondary);
+  max-width: 36rem;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.about-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-actions .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-actions .btn-primary svg {
+  width: 16px;
+  height: 16px;
+}

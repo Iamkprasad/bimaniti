@@ -1,0 +1,15 @@
+{
+  "name": "BimaNiti",
+  "shortName": "BimaNiti",
+  "title": "Insurance & Market Analysis",
+  "tagline": "Analysing markets, decoding insurance, and sharing insights that matter.",
+  "bio": "BimaNiti is a dedicated platform for insurance analytics, market research, and financial insights. With a deep understanding of the Indian insurance landscape, regulatory developments, and market dynamics, BimaNiti provides well-researched analysis on insurance trends, market movements, and investment opportunities.",
+  "shortBio": "Insurance analysis platform tracking IRDAI regulatory developments, insurer performance, and market structure in India.",
+  "email": "prasad.kulal@example.com",
+  "location": "India",
+  "site": {
+    "title": "BimaNiti — Insurance & Market Insights",
+    "description": "Analysing markets, decoding insurance, and sharing insights that matter.",
+    "url": "https://bimaniti.in"
+  }
+}

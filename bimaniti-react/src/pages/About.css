@@ -1,0 +1,134 @@
+.about-bio {
+  margin-bottom: 2rem;
+}
+
+.about-bio p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+.about-divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--accent);
+  margin: 3rem auto;
+}
+
+.about-section-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-focus-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+
+.about-focus-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.about-focus-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.about-recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-recent-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+.about-recent-item:hover {
+  background-color: var(--bg-secondary);
+}
+
+.about-recent-id {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--bg-secondary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.about-recent-title {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.about-recent-arrow {
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.about-recent-item:hover .about-recent-arrow {
+  color: var(--accent);
+}
+
+.about-connect {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.about-connect p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.about-connect-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-connect-actions .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.about-connect-actions .btn-primary svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (max-width: 768px) {
+  .about-focus-grid {
+    grid-template-columns: 1fr;
+  }
+}

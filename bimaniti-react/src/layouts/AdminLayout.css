@@ -1,0 +1,111 @@
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  width: 250px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-sidebar h2 {
+  margin-bottom: 2rem;
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.admin-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.admin-sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.admin-sidebar nav a:hover {
+  background-color: var(--border);
+}
+
+.admin-sidebar nav a.active {
+  background-color: var(--accent);
+  color: white;
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.sidebar-user {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--alert);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+
+.sidebar-logout:hover {
+  background-color: rgba(185, 64, 64, 0.1);
+  border-color: var(--alert);
+}
+
+.admin-main {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .admin-layout {
+    flex-direction: column;
+  }
+  .admin-sidebar {
+    width: 100%;
+    padding: 1rem;
+  }
+  .admin-sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .admin-main {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,43 @@
+.contact-field {
+  margin-bottom: 1.25rem;
+}
+
+.contact-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.contact-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.contact-input:focus {
+  border-color: var(--accent);
+}
+
+.contact-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+textarea.contact-input {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-input:disabled {
+  opacity: 0.6;
+}
