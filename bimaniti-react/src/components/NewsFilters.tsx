@@ -1,4 +1,4 @@
-import './NewsFilters.css';
+import './FeedFilters.css';
 
 interface NewsFiltersProps {
   news: { category: string }[];

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './BlogFeed.css';
+import './FeedCards.css';
 
 interface BlogFeedProps {
   blogs: any[];
@@ -15,24 +15,24 @@ export const BlogFeed = ({ blogs }: BlogFeedProps) => {
   }
 
   return (
-    <div className="blog-grid">
+    <div className="feed-grid">
       {blogs.map((blog, i) => (
         <Link
           key={blog.id}
           to={`/post/${blog.id}`}
-          className="blog-card"
+          className="feed-card"
           style={{ animationDelay: `${i * 0.06}s` }}
         >
-          <div className="blog-card-content">
-            <span className="blog-card-tag">{blog.category}</span>
-            <h2 className="blog-card-title">{blog.title}</h2>
-            <p className="blog-card-excerpt">{blog.summary}</p>
+          <div className="feed-card-content">
+            <span className="feed-card-tag">{blog.category}</span>
+            <h2 className="feed-card-title">{blog.title}</h2>
+            <p className="feed-card-excerpt">{blog.summary}</p>
           </div>
-          <div className="blog-card-footer">
-            <div className="blog-card-meta">
+          <div className="feed-card-footer">
+            <div className="feed-card-meta">
               <strong>{blog.author}</strong> · {blog.published_date} · {blog.read_time}
             </div>
-            <span className="blog-card-read-more">Read →</span>
+            <span className="feed-card-read-more">Read →</span>
           </div>
         </Link>
       ))}

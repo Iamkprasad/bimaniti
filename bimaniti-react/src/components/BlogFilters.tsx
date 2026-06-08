@@ -1,4 +1,4 @@
-import './BlogFilters.css';
+import './FeedFilters.css';
 
 interface BlogFiltersProps {
   blogs: { category: string }[];
