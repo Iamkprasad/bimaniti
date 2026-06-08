@@ -159,7 +159,7 @@
 .status-badge.draft { background: #fef3c7; color: #92400e; }
 .status-badge.new { background: #dbeafe; color: #1e40af; }
 .status-badge.read { background: #e5e7eb; color: #374151; }
-.status-badge.archived { background: #f3f4f6; color: #6b7280; }
+.status-badge.archived { background: #f3f4f6; color: #4b5563; }
 .dark .status-badge.published { background: #064e3b; color: #6ee7b7; }
 .dark .status-badge.draft { background: #78350f; color: #fde68a; }
 .dark .status-badge.new { background: #1e3a5f; color: #93c5fd; }

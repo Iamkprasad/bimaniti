@@ -84,14 +84,14 @@ export const Contact = () => {
       />
       <div className="max-w-2xl mx-auto py-12 px-4">
         {success && (
-          <div style={{ backgroundColor: '#e8f5e9', color: '#2e7d32', padding: '1rem', borderRadius: 'var(--radius)', marginBottom: '1.5rem' }}>
+          <div role="alert" className="contact-alert contact-alert-success">
             {isSupabaseConfigured
               ? "Thank you for your message! I'll get back to you soon."
               : "Opening your email client... If it didn't open, send an email to prasad.kulal@example.com"}
           </div>
         )}
         {error && (
-          <div style={{ backgroundColor: '#fdecea', color: '#b94040', padding: '1rem', borderRadius: 'var(--radius)', marginBottom: '1.5rem' }}>
+          <div role="alert" className="contact-alert contact-alert-error">
             {error}
           </div>
         )}

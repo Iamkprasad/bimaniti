@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Eye, Trash2 } from 'lucide-react';
 import { ConfirmDialog } from '../../components/admin/ConfirmDialog';
 import { getContacts, updateContactStatus, deleteContact } from '../../services/admin';
@@ -122,7 +122,7 @@ export const ContactsPage = () => {
       </div>
 
       {viewing && (
-        <div className="contact-modal-overlay" onClick={() => setViewing(null)}>
+        <div className="contact-modal-overlay" onClick={() => setViewing(null)} role="dialog" aria-modal="true" aria-label="Contact details">
           <div className="contact-modal" onClick={e => e.stopPropagation()}>
             <h3>{viewing.subject || 'Contact Submission'}</h3>
             <div className="meta">

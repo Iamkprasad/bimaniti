@@ -21,18 +21,18 @@
   color: var(--text-primary);
 }
 
-.form-group {
+.login-card .form-group {
   margin-bottom: 1.5rem;
 }
 
-.form-group label {
+.login-card .form-group label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: var(--text-secondary);
 }
 
-.form-group input {
+.login-card .form-group input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid var(--border);
@@ -41,12 +41,12 @@
   transition: border-color 0.2s;
 }
 
-.form-group input:focus {
+.login-card .form-group input:focus {
   outline: none;
   border-color: var(--accent);
 }
 
-.error-message {
+.login-card .error-message {
   background-color: rgba(185, 64, 64, 0.1);
   color: var(--alert);
   padding: 0.75rem;
@@ -55,7 +55,7 @@
   font-size: 0.875rem;
 }
 
-button {
+.login-card button {
   width: 100%;
   padding: 0.75rem;
   background-color: var(--accent);
@@ -68,11 +68,11 @@ button {
   transition: background-color 0.2s;
 }
 
-button:hover:not(:disabled) {
+.login-card button:hover:not(:disabled) {
   background-color: var(--accent-hover);
 }
 
-button:disabled {
+.login-card button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
 }

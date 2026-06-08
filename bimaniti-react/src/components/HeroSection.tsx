@@ -6,14 +6,14 @@ export const HeroSection = () => {
     <section className="hero">
       <div className="hero-content">
         <div className="hero-eyebrow fade-in">Insurance &amp; Market Analysis</div>
-        <h1 className="hero-title fade-in-up" style={{ animationDelay: '0.2s' }}>
+        <h1 className="hero-title fade-in-up" style={{ animationDelay: '0.1s' }}>
           BimaNiti
         </h1>
-        <p className="hero-desc fade-in" style={{ animationDelay: '0.4s' }}>
+        <p className="hero-desc fade-in" style={{ animationDelay: '0.2s' }}>
           Analysing markets, decoding insurance, and sharing insights that matter.
           A curated platform for insurance analysis, market research, and financial perspectives.
         </p>
-        <div className="hero-actions fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="hero-actions fade-in-up" style={{ animationDelay: '0.3s' }}>
           <Link to="/blog" className="btn-primary">
             Explore Blog
           </Link>

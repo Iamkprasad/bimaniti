@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -12,14 +13,19 @@ import { Contact } from './pages/Contact';
 import { Post } from './pages/Post';
 import { AdminLayout } from './layouts/AdminLayout';
 import { Login } from './pages/admin/Login';
-import { BlogsPage } from './pages/admin/BlogsPage';
-import { BlogEditorPage } from './pages/admin/BlogEditorPage';
-import { NewsPage } from './pages/admin/NewsPage';
-import { NewsEditorPage } from './pages/admin/NewsEditorPage';
-import { ContactsPage } from './pages/admin/ContactsPage';
-import { SettingsPage } from './pages/admin/SettingsPage';
-import { ContentGenerator } from './pages/admin/ContentGenerator';
 import { ProtectedRoute } from './components/ProtectedRoute';
+
+const BlogsPage = lazy(() => import('./pages/admin/BlogsPage').then(m => ({ default: m.BlogsPage })));
+const BlogEditorPage = lazy(() => import('./pages/admin/BlogEditorPage').then(m => ({ default: m.BlogEditorPage })));
+const NewsPage = lazy(() => import('./pages/admin/NewsPage').then(m => ({ default: m.NewsPage })));
+const NewsEditorPage = lazy(() => import('./pages/admin/NewsEditorPage').then(m => ({ default: m.NewsEditorPage })));
+const ContactsPage = lazy(() => import('./pages/admin/ContactsPage').then(m => ({ default: m.ContactsPage })));
+const SettingsPage = lazy(() => import('./pages/admin/SettingsPage').then(m => ({ default: m.SettingsPage })));
+const ContentGenerator = lazy(() => import('./pages/admin/ContentGenerator').then(m => ({ default: m.ContentGenerator })));
+
+function AdminFallback() {
+  return <div className="admin-loading">Loading...</div>;
+}
 
 function Layout() {
   return (
@@ -57,15 +63,15 @@ function App() {
               }
             >
               <Route index element={<Navigate to="/admin/blogs" replace />} />
-              <Route path="blogs" element={<BlogsPage />} />
-              <Route path="blogs/new" element={<BlogEditorPage />} />
-              <Route path="blogs/:id/edit" element={<BlogEditorPage />} />
-              <Route path="news" element={<NewsPage />} />
-              <Route path="news/new" element={<NewsEditorPage />} />
-              <Route path="news/:id/edit" element={<NewsEditorPage />} />
-              <Route path="contacts" element={<ContactsPage />} />
-              <Route path="settings" element={<SettingsPage />} />
-              <Route path="generate" element={<ContentGenerator />} />
+              <Route path="blogs" element={<Suspense fallback={<AdminFallback />}><BlogsPage /></Suspense>} />
+              <Route path="blogs/new" element={<Suspense fallback={<AdminFallback />}><BlogEditorPage /></Suspense>} />
+              <Route path="blogs/:id/edit" element={<Suspense fallback={<AdminFallback />}><BlogEditorPage /></Suspense>} />
+              <Route path="news" element={<Suspense fallback={<AdminFallback />}><NewsPage /></Suspense>} />
+              <Route path="news/new" element={<Suspense fallback={<AdminFallback />}><NewsEditorPage /></Suspense>} />
+              <Route path="news/:id/edit" element={<Suspense fallback={<AdminFallback />}><NewsEditorPage /></Suspense>} />
+              <Route path="contacts" element={<Suspense fallback={<AdminFallback />}><ContactsPage /></Suspense>} />
+              <Route path="settings" element={<Suspense fallback={<AdminFallback />}><SettingsPage /></Suspense>} />
+              <Route path="generate" element={<Suspense fallback={<AdminFallback />}><ContentGenerator /></Suspense>} />
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />

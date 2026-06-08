@@ -41,3 +41,29 @@ textarea.contact-input {
 .contact-input:disabled {
   opacity: 0.6;
 }
+
+.contact-alert {
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+.contact-alert-success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.contact-alert-error {
+  background-color: #fdecea;
+  color: #b94040;
+}
+
+.dark .contact-alert-success {
+  background-color: #1a2e1a;
+  color: #6fcf6f;
+}
+
+.dark .contact-alert-error {
+  background-color: #2e1a1a;
+  color: #f07070;
+}

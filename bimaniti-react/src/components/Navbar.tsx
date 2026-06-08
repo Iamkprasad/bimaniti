@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import './Navbar.css';
@@ -6,6 +6,43 @@ import './Navbar.css';
 export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const menuBtnRef = useRef<HTMLButtonElement>(null);
+
+  const closeMobileMenu = useCallback(() => {
+    setIsMobileMenuOpen(false);
+    menuBtnRef.current?.focus();
+  }, []);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeMobileMenu();
+        return;
+      }
+      if (e.key === 'Tab' && mobileMenuRef.current) {
+        const focusable = mobileMenuRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    mobileMenuRef.current?.querySelector<HTMLElement>('a')?.focus();
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isMobileMenuOpen, closeMobileMenu]);
 
   return (
     <nav className="navbar">
@@ -44,7 +81,14 @@ export const Navbar = () => {
             )}
           </button>
         </div>
-        <button className="mobile-menu-btn" aria-label="Toggle menu" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button
+          ref={menuBtnRef}
+          className="mobile-menu-btn"
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={isMobileMenuOpen ? 'close-icon' : 'menu-icon'}>
             {isMobileMenuOpen ? (
               <>
@@ -61,24 +105,35 @@ export const Navbar = () => {
           </svg>
         </button>
       </div>
-      <div className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}>
+      {isMobileMenuOpen && (
+        <div className="mobile-nav-overlay" onClick={closeMobileMenu} aria-hidden="true" />
+      )}
+      <div
+        ref={mobileMenuRef}
+        id="mobile-menu"
+        className={`mobile-nav ${isMobileMenuOpen ? 'open' : ''}`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+        inert={!isMobileMenuOpen ? '' : undefined}
+      >
         <div className="mobile-nav-content">
-          <NavLink to="/" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'}>
+          <NavLink to="/" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'} onClick={closeMobileMenu}>
             Home
           </NavLink>
-          <NavLink to="/blog" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'}>
+          <NavLink to="/blog" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'} onClick={closeMobileMenu}>
             Blog
           </NavLink>
-          <NavLink to="/news" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'}>
+          <NavLink to="/news" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'} onClick={closeMobileMenu}>
             News
           </NavLink>
-          <NavLink to="/archives" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'}>
+          <NavLink to="/archives" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'} onClick={closeMobileMenu}>
             Archives
           </NavLink>
-          <NavLink to="/about" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'}>
+          <NavLink to="/about" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'} onClick={closeMobileMenu}>
             About
           </NavLink>
-          <NavLink to="/contact" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'}>
+          <NavLink to="/contact" end className={({ isActive }) => isActive ? 'mobile-nav-link active' : 'mobile-nav-link'} onClick={closeMobileMenu}>
             Contact
           </NavLink>
         </div>
