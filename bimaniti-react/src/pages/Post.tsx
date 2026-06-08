@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ShareButtons } from '../components/ShareButtons';
+import { getCachedBlogs, getCachedNews } from '../services/dataCache';
 import './Post.css';
 
 export const Post = () => {
@@ -19,23 +20,12 @@ export const Post = () => {
       }
 
       try {
-        // Fetch from both blogs and news data
-        const [blogsResponse, newsResponse] = await Promise.all([
-          fetch('/data/blogs.json'),
-          fetch('/data/news.json')
+        const [blogs, news] = await Promise.all([
+          getCachedBlogs(),
+          getCachedNews(),
         ]);
 
-        if (!blogsResponse.ok) {
-          throw new Error(`Failed to fetch blogs: ${blogsResponse.status}`);
-        }
-        if (!newsResponse.ok) {
-          throw new Error(`Failed to fetch news: ${newsResponse.status}`);
-        }
-
-        const blogs = await blogsResponse.json();
-        const news = await newsResponse.json();
         const allItems = [...blogs, ...news];
-
         const foundPost = allItems.find(item => item.id === id);
 
         if (!foundPost) {
@@ -44,7 +34,6 @@ export const Post = () => {
 
         setPost(foundPost);
 
-        // Fetch related posts (same category, exclude current)
         const related = allItems
           .filter(item => item.category === foundPost.category && item.id !== id)
           .slice(0, 3);

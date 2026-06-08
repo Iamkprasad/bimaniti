@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { NewsFilters } from '../components/NewsFilters';
 import { NewsFeed } from '../components/NewsFeed';
 import { PageHeader } from '../components/PageHeader';
+import { getCachedNews } from '../services/dataCache';
 
 interface NewsItem {
   id: string;
@@ -25,11 +26,7 @@ export const News = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await fetch('/data/news.json');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const data = await getCachedNews();
         setNews(data);
       } catch (err: unknown) {
         setError(err instanceof Error ? err.message : 'Failed to load news');

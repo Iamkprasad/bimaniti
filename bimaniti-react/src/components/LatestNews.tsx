@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getCachedNews } from '../services/dataCache';
 import './LatestNews.css';
 
 interface NewsItem {
@@ -17,8 +18,7 @@ export const LatestNews = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/news.json')
-      .then(res => res.json())
+    getCachedNews()
       .then((data: NewsItem[]) => setNews(data.slice(0, 3)))
       .catch(() => {})
       .finally(() => setLoading(false));

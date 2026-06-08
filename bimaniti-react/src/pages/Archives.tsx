@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../components/PageHeader';
+import { getCachedBlogs, getCachedNews } from '../services/dataCache';
 import './Archives.css';
 
 interface ArchiveItem {
@@ -24,16 +25,10 @@ export const Archives = () => {
   useEffect(() => {
     const fetchArchives = async () => {
       try {
-        const [blogsResponse, newsResponse] = await Promise.all([
-          fetch('/data/blogs.json'),
-          fetch('/data/news.json')
+        const [blogs, news] = await Promise.all([
+          getCachedBlogs(),
+          getCachedNews(),
         ]);
-
-        if (!blogsResponse.ok) throw new Error(`Failed to fetch blogs: ${blogsResponse.status}`);
-        if (!newsResponse.ok) throw new Error(`Failed to fetch news: ${newsResponse.status}`);
-
-        const blogs = await blogsResponse.json();
-        const news = await newsResponse.json();
 
         const allItems = [
           ...blogs.map((item: ArchiveItem) => ({ ...item, type: 'Blog' })),

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { BlogFilters } from '../components/BlogFilters';
 import { BlogFeed } from '../components/BlogFeed';
 import { PageHeader } from '../components/PageHeader';
+import { getCachedBlogs } from '../services/dataCache';
 
 interface BlogPost {
   id: string;
@@ -24,11 +25,7 @@ export const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('/data/blogs.json');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data = await response.json();
+        const data = await getCachedBlogs();
         setBlogs(data);
       } catch (err: unknown) {
         setError(err instanceof Error ? err.message : 'Failed to load blog posts');

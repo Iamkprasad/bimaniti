@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getCachedBlogs } from '../services/dataCache';
 import './FeaturedPosts.css';
 
 interface BlogPost {
@@ -17,8 +18,7 @@ export const FeaturedPosts = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/blogs.json')
-      .then(res => res.json())
+    getCachedBlogs()
       .then((data: BlogPost[]) => setBlogs(data.slice(0, 3)))
       .catch(() => {})
       .finally(() => setLoading(false));
