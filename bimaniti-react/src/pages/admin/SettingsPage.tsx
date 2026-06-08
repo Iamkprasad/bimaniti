@@ -99,21 +99,20 @@ export const SettingsPage = () => {
         <>
           <div className="admin-form-card">
             <h3>Add Category</h3>
-            <div className="form-row" style={{ alignItems: 'flex-end' }}>
-              <div className="form-group" style={{ flex: 2 }}>
+            <div className="form-row admin-flex-row-end">
+              <div className="form-group admin-flex-2">
                 <label className="admin-label">Name</label>
                 <input
-                  className="admin-input"
-                  style={{ width: '100%' }}
+                  className="admin-input admin-w-full"
                   value={newCatName}
                   onChange={e => setNewCatName(e.target.value)}
                   placeholder="Category name"
                   onKeyDown={e => e.key === 'Enter' && handleAddCategory()}
                 />
               </div>
-              <div className="form-group" style={{ flex: 1 }}>
+              <div className="form-group admin-flex-1">
                 <label className="admin-label">Type</label>
-                <select className="admin-select" style={{ width: '100%' }} value={newCatType} onChange={e => setNewCatType(e.target.value as 'blog' | 'news')}>
+                <select className="admin-select admin-w-full" value={newCatType} onChange={e => setNewCatType(e.target.value as 'blog' | 'news')}>
                   <option value="blog">Blog</option>
                   <option value="news">News</option>
                 </select>
@@ -126,16 +125,16 @@ export const SettingsPage = () => {
             </div>
           </div>
 
-          <div className="form-row" style={{ alignItems: 'flex-start' }}>
-            <div className="admin-form-card" style={{ flex: 1 }}>
+          <div className="form-row admin-flex-row-start">
+            <div className="admin-form-card admin-flex-1">
               <h3>Blog Categories</h3>
               {blogCategories.length === 0 ? (
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>No categories yet.</p>
+                <p className="admin-text-muted">No categories yet.</p>
               ) : (
                 <ul className="category-list">
                   {blogCategories.map((cat, i) => (
                     <li key={cat.id}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <div className="admin-flex-row">
                         <span>{cat.name}</span>
                       </div>
                       <div className="cat-actions">
@@ -151,15 +150,15 @@ export const SettingsPage = () => {
                 </ul>
               )}
             </div>
-            <div className="admin-form-card" style={{ flex: 1 }}>
+            <div className="admin-form-card admin-flex-1">
               <h3>News Categories</h3>
               {newsCategories.length === 0 ? (
-                <p style={{ color: 'var(--text-muted)', fontSize: '0.875rem' }}>No categories yet.</p>
+                <p className="admin-text-muted">No categories yet.</p>
               ) : (
                 <ul className="category-list">
                   {newsCategories.map((cat, i) => (
                     <li key={cat.id}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <div className="admin-flex-row">
                         <span>{cat.name}</span>
                       </div>
                       <div className="cat-actions">

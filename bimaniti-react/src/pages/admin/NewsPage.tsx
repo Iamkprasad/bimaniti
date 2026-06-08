@@ -76,7 +76,7 @@ export const NewsPage = () => {
     { key: 'id', label: 'ID', width: '90px', sortable: true },
     {
       key: 'title', label: 'Title', sortable: true,
-      render: (n) => <span style={{ fontWeight: 500 }}>{n.title.length > 60 ? n.title.slice(0, 60) + '...' : n.title}</span>,
+      render: (n) => <span className="admin-text-bold">{n.title.length > 60 ? n.title.slice(0, 60) + '...' : n.title}</span>,
     },
     {
       key: 'category', label: 'Category', sortable: true,
@@ -84,7 +84,7 @@ export const NewsPage = () => {
     },
     {
       key: 'source', label: 'Source',
-      render: (n) => <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{n.source || '-'}</span>,
+      render: (n) => <span className="admin-text-muted-sm">{n.source || '-'}</span>,
     },
     {
       key: 'is_published', label: 'Status', width: '100px',
@@ -92,7 +92,7 @@ export const NewsPage = () => {
     },
     {
       key: 'published_date', label: 'Date', sortable: true, width: '110px',
-      render: (n) => <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{n.published_date}</span>,
+      render: (n) => <span className="admin-text-muted-sm">{n.published_date}</span>,
     },
   ];
 
@@ -108,7 +108,7 @@ export const NewsPage = () => {
       </div>
       {error && <div className="admin-error">{error}</div>}
       <div className="admin-filters">
-        <input className="admin-input" placeholder="Search news..." value={search} onChange={e => setSearch(e.target.value)} style={{ width: 220 }} />
+        <input className="admin-input admin-w-search" placeholder="Search news..." value={search} onChange={e => setSearch(e.target.value)} />
         <select className="admin-select" value={categoryFilter} onChange={e => setCategoryFilter(e.target.value)}>
           <option value="all">All Categories</option>
           {categories.map(c => <option key={c} value={c}>{c}</option>)}

@@ -71,11 +71,11 @@ export const ContactsPage = () => {
   return (
     <div className="admin-page">
       <div className="admin-page-header">
-        <h1>Contact Submissions {newCount > 0 && <span className="status-badge new" style={{ marginLeft: '0.5rem', fontSize: '0.75rem' }}>{newCount} new</span>}</h1>
+        <h1>Contact Submissions {newCount > 0 && <span className="status-badge new admin-badge-inline">{newCount} new</span>}</h1>
       </div>
       {error && <div className="admin-error">{error}</div>}
       <div className="admin-filters">
-        <input className="admin-input" placeholder="Search contacts..." value={search} onChange={e => setSearch(e.target.value)} style={{ width: 220 }} />
+        <input className="admin-input admin-w-search" placeholder="Search contacts..." value={search} onChange={e => setSearch(e.target.value)} />
         <select className="admin-select" value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
           <option value="all">All Status</option>
           <option value="new">New</option>
@@ -101,11 +101,11 @@ export const ContactsPage = () => {
             ) : (
               filtered.map(c => (
                 <tr key={c.id}>
-                  <td style={{ fontWeight: 500 }}>{c.name}</td>
-                  <td><a href={`mailto:${c.email}`} style={{ color: 'var(--accent)' }}>{c.email}</a></td>
+                  <td className="admin-text-bold">{c.name}</td>
+                  <td><a href={`mailto:${c.email}`} className="admin-link-accent">{c.email}</a></td>
                   <td>{c.subject || '-'}</td>
                   <td><span className={`status-badge ${c.status}`}>{c.status}</span></td>
-                  <td style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{new Date(c.created_at).toLocaleDateString()}</td>
+                  <td className="admin-text-muted-sm">{new Date(c.created_at).toLocaleDateString()}</td>
                   <td className="actions-cell">
                     <button className="admin-btn-icon" title="View" onClick={() => handleView(c)}>
                       <Eye size={16} />

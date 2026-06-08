@@ -134,7 +134,7 @@ export const ContentGenerator = () => {
   return (
     <div className="admin-page">
       <div className="admin-page-header">
-        <h1><Sparkles size={24} style={{ marginRight: '0.5rem', verticalAlign: 'middle' }} /> Content Generator</h1>
+        <h1><Sparkles size={24} className="admin-icon-inline" /> Content Generator</h1>
         <button
           className="admin-btn admin-btn-primary"
           onClick={handleGenerate}
@@ -147,7 +147,7 @@ export const ContentGenerator = () => {
 
       {!geminiConfigured && (
         <div className="admin-error">
-          <AlertCircle size={16} style={{ marginRight: '0.5rem' }} />
+          <AlertCircle size={16} className="admin-icon-inline" />
           Gemini API key not configured. Add <code>VITE_GEMINI_API_KEY</code> to your <code>.env</code> file.
         </div>
       )}
@@ -314,7 +314,7 @@ export const ContentGenerator = () => {
       {/* Logs */}
       {logs.length > 0 && (
         <div className="admin-form-card">
-          <h3><Clock size={16} style={{ marginRight: '0.5rem', verticalAlign: 'middle' }} /> Generation History</h3>
+          <h3><Clock size={16} className="admin-icon-inline" /> Generation History</h3>
           <div className="admin-table-wrap">
             <table className="admin-table">
               <thead>

@@ -76,7 +76,7 @@ export const BlogsPage = () => {
     { key: 'id', label: 'ID', width: '90px', sortable: true },
     {
       key: 'title', label: 'Title', sortable: true,
-      render: (b) => <span style={{ fontWeight: 500 }}>{b.title.length > 60 ? b.title.slice(0, 60) + '...' : b.title}</span>,
+      render: (b) => <span className="admin-text-bold">{b.title.length > 60 ? b.title.slice(0, 60) + '...' : b.title}</span>,
     },
     {
       key: 'category', label: 'Category', sortable: true,
@@ -88,7 +88,7 @@ export const BlogsPage = () => {
     },
     {
       key: 'published_date', label: 'Date', sortable: true, width: '110px',
-      render: (b) => <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>{b.published_date}</span>,
+      render: (b) => <span className="admin-text-muted-sm">{b.published_date}</span>,
     },
   ];
 
@@ -105,11 +105,10 @@ export const BlogsPage = () => {
       {error && <div className="admin-error">{error}</div>}
       <div className="admin-filters">
         <input
-          className="admin-input"
+          className="admin-input admin-w-search"
           placeholder="Search blogs..."
           value={search}
           onChange={e => setSearch(e.target.value)}
-          style={{ width: 220 }}
         />
         <select className="admin-select" value={categoryFilter} onChange={e => setCategoryFilter(e.target.value)}>
           <option value="all">All Categories</option>

@@ -117,29 +117,29 @@ export const BlogEditorPage = () => {
         <div className="form-row">
           <div className="form-group form-group-full">
             <label className="admin-label">Title</label>
-            <input className="admin-input" style={{ width: '100%' }} value={title} onChange={e => handleTitleChange(e.target.value)} placeholder="Blog title" />
+            <input className="admin-input admin-w-full" value={title} onChange={e => handleTitleChange(e.target.value)} placeholder="Blog title" />
           </div>
           <div className="form-group form-group-full">
             <label className="admin-label">Slug</label>
-            <input className="admin-input" style={{ width: '100%' }} value={slug} onChange={e => handleSlugChange(e.target.value)} />
+            <input className="admin-input admin-w-full" value={slug} onChange={e => handleSlugChange(e.target.value)} />
           </div>
           <div className="form-group">
             <label className="admin-label">Category</label>
-            <select className="admin-select" style={{ width: '100%' }} value={category} onChange={e => setCategory(e.target.value)}>
+            <select className="admin-select admin-w-full" value={category} onChange={e => setCategory(e.target.value)}>
               {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
           <div className="form-group">
             <label className="admin-label">Author</label>
-            <input className="admin-input" style={{ width: '100%' }} value={author} onChange={e => setAuthor(e.target.value)} />
+            <input className="admin-input admin-w-full" value={author} onChange={e => setAuthor(e.target.value)} />
           </div>
           <div className="form-group">
             <label className="admin-label">Published Date</label>
-            <input className="admin-input" style={{ width: '100%' }} type="date" value={publishedDate} onChange={e => setPublishedDate(e.target.value)} />
+            <input className="admin-input admin-w-full" type="date" value={publishedDate} onChange={e => setPublishedDate(e.target.value)} />
           </div>
           <div className="form-group">
             <label className="admin-label">Read Time</label>
-            <input className="admin-input" style={{ width: '100%' }} value={readTime} onChange={e => setReadTime(e.target.value)} placeholder="e.g. 3 min read" />
+            <input className="admin-input admin-w-full" value={readTime} onChange={e => setReadTime(e.target.value)} placeholder="e.g. 3 min read" />
           </div>
         </div>
         <div className="form-group">
@@ -162,9 +162,9 @@ export const BlogEditorPage = () => {
         <ImageUpload value={featuredImage} onChange={setFeaturedImage} folder="blogs" />
       </div>
 
-      <div className="admin-form-card" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-        <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer', fontSize: '0.875rem' }}>
-          <input type="checkbox" checked={isPublished} onChange={e => setIsPublished(e.target.checked)} style={{ width: 16, height: 16 }} />
+      <div className="admin-form-card admin-flex-row-lg">
+        <label className="admin-checkbox-label">
+          <input type="checkbox" checked={isPublished} onChange={e => setIsPublished(e.target.checked)} className="admin-checkbox" />
           Published
         </label>
       </div>
