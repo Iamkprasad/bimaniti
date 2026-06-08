@@ -21,7 +21,7 @@ export const NewsFeed = ({ news }: NewsFeedProps) => {
           key={item.id}
           to={`/post/${item.id}`}
           className="feed-card"
-          style={{ animationDelay: `${i * 0.06}s` }}
+          style={{ '--i': i } as React.CSSProperties}
         >
           <div className="feed-card-content">
             <span className="feed-card-tag">{item.category}</span>

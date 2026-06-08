@@ -21,7 +21,7 @@ export const BlogFeed = ({ blogs }: BlogFeedProps) => {
           key={blog.id}
           to={`/post/${blog.id}`}
           className="feed-card"
-          style={{ animationDelay: `${i * 0.06}s` }}
+          style={{ '--i': i } as React.CSSProperties}
         >
           <div className="feed-card-content">
             <span className="feed-card-tag">{blog.category}</span>
