@@ -19,7 +19,7 @@
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 300;
+  font-weight: 400;
   outline: none;
   transition: border-color 0.2s;
 }

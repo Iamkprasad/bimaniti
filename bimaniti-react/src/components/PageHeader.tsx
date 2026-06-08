@@ -13,7 +13,7 @@ export const PageHeader = ({ eyebrow, title, description }: PageHeaderProps) => 
           {title}
         </h1>
         {description && (
-          <p style={{ color: 'var(--text-muted)', maxWidth: '36rem', margin: '0 auto', fontSize: '15px', fontWeight: 300 }}>
+          <p style={{ color: 'var(--text-muted)', maxWidth: '36rem', margin: '0 auto', fontSize: '15px', fontWeight: 400 }}>
             {description}
           </p>
         )}
