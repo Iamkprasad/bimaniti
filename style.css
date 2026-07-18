@@ -266,10 +266,16 @@ img { max-width: 100%; height: auto; }
   background: none;
 }
 
-html.dark .logo img,
-html.dark .footer-brand {
-  filter: brightness(0) invert(0.85);
-}
+/* Logo handles dark mode via SVG @media query */
+
+.site-logo { height: 36px; width: auto; }
+.site-logo.footer-brand { height: 32px; }
+.logo-bima { font-family: 'Outfit', system-ui, sans-serif; font-size: 34px; font-weight: 600; fill: #1a1a1a; }
+.logo-niti { font-family: 'Lora', Georgia, serif; font-size: 34px; font-weight: 500; fill: #4a6741; }
+.logo-tag { font-family: 'Outfit', system-ui, sans-serif; font-size: 8.5px; font-weight: 400; fill: #6a6a6a; letter-spacing: 2.5px; }
+html.dark .logo-bima { fill: #e8e4dc; }
+html.dark .logo-niti { fill: #8aaa7a; }
+html.dark .logo-tag { fill: #8a8a84; }
 
 .desktop-nav { display: none; align-items: center; gap: 28px; }
 @media (min-width: 768px) { .desktop-nav { display: flex; } }

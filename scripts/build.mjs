@@ -61,7 +61,14 @@ img{max-width:100%;height:auto}
 .nav-container{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:58px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;flex-shrink:0;overflow:visible;line-height:0}
 .logo img{height:36px;width:auto;max-width:none;min-width:120px;display:block;flex-shrink:0;background:none}
-html.dark .logo img{filter:brightness(0)invert(0.85)}
+.site-logo{height:36px;width:auto}
+.site-logo.footer-brand{height:32px}
+.logo-bima{font-family:'Outfit',system-ui,sans-serif;font-size:34px;font-weight:600;fill:#1a1a1a}
+.logo-niti{font-family:'Lora',Georgia,serif;font-size:34px;font-weight:500;fill:#4a6741}
+.logo-tag{font-family:'Outfit',system-ui,sans-serif;font-size:8.5px;font-weight:400;fill:#6a6a6a;letter-spacing:2.5px}
+html.dark .logo-bima{fill:#e8e4dc}
+html.dark .logo-niti{fill:#8aaa7a}
+html.dark .logo-tag{fill:#8a8a84}
 .desktop-nav{display:none;align-items:center;gap:28px}
 @media(min-width:768px){.desktop-nav{display:flex}}
 .nav-link{font-family:var(--font-body);font-size:13px;font-weight:400;color:var(--text-muted);transition:color 150ms ease}
@@ -109,7 +116,6 @@ html.dark .theme-toggle .icon-moon{display:none}
 .footer-content{display:flex;flex-direction:column;gap:2rem;margin-bottom:2rem}
 @media(min-width:768px){.footer-content{flex-direction:row;justify-content:space-between;align-items:flex-start}}
 .footer-brand{height:32px;width:auto;max-width:none;min-width:100px;display:block;flex-shrink:0;margin-bottom:8px}
-html.dark .footer-brand{filter:brightness(0)invert(0.85)}
 .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--text-muted);font-weight:300;max-width:20rem;line-height:1.6}
 .footer-links{display:flex;flex-wrap:wrap;gap:1.5rem}
 .footer-link{font-family:var(--font-body);font-size:.8125rem;color:var(--text-secondary);font-weight:300;transition:color var(--transition)}
@@ -142,7 +148,7 @@ html.dark .footer-brand{filter:brightness(0)invert(0.85)}
     <a href="#main-content" class="skip-link" style="position:absolute;top:-100%;left:16px;z-index:999;padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:500;border-radius:0 0 4px 4px;transition:top .2s ease">Skip to main content</a>
     <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="https://bimaniti.in/" class="logo"><img src="https://bimaniti.in/logo.svg" alt="BimaNiti" width="120" height="36"></a>
+            <a href="https://bimaniti.in/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg></a>
             <div class="desktop-nav">
                 <a href="https://bimaniti.in/" class="nav-link">Home</a>
                 <a href="https://bimaniti.in/blog.html" class="nav-link">Blog</a>
@@ -183,7 +189,7 @@ html.dark .footer-brand{filter:brightness(0)invert(0.85)}
         <div class="max-w-5xl mx-auto" style="max-width:var(--max-w);margin-left:auto;margin-right:auto">
             <div class="footer-content">
                 <div>
-                    <img src="https://bimaniti.in/logo.svg" alt="BimaNiti" width="100" height="32" class="footer-brand">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo footer-brand" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg>
                     <p class="footer-desc">Independent Insurance Analysis · India</p>
                 </div>
                 <div class="footer-links">

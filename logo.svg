@@ -1,22 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 75">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58">
   <style>
-    .w { font-family: 'Poppins',system-ui,sans-serif; font-size: 42px; font-weight: 400; fill: #1a1a1a; }
-    .n { font-weight: 700; fill: #4a6741; }
-    .d { fill: #4a6741; }
-    .a { stroke: #4a6741; }
-    .s { fill: #6a6a6a; font-family: 'Outfit',system-ui,sans-serif; font-size: 9px; letter-spacing: 3px; }
+    .t { font-family: 'Outfit', system-ui, sans-serif; font-size: 34px; font-weight: 600; fill: #1a1a1a; }
+    .n { font-family: 'Lora', Georgia, serif; font-size: 34px; font-weight: 500; fill: #4a6741; }
+    .tag { font-family: 'Outfit', system-ui, sans-serif; font-size: 8.5px; font-weight: 400; fill: #6a6a6a; letter-spacing: 2.5px; }
     @media (prefers-color-scheme: dark) {
-      .w { fill: #e8e4dc; }
+      .t { fill: #e8e4dc; }
       .n { fill: #8aaa7a; }
-      .d { fill: #8aaa7a; }
-      .a { stroke: #8aaa7a; }
-      .s { fill: #8a8680; }
+      .tag { fill: #8a8a84; }
     }
   </style>
-  <text x="8" y="42" class="w">Bima<tspan class="n">N</tspan>iti</text>
-  <polygon points="46,14 49,19 46,24 43,19" class="d"/>
-  <polygon points="168,14 171,19 168,24 165,19" class="d"/>
-  <polygon points="204,14 207,19 204,24 201,19" class="d"/>
-  <path d="M8,54 Q70,60 140,52 Q210,44 272,52" fill="none" class="a" stroke-width="2" stroke-linecap="round"/>
-  <text x="8" y="68" class="s">INSURANCE &amp; MARKET ANALYSIS</text>
+  <text x="4" y="34" class="t">Bima</text><text x="83" y="34" class="n">Niti</text>
+  <text x="4" y="50" class="tag">INSURANCE &amp; MARKET ANALYSIS</text>
 </svg>
