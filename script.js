@@ -484,4 +484,154 @@ document.addEventListener('DOMContentLoaded', function() {
                 recentWritingContainer.innerHTML = '<p style="color: var(--text-muted); font-size: 14px; font-weight: 300;">Unable to load recent posts.</p>';
             });
     }
+
+    // === Scroll-triggered animations ===
+    // Hero animations — immediate on load
+    document.querySelectorAll('.hero .fade-in, .hero .fade-in-up').forEach(function(el) {
+        el.classList.add('visible');
+    });
+
+    function animateOnScroll() {
+        var elements = document.querySelectorAll('.fade-in, .fade-in-up, .timeline-item, .stat-card');
+        if (!elements.length) return;
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+        elements.forEach(function(el) { observer.observe(el); });
+    }
+    animateOnScroll();
+
+    // === Counter animation ===
+    function animateCounter(el, target, duration, suffix) {
+        var start = 0;
+        var startTime = null;
+        suffix = suffix || '';
+        duration = duration || 1500;
+
+        function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.round(eased * target * 10) / 10;
+            el.textContent = (target % 1 !== 0 ? current.toFixed(1) : Math.round(current)) + suffix;
+            if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+    }
+
+    // === Insurance Timeline ===
+    var timelineContainer = document.getElementById('insurance-timeline');
+    if (timelineContainer) {
+        loadData('data/timeline.json' + cacheBuster)
+            .then(function(events) {
+                timelineContainer.innerHTML = events.map(function(ev) {
+                    return '<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">' + ev.year + '</div><div class="timeline-title">' + ev.title + '</div><div class="timeline-desc">' + ev.desc + '</div></div>';
+                }).join('');
+                animateOnScroll();
+            })
+            .catch(function() {
+                timelineContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center;">Unable to load timeline.</p>';
+            });
+    }
+
+    // === Data Charts ===
+    var dataChartsContainer = document.getElementById('data-charts');
+    if (dataChartsContainer) {
+        loadData('data/metrics.json' + cacheBuster)
+            .then(function(metrics) {
+                var html = '';
+
+                // Stat cards row
+                html += '<div class="stat-cards" style="grid-column: 1 / -1;">';
+                html += '<div class="stat-card"><div class="stat-value" data-target="3.8" data-suffix="%" data-decimal="true">0%</div><div class="stat-label">Insurance Penetration</div></div>';
+                html += '<div class="stat-card"><div class="stat-value" data-target="97" data-suffix="">0</div><div class="stat-label">Density (USD)</div></div>';
+                html += '<div class="stat-card"><div class="stat-value" data-target="10.51" data-suffix="L Cr" data-decimal="true">0</div><div class="stat-label">Total Premium FY26</div></div>';
+                html += '</div>';
+
+                // Penetration chart
+                if (metrics.penetration) {
+                    html += '<div class="data-chart-block"><div class="chart-title">' + metrics.penetration.title + '</div>';
+                    metrics.penetration.data.forEach(function(d) {
+                        var pct = (d.value / metrics.penetration.maxValue * 100).toFixed(1);
+                        html += '<div class="bar-row"><div class="bar-label">' + d.label + '</div><div class="bar-track"><div class="bar-fill" style="--bar-width: ' + pct + '%"></div></div><div class="bar-value">' + d.value + '%</div></div>';
+                    });
+                    html += '</div>';
+                }
+
+                // Density chart
+                if (metrics.density) {
+                    html += '<div class="data-chart-block"><div class="chart-title">' + metrics.density.title + '</div>';
+                    metrics.density.data.forEach(function(d) {
+                        var pct = (d.value / metrics.density.maxValue * 100).toFixed(1);
+                        html += '<div class="bar-row"><div class="bar-label">' + d.label + '</div><div class="bar-track"><div class="bar-fill" style="--bar-width: ' + pct + '%"></div></div><div class="bar-value">$' + d.value + '</div></div>';
+                    });
+                    html += '</div>';
+                }
+
+                // Market share chart
+                if (metrics.marketShare) {
+                    html += '<div class="data-chart-block" style="grid-column: 1 / -1;"><div class="chart-title">' + metrics.marketShare.title + '</div>';
+                    metrics.marketShare.data.forEach(function(d) {
+                        var pct = (d.value / metrics.marketShare.maxValue * 100).toFixed(1);
+                        html += '<div class="bar-row"><div class="bar-label" style="min-width: 110px;">' + d.label + '</div><div class="bar-track"><div class="bar-fill" style="--bar-width: ' + pct + '%; background: ' + d.color + ';"></div></div><div class="bar-value">' + d.value + '%</div></div>';
+                    });
+                    html += '</div>';
+                }
+
+                dataChartsContainer.innerHTML = html;
+
+                // Animate stat counters
+                var statValues = dataChartsContainer.querySelectorAll('.stat-value');
+                var statObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            var el = entry.target;
+                            var target = parseFloat(el.dataset.target);
+                            var suffix = el.dataset.suffix || '';
+                            var isDecimal = el.dataset.decimal === 'true';
+                            var start = 0;
+                            var startTime = null;
+                            var duration = 1500;
+
+                            function step(timestamp) {
+                                if (!startTime) startTime = timestamp;
+                                var progress = Math.min((timestamp - startTime) / duration, 1);
+                                var eased = 1 - Math.pow(1 - progress, 3);
+                                var current = eased * target;
+                                el.textContent = (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
+                                if (progress < 1) requestAnimationFrame(step);
+                            }
+                            requestAnimationFrame(step);
+                            el.classList.add('visible');
+                            statObserver.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                statValues.forEach(function(el) { statObserver.observe(el); });
+
+                // Animate bar fills
+                var barFills = dataChartsContainer.querySelectorAll('.bar-fill');
+                var barObserver = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animate');
+                            barObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+
+                barFills.forEach(function(bar) { barObserver.observe(bar); });
+            })
+            .catch(function() {
+                dataChartsContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center; grid-column: 1 / -1;">Unable to load industry data.</p>';
+            });
+    }
 });

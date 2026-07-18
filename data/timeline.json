@@ -1,0 +1,80 @@
+[
+  {
+    "year": "1912",
+    "title": "First Insurance Act",
+    "desc": "India\u2019s first insurance legislation enacted to regulate the growing insurance market.",
+    "icon": "scale"
+  },
+  {
+    "year": "1928",
+    "title": "Indian Insurance Companies Act",
+    "desc": "Introduced government supervision over insurance company operations and investments.",
+    "icon": "building"
+  },
+  {
+    "year": "1938",
+    "title": "Comprehensive Insurance Act",
+    "desc": "Consolidated earlier laws into a single framework governing life and non-life insurance.",
+    "icon": "book"
+  },
+  {
+    "year": "1956",
+    "title": "Life Insurance Nationalized",
+    "desc": "175 private life insurers merged into the Life Insurance Corporation of India (LIC).",
+    "icon": "flag"
+  },
+  {
+    "year": "1972",
+    "title": "General Insurance Nationalized",
+    "desc": "Non-life sector consolidated under the General Insurance Corporation of India.",
+    "icon": "shield"
+  },
+  {
+    "year": "1991",
+    "title": "Economic Liberalization",
+    "desc": "India\u2019s economic reforms opened the door for insurance sector restructuring.",
+    "icon": "globe"
+  },
+  {
+    "year": "1999",
+    "title": "IRDA Established",
+    "desc": "Insurance Regulatory and Development Authority formed as the sector regulator.",
+    "icon": "landmark"
+  },
+  {
+    "year": "2000",
+    "title": "Private Insurers Enter",
+    "desc": "Private companies allowed to operate, ending the LIC monopoly after four decades.",
+    "icon": "unlock"
+  },
+  {
+    "year": "2015",
+    "title": "IRDAI Reconstituted",
+    "desc": "Renamed to IRDAI with expanded powers to drive inclusive insurance growth.",
+    "icon": "refresh"
+  },
+  {
+    "year": "2021",
+    "title": "FDI Limit Raised to 74%",
+    "desc": "Foreign direct investment cap increased to attract global insurers to India.",
+    "icon": "trending"
+  },
+  {
+    "year": "2023",
+    "title": "IRDAI Regulatory Reforms",
+    "desc": "Bima Vistaar, composite licensing, and risk-based capital framework approved.",
+    "icon": "zap"
+  },
+  {
+    "year": "2024",
+    "title": "100% FDI in Insurance",
+    "desc": "Full foreign ownership permitted, opening India\u2019s insurance market globally.",
+    "icon": "globe"
+  },
+  {
+    "year": "2026",
+    "title": "Insurance for All by 2047",
+    "desc": "India\u2019s roadmap to achieve universal insurance coverage by independence centenary.",
+    "icon": "target"
+  }
+]
