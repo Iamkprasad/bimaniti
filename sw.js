@@ -1,4 +1,4 @@
-var CACHE = 'bimaniti-v2';
+var CACHE = 'bimaniti-v3';
 var PRECACHE = [
   '/',
   '/index.html',
@@ -13,6 +13,8 @@ var PRECACHE = [
   '/script.js',
   '/logo.svg',
   '/data/home-featured.json',
+  '/data/blogs.json',
+  '/data/news.json',
   '/data/timeline.json',
   '/data/metrics.json'
 ];
