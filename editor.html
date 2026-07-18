@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BimaNiti Content Editor</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#f5f3ef;--card:#fff;--border:#d6d0c8;--text:#1a1a1a;--text-muted:#6a6a6a;--accent:#4a6741;--accent-hover:#3a5232;--error:#b94040;--radius:4px;--font:'Outfit',system-ui,sans-serif;--font-display:'Lora',Georgia,serif}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-weight:300;line-height:1.6;padding:0}
+.header{background:var(--card);border-bottom:2px solid var(--accent);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.header h1{font-family:var(--font-display);font-size:20px;font-weight:400;color:var(--accent);display:flex;align-items:center;gap:8px}
+.header h1 span{font-size:13px;font-weight:300;color:var(--text-muted)}
+.folder-status{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:6px}
+.folder-status .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.folder-status .dot.open{background:#22c55e}
+.folder-status .dot.closed{background:#aaa}
+.container{max-width:900px;margin:0 auto;padding:24px 16px 64px}
+.type-toggle{display:flex;gap:0;margin-bottom:24px;background:var(--card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);width:fit-content}
+.type-btn{padding:10px 28px;border:0;background:transparent;font-family:var(--font);font-size:14px;cursor:pointer;color:var(--text-muted);transition:all .15s;font-weight:400}
+.type-btn.active{background:var(--accent);color:#fff;font-weight:500}
+.type-btn:not(.active):hover{background:var(--bg)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.form-grid{grid-template-columns:1fr}}
+.form-group{display:flex;flex-direction:column;gap:4px}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted)}
+.form-group input,.form-group select,.form-group textarea{padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);font-family:var(--font);font-size:14px;background:var(--card);color:var(--text);outline:none;transition:border-color .15s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent)}
+.form-group input[readonly]{background:var(--bg);color:var(--text-muted)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-group textarea#content-textarea{min-height:280px;font-family:monospace;font-size:13px;line-height:1.7}
+.toolbar{display:flex;gap:4px;flex-wrap:wrap;padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-bottom:0;border-radius:var(--radius) var(--radius) 0 0}
+.toolbar button{padding:6px 12px;border:1px solid var(--border);border-radius:3px;background:var(--card);cursor:pointer;font-family:var(--font);font-size:12px;color:var(--text);transition:all .12s}
+.toolbar button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.toolbar .sep{width:1px;background:var(--border);margin:2px 4px}
+.actions{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:12px 28px;border:0;border-radius:var(--radius);font-family:var(--font);font-size:14px;font-weight:500;cursor:pointer;transition:all .15s;text-decoration:none}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.btn-outline{border:1px solid var(--border);background:var(--card);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-danger{background:var(--error);color:#fff}
+.btn-danger:hover{background:#963333}
+.status-bar{margin-top:16px;padding:14px 18px;border-radius:var(--radius);font-size:13px;display:none}
+.status-bar.success{display:block;background:#f0fdf4;border:1px solid #86efac;color:#166534}
+.status-bar.error{display:block;background:#fef2f2;border:1px solid #fca5a5;color:var(--error)}
+.status-bar.info{display:block;background:#eff6ff;border:1px solid #93c5fd;color:#1e40af}
+.git-commands{margin-top:12px;padding:14px 18px;background:#1a1a1a;color:#e8e4dc;border-radius:var(--radius);font-family:monospace;font-size:13px;display:none;white-space:pre-wrap;word-break:break-all}
+.preview-box{margin-top:16px;padding:16px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);display:none}
+.preview-box .label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:8px}
+.preview-box .preview-content{font-size:14px;line-height:1.7;color:var(--text)}
+.preview-box .preview-content h2{font-family:var(--font-display);font-size:18px;margin:16px 0 8px}
+.preview-box .preview-content p{margin-bottom:10px}
+.preview-box .preview-content strong{font-weight:500}
+.badge{display:inline-block;font-size:10px;padding:2px 10px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:.05em}
+.helper-text{font-size:11px;color:var(--text-muted);margin-top:2px}
+.required{color:#dc2626;margin-left:2px;font-weight:600}
+.auto-badge{font-size:9px;color:var(--text-muted);background:var(--bg);padding:1px 7px;border-radius:3px;margin-left:6px;font-weight:400;text-transform:none;letter-spacing:normal;white-space:nowrap}
+.ai-section{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:24px;background:var(--card);overflow:hidden}
+.ai-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;cursor:pointer;user-select:none;gap:8px;flex-wrap:wrap}
+.ai-header:hover{background:var(--bg)}
+.ai-header-left{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--text)}
+.ai-header-right{display:flex;align-items:center;gap:8px}
+.ai-body{padding:0 16px 16px;border-top:1px solid var(--border);display:none}
+.ai-body.open{display:block}
+.ai-prompt-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:12px;font-family:monospace;font-size:12px;line-height:1.6;color:var(--text);white-space:pre-wrap;max-height:300px;overflow-y:auto;margin-top:12px;position:relative}
+.ai-prompt-actions{position:absolute;top:8px;right:8px}
+.ai-paste-area{margin-top:12px}
+.ai-paste-area textarea{width:100%;min-height:120px;padding:12px;border:1px solid var(--border);border-radius:var(--radius);font-family:monospace;font-size:13px;line-height:1.6;resize:vertical;background:var(--card);color:var(--text);outline:none}
+.ai-paste-area textarea:focus{border-color:var(--accent)}
+.ai-paste-actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>BimaNiti <span>Content Editor</span></h1>
+  <div class="folder-status">
+    <span class="dot closed" id="folder-dot"></span>
+    <span id="folder-label">No project folder selected</span>
+    <button class="btn btn-outline" style="padding:6px 14px;font-size:12px;margin-left:8px" onclick="openProject()">Open Project</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="type-toggle" id="type-toggle">
+    <button class="type-btn" data-type="news" onclick="setType('news')">News</button>
+    <button class="type-btn active" data-type="blog" onclick="setType('blog')">Blog</button>
+  </div>
+
+  <div class="ai-section" id="ai-section">
+    <div class="ai-header" onclick="toggleAiPanel()">
+      <div class="ai-header-left">
+        <span id="ai-chevron">▶</span> AI Writing Assistant
+        <span style="font-size:11px;font-weight:300;color:var(--text-muted)">— paste AI output to auto-fill the form</span>
+      </div>
+      <div class="ai-header-right">
+        <button class="btn btn-outline" style="padding:6px 14px;font-size:11px" onclick="event.stopPropagation();copyPrompt()">📋 Copy Prompt</button>
+      </div>
+    </div>
+    <div class="ai-body" id="ai-body">
+      <div class="ai-prompt-box" id="ai-prompt-box">
+        <div class="ai-prompt-actions">
+          <button class="btn btn-outline" style="padding:4px 10px;font-size:10px" onclick="copyPrompt()">📋 Copy</button>
+        </div>
+You are a news writer for BimaNiti, an Indian insurance industry analysis platform.
+
+I will give you a source link or article text. Structure it into the format below.
+
+Return exactly this:
+
+TITLE: [compelling headline, max 12 words]
+
+SUMMARY: [1-2 sentences, max 250 characters]
+
+CATEGORY: [one of: Life Insurance | Health | General Insurance | Motor | IRDAI/Regulatory | Personal Lines | Reinsurance]
+
+TAGS: [3-6 comma-separated keywords]
+
+READ_TIME: [X min read — calculate at ~200 words/min]
+
+CONTENT:
+&lt;html&gt;
+&lt;p&gt;First paragraph — lead with the most important fact.&lt;/p&gt;
+
+&lt;h2&gt;Key Details&lt;/h2&gt;
+&lt;p&gt;Expand with numbers, companies, dates.&lt;/p&gt;
+
+&lt;h2&gt;Impact &amp; Analysis&lt;/h2&gt;
+&lt;p&gt;Why this matters.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sources: [Source Name] ([Date])&lt;/em&gt;&lt;/p&gt;
+
+Rules:
+- Only use: &lt;p&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;&lt;li&gt;, &lt;blockquote&gt;
+- Bold key numbers and company names with &lt;strong&gt;
+- Short paragraphs (2-4 sentences each)
+- End with source attribution in &lt;em&gt;
+- No markdown — HTML only
+- Be factual and neutral, not promotional
+      </div>
+      <div class="ai-paste-area">
+        <textarea id="ai-paste-text" placeholder="Paste the AI's structured response here..."></textarea>
+        <div class="ai-paste-actions">
+          <button class="btn btn-primary" onclick="parseAiOutput()">Parse & Fill Form</button>
+          <button class="btn btn-outline" onclick="document.getElementById('ai-paste-text').value='';showStatus('Cleared.','info')">Clear</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-grid">
+    <div class="form-group">
+      <label>ID <span class="auto-badge">auto</span></label>
+      <input type="text" id="field-id" readonly>
+    </div>
+    <div class="form-group">
+      <label>Published Date <span class="auto-badge">auto</span></label>
+      <input type="date" id="field-date">
+    </div>
+    <div class="form-group full">
+      <label>Title <span class="required">*</span></label>
+      <input type="text" id="field-title" placeholder="e.g. New Insurance Regulation Analysis" oninput="autoSlug()">
+    </div>
+    <div class="form-group">
+      <label>Slug <span class="auto-badge">auto</span></label>
+      <input type="text" id="field-slug" readonly>
+    </div>
+    <div class="form-group">
+      <label>Author <span class="auto-badge">auto</span></label>
+      <input type="text" id="field-author" value="BimaNiti">
+    </div>
+    <div class="form-group">
+      <label>Category <span class="required">*</span></label>
+      <select id="field-category">
+        <option>Life Insurance</option>
+        <option>Health</option>
+        <option>General Insurance</option>
+        <option>Motor</option>
+        <option selected>IRDAI/Regulatory</option>
+        <option>Personal Lines</option>
+        <option>Reinsurance</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Read Time <span class="auto-badge">auto</span></label>
+      <input type="text" id="field-readtime" placeholder="e.g. 2 min read">
+    </div>
+    <div class="form-group" id="source-group">
+      <label>Source <span class="required">*</span></label>
+      <input type="text" id="field-source" placeholder="e.g. Economic Times">
+      <span class="helper-text">Only for News articles</span>
+    </div>
+    <div class="form-group">
+      <label>Tags</label>
+      <input type="text" id="field-tags" placeholder="e.g. IRDAI, Regulation, Life Insurance">
+      <span class="helper-text">Comma-separated</span>
+    </div>
+    <div class="form-group">
+      <label>Related IDs</label>
+      <input type="text" id="field-related" placeholder="e.g. NWS-040, BLG-028">
+      <span class="helper-text">Comma-separated article IDs (optional)</span>
+    </div>
+    <div class="form-group full">
+      <label>Summary <span class="required">*</span></label>
+      <textarea id="field-summary" placeholder="A 1-2 sentence description of this article..."></textarea>
+    </div>
+  </div>
+
+  <div class="form-group full" style="margin-top:16px">
+    <label>Content (HTML) <span class="required">*</span></label>
+    <div class="toolbar">
+      <button onclick="wrapTag('p')" title="Paragraph">P</button>
+      <button onclick="wrapTag('h2')" title="Heading 2">H2</button>
+      <button onclick="wrapTag('h3')" title="Heading 3">H3</button>
+      <span class="sep"></span>
+      <button onclick="wrapTag('strong')" title="Bold"><b>B</b></button>
+      <button onclick="wrapTag('em')" title="Italic"><i>I</i></button>
+      <span class="sep"></span>
+      <button onclick="wrapTag('li')" title="List item">LI</button>
+      <button onclick="insertList('ul')" title="Bullet list">UL</button>
+      <button onclick="insertList('ol')" title="Numbered list">OL</button>
+      <span class="sep"></span>
+      <button onclick="insertBlockquote()" title="Blockquote">"</button>
+      <button onclick="wrapTag('a')" title="Link">Link</button>
+      <span class="sep"></span>
+      <button onclick="clearContent()" title="Clear" style="color:var(--error)">Clear</button>
+    </div>
+    <textarea id="content-textarea" placeholder="Write your article content here... Use the toolbar buttons above to wrap text in HTML tags."></textarea>
+  </div>
+
+  <div style="display:flex;gap:8px;margin-top:8px">
+    <label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer">
+      <input type="checkbox" id="auto-readtime" checked>
+      Auto-calculate read time
+    </label>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-primary" id="btn-save" onclick="saveArticle()" disabled>Save to JSON</button>
+    <button class="btn btn-outline" onclick="togglePreview()">Preview</button>
+    <button class="btn btn-outline" onclick="resetForm()">Reset Form</button>
+  </div>
+
+  <div class="status-bar" id="status-bar"></div>
+  <div class="git-commands" id="git-commands"></div>
+
+  <div class="preview-box" id="preview-box">
+    <div class="label">Preview</div>
+    <div class="preview-content" id="preview-content"></div>
+  </div>
+
+</div>
+
+<script>
+// ── State ──────────────────────────────────────────────
+var STATE = {
+  folderHandle: null,
+  projectRoot: null,
+  type: 'blog',    // 'blog' or 'news'
+  existingBlogs: [],
+  existingNews: [],
+  articleType: 'blog'
+};
+
+var CATEGORIES = ['Life Insurance','Health','General Insurance','Motor','IRDAI/Regulatory','Personal Lines','Reinsurance'];
+var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+// ── Init ───────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  var d = new Date();
+  document.getElementById('field-date').value = d.toISOString().split('T')[0];
+  setType('blog');
+});
+
+// ── Folder / File Operations ──────────────────────────
+async function openProject() {
+  try {
+    if (!window.showDirectoryPicker) {
+      showStatus('Your browser does not support the File System Access API. Please use Chrome or Edge.', 'error');
+      return;
+    }
+    var handle = await window.showDirectoryPicker({ mode: 'readwrite' });
+    STATE.folderHandle = handle;
+    STATE.projectRoot = handle.name;
+
+    // Verify it looks like our project
+    var entries = [];
+    for await (var entry of handle.values()) { entries.push(entry.name); }
+
+    if (!entries.includes('data')) {
+      showStatus('This does not look like a BimaNiti project folder — no "data" directory found.', 'error');
+      STATE.folderHandle = null;
+      STATE.projectRoot = null;
+      updateFolderUI();
+      return;
+    }
+
+    updateFolderUI();
+    showStatus('Project folder loaded: ' + handle.name, 'success');
+    await loadExistingData();
+    autoGenerateId();
+    document.getElementById('btn-save').disabled = false;
+  } catch (err) {
+    if (err.name !== 'AbortError' && err.name !== 'SecurityError') {
+      showStatus('Error opening folder: ' + err.message, 'error');
+    }
+  }
+}
+
+async function loadExistingData() {
+  if (!STATE.folderHandle) return;
+  try {
+    var dataDir = await STATE.folderHandle.getDirectoryHandle('data');
+    try {
+      var blogFile = await dataDir.getFileHandle('blogs.json');
+      var blogBlob = await blogFile.getFile();
+      STATE.existingBlogs = JSON.parse(await blogBlob.text());
+    } catch(e) { STATE.existingBlogs = []; }
+
+    try {
+      var newsFile = await dataDir.getFileHandle('news.json');
+      var newsBlob = await newsFile.getFile();
+      STATE.existingNews = JSON.parse(await newsBlob.text());
+    } catch(e) { STATE.existingNews = []; }
+  } catch(e) {
+    showStatus('Could not read data files. Make sure data/blogs.json and data/news.json exist.', 'error');
+  }
+}
+
+async function saveArticle() {
+  var fn, existingData;
+
+  if (STATE.articleType === 'blog') {
+    fn = 'blogs.json';
+    existingData = STATE.existingBlogs;
+  } else {
+    fn = 'news.json';
+    existingData = STATE.existingNews;
+  }
+
+  // Validate
+  var title = document.getElementById('field-title').value.trim();
+  var summary = document.getElementById('field-summary').value.trim();
+  var content = document.getElementById('content-textarea').value.trim();
+
+  if (!title) { showStatus('Title is required.', 'error'); return; }
+  if (!summary) { showStatus('Summary is required.', 'error'); return; }
+  if (!content) { showStatus('Content is required.', 'error'); return; }
+
+  var newEntry = buildEntry();
+  if (!newEntry) return;
+
+  // Add to beginning of array
+  existingData.unshift(newEntry);
+
+  try {
+    var dataDir = await STATE.folderHandle.getDirectoryHandle('data');
+    var fileHandle = await dataDir.getFileHandle(fn, { create: true });
+    var writable = await fileHandle.createWritable();
+    await writable.write(JSON.stringify(existingData, null, 4));
+    await writable.close();
+
+    // Update in-memory state
+    if (STATE.articleType === 'blog') {
+      STATE.existingBlogs = existingData;
+    } else {
+      STATE.existingNews = existingData;
+    }
+
+    var id = newEntry.id;
+    var slug = newEntry.slug;
+    showStatus('"' + title.replace(/'/g, "\\'") + '" saved to data/' + fn + ' ✅', 'success');
+
+    // Show git commands
+    var msg = "Add " + STATE.articleType + ": " + title.replace(/'/g, "");
+    document.getElementById('git-commands').style.display = 'block';
+    document.getElementById('git-commands').textContent =
+      '# Next: deploy to production\n' +
+      'git add -A\n' +
+      'git commit -m "' + msg + '"\n' +
+      'git push\n\n' +
+      '# New ID: ' + id + '\n' +
+      '# Slug: ' + slug + '\n' +
+      '# URL: https://bimaniti.in/post/' + slug + '.html';
+
+    autoGenerateId();
+    document.getElementById('field-title').focus();
+
+  } catch(err) {
+    showStatus('Error saving: ' + err.message, 'error');
+  }
+}
+
+// ── Form Logic ────────────────────────────────────────
+function setType(type) {
+  STATE.articleType = type;
+  document.querySelectorAll('.type-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.type === type);
+  });
+
+  var sg = document.getElementById('source-group');
+  if (type === 'news') {
+    sg.style.display = 'flex';
+  } else {
+    sg.style.display = 'none';
+  }
+
+  autoGenerateId();
+  autoReadTime();
+}
+
+function autoSlug() {
+  var title = document.getElementById('field-title').value.trim();
+  if (!title) { document.getElementById('field-slug').value = ''; return; }
+  document.getElementById('field-slug').value = title
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+  autoReadTime();
+}
+
+function autoReadTime() {
+  var content = document.getElementById('content-textarea').value || '';
+  var text = content.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  var words = text ? text.split(' ').length : 0;
+  var mins = Math.max(1, Math.round(words / 200));
+  document.getElementById('field-readtime').value = mins + ' min read';
+}
+
+function autoGenerateId() {
+  var prefix = STATE.articleType === 'blog' ? 'BLG' : 'NWS';
+  var existing = STATE.articleType === 'blog' ? STATE.existingBlogs : STATE.existingNews;
+  var maxNum = 0;
+  existing.forEach(function(item) {
+    if (item.id && item.id.startsWith(prefix + '-')) {
+      var num = parseInt(item.id.split('-')[1], 10);
+      if (num > maxNum) maxNum = num;
+    }
+  });
+  document.getElementById('field-id').value = prefix + '-' + String(maxNum + 1).padStart(3, '0');
+}
+
+function buildEntry() {
+  var id = document.getElementById('field-id').value.trim();
+  var slug = document.getElementById('field-slug').value.trim();
+  var title = document.getElementById('field-title').value.trim();
+  var author = document.getElementById('field-author').value.trim() || 'BimaNiti';
+  var category = document.getElementById('field-category').value;
+  var date = document.getElementById('field-date').value;
+  var readTime = document.getElementById('field-readtime').value.trim() || '1 min read';
+  var summary = document.getElementById('field-summary').value.trim();
+  var content = document.getElementById('content-textarea').value.trim();
+  var tagsStr = document.getElementById('field-tags').value.trim();
+  var relatedStr = document.getElementById('field-related').value.trim();
+  var source = document.getElementById('field-source').value.trim();
+
+  if (!slug) { showStatus('Title is required (slug is auto-generated from title).', 'error'); return null; }
+
+  var tags = tagsStr ? tagsStr.split(',').map(function(t) { return t.trim(); }).filter(Boolean) : [];
+  var related = relatedStr ? relatedStr.split(',').map(function(t) { return t.trim(); }).filter(Boolean) : [];
+
+  var entry = {
+    id: id,
+    slug: slug,
+    title: title,
+    category: category,
+    tags: tags,
+    author: author,
+    published_date: date,
+    read_time: readTime,
+    summary: summary,
+    content: content,
+    previous_coverage: null,
+    related_ids: related
+  };
+
+  if (STATE.articleType === 'news') {
+    entry.source = source || 'BimaNiti';
+  }
+
+  return entry;
+}
+
+// ── Content Toolbar ───────────────────────────────────
+function wrapTag(tag) {
+  var ta = document.getElementById('content-textarea');
+  var start = ta.selectionStart;
+  var end = ta.selectionEnd;
+  var text = ta.value;
+  var selected = text.substring(start, end);
+
+  var open, close;
+  if (tag === 'a') {
+    open = '<a href="https://">';
+    close = '</a>';
+  } else {
+    open = '<' + tag + '>';
+    close = '</' + tag + '>';
+  }
+
+  var replacement = selected ? open + selected + close : open + close;
+  ta.value = text.substring(0, start) + replacement + text.substring(end);
+  ta.selectionStart = start + open.length;
+  ta.selectionEnd = start + open.length + selected.length;
+  ta.focus();
+  autoReadTime();
+}
+
+function insertList(type) {
+  var ta = document.getElementById('content-textarea');
+  var text = ta.value;
+  var list = '<' + type + '>\n  <li>Item 1</li>\n  <li>Item 2</li>\n  <li>Item 3</li>\n</' + type + '>\n';
+  ta.value = text + list;
+  ta.focus();
+  autoReadTime();
+}
+
+function insertBlockquote() {
+  var ta = document.getElementById('content-textarea');
+  var text = ta.value;
+  var bq = '\n<blockquote>Your quote here</blockquote>\n';
+  ta.value = text + bq;
+  ta.focus();
+  autoReadTime();
+}
+
+function clearContent() {
+  if (confirm('Clear the content field?')) {
+    document.getElementById('content-textarea').value = '';
+    document.getElementById('content-textarea').focus();
+    autoReadTime();
+  }
+}
+
+// ── Preview ──────────────────────────────────────────
+function togglePreview() {
+  var box = document.getElementById('preview-box');
+  var content = document.getElementById('content-textarea').value.trim();
+  if (box.style.display === 'block') {
+    box.style.display = 'none';
+    return;
+  }
+  if (!content) { showStatus('Nothing to preview — content is empty.', 'info'); return; }
+  document.getElementById('preview-content').innerHTML = content;
+  box.style.display = 'block';
+}
+
+// ── Reset ────────────────────────────────────────────
+function resetForm() {
+  if (!confirm('Reset the form? Unsaved data will be lost.')) return;
+  document.getElementById('field-title').value = '';
+  document.getElementById('field-summary').value = '';
+  document.getElementById('content-textarea').value = '';
+  document.getElementById('field-tags').value = '';
+  document.getElementById('field-related').value = '';
+  document.getElementById('field-source').value = '';
+  document.getElementById('field-slug').value = '';
+  document.getElementById('preview-box').style.display = 'none';
+  document.getElementById('git-commands').style.display = 'none';
+  var d = new Date();
+  document.getElementById('field-date').value = d.toISOString().split('T')[0];
+  document.getElementById('field-author').value = 'BimaNiti';
+  document.getElementById('field-readtime').value = '1 min read';
+  autoGenerateId();
+  document.getElementById('field-title').focus();
+}
+
+// ── UI Helpers ───────────────────────────────────────
+function showStatus(msg, type) {
+  var bar = document.getElementById('status-bar');
+  bar.className = 'status-bar ' + (type || 'info');
+  bar.textContent = msg;
+  bar.style.display = 'block';
+  if (type === 'success') {
+    setTimeout(function() { bar.style.display = 'none'; }, 8000);
+  }
+}
+
+function updateFolderUI() {
+  var dot = document.getElementById('folder-dot');
+  var label = document.getElementById('folder-label');
+  if (STATE.folderHandle) {
+    dot.className = 'dot open';
+    label.textContent = STATE.projectRoot + '/';
+  } else {
+    dot.className = 'dot closed';
+    label.textContent = 'No project folder selected';
+  }
+}
+
+// Auto calculate read time when content changes
+document.getElementById('content-textarea').addEventListener('input', function() {
+  if (document.getElementById('auto-readtime').checked) autoReadTime();
+});
+
+// ── AI Assistant ─────────────────────────────────────
+function toggleAiPanel() {
+  var body = document.getElementById('ai-body');
+  var chevron = document.getElementById('ai-chevron');
+  body.classList.toggle('open');
+  chevron.textContent = body.classList.contains('open') ? '▼' : '▶';
+}
+
+function copyPrompt() {
+  var box = document.getElementById('ai-prompt-box');
+  // Get text content (strip the copy button text)
+  var text = box.textContent.replace('📋 Copy', '').trim();
+  // Unescape HTML entities (only need basic ones for plain text)
+  var txt = document.createElement('textarea');
+  txt.value = text;
+  document.body.appendChild(txt);
+  txt.select();
+  try {
+    document.execCommand('copy');
+    showStatus('Prompt copied to clipboard 📋', 'success');
+  } catch(e) {
+    showStatus('Failed to copy. Select and copy manually.', 'error');
+  }
+  document.body.removeChild(txt);
+}
+
+function parseAiOutput() {
+  var raw = document.getElementById('ai-paste-text').value;
+  if (!raw.trim()) { showStatus('Paste the AI output first.', 'error'); return; }
+
+  // Normalize line endings
+  var text = raw.replace(/\r\n/g, '\n');
+
+  // ── Helper functions ──
+  function extract(label) {
+    var re = new RegExp(label + '\\s*:\\s*([\\s\\S]*?)(?:\\n(?:TITLE|SUMMARY|CATEGORY|TAGS|READ_TIME|CONTENT)\\s*:|\\n*$)', 'i');
+    var m = text.match(re);
+    return m ? m[1].trim() : '';
+  }
+
+  function extractLast(label) {
+    var idx = text.toUpperCase().lastIndexOf(label + ':');
+    if (idx === -1) return '';
+    var after = text.substring(idx + label.length + 1).trim();
+    var parts = text.substring(0, idx);
+    return after;
+  }
+
+  // ── Extract fields ──
+  var title = extract('TITLE');
+  var summary = extract('SUMMARY');
+  var category = extract('CATEGORY');
+  var tags = extract('TAGS');
+  var readTime = extract('READ_TIME');
+
+  // Content: everything from first <html> or after "CONTENT:" to end
+  var content = '';
+  var htmlIdx = text.toLowerCase().indexOf('<html>');
+  if (htmlIdx !== -1) {
+    content = text.substring(htmlIdx).trim();
+  } else {
+    // Fallback: after CONTENT:
+    var contentMatch = text.match(/CONTENT\s*:\s*([\s\S]*)/i);
+    if (contentMatch) content = contentMatch[1].trim();
+  }
+  // Remove any trailing "Rules:" section if it leaked
+  var rulesIdx = content.toLowerCase().indexOf('rules:');
+  if (rulesIdx > 0) content = content.substring(0, rulesIdx).trim();
+
+  // Remove ```html or ``` if present (AI sometimes wraps in code blocks)
+  content = content.replace(/```html?/gi, '').replace(/```/g, '').trim();
+
+  // ── Fill form ──
+  if (title) document.getElementById('field-title').value = title;
+  if (summary) document.getElementById('field-summary').value = summary;
+  if (readTime) document.getElementById('field-readtime').value = readTime;
+  if (tags) document.getElementById('field-tags').value = tags;
+  if (content) document.getElementById('content-textarea').value = content;
+
+  // Auto-trigger slug generation from title
+  if (title) autoSlug();
+  // Auto-calculate read time from content
+  if (content) autoReadTime();
+
+  // ── Category: match to dropdown ──
+  if (category) {
+    var catMap = {
+      'life': 'Life Insurance',
+      'life insurance': 'Life Insurance',
+      'health': 'Health',
+      'general': 'General Insurance',
+      'general insurance': 'General Insurance',
+      'motor': 'Motor',
+      'irdai': 'IRDAI/Regulatory',
+      'irdai/regulatory': 'IRDAI/Regulatory',
+      'regulatory': 'IRDAI/Regulatory',
+      'personal': 'Personal Lines',
+      'personal lines': 'Personal Lines',
+      'reinsurance': 'Reinsurance'
+    };
+    var catLower = category.toLowerCase().trim();
+    var matched = catMap[catLower] || '';
+    if (matched) {
+      var select = document.getElementById('field-category');
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === matched) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
+
+  // ── Source: try to extract from content <em>Sources: ...</em> ──
+  if (STATE.articleType === 'news') {
+    var sourceMatch = content.match(/<em>Sources?:\s*([^<]+)<\/em>/i);
+    if (sourceMatch) {
+      document.getElementById('field-source').value = sourceMatch[1].trim();
+    }
+  }
+
+  // ── Set type based on presence of source or category heuristics ──
+  if (category) {
+    var catLower = category.toLowerCase();
+    // If category mentions news-like topics, keep as news; blogs tend to be analytical
+    // We'll just show status
+  }
+
+  var filled = [];
+  if (title) filled.push('Title');
+  if (summary) filled.push('Summary');
+  if (content) filled.push('Content');
+  if (category) filled.push('Category');
+  if (tags) filled.push('Tags');
+
+  if (filled.length > 0) {
+    showStatus('✅ Auto-filled: ' + filled.join(', ') + '. Review and click Save.', 'success');
+  } else {
+    showStatus('Could not parse any fields. Make sure the AI output follows the required format (TITLE:, SUMMARY:, etc.).', 'error');
+  }
+
+  // Collapse the AI panel after filling
+  var body = document.getElementById('ai-body');
+  if (body.classList.contains('open')) {
+    body.classList.remove('open');
+    document.getElementById('ai-chevron').textContent = '▶';
+  }
+}
+</script>
+</body>
+</html>

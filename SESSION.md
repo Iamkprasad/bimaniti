@@ -79,13 +79,12 @@
 When you add new articles to `data/blogs.json` or `data/news.json`:
 
 ```bash
-node scripts/build.mjs
 git add -A
 git commit -m "Add new article: [title]"
 git push
 ```
 
-That's it. The build script generates the static pages, sitemap, and feed automatically.
+That's it. GitHub Actions automatically runs the build script, generates static pages, sitemap, and feed, and deploys to GitHub Pages. No need to build locally.
 
 ## Pre-deploy checklist
 
@@ -95,4 +94,4 @@ Before first production deploy:
 2. (Optional) Generate real images using prompts in `assets/images/IMAGE-PLACEHOLDERS.md`
 3. (Optional) Convert stack JPGs to WebP: `for %f in (assets/images/stack-*.jpg) do cwebp -q 85 "%f" -o "assets/images/%~nf.webp"`
 4. Verify domain `bimaniti.in` is configured in GitHub Pages settings
-5. Run `node scripts/build.mjs` one final time before committing
+5. Push to main — the build runs automatically in CI

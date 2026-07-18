@@ -52,7 +52,7 @@ img{max-width:100%;height:auto}
 .nav-container{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:58px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;flex-shrink:0;overflow:visible;line-height:0}
 .logo img{height:36px;width:auto;max-width:none;min-width:120px;display:block;flex-shrink:0;background:none}
-html.dark .logo img{filter:brightness(0)saturate(100%)invert(65%)sepia(30%)saturate(400%)hue-rotate(50deg)brightness(90%)}
+html.dark .logo img{filter:brightness(0)invert(0.85)}
 .desktop-nav{display:none;align-items:center;gap:28px}
 @media(min-width:768px){.desktop-nav{display:flex}}
 .nav-link{font-family:var(--font-body);font-size:13px;font-weight:400;color:var(--text-muted);transition:color 150ms ease}
@@ -100,7 +100,7 @@ html.dark .theme-toggle .icon-moon{display:none}
 .footer-content{display:flex;flex-direction:column;gap:2rem;margin-bottom:2rem}
 @media(min-width:768px){.footer-content{flex-direction:row;justify-content:space-between;align-items:flex-start}}
 .footer-brand{height:32px;width:auto;max-width:none;min-width:100px;display:block;flex-shrink:0;margin-bottom:8px}
-html.dark .footer-brand{filter:brightness(0)saturate(100%)invert(65%)sepia(30%)saturate(400%)hue-rotate(50deg)brightness(90%)}
+html.dark .footer-brand{filter:brightness(0)invert(0.85)}
 .footer-desc{font-family:var(--font-body);font-size:.8125rem;color:var(--text-muted);font-weight:300;max-width:20rem;line-height:1.6}
 .footer-links{display:flex;flex-wrap:wrap;gap:1.5rem}
 .footer-link{font-family:var(--font-body);font-size:.8125rem;color:var(--text-secondary);font-weight:300;transition:color var(--transition)}
@@ -395,20 +395,22 @@ function updatePostPage(items) {
     slugMap[item.id] = item.slug || slugify(item.id, item.title);
   });
 
-  // Add redirect script before existing scripts
+  // Remove any existing redirect script (identified by REDIRECT_MAP marker)
+  html = html.replace(/[\s]*<script defer>[\s\S]*?REDIRECT_MAP[\s\S]*?<\/script>/g, '');
+
+  // Inject fresh redirect script
   const redirectScript = `
     <script defer>
     (function() {
+      var slugs = ${JSON.stringify(slugMap)}; /* REDIRECT_MAP */
       var id = new URLSearchParams(window.location.search).get('id');
-      var slugs = ${JSON.stringify(slugMap)};
       if (id && slugs[id]) {
-        var newUrl = 'post/' + slugs[id] + '.html' + window.location.hash;
-        window.location.replace(newUrl);
+        window.location.replace('post/' + slugs[id] + '.html' + window.location.hash);
       }
     })();
     </script>`;
 
-  html = html.replace('</head>', redirectScript + '\n</head>');
+  html = html.replace('</head>', redirectScript.trim() + '\n</head>');
   writeFileSync(postPath, html, 'utf-8');
   console.log('  ✓ Updated post.html with redirect to static URLs');
 }
