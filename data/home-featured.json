@@ -1,0 +1,60 @@
+{
+  "blogs": [
+    {
+      "id": "BLG-028",
+      "slug": "gst-itc-impact-on-insurers-10-months-on",
+      "title": "GST ITC Impact on Insurers: 10 Months On",
+      "category": "IRDAI/Regulatory",
+      "author": "BimaNiti",
+      "published_date": "2026-07-18",
+      "summary": "Ten months after the GST exemption on health insurance, the input tax credit (ITC) loss is unevenly distributed — Niva Bupa absorbed ~4%, Star Health ~1%, and Care Health ~2%. Net customer benefit stands at 12-15%."
+    },
+    {
+      "id": "BLG-026",
+      "slug": "non-life-insurance-june-2026-growth-accelerates-to-16-percent",
+      "title": "Non-Life Insurance June 2026: Growth Accelerates to 16%",
+      "category": "General Insurance",
+      "author": "BimaNiti",
+      "published_date": "2026-07-08",
+      "summary": "June 2026 GDPI hit Rs 24,195 crore, up 15.9% YoY. Standalone health insurers led the charge at 30.9% growth, with Care (+41.9%) and Niva (+34.3%) posting exceptional numbers."
+    },
+    {
+      "id": "BLG-025",
+      "slug": "health-insurance-trends-reshaping-india-in-2026",
+      "title": "Health Insurance Trends Reshaping India in 2026",
+      "category": "Health",
+      "author": "BimaNiti",
+      "published_date": "2026-06-30",
+      "summary": "From GST-driven premium drops to tier-2/3 expansion and digital-first distribution, health insurance in India is undergoing its most significant transformation in a decade."
+    }
+  ],
+  "news": [
+    {
+      "id": "NWS-026",
+      "slug": "hdfc-life-icici-pru-q1-fy27-double-digit-profit-growth",
+      "title": "HDFC Life & ICICI Pru Q1 FY27: Double-Digit Profit Growth",
+      "category": "Life Insurance",
+      "source": "Economic Times / Business Standard",
+      "published_date": "2026-07-15",
+      "summary": "HDFC Life reported Q1 FY27 PAT of Rs 611 crore (+12%), while ICICI Pru posted PAT of Rs 386 crore (+27.8%), with retail protection APE surging 60.4%."
+    },
+    {
+      "id": "NWS-033",
+      "slug": "standalone-health-insurers-surge-309-in-june",
+      "title": "Standalone Health Insurers Surge 30.9% in June",
+      "category": "Health",
+      "source": "IRDAI / CRISIL",
+      "published_date": "2026-07-10",
+      "summary": "SAHIs collectively grew 30.9% in June 2026, led by Care Health (+41.9%) and Niva Bupa (+34.3%), driven by GST exemption tailwinds and expanding tier-2/3 demand."
+    },
+    {
+      "id": "NWS-030",
+      "slug": "irdai-134th-meeting-key-regulatory-outcomes",
+      "title": "IRDAI 134th Meeting: Key Regulatory Outcomes",
+      "category": "IRDAI/Regulatory",
+      "source": "IRDAI",
+      "published_date": "2026-07-05",
+      "summary": "IRDAI approved new risk-based capital framework, composite licensing for insurers, and Bima Vistaar universal product guidelines at its 134th meeting."
+    }
+  ]
+}

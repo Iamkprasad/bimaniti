@@ -1,7 +1,10 @@
 html { color-scheme: light; }
 html.dark { color-scheme: dark; }
 
-*, *::before, *::after {
+/* Transitions applied only to elements that need them */
+a, button, .card, .blog-card, .archive-row, .post-card,
+.nav-link, .filter-btn, .btn-primary, .btn-outline, .theme-toggle,
+.stack-img-wrapper, .timeline-dot, .share-btn {
   transition: background-color 0.25s ease, border-color 0.2s ease, color 0.15s ease;
 }
 
@@ -1522,12 +1525,14 @@ textarea.contact-input {
   height: 100%;
   background: var(--accent);
   border-radius: 3px;
-  width: 0%;
-  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  width: var(--bar-width);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .bar-fill.animate {
-  width: var(--bar-width);
+  transform: scaleX(1);
 }
 
 .bar-value {
@@ -1779,10 +1784,12 @@ textarea.contact-input {
   top: 58px;
   left: 0;
   height: 3px;
+  width: 100%;
   background: var(--accent);
   z-index: 99;
-  width: 0%;
-  transition: width 0.1s linear;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.1s linear;
 }
 
 /* Pagination */
