@@ -293,15 +293,21 @@ html.dark .theme-toggle .icon-moon { display: none; }
 
 /* Hero */
 .hero {
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 6rem 1.5rem 8rem;
+  padding: 4rem 1.5rem 4rem;
   position: relative;
   background: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+    padding: 3rem 1.5rem 3rem;
+  }
 }
 
 .hero-content {
@@ -723,13 +729,24 @@ html.dark .theme-toggle .icon-moon { display: none; }
 .stack-layer {
   position: sticky;
   top: 0;
-  height: 100vh;
-  height: 100dvh;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .stack-layer {
+    height: 55vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .stack-layer {
+    height: 50vh;
+  }
 }
 
 .stack-content {

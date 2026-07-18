@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (stackingContainer) {
         loadData('data/stack-images.json' + cacheBuster)
             .then(function(data) {
-                stackingContainer.innerHTML = data.map(function(img) {
+                stackingContainer.innerHTML = data.slice(0, 3).map(function(img) {
                     var webpSrc = img.image.replace(/\.jpg$/, '.webp');
                     return '<div class="stack-layer"><div class="stack-content"><div class="stack-img-wrapper"><picture><source srcset="' + webpSrc + '" type="image/webp"><img src="' + img.image + '" alt="' + img.title + '" class="stack-img" loading="lazy" width="1200" height="700" onerror="handleImgError(this)"></picture><div class="stack-overlay"></div></div><div class="stack-text"><h2 class="stack-title">' + img.title + '</h2><p class="stack-desc">' + img.desc + '</p></div></div></div>';
                 }).join('');
