@@ -1,837 +1,1451 @@
-﻿{
-    "news":  [
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "irdai-links-insurance-kmp-pay-to-customer-outcomes-mandates-public-disclosures",
-                     "id":  "NWS-020",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "LIC",
-                                  "IRDAI",
-                                  "PAT",
-                                  "Ind AS",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-05-26",
-                     "summary":  "IRDAI amended corporate governance norms to link KMP remuneration to customer-centric metrics including claim settlement speed, grievance redressal, and product performance.",
-                     "status":  "published",
-                     "file_path":  "news/irdai-links-insurance-kmp-pay-to-customer-outcomes-mandates-public-disclosures.md",
-                     "title":  "IRDAI Links Insurance KMP Pay to Customer Outcomes, Mandates Public Disclosures",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "lic-q4-fy26-net-profit-surges-23-to-rs-23467-crore-board-declares-rs-10-dividend",
-                     "id":  "NWS-019",
-                     "superseded_by":  null,
-                     "category":  "Life Insurance",
-                     "tags":  [
-                                  "LIC",
-                                  "FY26",
-                                  "Q4",
-                                  "VNB",
-                                  "AUM",
-                                  "Life Insurance"
-                              ],
-                     "published_date":  "2026-05-21",
-                     "summary":  "LIC reported a 23% YoY rise in Q4 net profit to Rs 23,467 crore, with FY26 PAT reaching a record Rs 57,419 crore. The board declared a Rs 10/share dividend and a 1:1 bonus issue.",
-                     "status":  "published",
-                     "file_path":  "news/lic-q4-fy26-net-profit-surges-23-to-rs-23467-crore-board-declares-rs-10-dividend.md",
-                     "title":  "LIC Q4 FY26: Net Profit Surges 23% to Rs 23,467 Crore, Board Declares Rs 10 Dividend and 1:1 Bonus",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "new-india-assurance-q4-profit-jumps-61-to-rs-558-crore-on-investment-income",
-                     "id":  "NWS-018",
-                     "superseded_by":  null,
-                     "category":  "General Insurance",
-                     "tags":  [
-                                  "FY26",
-                                  "Q4",
-                                  "General Insurance",
-                                  "New India"
-                              ],
-                     "published_date":  "2026-05-11",
-                     "summary":  "New India Assurance reported 61% YoY growth in Q4 PAT to Rs 558 crore. FY26 PAT rose 40% to Rs 1,384 crore.",
-                     "status":  "published",
-                     "file_path":  "news/new-india-assurance-q4-profit-jumps-61-to-rs-558-crore-on-investment-income.md",
-                     "title":  "New India Assurance Q4: Profit Jumps 61% to Rs 558 Crore on Investment Income",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "standalone-health-insurers-lead-with-1789-premium-growth-as-health-awareness-ris",
-                     "id":  "NWS-017",
-                     "superseded_by":  null,
-                     "category":  "Health",
-                     "tags":  [
-                                  "IRDAI",
-                                  "Health"
-                              ],
-                     "published_date":  "2026-05-10",
-                     "summary":  "Standalone health insurers recorded 17.89% growth with premium collections of Rs 35,815 crore up to January 2026.",
-                     "status":  "published",
-                     "file_path":  "news/standalone-health-insurers-lead-with-1789-premium-growth-as-health-awareness-ris.md",
-                     "title":  "Standalone Health Insurers Lead with 17.89% Premium Growth as Health Awareness Rises",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "indias-insurance-penetration-stable-at-37-as-density-improves-marginally-to-usd",
-                     "id":  "NWS-016",
-                     "superseded_by":  null,
-                     "category":  "General Insurance",
-                     "tags":  [
-                                  "IRDAI",
-                                  "AUM",
-                                  "General Insurance"
-                              ],
-                     "published_date":  "2026-05-05",
-                     "summary":  "India\u0027s insurance penetration remained at 3.7% in FY2024-25 while insurance density increased from USD 95 to USD 97.",
-                     "status":  "published",
-                     "file_path":  "news/indias-insurance-penetration-stable-at-37-as-density-improves-marginally-to-usd.md",
-                     "title":  "India\u0027s Insurance Penetration Stable at 3.7% as Density Improves Marginally to USD 97",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "100-fdi-in-insurance-global-insurers-line-up-to-enter-indian-market",
-                     "id":  "NWS-015",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "FDI",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-04-25",
-                     "summary":  "With the SBSR Act enabling 100% FDI from February 2026, several global insurers are exploring increased stakes in their Indian subsidiaries.",
-                     "status":  "published",
-                     "file_path":  "news/100-fdi-in-insurance-global-insurers-line-up-to-enter-indian-market.md",
-                     "title":  "100% FDI in Insurance: Global Insurers Line Up to Enter Indian Market",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "sbi-general-insurance-crosses-rs-15000-crore-gdp-milestone-in-fy26",
-                     "id":  "NWS-014",
-                     "superseded_by":  null,
-                     "category":  "General Insurance",
-                     "tags":  [
-                                  "SBI",
-                                  "FY26",
-                                  "General Insurance"
-                              ],
-                     "published_date":  "2026-04-24",
-                     "summary":  "SBI General Insurance crossed Rs 15,000 crore in gross direct premium for the first time with 14.5% growth, outpacing the industry by 1.6 times.",
-                     "status":  "published",
-                     "file_path":  "news/sbi-general-insurance-crosses-rs-15000-crore-gdp-milestone-in-fy26.md",
-                     "title":  "SBI General Insurance Crosses Rs 15,000 Crore GDP Milestone in FY26",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "sbi-life-fy26-nbp-grows-20-to-rs-42550-crore-vnb-margin-holds-at-275",
-                     "id":  "NWS-013",
-                     "superseded_by":  null,
-                     "category":  "Life Insurance",
-                     "tags":  [
-                                  "SBI",
-                                  "ICICI",
-                                  "FY26",
-                                  "VNB",
-                                  "NBP",
-                                  "GWP",
-                                  "Life Insurance",
-                                  "SBI Life"
-                              ],
-                     "published_date":  "2026-04-22",
-                     "summary":  "SBI Life reported 20% NBP growth to Rs 42,550 crore with VNB margins at the upper end of guidance. GWP crossed Rs 1 lakh crore for the first time.",
-                     "status":  "published",
-                     "file_path":  "news/sbi-life-fy26-nbp-grows-20-to-rs-42550-crore-vnb-margin-holds-at-275.md",
-                     "title":  "SBI Life FY26: NBP Grows 20% to Rs 42,550 Crore, VNB Margin Holds at 27.5%",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "mid-tier-life-insurers-gain-ground-retail-premium-growth-outpaces-top-5-players",
-                     "id":  "NWS-012",
-                     "superseded_by":  null,
-                     "category":  "Life Insurance",
-                     "tags":  [
-                                  "IRDAI",
-                                  "FY26",
-                                  "Life Insurance"
-                              ],
-                     "published_date":  "2026-04-21",
-                     "summary":  "IRDAI\u0027s FY26 premium data reveals mid-tier insurers growing at 15.7% in retail premium, delivering 83% of the top-tier\u0027s retail gain.",
-                     "status":  "published",
-                     "file_path":  "news/mid-tier-life-insurers-gain-ground-retail-premium-growth-outpaces-top-5-players.md",
-                     "title":  "Mid-Tier Life Insurers Gain Ground: Retail Premium Growth Outpaces Top 5 Players",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "icici-lombard-q4-gdpi-growth-surges-182-health-insurance-leads-at-382",
-                     "id":  "NWS-011",
-                     "superseded_by":  null,
-                     "category":  "General Insurance",
-                     "tags":  [
-                                  "ICICI",
-                                  "FY26",
-                                  "Q4",
-                                  "GDPI",
-                                  "General Insurance",
-                                  "ICICI Lombard"
-                              ],
-                     "published_date":  "2026-04-15",
-                     "summary":  "ICICI Lombard reported 18.2% GDPI growth in Q4 FY26, nearly double the industry rate. Retail health insurance premiums surged 55.6%.",
-                     "status":  "published",
-                     "file_path":  "news/icici-lombard-q4-gdpi-growth-surges-182-health-insurance-leads-at-382.md",
-                     "title":  "ICICI Lombard Q4: GDPI Growth Surges 18.2%, Health Insurance Leads at 38.2%",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "gst-exemption-on-health-insurance-drives-premium-surge-in-h2fy26",
-                     "id":  "NWS-010",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "LIC",
-                                  "GST",
-                                  "FY26",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-04-15",
-                     "summary":  "The GST exemption on retail health insurance policies from September 2025 significantly boosted health insurance premiums in H2FY26.",
-                     "status":  "published",
-                     "file_path":  "news/gst-exemption-on-health-insurance-drives-premium-surge-in-h2fy26.md",
-                     "title":  "GST Exemption on Health Insurance Drives Premium Surge in H2FY26",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "careedge-non-life-insurance-sector-grew-86-in-fy26-health-insurance-leads-growth",
-                     "id":  "NWS-008",
-                     "superseded_by":  null,
-                     "category":  "General Insurance",
-                     "tags":  [
-                                  "GST",
-                                  "FY26",
-                                  "GDPI",
-                                  "General Insurance"
-                              ],
-                     "published_date":  "2026-04-09",
-                     "summary":  "CareEdge reported that the non-life insurance sector grew 8.6% in FY26, with health insurance emerging as the primary growth driver.",
-                     "status":  "published",
-                     "file_path":  "news/careedge-non-life-insurance-sector-grew-86-in-fy26-health-insurance-leads-growth.md",
-                     "title":  "CareEdge: Non-Life Insurance Sector Grew 8.6% in FY26, Health Insurance Leads Growth",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "non-life-insurers-log-93-premium-growth-in-fy26-amid-gst-relief",
-                     "id":  "NWS-009",
-                     "superseded_by":  null,
-                     "category":  "General Insurance",
-                     "tags":  [
-                                  "GST",
-                                  "FY26",
-                                  "General Insurance"
-                              ],
-                     "published_date":  "2026-04-09",
-                     "summary":  "The non-life insurance industry reported 9.3% YoY growth to Rs 3.36 trillion in FY26, aided by the health insurance segment after GST rate rationalisation.",
-                     "status":  "published",
-                     "file_path":  "news/non-life-insurers-log-93-premium-growth-in-fy26-amid-gst-relief.md",
-                     "title":  "Non-Life Insurers Log 9.3% Premium Growth in FY26 Amid GST Relief",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "irdai-notifies-ind-as-implementation-framework-for-insurers-effective-april-1-20",
-                     "id":  "NWS-006",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "IRDAI",
-                                  "Ind AS",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-04-01",
-                     "summary":  "IRDAI issued the final framework for Ind AS 117 implementation, mandating parallel reporting for two years and a one-year forbearance option.",
-                     "status":  "published",
-                     "file_path":  "news/irdai-notifies-ind-as-implementation-framework-for-insurers-effective-april-1-20.md",
-                     "title":  "IRDAI Notifies Ind AS Implementation Framework for Insurers, Effective April 1, 2026",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "ind-as-117-comes-into-effect-new-accounting-standard-transforms-insurance-financ",
-                     "id":  "NWS-007",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "IRDAI",
-                                  "Ind AS",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-04-01",
-                     "summary":  "Ind AS 117 came into effect from April 2026, fundamentally changing how insurers recognise revenue, report profits, and communicate financial performance.",
-                     "status":  "published",
-                     "file_path":  "news/ind-as-117-comes-into-effect-new-accounting-standard-transforms-insurance-financ.md",
-                     "title":  "Ind AS 117 Comes Into Effect: New Accounting Standard Transforms Insurance Financial Reporting",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti",
-                     "id":  "NWS-004",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "IRDAI",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-03-09",
-                     "summary":  "IRDAI granted certificates of registration to Allianz Jio Reinsurance (50:50 JV between Jio Financial and Allianz) and Kiwi General Insurance.",
-                     "status":  "published",
-                     "file_path":  "news/irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti.md",
-                     "title":  "IRDAI Approves Allianz Jio Reinsurance and Kiwi General Insurance at 134th Meeting",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "irdai-reviews-insurance-sector-performance-total-premium-collections-reach-rs-10",
-                     "id":  "NWS-005",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "IRDAI",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-03-09",
-                     "summary":  "At its 134th meeting, IRDAI reviewed industry performance noting total premium collections of Rs 10.51 lakh crore with 11.45% growth.",
-                     "status":  "published",
-                     "file_path":  "news/irdai-reviews-insurance-sector-performance-total-premium-collections-reach-rs-10.md",
-                     "title":  "IRDAI Reviews Insurance Sector Performance; Total Premium Collections Reach Rs 10.51 Lakh Crore",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "rbi-proposes-stricter-bancassurance-norms-two-tier-model-for-banks-selling-insur",
-                     "id":  "NWS-003",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "PAT",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-02-11",
-                     "summary":  "RBI issued draft directions for bancassurance, creating a clear separation between agency (fee-based distribution) and referral (one-time referral fee) models.",
-                     "status":  "published",
-                     "file_path":  "news/rbi-proposes-stricter-bancassurance-norms-two-tier-model-for-banks-selling-insur.md",
-                     "title":  "RBI Proposes Stricter Bancassurance Norms: Two-Tier Model for Banks Selling Insurance",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "sabka-bima-sabki-raksha-act-comes-into-effect-100-fdi-in-insurance-now-operation",
-                     "id":  "NWS-002",
-                     "superseded_by":  null,
-                     "category":  "IRDAI/Regulatory",
-                     "tags":  [
-                                  "IRDAI",
-                                  "FDI",
-                                  "IRDAI/Regulatory"
-                              ],
-                     "published_date":  "2026-02-05",
-                     "summary":  "The Sabka Bima Sabki Raksha Act came into force, raising the FDI limit to 100% and introducing enhanced policyholder protection measures.",
-                     "status":  "published",
-                     "file_path":  "news/sabka-bima-sabki-raksha-act-comes-into-effect-100-fdi-in-insurance-now-operation.md",
-                     "title":  "Sabka Bima Sabki Raksha Act Comes Into Effect: 100% FDI in Insurance Now Operational",
-                     "previous_coverage_id":  null
-                 },
-                 {
-                     "related_ids":  [
-
-                                     ],
-                     "slug":  "swiss-re-forecasts-india-as-fastest-growing-major-insurance-market-at-69-cagr-ov",
-                     "id":  "NWS-001",
-                     "superseded_by":  null,
-                     "category":  "General Insurance",
-                     "tags":  "General Insurance",
-                     "published_date":  "2026-01-19",
-                     "summary":  "Swiss Re projects Indian insurance premium growth to accelerate to 6.9% over 2026-2030, outpacing China, the US and Western European markets.",
-                     "status":  "published",
-                     "file_path":  "news/swiss-re-forecasts-india-as-fastest-growing-major-insurance-market-at-69-cagr-ov.md",
-                     "title":  "Swiss Re Forecasts India as Fastest-Growing Major Insurance Market at 6.9% CAGR Over 2026-2030",
-                     "previous_coverage_id":  null
-                 }
-             ],
-    "blogs":  [
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "lic-q4-fy26-deep-dive-record-profit-surging-vnb-and-the-margin-story",
-                      "id":  "BLG-019",
-                      "superseded_by":  null,
-                      "category":  "Life Insurance",
-                      "tags":  [
-                                   "LIC",
-                                   "SBI",
-                                   "HDFC",
-                                   "FY26",
-                                   "Q4",
-                                   "PAT",
-                                   "VNB",
-                                   "AUM",
-                                   "Ind AS",
-                                   "Life Insurance",
-                                   "SBI Life",
-                                   "HDFC Life"
-                               ],
-                      "published_date":  "2026-06-04",
-                      "summary":  "LIC reported a record Rs 57,419 crore PAT for FY26 with VNB surging 42%. A deep dive into the performance of India\u0027s largest life insurer.",
-                      "status":  "published",
-                      "file_path":  "blogs/lic-q4-fy26-deep-dive-record-profit-surging-vnb-and-the-margin-story.md",
-                      "title":  "LIC Q4 FY26 Deep Dive: Record Profit, Surging VNB, and the Margin Story",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "icici-lombard-fy26-health-led-growth-story-gains-momentum",
-                      "id":  "BLG-018",
-                      "superseded_by":  null,
-                      "category":  "General Insurance",
-                      "tags":  [
-                                   "ICICI",
-                                   "GST",
-                                   "FY26",
-                                   "Q4",
-                                   "PAT",
-                                   "GDPI",
-                                   "General Insurance",
-                                   "ICICI Lombard"
-                               ],
-                      "published_date":  "2026-06-02",
-                      "summary":  "ICICI Lombard\u0027s Q4 GDPI surged 18.2% — nearly double the industry rate — driven by retail health insurance growing 54%.",
-                      "status":  "published",
-                      "file_path":  "blogs/icici-lombard-fy26-health-led-growth-story-gains-momentum.md",
-                      "title":  "ICICI Lombard FY26: Health-Led Growth Story Gains Momentum",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "health-insurance-trends-reshaping-india-in-2026",
-                      "id":  "BLG-017",
-                      "superseded_by":  null,
-                      "category":  "Health",
-                      "tags":  [
-                                   "LIC",
-                                   "IRDAI",
-                                   "GST",
-                                   "GDPI",
-                                   "Health"
-                               ],
-                      "published_date":  "2026-06-01",
-                      "summary":  "Health insurance premiums grew 14.41% in FY26 driven by GST exemption and rising healthcare awareness.",
-                      "status":  "published",
-                      "file_path":  "blogs/health-insurance-trends-reshaping-india-in-2026.md",
-                      "title":  "Health Insurance Trends Reshaping India in 2026",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "sbi-life-fy26-steady-growth-margin-resilience-and-distribution-strength",
-                      "id":  "BLG-016",
-                      "superseded_by":  null,
-                      "category":  "Life Insurance",
-                      "tags":  [
-                                   "SBI",
-                                   "ICICI",
-                                   "GST",
-                                   "FY26",
-                                   "PAT",
-                                   "VNB",
-                                   "NBP",
-                                   "GWP",
-                                   "Life Insurance",
-                                   "SBI Life"
-                               ],
-                      "published_date":  "2026-05-31",
-                      "summary":  "SBI Life delivered 20% NBP growth with VNB margins at 27.5% — the upper end of guidance. A detailed analysis of the insurer\u0027s FY26 performance.",
-                      "status":  "published",
-                      "file_path":  "blogs/sbi-life-fy26-steady-growth-margin-resilience-and-distribution-strength.md",
-                      "title":  "SBI Life FY26: Steady Growth, Margin Resilience, and Distribution Strength",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "new-india-assurance-q4-profit-jumps-61-but-underwriting-concerns-persist",
-                      "id":  "BLG-015",
-                      "superseded_by":  null,
-                      "category":  "General Insurance",
-                      "tags":  [
-                                   "FY26",
-                                   "Q4",
-                                   "PAT",
-                                   "General Insurance",
-                                   "New India"
-                               ],
-                      "published_date":  "2026-05-29",
-                      "summary":  "New India Assurance reported a 61% jump in Q4 profit, but the combined ratio worsened to 118.34% as wage revision costs of Rs 3,525 crore masked underlying weakness.",
-                      "status":  "published",
-                      "file_path":  "blogs/new-india-assurance-q4-profit-jumps-61-but-underwriting-concerns-persist.md",
-                      "title":  "New India Assurance Q4: Profit Jumps 61% but Underwriting Concerns Persist",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "irdais-regulatory-reforms-a-new-era-for-indian-insurance",
-                      "id":  "BLG-014",
-                      "superseded_by":  null,
-                      "category":  "IRDAI/Regulatory",
-                      "tags":  [
-                                   "LIC",
-                                   "IRDAI",
-                                   "RBC",
-                                   "FDI",
-                                   "IRDAI/Regulatory"
-                               ],
-                      "published_date":  "2026-05-28",
-                      "summary":  "From 100% FDI to risk-based capital norms, IRDAI\u0027s regulatory overhaul is reshaping the Indian insurance sector.",
-                      "status":  "published",
-                      "file_path":  "blogs/irdais-regulatory-reforms-a-new-era-for-indian-insurance.md",
-                      "title":  "IRDAI\u0027s Regulatory Reforms: A New Era for Indian Insurance",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "sbi-general-insurance-crosses-rs-15000-crore-gdp-a-growth-milestone",
-                      "id":  "BLG-013",
-                      "superseded_by":  null,
-                      "category":  "General Insurance",
-                      "tags":  [
-                                   "SBI",
-                                   "GST",
-                                   "FY26",
-                                   "PAT",
-                                   "General Insurance"
-                               ],
-                      "published_date":  "2026-05-27",
-                      "summary":  "SBI General Insurance achieved a historic milestone, crossing Rs 15,000 crore in gross direct premium for the first time with 14.5% growth.",
-                      "status":  "published",
-                      "file_path":  "blogs/sbi-general-insurance-crosses-rs-15000-crore-gdp-a-growth-milestone.md",
-                      "title":  "SBI General Insurance Crosses Rs 15,000 Crore GDP: A Growth Milestone",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "irdais-new-kmp-governance-why-your-insurance-ceos-pay-now-depends-on-your-claim",
-                      "id":  "BLG-012",
-                      "superseded_by":  null,
-                      "category":  "IRDAI/Regulatory",
-                      "tags":  [
-                                   "LIC",
-                                   "IRDAI",
-                                   "PAT",
-                                   "AUM",
-                                   "Ind AS",
-                                   "IRDAI/Regulatory"
-                               ],
-                      "published_date":  "2026-05-26",
-                      "summary":  "IRDAI has linked insurance executive compensation to customer outcomes — claim settlement speed, grievance redressal, and product performance.",
-                      "status":  "published",
-                      "file_path":  "blogs/irdais-new-kmp-governance-why-your-insurance-ceos-pay-now-depends-on-your-claim.md",
-                      "title":  "IRDAI\u0027s New KMP Governance: Why Your Insurance CEO\u0027s Pay Now Depends on Your Claim Experience",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "life-insurance-fy26-mid-tier-challengers-reshape-the-market",
-                      "id":  "BLG-011",
-                      "superseded_by":  null,
-                      "category":  "Life Insurance",
-                      "tags":  [
-                                   "LIC",
-                                   "SBI",
-                                   "HDFC",
-                                   "ICICI",
-                                   "Bajaj",
-                                   "IRDAI",
-                                   "FY26",
-                                   "PAT",
-                                   "Life Insurance",
-                                   "SBI Life",
-                                   "HDFC Life",
-                                   "ICICI Prudential",
-                                   "Bajaj Allianz",
-                                   "Max Life",
-                                   "Kotak Life"
-                               ],
-                      "published_date":  "2026-05-25",
-                      "summary":  "IRDAI\u0027s FY2025-26 premium data reveals a structural shift as mid-tier insurers grow at 15.7% in retail premium, challenging the dominance of the Top 5 players.",
-                      "status":  "published",
-                      "file_path":  "blogs/life-insurance-fy26-mid-tier-challengers-reshape-the-market.md",
-                      "title":  "Life Insurance FY26: Mid-Tier Challengers Reshape the Market",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "cyber-insurance-in-india-a-rapidly-growing-market-taking-shape",
-                      "id":  "BLG-010",
-                      "superseded_by":  null,
-                      "category":  "General Insurance",
-                      "tags":  [
-                                   "HDFC",
-                                   "ICICI",
-                                   "Bajaj",
-                                   "DPDP",
-                                   "General Insurance",
-                                   "ICICI Lombard",
-                                   "New India",
-                                   "Bajaj Allianz"
-                               ],
-                      "published_date":  "2026-05-24",
-                      "summary":  "India\u0027s cyber insurance market is projected to grow at 28% CAGR to reach USD 8.8 billion by 2034, driven by DPDP Act compliance and rising ransomware threats.",
-                      "status":  "published",
-                      "file_path":  "blogs/cyber-insurance-in-india-a-rapidly-growing-market-taking-shape.md",
-                      "title":  "Cyber Insurance in India: A Rapidly Growing Market Taking Shape",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "non-life-insurance-93-growth-in-fy26-amid-regulatory-shifts",
-                      "id":  "BLG-008",
-                      "superseded_by":  null,
-                      "category":  "General Insurance",
-                      "tags":  [
-                                   "IRDAI",
-                                   "GST",
-                                   "FY26",
-                                   "General Insurance"
-                               ],
-                      "published_date":  "2026-05-22",
-                      "summary":  "The non-life insurance sector grew 9.3% to Rs 3.36 trillion in FY26, driven by health insurance and GST relief.",
-                      "status":  "published",
-                      "file_path":  "blogs/non-life-insurance-93-growth-in-fy26-amid-regulatory-shifts.md",
-                      "title":  "Non-Life Insurance: 9.3% Growth in FY26 Amid Regulatory Shifts",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "ind-as-117-the-accounting-revolution-reshaping-indian-insurance",
-                      "id":  "BLG-009",
-                      "superseded_by":  null,
-                      "category":  "IRDAI/Regulatory",
-                      "tags":  [
-                                   "IRDAI",
-                                   "Ind AS",
-                                   "IRDAI/Regulatory"
-                               ],
-                      "published_date":  "2026-05-22",
-                      "summary":  "Ind AS 117 came into effect from April 2026, fundamentally changing how insurers recognise revenue, report profits, and communicate financial performance.",
-                      "status":  "published",
-                      "file_path":  "blogs/ind-as-117-the-accounting-revolution-reshaping-indian-insurance.md",
-                      "title":  "Ind AS 117: The Accounting Revolution Reshaping Indian Insurance",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "gst-exemption-on-insurance-analysing-the-impact-six-months-on",
-                      "id":  "BLG-007",
-                      "superseded_by":  null,
-                      "category":  "IRDAI/Regulatory",
-                      "tags":  [
-                                   "LIC",
-                                   "IRDAI",
-                                   "GST",
-                                   "NBP",
-                                   "IRDAI/Regulatory"
-                               ],
-                      "published_date":  "2026-05-19",
-                      "summary":  "Six months since the GST exemption on life and health insurance policies came into effect, we analyse the impact on premium growth and affordability.",
-                      "status":  "published",
-                      "file_path":  "blogs/gst-exemption-on-insurance-analysing-the-impact-six-months-on.md",
-                      "title":  "GST Exemption on Insurance: Analysing the Impact Six Months On",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "risk-based-capital-in-india-what-it-means-for-insurers-and-policyholders",
-                      "id":  "BLG-006",
-                      "superseded_by":  null,
-                      "category":  "IRDAI/Regulatory",
-                      "tags":  [
-                                   "LIC",
-                                   "IRDAI",
-                                   "RBC",
-                                   "IRDAI/Regulatory"
-                               ],
-                      "published_date":  "2026-05-16",
-                      "summary":  "India\u0027s shift to a risk-based capital regime from April 2026 will fundamentally change how insurers price risk, allocate capital, and report profits.",
-                      "status":  "published",
-                      "file_path":  "blogs/risk-based-capital-in-india-what-it-means-for-insurers-and-policyholders.md",
-                      "title":  "Risk-Based Capital in India: What It Means for Insurers and Policyholders",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "indias-rising-position-in-the-global-insurance-landscape",
-                      "id":  "BLG-005",
-                      "superseded_by":  null,
-                      "category":  "General Insurance",
-                      "tags":  "General Insurance",
-                      "published_date":  "2026-05-13",
-                      "summary":  "India is now the 10th largest insurance market globally with 1.8% market share. Swiss Re forecasts India will be the fastest-growing major insurance market over 2026-2030.",
-                      "status":  "published",
-                      "file_path":  "blogs/indias-rising-position-in-the-global-insurance-landscape.md",
-                      "title":  "India\u0027s Rising Position in the Global Insurance Landscape",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "motor-insurance-in-india-navigating-change-in-2026",
-                      "id":  "BLG-004",
-                      "superseded_by":  null,
-                      "category":  "Motor",
-                      "tags":  [
-                                   "GST",
-                                   "Motor"
-                               ],
-                      "published_date":  "2026-05-10",
-                      "summary":  "Motor insurance, the largest segment in India\u0027s general insurance industry, is undergoing significant changes with GST rationalisation and regulatory shifts.",
-                      "status":  "published",
-                      "file_path":  "blogs/motor-insurance-in-india-navigating-change-in-2026.md",
-                      "title":  "Motor Insurance in India: Navigating Change in 2026",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "digital-transformation-in-indian-insurance-from-insurtech-to-ai",
-                      "id":  "BLG-003",
-                      "superseded_by":  null,
-                      "category":  "General Insurance",
-                      "tags":  [
-                                   "IRDAI",
-                                   "FDI",
-                                   "General Insurance"
-                               ],
-                      "published_date":  "2026-05-07",
-                      "summary":  "Technology is reshaping every aspect of the insurance value chain in India, from underwriting to claims management and customer engagement.",
-                      "status":  "published",
-                      "file_path":  "blogs/digital-transformation-in-indian-insurance-from-insurtech-to-ai.md",
-                      "title":  "Digital Transformation in Indian Insurance: From Insurtech to AI",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "insurance-for-all-by-2047-assessing-indias-progress",
-                      "id":  "BLG-002",
-                      "superseded_by":  null,
-                      "category":  "IRDAI/Regulatory",
-                      "tags":  [
-                                   "IRDAI",
-                                   "IRDAI/Regulatory"
-                               ],
-                      "published_date":  "2026-05-04",
-                      "summary":  "IRDAI\u0027s ambitious vision of \u0027Insurance for All by 2047\u0027 is gaining momentum. An assessment of progress, challenges, and the road ahead.",
-                      "status":  "published",
-                      "file_path":  "blogs/insurance-for-all-by-2047-assessing-indias-progress.md",
-                      "title":  "Insurance for All by 2047: Assessing India\u0027s Progress",
-                      "previous_coverage_id":  null
-                  },
-                  {
-                      "related_ids":  [
-
-                                      ],
-                      "slug":  "crop-insurance-in-india-addressing-the-agricultural-protection-gap",
-                      "id":  "BLG-001",
-                      "superseded_by":  null,
-                      "category":  "Personal Lines",
-                      "tags":  "Personal Lines",
-                      "published_date":  "2026-04-28",
-                      "summary":  "Crop insurance premiums declined 43.6% in FY26, highlighting the challenges in India\u0027s agricultural insurance framework.",
-                      "status":  "published",
-                      "file_path":  "blogs/crop-insurance-in-india-addressing-the-agricultural-protection-gap.md",
-                      "title":  "Crop Insurance in India: Addressing the Agricultural Protection Gap",
-                      "previous_coverage_id":  null
-                  }
-              ],
-    "last_updated":  "2026-06-03"
+{
+    "news": [
+        {
+            "id": "NWS-026",
+            "slug": "hdfc-life-icici-pru-q1-fy27-double-digit-profit-growth",
+            "title": "HDFC Life & ICICI Pru Q1 FY27: Double-Digit Profit Growth",
+            "category": "Life Insurance",
+            "tags": [
+                "HDFC Life",
+                "ICICI Pru",
+                "Q1 FY27",
+                "VNB",
+                "Life Insurance"
+            ],
+            "published_date": "2026-07-15",
+            "summary": "HDFC Life reported Q1 FY27 PAT of Rs 611 crore (+12%), while ICICI Pru posted PAT of Rs 386 crore (+27.8%), with retail protection APE surging 60.4%.",
+            "status": "published",
+            "file_path": "news/hdfc-life-icici-pru-q1-fy27-double-digit-profit-growth.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "NWS-024",
+                "NWS-025"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-033",
+            "slug": "standalone-health-insurers-surge-309-in-june",
+            "title": "Standalone Health Insurers Surge 30.9% in June",
+            "category": "Health",
+            "tags": [
+                "SAHI",
+                "Star Health",
+                "Niva Bupa",
+                "Care Health",
+                "Health"
+            ],
+            "published_date": "2026-07-09",
+            "summary": "Standalone health insurers posted 30.9% YoY growth in June 2026 premiums, with Care Health leading at 41.9% growth and market share reaching 16.1%.",
+            "status": "published",
+            "file_path": "news/standalone-health-insurers-surge-309-in-june.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "NWS-017",
+                "BLG-026"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-028",
+            "slug": "irdai-set-to-review-third-party-motor-insurance-rates",
+            "title": "IRDAI Set to Review Third-Party Motor Insurance Rates",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "Third Party",
+                "Motor Insurance",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-07-08",
+            "summary": "IRDAI is set to conduct its first major review of third-party motor insurance rates in years, as insurers face heavy underwriting losses in the segment.",
+            "status": "published",
+            "file_path": "news/irdai-set-to-review-third-party-motor-insurance-rates.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-022"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-032",
+            "slug": "non-life-premiums-grow-16-in-june-highest-in-5-months",
+            "title": "Non-Life Premiums Grow 16% in June, Highest in 5 Months",
+            "category": "General Insurance",
+            "tags": [
+                "GDPI",
+                "Non-Life",
+                "Monthly Data",
+                "General Insurance"
+            ],
+            "published_date": "2026-07-07",
+            "summary": "Non-life insurance GDPI grew 15.9% in June 2026 to Rs 24,195 crore, the highest monthly growth in five months, with SAHIs leading at 30.9%.",
+            "status": "published",
+            "file_path": "news/non-life-premiums-grow-16-in-june-highest-in-5-months.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-026"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-031",
+            "slug": "travel-insurance-adoption-up-22-in-2026",
+            "title": "Travel Insurance Adoption Up 22% in 2026",
+            "category": "General Insurance",
+            "tags": [
+                "Travel Insurance",
+                "Personal Lines",
+                "Claims",
+                "General Insurance"
+            ],
+            "published_date": "2026-07-03",
+            "summary": "Travel insurance adoption rose 22% YoY in 2026, with 40% of travellers choosing emerging destinations and non-medical claims outnumbering medical 4:1.",
+            "status": "published",
+            "file_path": "news/travel-insurance-adoption-up-22-in-2026.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-024"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-027",
+            "slug": "ev-policy-issuance-surges-670-in-fy26",
+            "title": "EV Policy Issuance Surges 670% in FY26",
+            "category": "General Insurance",
+            "tags": [
+                "EV",
+                "Motor Insurance",
+                "Electric Vehicle",
+                "General Insurance"
+            ],
+            "published_date": "2026-06-08",
+            "summary": "Electric vehicle insurance policy issuance surged 670% between FY25 and FY26, though EVs remain barely 1% of the insured vehicle fleet.",
+            "status": "published",
+            "file_path": "news/ev-policy-issuance-surges-670-in-fy26.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-021"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-020",
+            "slug": "irdai-links-insurance-kmp-pay-to-customer-outcomes-mandates-public-disclosures",
+            "title": "IRDAI Links Insurance KMP Pay to Customer Outcomes, Mandates Public Disclosures",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "LIC",
+                "IRDAI",
+                "PAT",
+                "Ind AS",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-05-26",
+            "summary": "IRDAI amended corporate governance norms to link KMP remuneration to customer-centric metrics including claim settlement speed, grievance redressal, and product performance.",
+            "status": "published",
+            "file_path": "news/irdai-links-insurance-kmp-pay-to-customer-outcomes-mandates-public-disclosures.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-030",
+            "slug": "14-insurers-file-telematics-products-for-commercial-fleets",
+            "title": "14+ Insurers File Telematics Products for Commercial Fleets",
+            "category": "General Insurance",
+            "tags": [
+                "Telematics",
+                "PAYD",
+                "PHYD",
+                "Commercial Fleet",
+                "General Insurance"
+            ],
+            "published_date": "2026-05-22",
+            "summary": "At least 14 general insurers have filed PAYD/PHYD telematics products for commercial fleets, with early deployments showing 15–28% frequency reduction.",
+            "status": "published",
+            "file_path": "news/14-insurers-file-telematics-products-for-commercial-fleets.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-023"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-019",
+            "slug": "lic-q4-fy26-net-profit-surges-23-to-rs-23467-crore-board-declares-rs-10-dividend",
+            "title": "LIC Q4 FY26: Net Profit Surges 23% to Rs 23,467 Crore, Board Declares Rs 10 Dividend and 1:1 Bonus",
+            "category": "Life Insurance",
+            "tags": [
+                "LIC",
+                "FY26",
+                "Q4",
+                "VNB",
+                "AUM",
+                "Life Insurance"
+            ],
+            "published_date": "2026-05-21",
+            "summary": "LIC reported a 23% YoY rise in Q4 net profit to Rs 23,467 crore, with FY26 PAT reaching a record Rs 57,419 crore. The board declared a Rs 10/share dividend and a 1:1 bonus issue.",
+            "status": "published",
+            "file_path": "news/lic-q4-fy26-net-profit-surges-23-to-rs-23467-crore-board-declares-rs-10-dividend.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-018",
+            "slug": "new-india-assurance-q4-profit-jumps-61-to-rs-558-crore-on-investment-income",
+            "title": "New India Assurance Q4: Profit Jumps 61% to Rs 558 Crore on Investment Income",
+            "category": "General Insurance",
+            "tags": [
+                "FY26",
+                "Q4",
+                "General Insurance",
+                "New India"
+            ],
+            "published_date": "2026-05-11",
+            "summary": "New India Assurance reported 61% YoY growth in Q4 PAT to Rs 558 crore. FY26 PAT rose 40% to Rs 1,384 crore.",
+            "status": "published",
+            "file_path": "news/new-india-assurance-q4-profit-jumps-61-to-rs-558-crore-on-investment-income.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-017",
+            "slug": "standalone-health-insurers-lead-with-1789-premium-growth-as-health-awareness-ris",
+            "title": "Standalone Health Insurers Lead with 17.89% Premium Growth as Health Awareness Rises",
+            "category": "Health",
+            "tags": [
+                "IRDAI",
+                "Health"
+            ],
+            "published_date": "2026-05-10",
+            "summary": "Standalone health insurers recorded 17.89% growth with premium collections of Rs 35,815 crore up to January 2026.",
+            "status": "published",
+            "file_path": "news/standalone-health-insurers-lead-with-1789-premium-growth-as-health-awareness-ris.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-016",
+            "slug": "indias-insurance-penetration-stable-at-37-as-density-improves-marginally-to-usd",
+            "title": "India's Insurance Penetration Stable at 3.7% as Density Improves Marginally to USD 97",
+            "category": "General Insurance",
+            "tags": [
+                "IRDAI",
+                "AUM",
+                "General Insurance"
+            ],
+            "published_date": "2026-05-05",
+            "summary": "India's insurance penetration remained at 3.7% in FY2024-25 while insurance density increased from USD 95 to USD 97.",
+            "status": "published",
+            "file_path": "news/indias-insurance-penetration-stable-at-37-as-density-improves-marginally-to-usd.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-039",
+            "slug": "motor-tp-premiums-rise-93-in-fy26-outpacing-od",
+            "title": "Motor TP Premiums Rise 9.3% in FY26, Outpacing OD",
+            "category": "General Insurance",
+            "tags": [
+                "Motor Insurance",
+                "Third Party",
+                "FY26",
+                "General Insurance"
+            ],
+            "published_date": "2026-05-03",
+            "summary": "Third-party motor insurance premiums rose 9.3% in FY26, outpacing own-damage growth of 9%, as stricter enforcement drives TP compliance across India.",
+            "status": "published",
+            "file_path": "news/motor-tp-premiums-rise-93-in-fy26-outpacing-od.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-031"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-015",
+            "slug": "100-fdi-in-insurance-global-insurers-line-up-to-enter-indian-market",
+            "title": "100% FDI in Insurance: Global Insurers Line Up to Enter Indian Market",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "FDI",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-04-25",
+            "summary": "With the SBSR Act enabling 100% FDI from February 2026, several global insurers are exploring increased stakes in their Indian subsidiaries.",
+            "status": "published",
+            "file_path": "news/100-fdi-in-insurance-global-insurers-line-up-to-enter-indian-market.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-014",
+            "slug": "sbi-general-insurance-crosses-rs-15000-crore-gdp-milestone-in-fy26",
+            "title": "SBI General Insurance Crosses Rs 15,000 Crore GDP Milestone in FY26",
+            "category": "General Insurance",
+            "tags": [
+                "SBI",
+                "FY26",
+                "General Insurance"
+            ],
+            "published_date": "2026-04-24",
+            "summary": "SBI General Insurance crossed Rs 15,000 crore in gross direct premium for the first time with 14.5% growth, outpacing the industry by 1.6 times.",
+            "status": "published",
+            "file_path": "news/sbi-general-insurance-crosses-rs-15000-crore-gdp-milestone-in-fy26.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-013",
+            "slug": "sbi-life-fy26-nbp-grows-20-to-rs-42550-crore-vnb-margin-holds-at-275",
+            "title": "SBI Life FY26: NBP Grows 20% to Rs 42,550 Crore, VNB Margin Holds at 27.5%",
+            "category": "Life Insurance",
+            "tags": [
+                "SBI",
+                "ICICI",
+                "FY26",
+                "VNB",
+                "NBP",
+                "GWP",
+                "Life Insurance",
+                "SBI Life"
+            ],
+            "published_date": "2026-04-22",
+            "summary": "SBI Life reported 20% NBP growth to Rs 42,550 crore with VNB margins at the upper end of guidance. GWP crossed Rs 1 lakh crore for the first time.",
+            "status": "published",
+            "file_path": "news/sbi-life-fy26-nbp-grows-20-to-rs-42550-crore-vnb-margin-holds-at-275.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-012",
+            "slug": "mid-tier-life-insurers-gain-ground-retail-premium-growth-outpaces-top-5-players",
+            "title": "Mid-Tier Life Insurers Gain Ground: Retail Premium Growth Outpaces Top 5 Players",
+            "category": "Life Insurance",
+            "tags": [
+                "IRDAI",
+                "FY26",
+                "Life Insurance"
+            ],
+            "published_date": "2026-04-21",
+            "summary": "IRDAI's FY26 premium data reveals mid-tier insurers growing at 15.7% in retail premium, delivering 83% of the top-tier's retail gain.",
+            "status": "published",
+            "file_path": "news/mid-tier-life-insurers-gain-ground-retail-premium-growth-outpaces-top-5-players.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-024",
+            "slug": "hdfc-life-fy26-pat-grows-6-to-rs-1910-crore-retail-protection-up-43",
+            "title": "HDFC Life FY26: PAT Grows 6% to Rs 1,910 Crore, Retail Protection Up 43%",
+            "category": "Life Insurance",
+            "tags": [
+                "HDFC Life",
+                "FY26",
+                "PAT",
+                "Protection",
+                "Life Insurance"
+            ],
+            "published_date": "2026-04-17",
+            "summary": "HDFC Life reported FY26 PAT of Rs 1,910 crore (+6%), with retail protection growing 43% and AUM crossing Rs 3.75 lakh crore.",
+            "status": "published",
+            "file_path": "news/hdfc-life-fy26-pat-grows-6-to-rs-1910-crore-retail-protection-up-43.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-016"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-011",
+            "slug": "icici-lombard-q4-gdpi-growth-surges-182-health-insurance-leads-at-382",
+            "title": "ICICI Lombard Q4: GDPI Growth Surges 18.2%, Health Insurance Leads at 38.2%",
+            "category": "General Insurance",
+            "tags": [
+                "ICICI",
+                "FY26",
+                "Q4",
+                "GDPI",
+                "General Insurance",
+                "ICICI Lombard"
+            ],
+            "published_date": "2026-04-15",
+            "summary": "ICICI Lombard reported 18.2% GDPI growth in Q4 FY26, nearly double the industry rate. Retail health insurance premiums surged 55.6%.",
+            "status": "published",
+            "file_path": "news/icici-lombard-q4-gdpi-growth-surges-182-health-insurance-leads-at-382.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-010",
+            "slug": "gst-exemption-on-health-insurance-drives-premium-surge-in-h2fy26",
+            "title": "GST Exemption on Health Insurance Drives Premium Surge in H2FY26",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "LIC",
+                "GST",
+                "FY26",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-04-15",
+            "summary": "The GST exemption on retail health insurance policies from September 2025 significantly boosted health insurance premiums in H2FY26.",
+            "status": "published",
+            "file_path": "news/gst-exemption-on-health-insurance-drives-premium-surge-in-h2fy26.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-025",
+            "slug": "icici-prudential-life-fy26-pat-surges-35-to-rs-1600-crore",
+            "title": "ICICI Prudential Life FY26: PAT Surges 35% to Rs 1,600 Crore",
+            "category": "Life Insurance",
+            "tags": [
+                "ICICI Pru",
+                "FY26",
+                "VNB",
+                "PAT",
+                "Life Insurance"
+            ],
+            "published_date": "2026-04-14",
+            "summary": "ICICI Prudential Life reported a 34.6% jump in FY26 PAT to Rs 1,600 crore, with VNB growing 10.9% and VNB margin expanding 193 bps to 24.7%.",
+            "status": "published",
+            "file_path": "news/icici-prudential-life-fy26-pat-surges-35-to-rs-1600-crore.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-016"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-036",
+            "slug": "careedge-non-life-sector-to-grow-8-11-over-medium-term",
+            "title": "CareEdge: Non-Life Sector to Grow 8–11% Over Medium Term",
+            "category": "General Insurance",
+            "tags": [
+                "CareEdge",
+                "Non-Life",
+                "Growth",
+                "FY27",
+                "General Insurance"
+            ],
+            "published_date": "2026-04-09",
+            "summary": "CareEdge projects non-life premium growth of 8–11% over the medium term, with health premiums expected to reach Rs 1.40 lakh crore by FY27.",
+            "status": "published",
+            "file_path": "news/careedge-non-life-sector-to-grow-8-11-over-medium-term.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-027"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-008",
+            "slug": "careedge-non-life-insurance-sector-grew-86-in-fy26-health-insurance-leads-growth",
+            "title": "CareEdge: Non-Life Insurance Sector Grew 8.6% in FY26, Health Insurance Leads Growth",
+            "category": "General Insurance",
+            "tags": [
+                "GST",
+                "FY26",
+                "GDPI",
+                "General Insurance"
+            ],
+            "published_date": "2026-04-09",
+            "summary": "CareEdge reported that the non-life insurance sector grew 8.6% in FY26, with health insurance emerging as the primary growth driver.",
+            "status": "published",
+            "file_path": "news/careedge-non-life-insurance-sector-grew-86-in-fy26-health-insurance-leads-growth.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-009",
+            "slug": "non-life-insurers-log-93-premium-growth-in-fy26-amid-gst-relief",
+            "title": "Non-Life Insurers Log 9.3% Premium Growth in FY26 Amid GST Relief",
+            "category": "General Insurance",
+            "tags": [
+                "GST",
+                "FY26",
+                "General Insurance"
+            ],
+            "published_date": "2026-04-09",
+            "summary": "The non-life insurance industry reported 9.3% YoY growth to Rs 3.36 trillion in FY26, aided by the health insurance segment after GST rate rationalisation.",
+            "status": "published",
+            "file_path": "news/non-life-insurers-log-93-premium-growth-in-fy26-amid-gst-relief.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-037",
+            "slug": "irdai-grants-12-month-ind-as-forbearance-to-insurers",
+            "title": "IRDAI Grants 12-Month Ind AS Forbearance to Insurers",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "Ind AS",
+                "Forbearance",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-04-01",
+            "summary": "IRDAI granted a 12-month forbearance period for insurers transitioning to Ind AS, requiring quarterly proforma financials and parallel reporting for two years.",
+            "status": "published",
+            "file_path": "news/irdai-grants-12-month-ind-as-forbearance-to-insurers.md",
+            "related_ids": [
+                "BLG-009"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-006",
+            "slug": "irdai-notifies-ind-as-implementation-framework-for-insurers-effective-april-1-20",
+            "title": "IRDAI Notifies Ind AS Implementation Framework for Insurers, Effective April 1, 2026",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "Ind AS",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-04-01",
+            "summary": "IRDAI issued the final framework for Ind AS 117 implementation, mandating parallel reporting for two years and a one-year forbearance option.",
+            "status": "published",
+            "file_path": "news/irdai-notifies-ind-as-implementation-framework-for-insurers-effective-april-1-20.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-007",
+            "slug": "ind-as-117-comes-into-effect-new-accounting-standard-transforms-insurance-financ",
+            "title": "Ind AS 117 Comes Into Effect: New Accounting Standard Transforms Insurance Financial Reporting",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "Ind AS",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-04-01",
+            "summary": "Ind AS 117 came into effect from April 2026, fundamentally changing how insurers recognise revenue, report profits, and communicate financial performance.",
+            "status": "published",
+            "file_path": "news/ind-as-117-comes-into-effect-new-accounting-standard-transforms-insurance-financ.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-034",
+            "slug": "allianz-jio-reinsurance-commences-operations",
+            "title": "Allianz Jio Reinsurance Commences Operations",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "Allianz",
+                "Jio",
+                "Reinsurance",
+                "FDI",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-03-26",
+            "summary": "Allianz Jio Reinsurance has formally commenced operations after receiving final IRDAI approval on March 12, 2026.",
+            "status": "published",
+            "file_path": "news/allianz-jio-reinsurance-commences-operations.md",
+            "related_ids": [
+                "BLG-030"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-004",
+            "slug": "irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti",
+            "title": "IRDAI Approves Allianz Jio Reinsurance and Kiwi General Insurance at 134th Meeting",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-03-09",
+            "summary": "IRDAI granted certificates of registration to Allianz Jio Reinsurance (50:50 JV between Jio Financial and Allianz) and Kiwi General Insurance.",
+            "status": "published",
+            "file_path": "news/irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-005",
+            "slug": "irdai-reviews-insurance-sector-performance-total-premium-collections-reach-rs-10",
+            "title": "IRDAI Reviews Insurance Sector Performance; Total Premium Collections Reach Rs 10.51 Lakh Crore",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-03-09",
+            "summary": "At its 134th meeting, IRDAI reviewed industry performance noting total premium collections of Rs 10.51 lakh crore with 11.45% growth.",
+            "status": "published",
+            "file_path": "news/irdai-reviews-insurance-sector-performance-total-premium-collections-reach-rs-10.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-003",
+            "slug": "rbi-proposes-stricter-bancassurance-norms-two-tier-model-for-banks-selling-insur",
+            "title": "RBI Proposes Stricter Bancassurance Norms: Two-Tier Model for Banks Selling Insurance",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "PAT",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-02-11",
+            "summary": "RBI issued draft directions for bancassurance, creating a clear separation between agency (fee-based distribution) and referral (one-time referral fee) models.",
+            "status": "published",
+            "file_path": "news/rbi-proposes-stricter-bancassurance-norms-two-tier-model-for-banks-selling-insur.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-023",
+            "slug": "lic-q3-fy26-cons-pat-jumps-17-to-rs-12930-crore",
+            "title": "LIC Q3 FY26: Cons PAT Jumps 17% to Rs 12,930 Crore",
+            "category": "Life Insurance",
+            "tags": [
+                "LIC",
+                "Q3",
+                "FY26",
+                "PAT",
+                "AUM",
+                "Life Insurance"
+            ],
+            "published_date": "2026-02-05",
+            "summary": "LIC reported a 17% YoY jump in Q3 FY26 consolidated PAT to Rs 12,930 crore, with AUM growing 8% to Rs 59.17 lakh crore.",
+            "status": "published",
+            "file_path": "news/lic-q3-fy26-cons-pat-jumps-17-to-rs-12930-crore.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-019"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-002",
+            "slug": "sabka-bima-sabki-raksha-act-comes-into-effect-100-fdi-in-insurance-now-operation",
+            "title": "Sabka Bima Sabki Raksha Act Comes Into Effect: 100% FDI in Insurance Now Operational",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "FDI",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-02-05",
+            "summary": "The Sabka Bima Sabki Raksha Act came into force, raising the FDI limit to 100% and introducing enhanced policyholder protection measures.",
+            "status": "published",
+            "file_path": "news/sabka-bima-sabki-raksha-act-comes-into-effect-100-fdi-in-insurance-now-operation.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-029",
+            "slug": "govt-proposes-age-linked-tp-premium-formula-in-budget-2026",
+            "title": "Govt Proposes Age-Linked TP Premium Formula in Budget 2026",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "Budget 2026",
+                "Third Party",
+                "Motor Insurance",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-01-30",
+            "summary": "The government proposed linking third-party motor insurance premiums to vehicle age, with lower rates for new vehicles and higher rates for older ones.",
+            "status": "published",
+            "file_path": "news/govt-proposes-age-linked-tp-premium-formula-in-budget-2026.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-022"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-001",
+            "slug": "swiss-re-forecasts-india-as-fastest-growing-major-insurance-market-at-69-cagr-ov",
+            "title": "Swiss Re Forecasts India as Fastest-Growing Major Insurance Market at 6.9% CAGR Over 2026-2030",
+            "category": "General Insurance",
+            "tags": "General Insurance",
+            "published_date": "2026-01-19",
+            "summary": "Swiss Re projects Indian insurance premium growth to accelerate to 6.9% over 2026-2030, outpacing China, the US and Western European markets.",
+            "status": "published",
+            "file_path": "news/swiss-re-forecasts-india-as-fastest-growing-major-insurance-market-at-69-cagr-ov.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-040",
+            "slug": "tier-2-3-regions-account-for-62-new-health-policies",
+            "title": "Tier 2/3 Regions Account for 62% New Health Policies",
+            "category": "Health",
+            "tags": [
+                "Health",
+                "Policybazaar",
+                "Tier 2",
+                "Tier 3",
+                "Health Insurance"
+            ],
+            "published_date": "2026-01-15",
+            "summary": "Tier 2/3 regions now account for 62% of new health insurance policies, with Rs 10–15 lakh sum insured becoming the most common coverage band.",
+            "status": "published",
+            "file_path": "news/tier-2-3-regions-account-for-62-new-health-policies.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-029",
+                "BLG-017"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-035",
+            "slug": "irdai-133rd-meeting-key-regulatory-outcomes",
+            "title": "IRDAI 133rd Meeting: Key Regulatory Outcomes",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "RBC",
+                "Ind AS",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2025-12-23",
+            "summary": "At its 133rd meeting, IRDAI noted total industry premium of Rs 8.02 lakh crore up to November 2025 and approved the RBC framework for drafting.",
+            "status": "published",
+            "file_path": "news/irdai-133rd-meeting-key-regulatory-outcomes.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-006",
+                "BLG-009"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-022",
+            "slug": "lic-q2-fy26-net-profit-jumps-31-to-rs-10098-crore",
+            "title": "LIC Q2 FY26: Net Profit Jumps 31% to Rs 10,098 Crore",
+            "category": "Life Insurance",
+            "tags": [
+                "LIC",
+                "Q2",
+                "FY26",
+                "PAT",
+                "VNB",
+                "Life Insurance"
+            ],
+            "published_date": "2025-11-06",
+            "summary": "LIC reported a 31% YoY jump in Q2 FY26 net profit to Rs 10,098 crore, with H1 VNB growing 12.3% and net premiums rising 5.4%.",
+            "status": "published",
+            "file_path": "news/lic-q2-fy26-net-profit-jumps-31-to-rs-10098-crore.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-019"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-038",
+            "slug": "cbic-clarifies-itc-reversal-for-insurance-commissions",
+            "title": "CBIC Clarifies ITC Reversal for Insurance Commissions",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "GST",
+                "ITC",
+                "CBIC",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2025-09-16",
+            "summary": "CBIC ruled that insurers cannot claim input tax credit on commissions paid for individual insurance policies, though reinsurance services remain exempt.",
+            "status": "published",
+            "file_path": "news/cbic-clarifies-itc-reversal-for-insurance-commissions.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "NWS-010",
+                "BLG-007"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-021",
+            "slug": "lic-q1-fy26-pat-grows-5-to-rs-10986-crore-vnb-surges-21",
+            "title": "LIC Q1 FY26: PAT Grows 5% to Rs 10,986 Crore, VNB Surges 21%",
+            "category": "Life Insurance",
+            "tags": [
+                "LIC",
+                "Q1",
+                "FY26",
+                "PAT",
+                "VNB",
+                "AUM",
+                "Life Insurance"
+            ],
+            "published_date": "2025-08-07",
+            "summary": "LIC reported a 5% YoY rise in Q1 FY26 PAT to Rs 10,986 crore, with VNB surging 20.75% and VNB margin expanding 150 bps to 15.4%.",
+            "status": "published",
+            "file_path": "news/lic-q1-fy26-pat-grows-5-to-rs-10986-crore-vnb-surges-21.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-019"
+            ],
+            "superseded_by": null
+        }
+    ],
+    "blogs": [
+        {
+            "id": "BLG-028",
+            "slug": "gst-itc-impact-on-insurers-10-months-on",
+            "title": "GST ITC Impact on Insurers: 10 Months On",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "GST",
+                "ITC",
+                "IRDAI",
+                "Health",
+                "Life Insurance"
+            ],
+            "published_date": "2026-07-18",
+            "summary": "Ten months after the GST exemption on health insurance, the input tax credit (ITC) loss is unevenly distributed — Niva Bupa absorbed ~4%, Star Health ~1%, and Care Health ~2%. Net customer benefit stands at 12-15%.",
+            "status": "published",
+            "file_path": "blogs/gst-itc-impact-on-insurers-10-months-on.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-007",
+                "NWS-010"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-026",
+            "slug": "non-life-insurance-june-2026-growth-accelerates-to-16-percent",
+            "title": "Non-Life Insurance June 2026: Growth Accelerates to 16%",
+            "category": "General Insurance",
+            "tags": [
+                "General Insurance",
+                "Health",
+                "SAHI",
+                "FY27"
+            ],
+            "published_date": "2026-07-08",
+            "summary": "June 2026 GDPI hit Rs 24,195 crore, up 15.9% YoY. Standalone health insurers led the charge at 30.9% growth, with Care (+41.9%) and Niva (+34.3%) posting exceptional numbers.",
+            "status": "published",
+            "file_path": "blogs/non-life-insurance-june-2026-growth-accelerates-to-16-percent.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-024",
+            "slug": "travel-insurance-india-rising-adoption-and-changing-patterns",
+            "title": "Travel Insurance in India: Rising Adoption and Changing Patterns",
+            "category": "Personal Lines",
+            "tags": [
+                "Travel",
+                "Insurance",
+                "Personal Lines"
+            ],
+            "published_date": "2026-07-05",
+            "summary": "Travel insurance adoption in India grew 22% year-on-year in 2026. Non-medical claims dominate at 4:1, senior traveler share hit 22%, and under-18 purchases surged 56%.",
+            "status": "published",
+            "file_path": "blogs/travel-insurance-india-rising-adoption-and-changing-patterns.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-025",
+            "slug": "home-insurance-indias-biggest-protection-gap",
+            "title": "Home Insurance: India's Biggest Protection Gap",
+            "category": "Personal Lines",
+            "tags": [
+                "Home Insurance",
+                "Personal Lines",
+                "Property"
+            ],
+            "published_date": "2026-06-15",
+            "summary": "Only 1 in 20 Indian households has any form of home insurance. With reconstruction costs at Rs 1,200-1,500 per square foot and 5,000+ fire cases annually in Mumbai alone, the protection gap is enormous.",
+            "status": "published",
+            "file_path": "blogs/home-insurance-indias-biggest-protection-gap.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-021",
+            "slug": "ev-insurance-india-complete-guide-2026",
+            "title": "EV Insurance in India: The Complete Guide",
+            "category": "Motor",
+            "tags": [
+                "EV",
+                "Motor",
+                "Insurance",
+                "Electric Vehicles",
+                "Battery"
+            ],
+            "published_date": "2026-06-10",
+            "summary": "EV policy issuance surged 670% between FY25 and FY26, yet electric vehicles remain barely 1% of India's insured fleet. Premiums are 20-40% higher than petrol equivalents. Here's why, and what's changing.",
+            "status": "published",
+            "file_path": "blogs/ev-insurance-india-complete-guide-2026.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-004"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-019",
+            "slug": "lic-q4-fy26-deep-dive-record-profit-surging-vnb-and-the-margin-story",
+            "title": "LIC Q4 FY26 Deep Dive: Record Profit, Surging VNB, and the Margin Story",
+            "category": "Life Insurance",
+            "tags": [
+                "LIC",
+                "SBI",
+                "HDFC",
+                "FY26",
+                "Q4",
+                "PAT",
+                "VNB",
+                "AUM",
+                "Ind AS",
+                "Life Insurance",
+                "SBI Life",
+                "HDFC Life"
+            ],
+            "published_date": "2026-06-04",
+            "summary": "LIC reported a record Rs 57,419 crore PAT for FY26 with VNB surging 42%. A deep dive into the performance of India's largest life insurer.",
+            "status": "published",
+            "file_path": "blogs/lic-q4-fy26-deep-dive-record-profit-surging-vnb-and-the-margin-story.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-018",
+            "slug": "icici-lombard-fy26-health-led-growth-story-gains-momentum",
+            "title": "ICICI Lombard FY26: Health-Led Growth Story Gains Momentum",
+            "category": "General Insurance",
+            "tags": [
+                "ICICI",
+                "GST",
+                "FY26",
+                "Q4",
+                "PAT",
+                "GDPI",
+                "General Insurance",
+                "ICICI Lombard"
+            ],
+            "published_date": "2026-06-02",
+            "summary": "ICICI Lombard's Q4 GDPI surged 18.2% — nearly double the industry rate — driven by retail health insurance growing 54%.",
+            "status": "published",
+            "file_path": "blogs/icici-lombard-fy26-health-led-growth-story-gains-momentum.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-017",
+            "slug": "health-insurance-trends-reshaping-india-in-2026",
+            "title": "Health Insurance Trends Reshaping India in 2026",
+            "category": "Health",
+            "tags": [
+                "LIC",
+                "IRDAI",
+                "GST",
+                "GDPI",
+                "Health"
+            ],
+            "published_date": "2026-06-01",
+            "summary": "Health insurance premiums grew 14.41% in FY26 driven by GST exemption and rising healthcare awareness.",
+            "status": "published",
+            "file_path": "blogs/health-insurance-trends-reshaping-india-in-2026.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-016",
+            "slug": "sbi-life-fy26-steady-growth-margin-resilience-and-distribution-strength",
+            "title": "SBI Life FY26: Steady Growth, Margin Resilience, and Distribution Strength",
+            "category": "Life Insurance",
+            "tags": [
+                "SBI",
+                "ICICI",
+                "GST",
+                "FY26",
+                "PAT",
+                "VNB",
+                "NBP",
+                "GWP",
+                "Life Insurance",
+                "SBI Life"
+            ],
+            "published_date": "2026-05-31",
+            "summary": "SBI Life delivered 20% NBP growth with VNB margins at 27.5% — the upper end of guidance. A detailed analysis of the insurer's FY26 performance.",
+            "status": "published",
+            "file_path": "blogs/sbi-life-fy26-steady-growth-margin-resilience-and-distribution-strength.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-015",
+            "slug": "new-india-assurance-q4-profit-jumps-61-but-underwriting-concerns-persist",
+            "title": "New India Assurance Q4: Profit Jumps 61% but Underwriting Concerns Persist",
+            "category": "General Insurance",
+            "tags": [
+                "FY26",
+                "Q4",
+                "PAT",
+                "General Insurance",
+                "New India"
+            ],
+            "published_date": "2026-05-29",
+            "summary": "New India Assurance reported a 61% jump in Q4 profit, but the combined ratio worsened to 118.34% as wage revision costs of Rs 3,525 crore masked underlying weakness.",
+            "status": "published",
+            "file_path": "blogs/new-india-assurance-q4-profit-jumps-61-but-underwriting-concerns-persist.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-014",
+            "slug": "irdais-regulatory-reforms-a-new-era-for-indian-insurance",
+            "title": "IRDAI's Regulatory Reforms: A New Era for Indian Insurance",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "LIC",
+                "IRDAI",
+                "RBC",
+                "FDI",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-05-28",
+            "summary": "From 100% FDI to risk-based capital norms, IRDAI's regulatory overhaul is reshaping the Indian insurance sector.",
+            "status": "published",
+            "file_path": "blogs/irdais-regulatory-reforms-a-new-era-for-indian-insurance.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-013",
+            "slug": "sbi-general-insurance-crosses-rs-15000-crore-gdp-a-growth-milestone",
+            "title": "SBI General Insurance Crosses Rs 15,000 Crore GDP: A Growth Milestone",
+            "category": "General Insurance",
+            "tags": [
+                "SBI",
+                "GST",
+                "FY26",
+                "PAT",
+                "General Insurance"
+            ],
+            "published_date": "2026-05-27",
+            "summary": "SBI General Insurance achieved a historic milestone, crossing Rs 15,000 crore in gross direct premium for the first time with 14.5% growth.",
+            "status": "published",
+            "file_path": "blogs/sbi-general-insurance-crosses-rs-15000-crore-gdp-a-growth-milestone.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-012",
+            "slug": "irdais-new-kmp-governance-why-your-insurance-ceos-pay-now-depends-on-your-claim",
+            "title": "IRDAI's New KMP Governance: Why Your Insurance CEO's Pay Now Depends on Your Claim Experience",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "LIC",
+                "IRDAI",
+                "PAT",
+                "AUM",
+                "Ind AS",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-05-26",
+            "summary": "IRDAI has linked insurance executive compensation to customer outcomes — claim settlement speed, grievance redressal, and product performance.",
+            "status": "published",
+            "file_path": "blogs/irdais-new-kmp-governance-why-your-insurance-ceos-pay-now-depends-on-your-claim.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-023",
+            "slug": "telematics-in-motor-insurance-payd-and-phyd-explained",
+            "title": "Telematics in Motor Insurance: PAYD and PHYD Explained",
+            "category": "Motor",
+            "tags": [
+                "Motor",
+                "Telematics",
+                "PAYD",
+                "PHYD",
+                "IRDAI",
+                "Insurance"
+            ],
+            "published_date": "2026-05-25",
+            "summary": "14+ insurers have filed telematics-based motor insurance products with IRDAI. From Pay-As-You-Drive to Pay-How-You-Drive, here's how usage-based insurance is reshaping motor underwriting.",
+            "status": "published",
+            "file_path": "blogs/telematics-in-motor-insurance-payd-and-phyd-explained.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-004",
+                "BLG-021"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-011",
+            "slug": "life-insurance-fy26-mid-tier-challengers-reshape-the-market",
+            "title": "Life Insurance FY26: Mid-Tier Challengers Reshape the Market",
+            "category": "Life Insurance",
+            "tags": [
+                "LIC",
+                "SBI",
+                "HDFC",
+                "ICICI",
+                "Bajaj",
+                "IRDAI",
+                "FY26",
+                "PAT",
+                "Life Insurance",
+                "SBI Life",
+                "HDFC Life",
+                "ICICI Prudential",
+                "Bajaj Allianz",
+                "Max Life",
+                "Kotak Life"
+            ],
+            "published_date": "2026-05-25",
+            "summary": "IRDAI's FY2025-26 premium data reveals a structural shift as mid-tier insurers grow at 15.7% in retail premium, challenging the dominance of the Top 5 players.",
+            "status": "published",
+            "file_path": "blogs/life-insurance-fy26-mid-tier-challengers-reshape-the-market.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-010",
+            "slug": "cyber-insurance-in-india-a-rapidly-growing-market-taking-shape",
+            "title": "Cyber Insurance in India: A Rapidly Growing Market Taking Shape",
+            "category": "General Insurance",
+            "tags": [
+                "HDFC",
+                "ICICI",
+                "Bajaj",
+                "DPDP",
+                "General Insurance",
+                "ICICI Lombard",
+                "New India",
+                "Bajaj Allianz"
+            ],
+            "published_date": "2026-05-24",
+            "summary": "India's cyber insurance market is projected to grow at 28% CAGR to reach USD 8.8 billion by 2034, driven by DPDP Act compliance and rising ransomware threats.",
+            "status": "published",
+            "file_path": "blogs/cyber-insurance-in-india-a-rapidly-growing-market-taking-shape.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-008",
+            "slug": "non-life-insurance-93-growth-in-fy26-amid-regulatory-shifts",
+            "title": "Non-Life Insurance: 9.3% Growth in FY26 Amid Regulatory Shifts",
+            "category": "General Insurance",
+            "tags": [
+                "IRDAI",
+                "GST",
+                "FY26",
+                "General Insurance"
+            ],
+            "published_date": "2026-05-22",
+            "summary": "The non-life insurance sector grew 9.3% to Rs 3.36 trillion in FY26, driven by health insurance and GST relief.",
+            "status": "published",
+            "file_path": "blogs/non-life-insurance-93-growth-in-fy26-amid-regulatory-shifts.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-009",
+            "slug": "ind-as-117-the-accounting-revolution-reshaping-indian-insurance",
+            "title": "Ind AS 117: The Accounting Revolution Reshaping Indian Insurance",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "Ind AS",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-05-22",
+            "summary": "Ind AS 117 came into effect from April 2026, fundamentally changing how insurers recognise revenue, report profits, and communicate financial performance.",
+            "status": "published",
+            "file_path": "blogs/ind-as-117-the-accounting-revolution-reshaping-indian-insurance.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-007",
+            "slug": "gst-exemption-on-insurance-analysing-the-impact-six-months-on",
+            "title": "GST Exemption on Insurance: Analysing the Impact Six Months On",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "LIC",
+                "IRDAI",
+                "GST",
+                "NBP",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-05-19",
+            "summary": "Six months since the GST exemption on life and health insurance policies came into effect, we analyse the impact on premium growth and affordability.",
+            "status": "published",
+            "file_path": "blogs/gst-exemption-on-insurance-analysing-the-impact-six-months-on.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-006",
+            "slug": "risk-based-capital-in-india-what-it-means-for-insurers-and-policyholders",
+            "title": "Risk-Based Capital in India: What It Means for Insurers and Policyholders",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "LIC",
+                "IRDAI",
+                "RBC",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-05-16",
+            "summary": "India's shift to a risk-based capital regime from April 2026 will fundamentally change how insurers price risk, allocate capital, and report profits.",
+            "status": "published",
+            "file_path": "blogs/risk-based-capital-in-india-what-it-means-for-insurers-and-policyholders.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-020",
+            "slug": "private-life-insurers-fy26-sbi-life-vs-hdfc-life-vs-icici-pru",
+            "title": "Private Life Insurers FY26: SBI Life vs HDFC Life vs ICICI Pru",
+            "category": "Life Insurance",
+            "tags": [
+                "SBI",
+                "HDFC",
+                "ICICI",
+                "FY26",
+                "VNB",
+                "Life Insurance",
+                "SBI Life",
+                "HDFC Life",
+                "ICICI Prudential"
+            ],
+            "published_date": "2026-05-15",
+            "summary": "SBI Life, HDFC Life, and ICICI Prudential delivered divergent FY26 results. We break down the numbers — PAT growth, VNB margins, valuations, and where each stock trades relative to embedded value.",
+            "status": "published",
+            "file_path": "blogs/private-life-insurers-fy26-sbi-life-vs-hdfc-life-vs-icici-pru.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-016",
+                "BLG-019"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-005",
+            "slug": "indias-rising-position-in-the-global-insurance-landscape",
+            "title": "India's Rising Position in the Global Insurance Landscape",
+            "category": "General Insurance",
+            "tags": "General Insurance",
+            "published_date": "2026-05-13",
+            "summary": "India is now the 10th largest insurance market globally with 1.8% market share. Swiss Re forecasts India will be the fastest-growing major insurance market over 2026-2030.",
+            "status": "published",
+            "file_path": "blogs/indias-rising-position-in-the-global-insurance-landscape.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-004",
+            "slug": "motor-insurance-in-india-navigating-change-in-2026",
+            "title": "Motor Insurance in India: Navigating Change in 2026",
+            "category": "Motor",
+            "tags": [
+                "GST",
+                "Motor"
+            ],
+            "published_date": "2026-05-10",
+            "summary": "Motor insurance, the largest segment in India's general insurance industry, is undergoing significant changes with GST rationalisation and regulatory shifts.",
+            "status": "published",
+            "file_path": "blogs/motor-insurance-in-india-navigating-change-in-2026.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-003",
+            "slug": "digital-transformation-in-indian-insurance-from-insurtech-to-ai",
+            "title": "Digital Transformation in Indian Insurance: From Insurtech to AI",
+            "category": "General Insurance",
+            "tags": [
+                "IRDAI",
+                "FDI",
+                "General Insurance"
+            ],
+            "published_date": "2026-05-07",
+            "summary": "Technology is reshaping every aspect of the insurance value chain in India, from underwriting to claims management and customer engagement.",
+            "status": "published",
+            "file_path": "blogs/digital-transformation-in-indian-insurance-from-insurtech-to-ai.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-031",
+            "slug": "motor-insurance-tp-vs-od-growth-dynamics-fy26",
+            "title": "Motor Insurance: TP vs OD Growth Dynamics in FY26",
+            "category": "Motor",
+            "tags": [
+                "Motor",
+                "TP",
+                "OD",
+                "FY26",
+                "Insurance"
+            ],
+            "published_date": "2026-05-05",
+            "summary": "Motor TP premiums grew 9.3% in FY26, slightly outpacing OD at 9% — a reversal of the post-pandemic trend. Enforcement-driven compliance and the VAHAN digital verification system are transforming the motor insurance landscape.",
+            "status": "published",
+            "file_path": "blogs/motor-insurance-tp-vs-od-growth-dynamics-fy26.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-002",
+            "slug": "insurance-for-all-by-2047-assessing-indias-progress",
+            "title": "Insurance for All by 2047: Assessing India's Progress",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-05-04",
+            "summary": "IRDAI's ambitious vision of 'Insurance for All by 2047' is gaining momentum. An assessment of progress, challenges, and the road ahead.",
+            "status": "published",
+            "file_path": "blogs/insurance-for-all-by-2047-assessing-indias-progress.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-001",
+            "slug": "crop-insurance-in-india-addressing-the-agricultural-protection-gap",
+            "title": "Crop Insurance in India: Addressing the Agricultural Protection Gap",
+            "category": "Personal Lines",
+            "tags": "Personal Lines",
+            "published_date": "2026-04-28",
+            "summary": "Crop insurance premiums declined 43.6% in FY26, highlighting the challenges in India's agricultural insurance framework.",
+            "status": "published",
+            "file_path": "blogs/crop-insurance-in-india-addressing-the-agricultural-protection-gap.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-022",
+            "slug": "motor-tp-premium-reform-what-vehicle-owners-need-to-know",
+            "title": "Motor TP Premium Reform: What Vehicle Owners Need to Know",
+            "category": "Motor",
+            "tags": [
+                "Motor",
+                "IRDAI",
+                "TP Premium",
+                "Insurance"
+            ],
+            "published_date": "2026-04-20",
+            "summary": "A 10-25% hike in Motor Third Party premiums is on the table — the first increase in six years. Here's what it means for car and commercial vehicle owners.",
+            "status": "published",
+            "file_path": "blogs/motor-tp-premium-reform-what-vehicle-owners-need-to-know.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-004"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-027",
+            "slug": "icra-insurance-outlook-fy27-growth-drivers-and-risks",
+            "title": "ICRA Insurance Outlook FY27: Growth Drivers and Risks",
+            "category": "General Insurance",
+            "tags": [
+                "IRDAI",
+                "FY27",
+                "General Insurance",
+                "Health",
+                "ICRA"
+            ],
+            "published_date": "2026-04-15",
+            "summary": "ICRA projects non-life GDPI growth of 9.7-10.6% in FY27, with health insurance as the primary driver. Motor TP revision could add 2-3 percentage points. Industry GDPI projected at Rs 3.56-3.59 trillion.",
+            "status": "published",
+            "file_path": "blogs/icra-insurance-outlook-fy27-growth-drivers-and-risks.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-030",
+            "slug": "allianz-jio-reinsurance-reshaping-indias-reinsurance-market",
+            "title": "Allianz Jio Reinsurance: Reshaping India's Reinsurance Market",
+            "category": "General Insurance",
+            "tags": [
+                "Allianz",
+                "Jio",
+                "Reinsurance",
+                "IRDAI",
+                "General Insurance"
+            ],
+            "published_date": "2026-03-25",
+            "summary": "The Allianz-Jio Financial Services 50:50 joint venture for reinsurance has received IRDAI approval, marking the first license issued under Chairman Ajay Seth. India's reinsurance market is now crowded with over 30 players.",
+            "status": "published",
+            "file_path": "blogs/allianz-jio-reinsurance-reshaping-indias-reinsurance-market.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "NWS-004"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-029",
+            "slug": "tier-2-3-india-new-frontier-for-insurance",
+            "title": "Tier 2/3 India: The New Frontier for Insurance",
+            "category": "Health",
+            "tags": [
+                "Health",
+                "Tier 2",
+                "Tier 3",
+                "Penetration",
+                "Insurance"
+            ],
+            "published_date": "2026-01-20",
+            "summary": "62% of new health insurance policies in 2025-26 came from Tier 2 and Tier 3 cities. EMI options, post-COVID awareness, and digital distribution are driving adoption in India's insurance hinterland.",
+            "status": "published",
+            "file_path": "blogs/tier-2-3-india-new-frontier-for-insurance.md",
+            "previous_coverage_id": null,
+            "related_ids": [],
+            "superseded_by": null
+        }
+    ],
+    "last_updated": "2026-07-18"
 }
