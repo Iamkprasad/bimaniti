@@ -136,27 +136,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // === Homepage: batch all fetches in parallel ===
-    var isHomepage = !!document.getElementById('stacking-container');
+    var isHomepage = !!document.getElementById('featured-posts');
 
     if (isHomepage) {
         Promise.all([
-            loadData('data/stack-images.json'),
             loadData('data/home-featured.json'),
             loadData('data/timeline.json'),
             loadData('data/metrics.json')
         ]).then(function(results) {
-            var stackData = results[0];
-            var homeData = results[1];
-            var timelineData = results[2];
-            var metricsData = results[3];
-
-            // Stacking gallery
-            var stackingContainer = document.getElementById('stacking-container');
-            if (stackingContainer && stackData) {
-                stackingContainer.innerHTML = stackData.slice(0, 3).map(function(img) {
-                    return '<div class="stack-layer"><div class="stack-content"><div class="stack-img-wrapper"><img src="' + escapeHtml(img.image) + '" alt="' + escapeHtml(img.title) + '" class="stack-img" loading="lazy" width="1200" height="700" onerror="handleImgError(this)"><div class="stack-overlay"></div></div><div class="stack-text"><h2 class="stack-title">' + escapeHtml(img.title) + '</h2><p class="stack-desc">' + escapeHtml(img.desc) + '</p></div></div></div>';
-                }).join('');
-            }
+            var homeData = results[0];
+            var timelineData = results[1];
+            var metricsData = results[2];
 
             // Featured blog posts (lightweight)
             var featuredContainer = document.getElementById('featured-posts');
@@ -271,8 +261,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Observe all scroll elements after content is injected
             observeScrollElements();
         }).catch(function() {
-            var stackingContainer = document.getElementById('stacking-container');
-            if (stackingContainer) stackingContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 3rem 0;">Unable to load homepage data. Please refresh the page.</p>';
+            var featuredContainer = document.getElementById('featured-posts');
+            if (featuredContainer) featuredContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 3rem 0;">Unable to load homepage data. Please refresh the page.</p>';
         });
     }
 

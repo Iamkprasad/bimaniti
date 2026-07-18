@@ -13,7 +13,6 @@ var PRECACHE = [
   '/script.js',
   '/logo.svg',
   '/data/home-featured.json',
-  '/data/stack-images.json',
   '/data/timeline.json',
   '/data/metrics.json'
 ];

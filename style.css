@@ -4,7 +4,7 @@ html.dark { color-scheme: dark; }
 /* Transitions applied only to elements that need them */
 a, button, .card, .blog-card, .archive-row, .post-card,
 .nav-link, .filter-btn, .btn-primary, .btn-outline, .theme-toggle,
-.stack-img-wrapper, .timeline-dot, .share-btn {
+.timeline-dot, .share-btn {
   transition: background-color 0.25s ease, border-color 0.2s ease, color 0.15s ease;
 }
 
@@ -814,108 +814,6 @@ html.dark .theme-toggle .icon-moon { display: none; }
   background: var(--text-primary);
   border-color: var(--text-primary);
   color: var(--card-bg);
-}
-
-/* Stacking Gallery */
-.stacking-section {
-  position: relative;
-  background: var(--bg-primary);
-}
-
-.stack-layer {
-  position: sticky;
-  top: 0;
-  height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--bg-primary);
-}
-
-@media (max-width: 768px) {
-  .stack-layer {
-    height: 55vh;
-  }
-}
-
-@media (max-width: 640px) {
-  .stack-layer {
-    height: 50vh;
-  }
-}
-
-.stack-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.stack-img-wrapper {
-  position: absolute;
-  inset: 2rem;
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  transform: rotate(var(--rot, 0deg));
-}
-
-.stack-layer:nth-child(odd) .stack-img-wrapper { --rot: -1deg; }
-.stack-layer:nth-child(even) .stack-img-wrapper { --rot: 1deg; }
-
-@media (min-width: 768px) {
-  .stack-img-wrapper { inset: 4rem; }
-}
-
-.stack-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.stack-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26,26,26,0.8), transparent 50%);
-}
-
-.stack-text {
-  position: relative;
-  z-index: 3;
-  text-align: center;
-  padding: 2rem;
-  max-width: 36rem;
-}
-
-.stack-title {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 0.75rem;
-}
-
-.stack-desc {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.8);
-  font-weight: 300;
-}
-
-@media (max-width: 768px) {
-  .stack-title { font-size: 2rem; }
-  .stack-desc { font-size: 0.95rem; }
-  .stack-text {
-    padding: 1.5rem;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(5px);
-    border-radius: 4px;
-    margin: 1rem;
-    width: calc(100% - 2rem);
-  }
 }
 
 /* Footer */
