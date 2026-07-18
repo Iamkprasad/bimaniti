@@ -33,7 +33,7 @@ a, button, .card, .blog-card, .archive-row, .post-card,
   --bg-secondary: #1c1c18;
   --text-primary: #e8e4dc;
   --text-secondary: #c0bab0;
-  --text-muted: #8a8680;
+  --text-muted: #8a8a84;
   --accent: #8aaa7a;
   --accent-hover: #a0be90;
   --border: #2e2e28;
@@ -88,6 +88,93 @@ img { max-width: 100%; height: auto; }
 
 /* Utilities */
 .hidden { display: none !important; }
+
+/* Screen reader only — visually hidden but accessible */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: fixed;
+  top: -100%;
+  left: 1rem;
+  z-index: 200;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0 0 var(--radius) var(--radius);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 90;
+  width: 44px;
+  height: 44px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.15s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--accent-hover);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.back-to-top svg {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
 .py-28 { padding-top: 7rem; padding-bottom: 7rem; }
 .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
 .py-20 { padding-top: 5rem; padding-bottom: 5rem; }

@@ -23,6 +23,15 @@ function htmlEscape(str) {
 
 function pageShell(title, desc, ogTitle, ogDesc, ogImage, canonical, jsonld, body, type) {
   const isArticle = type === 'article';
+  const breadcrumbJsonLd = jsonld ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bimaniti.in/" },
+      { "@type": "ListItem", "position": 2, "name": isArticle ? "Blog" : "Page", "item": canonical },
+      { "@type": "ListItem", "position": 3, "name": title }
+    ]
+  } : null;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +51,7 @@ function pageShell(title, desc, ogTitle, ogDesc, ogImage, canonical, jsonld, bod
 html{color-scheme:light}
 html.dark{color-scheme:dark}
 :root{--font-display:'Lora',Georgia,serif;--font-body:'Outfit',system-ui,sans-serif;--bg-primary:#f5f3ef;--bg-secondary:#ede9e3;--text-primary:#1a1a1a;--text-secondary:#4a4a4a;--text-muted:#6a6a6a;--accent:#4a6741;--accent-hover:#3a5232;--border:#d6d0c8;--card-bg:#ffffff;--nav-bg:#f5f3ef;--alert:#b94040;--max-w:1160px;--article-w:680px;--radius:4px;--transition:200ms ease}
-.dark{--bg-primary:#141410;--bg-secondary:#1c1c18;--text-primary:#e8e4dc;--text-secondary:#c0bab0;--text-muted:#8a8680;--accent:#8aaa7a;--accent-hover:#a0be90;--border:#2e2e28;--card-bg:#1e1e1a;--nav-bg:#141410}
+.dark{--bg-primary:#141410;--bg-secondary:#1c1c18;--text-primary:#e8e4dc;--text-secondary:#c0bab0;--text-muted:#8a8a84;--accent:#8aaa7a;--accent-hover:#a0be90;--border:#2e2e28;--card-bg:#1e1e1a;--nav-bg:#141410}
 body{background:var(--bg-primary);color:var(--text-secondary);font-family:var(--font-body);font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 h1,h2,h3,h4,h5,h6{font-family:var(--font-display);font-weight:400;line-height:1.2;color:var(--text-primary)}
@@ -127,9 +136,11 @@ html.dark .footer-brand{filter:brightness(0)invert(0.85)}
     <script defer src="https://analytics.bimaniti.in/script.js" data-website-id="XXXXXXXX"></script>
     <noscript><img src="https://analytics.bimaniti.in/collect.gif" alt="" style="display:none"></noscript>
     ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
+    ${breadcrumbJsonLd ? `<script type="application/ld+json">${JSON.stringify(breadcrumbJsonLd)}</script>` : ''}
 </head>
 <body>
-    <nav class="navbar">
+    <a href="#main-content" class="skip-link" style="position:absolute;top:-100%;left:16px;z-index:999;padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:500;border-radius:0 0 4px 4px;transition:top .2s ease">Skip to main content</a>
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <a href="https://bimaniti.in/" class="logo"><img src="https://bimaniti.in/logo.svg" alt="BimaNiti" width="120" height="36"></a>
             <div class="desktop-nav">
@@ -144,12 +155,12 @@ html.dark .footer-brand{filter:brightness(0)invert(0.85)}
                     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                 </button>
             </div>
-            <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-panel">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
             </button>
         </div>
-        <div class="mobile-nav">
+        <div class="mobile-nav" id="mobile-nav">
             <div class="mobile-nav-content">
                 <a href="https://bimaniti.in/" class="mobile-nav-link">Home</a>
                 <a href="https://bimaniti.in/blog.html" class="mobile-nav-link">Blog</a>
@@ -165,7 +176,7 @@ html.dark .footer-brand{filter:brightness(0)invert(0.85)}
         </div>
     </nav>
     <div class="progress-bar"></div>
-    <main>
+    <main id="main-content">
         ${body}
     </main>
     <footer class="footer py-24 px-6" style="padding:4rem 1.5rem">
@@ -200,7 +211,7 @@ html.dark .footer-brand{filter:brightness(0)invert(0.85)}
     (function(){var s=localStorage.getItem('theme')||'light';if(s==='dark')document.documentElement.classList.add('dark')})();
     document.querySelectorAll('.theme-toggle').forEach(function(t){t.addEventListener('click',function(){var h=document.documentElement;var d=h.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light')})});
     (function(){var b=document.querySelector('.progress-bar');if(b){window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;b.style.width=(h>0?(window.scrollY/h)*100:0)+'%'})}})();
-    (function(){var m=document.querySelector('.mobile-menu-btn'),n=document.querySelector('.mobile-nav'),i=document.querySelector('.menu-icon'),c=document.querySelector('.close-icon');if(m&&n)m.addEventListener('click',function(){n.classList.toggle('open');if(i)i.classList.toggle('hidden');if(c)c.classList.toggle('hidden')})})();
+    (function(){var m=document.querySelector('.mobile-menu-btn'),n=document.querySelector('.mobile-nav'),i=document.querySelector('.menu-icon'),c=document.querySelector('.close-icon');if(m&&n)m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o);if(i)i.classList.toggle('hidden');if(c)c.classList.toggle('hidden')})})();
     (function(){if('serviceWorker'in navigator)navigator.serviceWorker.register('https://bimaniti.in/sw.js').catch(function(){})})();
     </script>
     <script defer src="https://bimaniti.in/script.js"></script>
@@ -253,13 +264,14 @@ function generatePostPages() {
     whatsapp: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>'
   };
 
+  const today = new Date().toISOString().split('T')[0];
   const sitemapUrls = [
-    { loc: 'https://bimaniti.in/', priority: '1.0', changefreq: 'weekly' },
-    { loc: 'https://bimaniti.in/blog.html', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://bimaniti.in/news.html', priority: '0.9', changefreq: 'weekly' },
-    { loc: 'https://bimaniti.in/archives.html', priority: '0.7', changefreq: 'monthly' },
-    { loc: 'https://bimaniti.in/about.html', priority: '0.6', changefreq: 'monthly' },
-    { loc: 'https://bimaniti.in/contact.html', priority: '0.5', changefreq: 'monthly' },
+    { loc: 'https://bimaniti.in/', priority: '1.0', changefreq: 'weekly', lastmod: today },
+    { loc: 'https://bimaniti.in/blog.html', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { loc: 'https://bimaniti.in/news.html', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { loc: 'https://bimaniti.in/archives.html', priority: '0.7', changefreq: 'monthly', lastmod: today },
+    { loc: 'https://bimaniti.in/about.html', priority: '0.6', changefreq: 'monthly', lastmod: today },
+    { loc: 'https://bimaniti.in/contact.html', priority: '0.5', changefreq: 'monthly', lastmod: today },
   ];
 
   const rssItems = [];
@@ -319,7 +331,9 @@ function generatePostPages() {
       description: item.summary,
       author: { "@type": "Person", name: item.author || "BimaNiti" },
       datePublished: item.published_date,
+      dateModified: item.published_date,
       url: postUrl,
+      image: `https://bimaniti.in/${imagePath}`,
       mainEntityOfPage: { "@type": "WebPage", "@id": postUrl }
     };
 
@@ -341,7 +355,8 @@ function generatePostPages() {
     sitemapUrls.push({
       loc: postUrl,
       priority: '0.8',
-      changefreq: 'monthly'
+      changefreq: 'monthly',
+      lastmod: item.published_date
     });
 
     rssItems.push({
@@ -357,7 +372,7 @@ function generatePostPages() {
   // Generate sitemap.xml
   let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
   sitemapUrls.forEach(u => {
-    sitemap += `  <url><loc>${u.loc}</loc><priority>${u.priority}</priority><changefreq>${u.changefreq}</changefreq></url>\n`;
+    sitemap += `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority}</priority><changefreq>${u.changefreq}</changefreq></url>\n`;
   });
   sitemap += '</urlset>';
   writeFileSync(OUT('sitemap.xml'), sitemap, 'utf-8');

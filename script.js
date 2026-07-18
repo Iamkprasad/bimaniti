@@ -11,6 +11,13 @@ function loadData(url) {
     return fetch(url, { mode: 'same-origin' }).then(function(r) { if (!r.ok) throw new Error('HTTP '+r.status); return r.json(); });
 }
 
+function escapeHtml(str) {
+    if (!str) return '';
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+}
+
 function handleImgError(img) {
     img.onerror = null;
     var d = document.createElement('div');
@@ -67,18 +74,42 @@ function observeScrollElements() {
     });
 }
 
+// Mobile menu with aria-expanded
 (function() {
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const menuIcon = document.querySelector('.menu-icon');
-    const closeIcon = document.querySelector('.close-icon');
+    var menuBtn = document.querySelector('.mobile-menu-btn');
+    var mobileNav = document.querySelector('.mobile-nav');
+    var menuIcon = document.querySelector('.menu-icon');
+    var closeIcon = document.querySelector('.close-icon');
     if (menuBtn && mobileNav) {
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-controls', 'mobile-nav-panel');
+        mobileNav.id = 'mobile-nav-panel';
         menuBtn.addEventListener('click', function() {
-            mobileNav.classList.toggle('open');
+            var isOpen = mobileNav.classList.toggle('open');
+            menuBtn.setAttribute('aria-expanded', String(isOpen));
             if (menuIcon) menuIcon.classList.toggle('hidden');
             if (closeIcon) closeIcon.classList.toggle('hidden');
         });
     }
+})();
+
+// Back to top button
+(function() {
+    var btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>';
+    document.body.appendChild(btn);
+    btn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
 })();
 
 // Reading progress bar
@@ -123,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var stackingContainer = document.getElementById('stacking-container');
             if (stackingContainer && stackData) {
                 stackingContainer.innerHTML = stackData.slice(0, 3).map(function(img) {
-                    return '<div class="stack-layer"><div class="stack-content"><div class="stack-img-wrapper"><img src="' + img.image + '" alt="' + img.title + '" class="stack-img" loading="lazy" width="1200" height="700" onerror="handleImgError(this)"><div class="stack-overlay"></div></div><div class="stack-text"><h2 class="stack-title">' + img.title + '</h2><p class="stack-desc">' + img.desc + '</p></div></div></div>';
+                    return '<div class="stack-layer"><div class="stack-content"><div class="stack-img-wrapper"><img src="' + escapeHtml(img.image) + '" alt="' + escapeHtml(img.title) + '" class="stack-img" loading="lazy" width="1200" height="700" onerror="handleImgError(this)"><div class="stack-overlay"></div></div><div class="stack-text"><h2 class="stack-title">' + escapeHtml(img.title) + '</h2><p class="stack-desc">' + escapeHtml(img.desc) + '</p></div></div></div>';
                 }).join('');
             }
 
@@ -131,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var featuredContainer = document.getElementById('featured-posts');
             if (featuredContainer && homeData && homeData.blogs) {
                 featuredContainer.innerHTML = homeData.blogs.map(function(blog) {
-                    return '<a href="post.html?id=' + blog.id + '" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + blog.category + '</span><h3 class="card-title">' + blog.title + '</h3><p class="card-excerpt">' + blog.summary + '</p><div class="card-meta"><span>' + blog.published_date + '</span><span>\u00B7</span><span>' + blog.author + '</span></div></div></article></a>';
+                    return '<a href="post.html?id=' + escapeHtml(blog.id) + '" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + escapeHtml(blog.category) + '</span><h3 class="card-title">' + escapeHtml(blog.title) + '</h3><p class="card-excerpt">' + escapeHtml(blog.summary) + '</p><div class="card-meta"><span>' + escapeHtml(blog.published_date) + '</span><span>\u00B7</span><span>' + escapeHtml(blog.author) + '</span></div></div></article></a>';
                 }).join('');
             }
 
@@ -139,52 +170,55 @@ document.addEventListener('DOMContentLoaded', function() {
             var latestNews = document.getElementById('latest-news');
             if (latestNews && homeData && homeData.news) {
                 latestNews.innerHTML = homeData.news.map(function(item) {
-                    return '<a href="post.html?id=' + item.id + '" class="post-card"><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem;"><span class="news-source">' + (item.source || item.author) + '</span><span style="font-size: 0.75rem; color: var(--text-muted); white-space: nowrap;">' + item.published_date + '</span></div><h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--text-primary); margin: 0.5rem 0;">' + item.title + '</h3><p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">' + item.summary + '</p></a>';
+                    return '<a href="post.html?id=' + escapeHtml(item.id) + '" class="post-card"><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem;"><span class="news-source">' + escapeHtml(item.source || item.author) + '</span><span style="font-size: 0.75rem; color: var(--text-muted); white-space: nowrap;">' + escapeHtml(item.published_date) + '</span></div><h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--text-primary); margin: 0.5rem 0;">' + escapeHtml(item.title) + '</h3><p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">' + escapeHtml(item.summary) + '</p></a>';
                 }).join('');
             }
 
-            // Insurance timeline
+            // Insurance timeline with ARIA
             var timelineContainer = document.getElementById('insurance-timeline');
             if (timelineContainer && timelineData) {
+                timelineContainer.setAttribute('role', 'list');
+                timelineContainer.setAttribute('aria-label', 'Insurance milestones in India from 1912 to present');
                 timelineContainer.innerHTML = timelineData.map(function(ev) {
-                    return '<div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">' + ev.year + '</div><div class="timeline-title">' + ev.title + '</div><div class="timeline-desc">' + ev.desc + '</div></div>';
+                    return '<div class="timeline-item" role="listitem" aria-label="' + escapeHtml(ev.year) + ': ' + escapeHtml(ev.title) + '"><div class="timeline-dot" aria-hidden="true"></div><div class="timeline-year">' + escapeHtml(ev.year) + '</div><div class="timeline-title">' + escapeHtml(ev.title) + '</div><div class="timeline-desc">' + escapeHtml(ev.desc) + '</div></div>';
                 }).join('');
             }
 
-            // Data charts
+            // Data charts with ARIA
             var dataChartsContainer = document.getElementById('data-charts');
             if (dataChartsContainer && metricsData) {
                 var html = '';
 
-                html += '<div class="stat-cards" style="grid-column: 1 / -1;">';
-                html += '<div class="stat-card"><div class="stat-value" data-target="3.8" data-suffix="%" data-decimal="true">0%</div><div class="stat-label">Insurance Penetration</div></div>';
-                html += '<div class="stat-card"><div class="stat-value" data-target="97" data-suffix="">0</div><div class="stat-label">Density (USD)</div></div>';
-                html += '<div class="stat-card"><div class="stat-value" data-target="10.51" data-suffix="L Cr" data-decimal="true">0</div><div class="stat-label">Total Premium FY26</div></div>';
+                // Stat cards
+                html += '<div class="stat-cards" style="grid-column: 1 / -1;" role="group" aria-label="Key insurance metrics">';
+                html += '<div class="stat-card"><div class="stat-value" data-target="3.8" data-suffix="%" data-decimal="true" role="meter" aria-valuenow="3.8" aria-valuemin="0" aria-valuemax="100" aria-label="Insurance penetration 3.8 percent">0%</div><div class="stat-label">Insurance Penetration</div></div>';
+                html += '<div class="stat-card"><div class="stat-value" data-target="97" data-suffix="" role="meter" aria-valuenow="97" aria-valuemin="0" aria-valuemax="200" aria-label="Insurance density 97 US dollars">0</div><div class="stat-label">Density (USD)</div></div>';
+                html += '<div class="stat-card"><div class="stat-value" data-target="10.51" data-suffix="L Cr" data-decimal="true" role="meter" aria-valuenow="10.51" aria-valuemin="0" aria-valuemax="20" aria-label="Total premium 10.51 Lakh Crore">0</div><div class="stat-label">Total Premium FY26</div></div>';
                 html += '</div>';
 
                 if (metricsData.penetration) {
-                    html += '<div class="data-chart-block"><div class="chart-title">' + metricsData.penetration.title + '</div>';
+                    html += '<div class="data-chart-block" role="img" aria-label="' + escapeHtml(metricsData.penetration.title) + '"><div class="chart-title">' + escapeHtml(metricsData.penetration.title) + '</div>';
                     metricsData.penetration.data.forEach(function(d) {
                         var pct = (d.value / metricsData.penetration.maxValue * 100).toFixed(1);
-                        html += '<div class="bar-row"><div class="bar-label">' + d.label + '</div><div class="bar-track"><div class="bar-fill" style="--bar-width: ' + pct + '%"></div></div><div class="bar-value">' + d.value + '%</div></div>';
+                        html += '<div class="bar-row"><div class="bar-label">' + escapeHtml(d.label) + '</div><div class="bar-track" role="meter" aria-valuenow="' + d.value + '" aria-valuemin="0" aria-valuemax="' + metricsData.penetration.maxValue + '" aria-label="' + escapeHtml(d.label) + ': ' + d.value + '%"><div class="bar-fill" style="--bar-width: ' + pct + '%"></div></div><div class="bar-value">' + d.value + '%</div></div>';
                     });
                     html += '</div>';
                 }
 
                 if (metricsData.density) {
-                    html += '<div class="data-chart-block"><div class="chart-title">' + metricsData.density.title + '</div>';
+                    html += '<div class="data-chart-block" role="img" aria-label="' + escapeHtml(metricsData.density.title) + '"><div class="chart-title">' + escapeHtml(metricsData.density.title) + '</div>';
                     metricsData.density.data.forEach(function(d) {
                         var pct = (d.value / metricsData.density.maxValue * 100).toFixed(1);
-                        html += '<div class="bar-row"><div class="bar-label">' + d.label + '</div><div class="bar-track"><div class="bar-fill" style="--bar-width: ' + pct + '%"></div></div><div class="bar-value">$' + d.value + '</div></div>';
+                        html += '<div class="bar-row"><div class="bar-label">' + escapeHtml(d.label) + '</div><div class="bar-track" role="meter" aria-valuenow="' + d.value + '" aria-valuemin="0" aria-valuemax="' + metricsData.density.maxValue + '" aria-label="' + escapeHtml(d.label) + ': $' + d.value + '"><div class="bar-fill" style="--bar-width: ' + pct + '%"></div></div><div class="bar-value">$' + d.value + '</div></div>';
                     });
                     html += '</div>';
                 }
 
                 if (metricsData.marketShare) {
-                    html += '<div class="data-chart-block" style="grid-column: 1 / -1;"><div class="chart-title">' + metricsData.marketShare.title + '</div>';
+                    html += '<div class="data-chart-block" style="grid-column: 1 / -1;" role="img" aria-label="' + escapeHtml(metricsData.marketShare.title) + '"><div class="chart-title">' + escapeHtml(metricsData.marketShare.title) + '</div>';
                     metricsData.marketShare.data.forEach(function(d) {
                         var pct = (d.value / metricsData.marketShare.maxValue * 100).toFixed(1);
-                        html += '<div class="bar-row"><div class="bar-label" style="min-width: 110px;">' + d.label + '</div><div class="bar-track"><div class="bar-fill" style="--bar-width: ' + pct + '%; background: ' + d.color + ';"></div></div><div class="bar-value">' + d.value + '%</div></div>';
+                        html += '<div class="bar-row"><div class="bar-label" style="min-width: 110px;">' + escapeHtml(d.label) + '</div><div class="bar-track" role="meter" aria-valuenow="' + d.value + '" aria-valuemin="0" aria-valuemax="' + metricsData.marketShare.maxValue + '" aria-label="' + escapeHtml(d.label) + ': ' + d.value + '%"><div class="bar-fill" style="--bar-width: ' + pct + '%; background: ' + d.color + ';"></div></div><div class="bar-value">' + d.value + '%</div></div>';
                     });
                     html += '</div>';
                 }
@@ -236,7 +270,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Observe all scroll elements after content is injected
             observeScrollElements();
-        }).catch(function() {});
+        }).catch(function() {
+            var stackingContainer = document.getElementById('stacking-container');
+            if (stackingContainer) stackingContainer.innerHTML = '<p style="color: var(--text-muted); text-align: center; padding: 3rem 0;">Unable to load homepage data. Please refresh the page.</p>';
+        });
     }
 
     // === Blog listing (blog.html) ===
@@ -301,21 +338,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
             blogFeedContainer.innerHTML = pageItems.map(function(item) {
                 var imgSrc = 'assets/images/blog/' + (item.slug || item.id.toLowerCase()) + '.jpg';
-                return '<a href="post/' + item.slug + '.html" class="blog-card" style="display:flex;gap:20px;flex-wrap:wrap"><div style="flex:1;min-width:240px"><span class="blog-card-tag">' + item.category + '</span><h2 class="blog-card-title">' + item.title + '</h2><p class="blog-card-excerpt">' + item.summary + '</p><div class="blog-card-footer"><div class="blog-card-meta"><strong>' + item.author + '</strong> \u00B7 ' + item.published_date + ' \u00B7 ' + item.read_time + '</div><span class="blog-card-more">Read more \u2192</span></div></div><img src="' + imgSrc + '" alt="' + item.title + '" loading="lazy" width="180" height="120" style="border-radius:4px;object-fit:cover;flex-shrink:0" onerror="this.style.display=\'none\'"></a>';
+                return '<a href="post/' + escapeHtml(item.slug) + '.html" class="blog-card" style="display:flex;gap:20px;flex-wrap:wrap"><div style="flex:1;min-width:240px"><span class="blog-card-tag">' + escapeHtml(item.category) + '</span><h2 class="blog-card-title">' + escapeHtml(item.title) + '</h2><p class="blog-card-excerpt">' + escapeHtml(item.summary) + '</p><div class="blog-card-footer"><div class="blog-card-meta"><strong>' + escapeHtml(item.author) + '</strong> \u00B7 ' + escapeHtml(item.published_date) + ' \u00B7 ' + escapeHtml(item.read_time) + '</div><span class="blog-card-more">Read more \u2192</span></div></div><img src="' + imgSrc + '" alt="' + escapeHtml(item.title) + '" loading="lazy" width="180" height="120" style="border-radius:4px;object-fit:cover;flex-shrink:0" onerror="this.style.display=\'none\'"></a>';
             }).join('');
 
             if (totalPages > 1) {
-                var pagHtml = '<div class="pagination">';
-                pagHtml += '<button class="pagination-btn" ' + (blogPage <= 1 ? 'disabled' : '') + ' onclick="window.blogPage=' + (blogPage - 1) + ';window.filterBlogPage();">\u2190 Previous</button>';
+                var pagHtml = '<div class="pagination" role="navigation" aria-label="Blog pagination">';
+                pagHtml += '<button class="pagination-btn" data-page="' + (blogPage - 1) + '"' + (blogPage <= 1 ? ' disabled' : '') + '>\u2190 Previous</button>';
                 pagHtml += '<span class="pagination-info">Page ' + blogPage + ' of ' + totalPages + '</span>';
-                pagHtml += '<button class="pagination-btn" ' + (blogPage >= totalPages ? 'disabled' : '') + ' onclick="window.blogPage=' + (blogPage + 1) + ';window.filterBlogPage();">Next \u2192</button>';
+                pagHtml += '<button class="pagination-btn" data-page="' + (blogPage + 1) + '"' + (blogPage >= totalPages ? ' disabled' : '') + '>Next \u2192</button>';
                 pagHtml += '</div>';
                 blogFeedContainer.insertAdjacentHTML('beforeend', pagHtml);
             }
         }
 
-        window.blogPage = 1;
-        window.filterBlogPage = filterBlogPage;
+        // Event delegation for blog pagination
+        blogFeedContainer.addEventListener('click', function(e) {
+            var btn = e.target.closest('.pagination-btn');
+            if (btn && !btn.disabled) {
+                blogPage = parseInt(btn.dataset.page, 10);
+                filterBlogPage();
+                blogFeedContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
     }
 
     // === News listing (news.html) ===
@@ -380,21 +424,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
             newsFeedContainer.innerHTML = pageItems.map(function(item) {
                 var imgSrc = 'assets/images/news/' + (item.slug || item.id.toLowerCase()) + '.jpg';
-                return '<a href="post/' + item.slug + '.html" class="blog-card" style="display:flex;gap:20px;flex-wrap:wrap"><div style="flex:1;min-width:240px"><span class="blog-card-tag">' + item.category + '</span><h2 class="blog-card-title">' + item.title + '</h2><p class="blog-card-excerpt">' + item.summary + '</p><div class="blog-card-footer"><div class="blog-card-meta"><strong>' + (item.source || item.author) + '</strong> \u00B7 ' + item.published_date + '</div><span class="blog-card-more">Read more \u2192</span></div></div><img src="' + imgSrc + '" alt="' + item.title + '" loading="lazy" width="180" height="120" style="border-radius:4px;object-fit:cover;flex-shrink:0" onerror="this.style.display=\'none\'"></a>';
+                return '<a href="post/' + escapeHtml(item.slug) + '.html" class="blog-card" style="display:flex;gap:20px;flex-wrap:wrap"><div style="flex:1;min-width:240px"><span class="blog-card-tag">' + escapeHtml(item.category) + '</span><h2 class="blog-card-title">' + escapeHtml(item.title) + '</h2><p class="blog-card-excerpt">' + escapeHtml(item.summary) + '</p><div class="blog-card-footer"><div class="blog-card-meta"><strong>' + escapeHtml(item.source || item.author) + '</strong> \u00B7 ' + escapeHtml(item.published_date) + '</div><span class="blog-card-more">Read more \u2192</span></div></div><img src="' + imgSrc + '" alt="' + escapeHtml(item.title) + '" loading="lazy" width="180" height="120" style="border-radius:4px;object-fit:cover;flex-shrink:0" onerror="this.style.display=\'none\'"></a>';
             }).join('');
 
             if (totalPages > 1) {
-                var pagHtml = '<div class="pagination">';
-                pagHtml += '<button class="pagination-btn" ' + (newsPage <= 1 ? 'disabled' : '') + ' onclick="window.newsPage=' + (newsPage - 1) + ';window.filterNewsPage();">\u2190 Previous</button>';
+                var pagHtml = '<div class="pagination" role="navigation" aria-label="News pagination">';
+                pagHtml += '<button class="pagination-btn" data-page="' + (newsPage - 1) + '"' + (newsPage <= 1 ? ' disabled' : '') + '>\u2190 Previous</button>';
                 pagHtml += '<span class="pagination-info">Page ' + newsPage + ' of ' + totalPages + '</span>';
-                pagHtml += '<button class="pagination-btn" ' + (newsPage >= totalPages ? 'disabled' : '') + ' onclick="window.newsPage=' + (newsPage + 1) + ';window.filterNewsPage();">Next \u2192</button>';
+                pagHtml += '<button class="pagination-btn" data-page="' + (newsPage + 1) + '"' + (newsPage >= totalPages ? ' disabled' : '') + '>Next \u2192</button>';
                 pagHtml += '</div>';
                 newsFeedContainer.insertAdjacentHTML('beforeend', pagHtml);
             }
         }
 
-        window.newsPage = 1;
-        window.filterNewsPage = filterNewsPage;
+        // Event delegation for news pagination
+        newsFeedContainer.addEventListener('click', function(e) {
+            var btn = e.target.closest('.pagination-btn');
+            if (btn && !btn.disabled) {
+                newsPage = parseInt(btn.dataset.page, 10);
+                filterNewsPage();
+                newsFeedContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
     }
 
     // === Single post view ===
@@ -449,6 +500,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     "description": post.summary,
                     "author": { "@type": "Person", "name": post.author || "BimaNiti" },
                     "datePublished": post.published_date,
+                    "dateModified": post.published_date,
+                    "image": post.image ? 'https://bimaniti.in/' + post.image : 'https://bimaniti.in/logo.svg',
                     "url": postUrl,
                     "mainEntityOfPage": { "@type": "WebPage", "@id": postUrl }
                 });
@@ -471,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var prevHtml = '';
                 if (post.previous_coverage) {
-                    prevHtml = '<div class="prev-coverage-banner">\uD83D\uDCCC Earlier coverage: <a href="post.html?id=' + post.previous_coverage.id + '">' + post.previous_coverage.title + '</a> \u2192</div>';
+                    prevHtml = '<div class="prev-coverage-banner">\uD83D\uDCCC Earlier coverage: <a href="post.html?id=' + escapeHtml(post.previous_coverage.id) + '">' + escapeHtml(post.previous_coverage.title) + '</a> \u2192</div>';
                 }
 
                 var relatedHtml = '';
@@ -480,7 +533,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (relatedItems.length > 0) {
                         relatedHtml = '<div style="max-width:680px;margin:3rem auto 0;border-top:1px solid var(--border);padding-top:2rem;"><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">Related Coverage</div><div style="display:grid;gap:1rem;">';
                         relatedItems.forEach(function(r) {
-                            relatedHtml += '<a href="post.html?id=' + r.id + '" style="display:block;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;transition:border-color 0.15s;"><span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">' + r.category + '</span><div style="font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:4px;">' + r.title + '</div><div style="font-size:12px;color:var(--text-muted);">' + r.published_date + '</div></a>';
+                            relatedHtml += '<a href="post.html?id=' + escapeHtml(r.id) + '" style="display:block;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;transition:border-color 0.15s;"><span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">' + escapeHtml(r.category) + '</span><div style="font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:4px;">' + escapeHtml(r.title) + '</div><div style="font-size:12px;color:var(--text-muted);">' + escapeHtml(r.published_date) + '</div></a>';
                         });
                         relatedHtml += '</div></div>';
                     }
@@ -497,16 +550,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (relatedByTag.length > 0) {
                         relatedHtml = '<div style="max-width:680px;margin:3rem auto 0;border-top:1px solid var(--border);padding-top:2rem;"><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">Related Coverage</div><div style="display:grid;gap:1rem;">';
                         relatedByTag.forEach(function(r) {
-                            relatedHtml += '<a href="post.html?id=' + r.id + '" style="display:block;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;transition:border-color 0.15s;"><span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">' + r.category + '</span><div style="font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:4px;">' + r.title + '</div><div style="font-size:12px;color:var(--text-muted);">' + r.published_date + '</div></a>';
+                            relatedHtml += '<a href="post.html?id=' + escapeHtml(r.id) + '" style="display:block;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;transition:border-color 0.15s;"><span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">' + escapeHtml(r.category) + '</span><div style="font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:4px;">' + escapeHtml(r.title) + '</div><div style="font-size:12px;color:var(--text-muted);">' + escapeHtml(r.published_date) + '</div></a>';
                         });
                         relatedHtml += '</div></div>';
                     }
                 }
 
-                var shareUrl = encodeURIComponent(postUrl);
-                var shareText = encodeURIComponent(post.title + ' | BimaNiti');
-
-                singlePostContainer.innerHTML = '<div class="post-hero"><div class="post-hero-inner"><span class="post-hero-tag">' + post.category + '</span><h1>' + post.title + '</h1><div class="post-hero-byline"><strong>' + (post.author || 'BimaNiti') + '</strong> \u00B7 ' + post.published_date + ' \u00B7 ' + (post.read_time || '6 min read') + '</div></div></div><div class="post-body-wrapper"><div class="post-content">' + prevHtml + formattedContent + '</div>' + relatedHtml + '<div class="post-sources" style="max-width: 680px; margin: 3rem auto 0; border-top: 1px solid var(--border); padding-top: 1.5rem;"><span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">Share this article</span><div style="display:flex;gap:0.5rem;flex-wrap:wrap;"><button class="share-btn" onclick="window.open(\'https://twitter.com/intent/tweet?text=\'+encodeURIComponent(document.title)+\' \'+encodeURIComponent(window.location.href),\'\',\'width=600,height=400\')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X</button><button class="share-btn" onclick="window.open(\'https://www.linkedin.com/sharing/share-offsite/?url=\'+encodeURIComponent(window.location.href),\'\',\'width=600,height=400\')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</button><button class="share-btn" onclick="window.open(\'https://wa.me/?text=\'+encodeURIComponent(document.title+\' \'+window.location.href),\'\',\'width=600,height=400\')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</button></div></div></div></div>';
+                singlePostContainer.innerHTML = '<div class="post-hero"><div class="post-hero-inner"><span class="post-hero-tag">' + escapeHtml(post.category) + '</span><h1>' + escapeHtml(post.title) + '</h1><div class="post-hero-byline"><strong>' + escapeHtml(post.author || 'BimaNiti') + '</strong> \u00B7 ' + escapeHtml(post.published_date) + ' \u00B7 ' + escapeHtml(post.read_time || '6 min read') + '</div></div></div><div class="post-body-wrapper"><div class="post-content">' + prevHtml + formattedContent + '</div>' + relatedHtml + '<div class="post-sources" style="max-width: 680px; margin: 3rem auto 0; border-top: 1px solid var(--border); padding-top: 1.5rem;"><span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">Share this article</span><div style="display:flex;gap:0.5rem;flex-wrap:wrap;"><button class="share-btn" onclick="window.open(\'https://twitter.com/intent/tweet?text=\'+encodeURIComponent(document.title)+\' \'+encodeURIComponent(window.location.href),\'\',\'width=600,height=400\')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> X</button><button class="share-btn" onclick="window.open(\'https://www.linkedin.com/sharing/share-offsite/?url=\'+encodeURIComponent(window.location.href),\'\',\'width=600,height=400\')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</button><button class="share-btn" onclick="window.open(\'https://wa.me/?text=\'+encodeURIComponent(document.title+\' \'+window.location.href),\'\',\'width=600,height=400\')"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</button></div></div></div></div>';
             });
         }
     }
@@ -546,7 +596,7 @@ document.addEventListener('DOMContentLoaded', function() {
             monthKeys.forEach(function(key) {
                 html += '<div class="archive-section-title">' + grouped[key].label + '</div>';
                 grouped[key].items.forEach(function(item) {
-                    html += '<a href="post.html?id=' + item.id + '" class="archive-row" style="display: flex; justify-content: space-between; align-items: baseline;"><div class="archive-row-left"><span class="archive-row-tag">' + item.category + '</span><span class="archive-row-tag">' + item.type + '</span><span class="archive-row-title">' + item.title + '</span></div><span class="archive-row-date">' + item.published_date + '</span></a>';
+                    html += '<a href="post.html?id=' + escapeHtml(item.id) + '" class="archive-row" style="display: flex; justify-content: space-between; align-items: baseline;"><div class="archive-row-left"><span class="archive-row-tag">' + escapeHtml(item.category) + '</span><span class="archive-row-tag">' + escapeHtml(item.type) + '</span><span class="archive-row-title">' + escapeHtml(item.title) + '</span></div><span class="archive-row-date">' + escapeHtml(item.published_date) + '</span></a>';
                 });
             });
 
@@ -572,7 +622,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(blogs) {
                 var latest = blogs.slice(0, 3);
                 recentWritingContainer.innerHTML = latest.map(function(blog) {
-                    return '<a href="post.html?id=' + blog.id + '" class="post-row" style="display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border);"><div class="post-tag">' + blog.category + '</div><div class="post-info"><div class="post-title">' + blog.title + '</div><div class="post-meta">' + blog.published_date + ' \u00B7 ' + blog.read_time + '</div></div></a>';
+                    return '<a href="post.html?id=' + escapeHtml(blog.id) + '" class="post-row" style="display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border);"><div class="post-tag">' + escapeHtml(blog.category) + '</div><div class="post-info"><div class="post-title">' + escapeHtml(blog.title) + '</div><div class="post-meta">' + escapeHtml(blog.published_date) + ' \u00B7 ' + escapeHtml(blog.read_time) + '</div></div></a>';
                 }).join('');
             })
             .catch(function() {

@@ -6,18 +6,25 @@
     <title>404 — Page Not Found | BimaNiti</title>
     <meta name="description" content="The page you are looking for does not exist.">
     <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://bimaniti.in/404.html">
+    <meta property="og:url" content="https://bimaniti.in/404.html">
+    <meta property="og:image" content="https://bimaniti.in/logo.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Page Not Found — BimaNiti">
+    <meta name="twitter:description" content="The page you're looking for doesn't exist.">
+    <meta name="twitter:image" content="https://bimaniti.in/logo.svg">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" as="style">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
     <script defer src="https://analytics.bimaniti.in/script.js" data-website-id="XXXXXXXX"></script>
     <noscript><img src="https://analytics.bimaniti.in/collect.gif" alt="" style="display:none"></noscript>
     <link rel="alternate" type="application/rss+xml" title="BimaNiti Feed" href="feed.xml">
 </head>
 <body>
-    <nav class="navbar">
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <a href="index.html" class="logo"><img src="logo.svg" alt="BimaNiti" width="120" height="36"></a>
             <div class="desktop-nav">
@@ -53,14 +60,30 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <section style="min-height: 70vh; display: flex; align-items: center; justify-content: center; padding: 6rem 1.5rem; background: var(--bg-primary);">
             <div style="text-align: center; max-width: 32rem;">
                 <div style="font-family: var(--font-display); font-size: 6rem; font-weight: 400; color: var(--accent); line-height: 1; margin-bottom: 0.5rem;">404</div>
                 <div class="divider" style="margin: 1.5rem auto;"></div>
                 <h1 style="font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; color: var(--text-primary); margin-bottom: 1rem;">Page Not Found</h1>
                 <p style="color: var(--text-muted); font-weight: 300; line-height: 1.7; margin-bottom: 2rem;">The page you are looking for might have been moved, renamed, or does not exist.</p>
-                <a href="index.html" class="btn-primary">Go Home</a>
+                <form action="blog.html" method="get" style="display: flex; gap: 8px; max-width: 400px; margin: 0 auto 2rem;" role="search">
+                    <label for="error-search" class="visually-hidden">Search articles</label>
+                    <input type="text" id="error-search" name="q" placeholder="Search articles..." style="flex:1;padding:10px 14px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text-secondary);font-family:var(--font-body);font-size:14px;outline:none;">
+                    <button type="submit" class="btn-primary" style="padding:10px 20px;font-size:13px;">Search</button>
+                </form>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html" class="btn-primary">Go Home</a>
+                    <a href="blog.html" class="btn-outline">Browse Blog</a>
+                </div>
+            </div>
+        </section>
+        <section class="section-white py-20 px-6">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="section-title">Recent Articles</h2>
+                </div>
+                <div id="error-recent-posts" class="grid-3"></div>
             </div>
         </section>
     </main>
@@ -87,10 +110,23 @@
     </footer>
 
     <script src="script.js" defer></script>
-    <script defer>
+    <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js').catch(function() {});
     }
+    (function() {
+        var container = document.getElementById('error-recent-posts');
+        if (!container) return;
+        fetch('data/home-featured.json', { mode: 'same-origin' })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (!data.blogs) return;
+                container.innerHTML = data.blogs.map(function(blog) {
+                    return '<a href="post.html?id=' + blog.id + '" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + blog.category + '</span><h3 class="card-title">' + blog.title + '</h3><p class="card-excerpt">' + blog.summary + '</p><div class="card-meta"><span>' + blog.published_date + '</span><span>\u00B7</span><span>' + blog.author + '</span></div></div></article></a>';
+                }).join('');
+            })
+            .catch(function() {});
+    })();
     </script>
 </body>
 </html>
