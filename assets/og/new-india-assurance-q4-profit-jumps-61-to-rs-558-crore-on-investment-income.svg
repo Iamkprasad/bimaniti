@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f3ef"/>
+  <rect x="0" y="0" width="12" height="630" fill="#4a6741"/>
+  <text x="80" y="120" font-family="Outfit, system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="3" fill="#4a6741">General Insurance</text>
+  <text x="80" y="160" font-family="Outfit, system-ui, sans-serif" font-size="26" font-weight="300" fill="#6a6a6a">BimaNiti — Insurance &amp; Market Insights</text>
+    <text x="80" y="250" font-family="Georgia, serif" font-size="52" font-weight="500" fill="#1a1a1a">New India Assurance Q4:</text>
+    <text x="80" y="322" font-family="Georgia, serif" font-size="52" font-weight="500" fill="#1a1a1a">Profit Jumps 61% to Rs 558</text>
+    <text x="80" y="394" font-family="Georgia, serif" font-size="52" font-weight="500" fill="#1a1a1a">Crore on Investment Income</text>
+  <text x="80" y="560" font-family="Outfit, system-ui, sans-serif" font-size="22" font-weight="400" fill="#4a6741">bimaniti.in</text>
+</svg>

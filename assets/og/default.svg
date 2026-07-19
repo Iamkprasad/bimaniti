@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f3ef"/>
+  <rect x="0" y="0" width="12" height="630" fill="#4a6741"/>
+  <text x="80" y="180" font-family="Outfit, system-ui, sans-serif" font-size="22" font-weight="600" letter-spacing="3" fill="#4a6741">INSURANCE &amp; MARKET ANALYSIS</text>
+  <text x="80" y="300" font-family="Georgia, serif" font-size="84" font-weight="500" fill="#1a1a1a">Bima<tspan fill="#4a6741">Niti</tspan></text>
+  <text x="80" y="380" font-family="Outfit, system-ui, sans-serif" font-size="32" font-weight="300" fill="#4a4a4a">Analysing markets, decoding insurance,</text>
+  <text x="80" y="425" font-family="Outfit, system-ui, sans-serif" font-size="32" font-weight="300" fill="#4a4a4a">and sharing insights that matter.</text>
+  <text x="80" y="560" font-family="Outfit, system-ui, sans-serif" font-size="22" font-weight="400" fill="#4a6741">bimaniti.in</text>
+</svg>

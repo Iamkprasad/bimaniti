@@ -37,6 +37,10 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Ensure generated build outputs are tracked for deploy
+        run: |
+          git add -f post/ learn/ sitemap.xml feed.xml assets/css/style.min.css assets/js/script.min.js assets/og 2>/dev/null || true
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
