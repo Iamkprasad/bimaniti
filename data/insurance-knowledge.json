@@ -1,0 +1,1139 @@
+{
+  "meta": {
+    "title": "Insurance in India — A to Z",
+    "description": "A plain-language guide to what insurance is, its seven principles, the history of insurance in India and the world, the regulator IRDAI, the Indian market, who can sell insurance, and a directory of every licensed insurer — all in one place.",
+    "version": 1,
+    "lastUpdated": "2026-07",
+    "nextReview": "2027-01",
+    "patchNotes": [
+      "v1 (2026-07): Initial A-to-Z knowledge base published — what insurance is, seven principles, world & India history, IRDAI regulator, market snapshot, distribution channels, insurer directory (life 26 / general 26 / standalone health 7 / reinsurers 8), and glossary."
+    ],
+    "sources": [
+      "IRDAI — Insurance Regulatory and Development Authority of India (irdai.gov.in), including 'Evolution of Insurance' and the IRDAI Annual Report 2024-25",
+      "The Insurance Act, 1938",
+      "The Insurance Regulatory and Development Authority Act, 1999",
+      "The Life Insurance Corporation Act, 1956",
+      "The General Insurance Business (Nationalisation) Act, 1972",
+      "The Insurance Laws (Amendment) Act, 2021 (FDI raised to 74%)",
+      "Sabka Bima Sabki Raksha / Insurance Amendment, 2025 (FDI raised to 100%)",
+      "Economic Survey 2025-26 (premium, penetration, density, AUM figures)",
+      "Swiss Re Sigma 2025 (global insurance penetration comparison)",
+      "PIB / Press Information Bureau, Government of India (reform announcements)",
+      "The Hindu, Economic Times, ET BFSI, Business Standard (market and reform reporting, 2025-26)",
+      "UK Insurance Act 2015 (proximate cause and disclosure principles)",
+      "Code of Hammurabi and Trennery, 'The Historical Development of Marine Insurance in England' (global history)",
+      "Wikipedia — 'List of insurance companies in India' and 'History of insurance' (compiled for cross-checking; always verify the live list on IRDAI)",
+      "Cyril Amarchand Mangaldas — distribution and intermediary guide 2026",
+      "iPleaders, Skillcast, SLM/MBA notes (explanation of the seven principles)"
+    ],
+    "sourceMap": {
+      "IRDAI": "IRDAI — irdai.gov.in ('Evolution of Insurance', Annual Report 2024-25)",
+      "IRDAI (Brokers) Regs 2018": "IRDAI (Insurance Brokers) Regulations, 2018",
+      "UK Insurance Act 2015": "UK Insurance Act 2015 (proximate cause & disclosure)",
+      "Economic Survey 2025-26": "Economic Survey 2025-26 (premium, penetration, density, AUM)",
+      "Swiss Re": "Swiss Re Sigma 2025 (global penetration comparison)",
+      "PIB": "PIB / Press Information Bureau, Govt. of India",
+      "Wikipedia / Trennery": "Wikipedia 'History of insurance' & Trennery, Marine Insurance in England"
+    },
+    "updateMechanism": {
+      "howToPatch": "This file is versioned. To fix a mistake or add an update: bump 'meta.version' by 1, set 'meta.lastUpdated' to the current YYYY-MM, add a short note to 'meta.patchNotes', then re-run 'node scripts/build.mjs'. The guide page reads this file at load time, so changes appear automatically after a rebuild and cache refresh.",
+      "verifyLiveData": "Insurer counts and lists change. Always confirm the current licensed list at irdai.gov.in before relying on it. A 'sourceNote' is attached to the insurers section for this reason."
+    }
+  },
+  "whatIsInsurance": {
+    "definition": "Insurance is a simple idea with a big name. Many people put a little money into one common pool. When one of them suffers a loss — a fire, an accident, a hospital bill — the pool pays for it. You are not betting against yourself. You are sharing risk with strangers so that no single person is crushed by a bad day.",
+    "buildingBlocks": [
+      {
+        "term": "Insured",
+        "meaning": "The person or business that buys the cover. That is you.",
+        "source": "IRDAI"
+      },
+      {
+        "term": "Insurer",
+        "meaning": "The company that runs the pool and pays valid claims.",
+        "source": "IRDAI"
+      },
+      {
+        "term": "Premium",
+        "meaning": "The amount you pay, usually yearly, to stay in the pool.",
+        "source": "IRDAI"
+      },
+      {
+        "term": "Sum Assured / Cover",
+        "meaning": "The amount the insurer pays when a valid claim happens.",
+        "source": "IRDAI"
+      },
+      {
+        "term": "Peril",
+        "meaning": "The event that is covered — fire, death, theft, accident, illness.",
+        "source": "IRDAI"
+      },
+      {
+        "term": "Underwriting",
+        "meaning": "How the insurer decides whether to cover you, and at what price.",
+        "source": "IRDAI"
+      }
+    ],
+    "whyUsed": [
+      {
+        "reason": "Protection",
+        "example": "A ₹5 lakh hospital bill does not wipe out your family's savings.",
+        "source": "Swiss Re"
+      },
+      {
+        "reason": "Peace of mind",
+        "example": "You sleep easy knowing a rainy day is already planned for.",
+        "source": "Swiss Re"
+      },
+      {
+        "reason": "Forced saving (life insurance)",
+        "example": "A term plan pays your family if something happens to you; an endowment plan also matures and pays you.",
+        "source": "Swiss Re"
+      },
+      {
+        "reason": "It helps the whole economy",
+        "example": "Banks lend safely, businesses run, and a family survives the loss of its main earner.",
+        "source": "Swiss Re"
+      }
+    ],
+    "commonMyth": "Many people think insurance is 'a waste if nothing happens'. The truth: the peace of mind and the safety net are the product. You hope you never need it — that is the point.",
+    "source": "IRDAI"
+  },
+  "principles": [
+    {
+      "id": "utmost-good-faith",
+      "name": "Utmost Good Faith (Uberrima Fides)",
+      "plainDefinition": "Both sides must be honest and tell each other everything that matters. The buyer must share facts that affect the risk. The seller must explain the cover clearly.",
+      "example": "You buy health insurance but hide that you already have diabetes. Later you claim for a diabetes-related treatment. The insurer can reject the claim and cancel the policy from day one.",
+      "indiaNuance": "In India, if you hide a material fact, the insurer can void the policy even years later — the duty of disclosure is strict. It does not help to say 'the agent filled the form', because the proposal is your responsibility.",
+      "commonMyth": "'The agent ticked the wrong box, so it is not my fault.' It usually is — you sign the proposal.",
+      "source": "UK Insurance Act 2015",
+      "indiaNuanceSource": "IRDAI",
+      "exampleSource": "IRDAI"
+    },
+    {
+      "id": "insurable-interest",
+      "name": "Insurable Interest",
+      "plainDefinition": "You can only insure something you would lose money from if it were damaged or lost.",
+      "example": "You can insure your own car. You cannot insure your neighbour's car, because you would not lose anything if it crashed.",
+      "indiaNuance": "In life insurance the interest must exist when you buy the policy. In fire and general insurance it must exist at the time of the loss. In marine insurance it must exist at the time of loss too.",
+      "commonMyth": "'I can take a policy on anyone.' No — you need a genuine financial connection (like a spouse, dependent child, or business partner).",
+      "source": "UK Insurance Act 2015",
+      "indiaNuanceSource": "IRDAI",
+      "exampleSource": "IRDAI"
+    },
+    {
+      "id": "indemnity",
+      "name": "Indemnity",
+      "plainDefinition": "Insurance is meant to put you back where you were — not to make you richer. You get paid for the loss, not for profit.",
+      "example": "Your car is worth ₹4 lakh. After an accident the insurer pays up to ₹4 lakh (minus deductions), not ₹10 lakh.",
+      "indiaNuance": "Life insurance is the big exception. You cannot put a price on a life, so a life policy pays the agreed sum assured regardless of 'loss'. Motor and health policies mostly follow indemnity.",
+      "commonMyth": "'My insurance will make me money.' Indemnity rules are designed to stop exactly that.",
+      "source": "UK Insurance Act 2015",
+      "indiaNuanceSource": "IRDAI",
+      "exampleSource": "IRDAI"
+    },
+    {
+      "id": "subrogation",
+      "name": "Subrogation",
+      "plainDefinition": "After the insurer pays your claim, it steps into your shoes and tries to recover the money from the person who actually caused the loss.",
+      "example": "Another driver dents your parked car. Your insurer pays your repair bill, then claims that amount from the other driver's insurer.",
+      "indiaNuance": "You cannot claim the same loss twice. Once you are paid, the right to recover from the wrongdoer passes to your insurer.",
+      "commonMyth": "'I got paid, so I can also sue the other guy for the same amount.' You cannot double-recover.",
+      "source": "UK Insurance Act 2015",
+      "indiaNuanceSource": "IRDAI",
+      "exampleSource": "IRDAI"
+    },
+    {
+      "id": "contribution",
+      "name": "Contribution",
+      "plainDefinition": "If you have two policies covering the same risk, the insurers share the payout. You cannot claim the full amount from both.",
+      "example": "You have two motor policies on one car. After a claim, both insurers pay a proportion so that together you get no more than the loss.",
+      "indiaNuance": "This works hand-in-hand with indemnity — the aim is to compensate, never to enrich.",
+      "commonMyth": "'More policies means more money.' Not for the same risk — they only share the bill.",
+      "source": "UK Insurance Act 2015",
+      "indiaNuanceSource": "IRDAI",
+      "exampleSource": "IRDAI"
+    },
+    {
+      "id": "proximate-cause",
+      "name": "Proximate Cause (Causa Proxima)",
+      "plainDefinition": "When several things happen, the claim is decided by the main, closest cause — not by the last small event.",
+      "example": "A rider falls off a horse and hits his head. He later catches pneumonia and dies. The fall (the accident) is the proximate cause, so the accidental-death claim stands — subject to the policy wording.",
+      "indiaNuance": "Courts look for the 'dominant' cause. If the dominant cause is covered but the last event is not, the claim is usually still payable.",
+      "commonMyth": "'The last thing that happened decides the claim.' Wrong — it is the dominant cause that matters.",
+      "source": "UK Insurance Act 2015",
+      "indiaNuanceSource": "IRDAI",
+      "exampleSource": "IRDAI"
+    },
+    {
+      "id": "loss-minimization",
+      "name": "Loss Minimization (Mitigation)",
+      "plainDefinition": "If something goes wrong, you must try to limit the damage. You cannot just stand by and let the loss grow.",
+      "example": "Your kitchen catches fire. You call the fire brigade and try to save what you can. You do not simply watch it burn while thinking 'the insurer will pay'.",
+      "indiaNuance": "The policy requires you to take reasonable steps to reduce the loss. Failing to do so can reduce or void the claim.",
+      "commonMyth": "'Once it is insured, I need do nothing.' You still have a duty to act sensibly.",
+      "source": "UK Insurance Act 2015",
+      "indiaNuanceSource": "IRDAI",
+      "exampleSource": "IRDAI"
+    }
+  ],
+  "historyGlobal": [
+    {
+      "year": "c. 1750 BC",
+      "event": "Code of Hammurabi",
+      "detail": "Babylonian law allowed 'bottomry' — a loan for a sea voyage where the debt was cancelled if the ship was lost. Risk was baked into the interest. One of the earliest traces of insurance thinking.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "c. 600 BC",
+      "event": "Marine risk-sharing",
+      "detail": "Greek 'foenus nauticum' and Rhodian law introduced 'general average' — if cargo was thrown overboard to save a ship, all merchants shared the loss. The idea of sharing risk is already there.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "Roman era",
+      "event": "Burial clubs",
+      "detail": "Romans formed 'collegia funeraticia' that paid for a member's funeral and gave the family a small payout. An early form of life cover for ordinary people.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "Medieval",
+      "event": "Guilds and friendly societies",
+      "detail": "Craft guilds supported members who were sick, widowed, or burned out. Mutual help, not profit.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "14th century",
+      "event": "Modern marine contracts",
+      "detail": "In Genoa and other Italian ports, written marine insurance contracts appear. Risk is now a separate, tradable thing.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "1688",
+      "event": "Lloyd's coffee house",
+      "detail": "Edward Lloyd's London coffee house becomes the meeting place for ship owners, merchants, and those willing to back their voyages. This grows into the famous Lloyd's market.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "1666 / 1667",
+      "event": "Great Fire of London",
+      "detail": "A fire destroys much of the city. Nicholas Barbon sets up one of the first fire insurance offices soon after, because people realise homes need protecting.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "1706",
+      "event": "Amicable Society",
+      "detail": "The first life insurer open to the public is formed in London.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "1762",
+      "event": "The Equitable",
+      "detail": "The Equitable Society introduces proper actuarial pricing — premiums based on real odds of death. Modern life insurance is born.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "19th-20th century",
+      "event": "Principles codified",
+      "detail": "English common-law cases settle the seven principles we still use — good faith, insurable interest, indemnity, subrogation, contribution, proximate cause, loss minimization.",
+      "source": "Wikipedia / Trennery"
+    },
+    {
+      "year": "2015",
+      "event": "UK Insurance Act",
+      "detail": "The UK modernises insurance law, clarifying disclosure duties and remedies for non-disclosure. India's principles trace back to this same common-law tradition.",
+      "source": "Wikipedia / Trennery"
+    }
+  ],
+  "historyIndia": [
+    {
+      "year": "1818",
+      "event": "Oriental Life Insurance Society",
+      "detail": "The first life insurer in India, started in Calcutta. It mainly served Europeans and struggled, closing in 1834 — but it begins the story.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1850",
+      "event": "Triton Insurance",
+      "detail": "The first general (non-life) insurer, also in Calcutta, covering fire and marine risks.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1870 / 1871",
+      "event": "Bombay Mutual",
+      "detail": "The first Indian-owned life insurer. Notably, it charged Indians and Europeans the same premium at a time when others did not.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1907",
+      "event": "Indian Mercantile",
+      "detail": "The first all-classes Indian general insurer, covering life, fire, and accident.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1912",
+      "event": "First insurance law",
+      "detail": "The Indian Life Assurance Companies Act brings early regulation of life business.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1928",
+      "event": "More oversight",
+      "detail": "The Indian Insurance Companies Act starts collecting data on both life and non-life insurers.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1938",
+      "event": "The Insurance Act",
+      "detail": "A single umbrella law for the whole industry. It is still the parent law today, amended many times since.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1956",
+      "event": "Life nationalised (LIC)",
+      "detail": "The Life Insurance Corporation Act merges about 245 life insurers into one state-owned LIC. A near-monopoly for decades.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1971-1973",
+      "event": "General insurance nationalised (GIC)",
+      "detail": "The General Insurance Business (Nationalisation) Act brings about 107 general insurers under state control, grouped into four public-sector companies — National, New India, Oriental, and United — with GIC as the sole reinsurer.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1993-1994",
+      "event": "Malhotra Committee",
+      "detail": "A committee recommends opening the sector to private players and setting up an independent regulator. This reshapes modern Indian insurance.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "1999 / 2000",
+      "event": "IRDA created",
+      "detail": "The IRDA Act, 1999 sets up the Insurance Regulatory and Development Authority. Private insurers enter; foreign direct investment (FDI) is allowed at 26%.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "2015",
+      "event": "FDI raised to 49%",
+      "detail": "The sector is opened further to foreign partners.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "2021",
+      "event": "FDI raised to 74%",
+      "detail": "The Insurance Laws (Amendment) Act, 2021 allows up to 74% foreign ownership. (Note: 100% FDI did NOT happen in 2021 — a common mix-up.)",
+      "source": "IRDAI"
+    },
+    {
+      "year": "2024-2026",
+      "event": "Ind AS 117",
+      "detail": "Indian insurers move to Ind AS 117, the local version of the global IFRS 17 accounting standard, from April 2026 — changing how insurers report profits.",
+      "source": "IRDAI"
+    },
+    {
+      "year": "2025",
+      "event": "Sabka Bima Sabki Raksha",
+      "detail": "New amendments allow 100% FDI and launch three big public initiatives — Bima Sugam (a one-stop digital marketplace), Bima Vahak (women-led last-mile reach), and Bima Vistaar (simplified rural cover). The mission: 'Insurance for All by 2047'.",
+      "source": "IRDAI"
+    }
+  ],
+  "regulator": {
+    "name": "IRDAI — Insurance Regulatory and Development Authority of India",
+    "formed": "IRDAI was created by the Insurance Regulatory and Development Authority Act, 1999, and began functioning in 2000. Its head office is in Hyderabad. It took over the regulatory role earlier held by the Controller of Insurance (under the Ministry of Finance).",
+    "role": "Think of IRDAI as the referee of the insurance market. Before IRDAI, the sector was small and mostly state-run. After private players were allowed in from 2000, the country needed an independent body to keep things fair. IRDAI's main jobs are: licensing insurers, agents, brokers and other intermediaries; protecting policyholders (for example through the Bima Bharosa grievance system); approving products so they are clear and fair; checking that claims are paid quickly; promoting competition and fair pricing; and pushing financial inclusion so more Indians are covered. It also sets accounting and solvency rules so that insurers stay financially strong and can pay claims even in a bad year.",
+    "whoReportsTo": "Ministry of Finance, Government of India.",
+    "commonMyth": "'IRDAI sells insurance.' No — it only regulates. You buy from insurers, not from the regulator.",
+    "source": "IRDAI"
+  },
+  "market": {
+    "snapshotYear": "FY 2024-25 / 2025-26",
+    "premium": "Total premium collected was about ₹11.9 lakh crore in FY25, with assets under management around ₹74 lakh crore (Economic Survey 2025-26).",
+    "penetration": "Insurance penetration — premium as a share of GDP — is about 3.7% (life around 2.7%, non-life around 1%). That is roughly half the global average of about 7% (Swiss Re).",
+    "density": "Insurance density — premium per person — is about $97, far below the global figure near $900.",
+    "trend": "Health insurance has overtaken motor as the largest part of the non-life market (about 41% of general domestic premium), reflecting rising medical costs and awareness.",
+    "protectionGap": "India still has a large 'protection gap' — many households are under-insured, so a single hospital bill or death can be financially devastating.",
+    "governmentSchemes": [
+      {
+        "name": "Pradhan Mantri Jeevan Jyoti Bima Yojana (PMJJBY)",
+        "detail": "Life cover of ₹2 lakh for an annual premium of about ₹330.",
+        "source": "PIB"
+      },
+      {
+        "name": "Pradhan Mantri Suraksha Bima Yojana (PMSBY)",
+        "detail": "Accident cover of ₹2 lakh for about ₹12 a year.",
+        "source": "PIB"
+      },
+      {
+        "name": "Ayushman Bharat / PM-JAY",
+        "detail": "Health cover up to ₹5 lakh per family per year for eligible low-income households.",
+        "source": "PIB"
+      },
+      {
+        "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+        "detail": "Crop insurance that protects farmers against yield loss.",
+        "source": "PIB"
+      }
+    ],
+    "source": "Economic Survey 2025-26",
+    "premiumSource": "Economic Survey 2025-26",
+    "penetrationSource": "Swiss Re",
+    "densitySource": "Swiss Re",
+    "trendSource": "Swiss Re",
+    "protectionGapSource": "Economic Survey 2025-26"
+  },
+  "distribution": {
+    "title": "Who can sell you insurance in India",
+    "channels": [
+      {
+        "name": "Agent",
+        "detail": "A person authorised to sell the products of ONE insurer. The classic LIC or private agent.",
+        "source": "IRDAI (Brokers) Regs 2018"
+      },
+      {
+        "name": "Corporate Agent",
+        "detail": "A company (often a bank) authorised to sell policies of one or a few insurers. Bancassurance is this model — you buy at the bank counter.",
+        "source": "IRDAI (Brokers) Regs 2018"
+      },
+      {
+        "name": "Insurance Broker",
+        "detail": "Works for YOU, not the insurer. Licensed by IRDAI (well over a thousand brokers are licensed). A broker can place your risk across many insurers and advise on the best fit.",
+        "source": "IRDAI (Brokers) Regs 2018"
+      },
+      {
+        "name": "Web Aggregator",
+        "detail": "Online platforms (such as Policybazaar) that list and compare policies from several insurers.",
+        "source": "IRDAI (Brokers) Regs 2018"
+      },
+      {
+        "name": "Insurance Marketing Firm",
+        "detail": "A firm that can offer products of multiple insurers plus related services, reaching more customers than a single-agent model.",
+        "source": "IRDAI (Brokers) Regs 2018"
+      },
+      {
+        "name": "Point of Sale (POS) person",
+        "detail": "A trained person who sells simple, standard products and helps with servicing.",
+        "source": "IRDAI (Brokers) Regs 2018"
+      }
+    ],
+    "tip": "If you want unbiased advice across insurers, a broker or aggregator is closest to 'working for you'. An agent or bank usually represents one insurer.",
+    "source": "IRDAI (Brokers) Regs 2018"
+  },
+  "insurers": {
+    "sourceNote": "This is a verified snapshot as of 2026-07. Insurer counts and licences change, and new standalone health insurers have been added in 2025-26. Always confirm the live, official list at irdai.gov.in before buying or relying on this data. Figures here are stable facts (name, sector, base, founded, website) only — not yearly metrics like claim-settlement ratios, which you should check on IRDAI.",
+    "life": [
+      {
+        "name": "Life Insurance Corporation of India (LIC)",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 1956,
+        "website": "https://www.licindia.in",
+        "notes": "The country's largest life insurer; created by nationalising ~245 insurers.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "HDFC Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2000,
+        "website": "https://www.hdfclife.com",
+        "notes": "Major private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Axis Max Life",
+        "sector": "Life",
+        "base": "New Delhi / Gurugram",
+        "founded": 2000,
+        "website": "https://www.maxlifeinsurance.com",
+        "notes": "Private life insurer (Max Life). (Verify current branding.)",
+        "source": "IRDAI"
+      },
+      {
+        "name": "ICICI Prudential Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2000,
+        "website": "https://www.iciciprulife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Kotak Mahindra Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2001,
+        "website": "https://www.kotaklife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Aditya Birla Sun Life Insurance",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2000,
+        "website": "https://www.adityabirlasunlifeinsurance.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Tata AIA Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2001,
+        "website": "https://www.tataaia.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "SBI Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2001,
+        "website": "https://www.sbilife.co.in",
+        "notes": "Private life insurer promoted by State Bank of India.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Bajaj Allianz Life",
+        "sector": "Life",
+        "base": "Pune",
+        "founded": 2001,
+        "website": "https://www.bajajallianzlife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "PNB MetLife",
+        "sector": "Life",
+        "base": "Mumbai / Gurugram",
+        "founded": 2001,
+        "website": "https://www.pnbmetlife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Reliance Nippon Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2001,
+        "website": "https://www.reliancenipponlife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Aviva Life",
+        "sector": "Life",
+        "base": "Gurugram",
+        "founded": 2002,
+        "website": "https://www.avivaindia.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Sahara Life",
+        "sector": "Life",
+        "base": "Mumbai / Lucknow",
+        "founded": 2004,
+        "website": "https://www.saharalife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Shriram Life",
+        "sector": "Life",
+        "base": "Hyderabad",
+        "founded": 2005,
+        "website": "https://www.shriramlife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Bharti AXA Life",
+        "sector": "Life",
+        "base": "Mumbai / Gurugram",
+        "founded": 2006,
+        "website": "https://www.bharti-axalife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Generali Central Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2007,
+        "website": "https://www.generalitm.com",
+        "notes": "Private life insurer (Future Generali / Central rebranded — verify current name).",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Ageas Federal Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2007,
+        "website": "https://www.ageasfederal.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Canara HSBC Life",
+        "sector": "Life",
+        "base": "Gurugram",
+        "founded": 2008,
+        "website": "https://www.canarahsbclife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Bandhan Life",
+        "sector": "Life",
+        "base": "Kolkata",
+        "founded": 2008,
+        "website": "https://www.bandhanlife.com",
+        "notes": "Private life insurer (formerly Aegon Life — verify current branding).",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Pramerica Life",
+        "sector": "Life",
+        "base": "Gurugram",
+        "founded": 2008,
+        "website": "https://www.pramericalife.in",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Star Union Dai-ichi Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2009,
+        "website": "https://www.staruniondaiichi.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "IndiaFirst Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2009,
+        "website": "https://www.indiafirstlife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Edelweiss Life",
+        "sector": "Life",
+        "base": "Mumbai",
+        "founded": 2010,
+        "website": "https://www.edelweisslife.com",
+        "notes": "Private life insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Credit Access Life",
+        "sector": "Life",
+        "base": "Bengaluru",
+        "founded": 2024,
+        "website": "https://www.creditaccesslife.com",
+        "notes": "Newer private life insurer (verify licence status).",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Acko Life",
+        "sector": "Life",
+        "base": "Bengaluru / Mumbai",
+        "founded": 2024,
+        "website": "https://www.acko.com",
+        "notes": "Digital-first entrant (verify licence status).",
+        "source": "IRDAI"
+      },
+      {
+        "name": "GoDigit Life",
+        "sector": "Life",
+        "base": "Bengaluru",
+        "founded": 2024,
+        "website": "https://www.godigit.com",
+        "notes": "Newer entrant (verify licence status).",
+        "source": "IRDAI"
+      }
+    ],
+    "general": [
+      {
+        "name": "New India Assurance",
+        "sector": "General (PSU)",
+        "base": "Mumbai",
+        "founded": 1919,
+        "website": "https://www.newindia.co.in",
+        "notes": "One of the four public-sector general insurers.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "United India Insurance",
+        "sector": "General (PSU)",
+        "base": "Chennai",
+        "founded": 1938,
+        "website": "https://www.uiic.co.in",
+        "notes": "Public-sector general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Oriental Insurance",
+        "sector": "General (PSU)",
+        "base": "New Delhi",
+        "founded": 1947,
+        "website": "https://www.orientalinsurance.org.in",
+        "notes": "Public-sector general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "National Insurance",
+        "sector": "General (PSU)",
+        "base": "Kolkata",
+        "founded": 1906,
+        "website": "https://www.nationalinsuranceservices.com",
+        "notes": "Public-sector general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "ICICI Lombard General",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2001,
+        "website": "https://www.icicillombard.com",
+        "notes": "Major private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "HDFC ERGO General",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2002,
+        "website": "https://www.hdfcergo.com",
+        "notes": "Major private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Bajaj Allianz General",
+        "sector": "General",
+        "base": "Pune",
+        "founded": 2001,
+        "website": "https://www.bajajallianz.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Tata AIG General",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2001,
+        "website": "https://www.tataaig.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "SBI General",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2009,
+        "website": "https://www.sbigeneral.in",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Reliance General",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2000,
+        "website": "https://www.reliancegeneral.co.in",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Royal Sundaram General",
+        "sector": "General",
+        "base": "Chennai",
+        "founded": 2000,
+        "website": "https://www.royalsundaram.com",
+        "notes": "First private general insurer after liberalisation.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Cholamandalam MS General",
+        "sector": "General",
+        "base": "Chennai",
+        "founded": 2002,
+        "website": "https://www.cholains.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Future Generali India",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2007,
+        "website": "https://www.futuregenerali.in",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Liberty General",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2013,
+        "website": "https://www.libertygeneralinsurance.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Raheja QBE General",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2015,
+        "website": "https://www.rahejaqbe.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Universal Sompo General",
+        "sector": "General",
+        "base": "Noida",
+        "founded": 2007,
+        "website": "https://www.universalsompo.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Navi General",
+        "sector": "General",
+        "base": "Bengaluru",
+        "founded": 2020,
+        "website": "https://www.navi.com",
+        "notes": "Digital-first general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "GoDigit General",
+        "sector": "General",
+        "base": "Bengaluru",
+        "founded": 2017,
+        "website": "https://www.godigit.com",
+        "notes": "Digital-first general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Zuno General (Edelweiss)",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2017,
+        "website": "https://www.zuno.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Shriram General",
+        "sector": "General",
+        "base": "Jaipur",
+        "founded": 2008,
+        "website": "https://www.shriramgeneral.in",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Kotak General",
+        "sector": "General",
+        "base": "Mumbai",
+        "founded": 2015,
+        "website": "https://www.kotakgeneral.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Magma General",
+        "sector": "General",
+        "base": "Kolkata",
+        "founded": 2015,
+        "website": "https://www.magmageneral.com",
+        "notes": "Private general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Acko General",
+        "sector": "General",
+        "base": "Bengaluru / Mumbai",
+        "founded": 2017,
+        "website": "https://www.acko.com",
+        "notes": "Digital-first general insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Agriculture Insurance Company of India (AIC)",
+        "sector": "General (specialised)",
+        "base": "New Delhi",
+        "founded": 2002,
+        "website": "https://www.aicofindia.com",
+        "notes": "Implements crop insurance schemes like PMFBY.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Export Credit Guarantee Corporation (ECGC)",
+        "sector": "Specialised (export credit)",
+        "base": "Mumbai",
+        "founded": 1957,
+        "website": "https://www.ecgc.in",
+        "notes": "Covers exporters against non-payment by overseas buyers.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "ManipalCigna General",
+        "sector": "General",
+        "base": "Mumbai / Gurugram",
+        "founded": 2014,
+        "website": "https://www.manipalcigna.com",
+        "notes": "Private general insurer; also operates a standalone health arm.",
+        "source": "IRDAI"
+      }
+    ],
+    "healthStandalone": [
+      {
+        "name": "Star Health and Allied Insurance",
+        "sector": "Standalone Health",
+        "base": "Chennai",
+        "founded": 2006,
+        "website": "https://www.starhealth.in",
+        "notes": "India's first standalone health insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Niva Bupa Health Insurance",
+        "sector": "Standalone Health",
+        "base": "Gurugram",
+        "founded": 2008,
+        "website": "https://www.nivabupa.com",
+        "notes": "Formerly Max Bupa.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Care Health Insurance",
+        "sector": "Standalone Health",
+        "base": "Gurugram",
+        "founded": 2012,
+        "website": "https://www.carehealthinsurance.com",
+        "notes": "Formerly Religare Health.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Aditya Birla Health Insurance",
+        "sector": "Standalone Health",
+        "base": "Mumbai",
+        "founded": 2016,
+        "website": "https://www.adityabirlahealthinsurance.com",
+        "notes": "Standalone health insurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "ManipalCigna Health Insurance",
+        "sector": "Standalone Health",
+        "base": "Mumbai / Gurugram",
+        "founded": 2020,
+        "website": "https://www.manipalcigna.com",
+        "notes": "Standalone health arm of the ManCigna group.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Galaxy Health Insurance",
+        "sector": "Standalone Health",
+        "base": "Chennai",
+        "founded": 2024,
+        "website": "https://www.galaxyhealth.com",
+        "notes": "Newer standalone health insurer (verify licence status).",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Narayana Health Insurance",
+        "sector": "Standalone Health",
+        "base": "Bengaluru",
+        "founded": 2025,
+        "website": "https://www.narayanahealth.com",
+        "notes": "Newest standalone health entrant (verify licence status).",
+        "source": "IRDAI"
+      }
+    ],
+    "reinsurers": [
+      {
+        "name": "General Insurance Corporation of India (GIC Re)",
+        "sector": "Reinsurance",
+        "base": "Mumbai",
+        "founded": 1972,
+        "website": "https://www.gicre.in",
+        "notes": "India's national reinsurer; all insurers cede a share of business to it by regulation.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Swiss Re India",
+        "sector": "Reinsurance",
+        "base": "Mumbai",
+        "founded": 0,
+        "website": "https://www.swissre.com",
+        "notes": "Branch of the global reinsurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Munich Re India",
+        "sector": "Reinsurance",
+        "base": "Mumbai",
+        "founded": 0,
+        "website": "https://www.munichre.com",
+        "notes": "Branch of the global reinsurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "SCOR India",
+        "sector": "Reinsurance",
+        "base": "Mumbai",
+        "founded": 0,
+        "website": "https://www.scor.com",
+        "notes": "Branch of the global reinsurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Hannover Re India",
+        "sector": "Reinsurance",
+        "base": "Mumbai",
+        "founded": 0,
+        "website": "https://www.hannover-re.com",
+        "notes": "Branch of the global reinsurer.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Lloyd's India",
+        "sector": "Reinsurance / market",
+        "base": "Mumbai",
+        "founded": 2019,
+        "website": "https://www.lloyds.com",
+        "notes": "Indian branch of the Lloyd's insurance market.",
+        "source": "IRDAI"
+      },
+      {
+        "name": "Allianz Jio Re",
+        "sector": "Reinsurance",
+        "base": "Mumbai",
+        "founded": 0,
+        "website": "https://www.allianz.com",
+        "notes": "Reinsurance joint venture (verify current structure).",
+        "source": "IRDAI"
+      },
+      {
+        "name": "RGA India",
+        "sector": "Reinsurance (life)",
+        "base": "Mumbai",
+        "founded": 0,
+        "website": "https://www.rgare.com",
+        "notes": "Life-focused reinsurer.",
+        "source": "IRDAI"
+      }
+    ],
+    "sourceNoteSource": "IRDAI"
+  },
+  "glossary": [
+    {
+      "term": "Actuary",
+      "meaning": "A maths expert who works out the odds and prices premiums fairly.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Assignment",
+      "meaning": "Transferring your policy rights to someone else (for example, as loan collateral).",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Beneficiary / Nominee",
+      "meaning": "The person who receives the money when a claim is paid.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Cession",
+      "meaning": "The part of risk an insurer passes to a reinsurer.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Claim Settlement Ratio",
+      "meaning": "Share of claims an insurer pays versus receives. A trust signal — check it on IRDAI before buying.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Endowment",
+      "meaning": "A life policy that pays on death OR on maturity, whichever comes first.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Exclusions",
+      "meaning": "Things the policy will NOT cover. Read these carefully.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "General Average",
+      "meaning": "An old sea rule: if cargo is sacrificed to save a ship, all shippers share the loss.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Moratorium",
+      "meaning": "A period (often 5 years) after which a policy cannot be challenged for non-disclosure, if premiums were paid.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Moral Hazard",
+      "meaning": "The risk that being insured makes someone careless or dishonest.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "No-Claim Bonus (NCB)",
+      "meaning": "A discount on next year's premium because you made no claim.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Peril",
+      "meaning": "The specific event covered — fire, flood, accident, death.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Premium",
+      "meaning": "The price you pay to keep the cover.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Rider",
+      "meaning": "An extra benefit added to a base policy (for example, critical illness cover).",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Sum Assured",
+      "meaning": "The amount paid on a valid claim.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Third-Party Administrator (TPA)",
+      "meaning": "A company that handles cashless hospital claims on behalf of the insurer.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Underwriting",
+      "meaning": "The insurer's process of deciding whether to cover you and at what price.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Utmost Good Faith",
+      "meaning": "The duty of both sides to be fully honest.",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Waiting Period",
+      "meaning": "Time you must wait after buying before certain cover starts (common in health insurance).",
+      "source": "IRDAI"
+    },
+    {
+      "term": "Yield",
+      "meaning": "The return you get from a savings-linked insurance plan.",
+      "source": "IRDAI"
+    }
+  ]
+}

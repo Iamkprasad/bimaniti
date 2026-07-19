@@ -647,6 +647,147 @@ function generateLearnPages() {
   return learnSitemap;
 }
 
+// Generate the static insurance-guide.html page (renders data/insurance-knowledge.json client-side)
+function generateGuidePage() {
+  const jsonPath = join(ROOT, 'data', 'insurance-knowledge.json');
+  if (!existsSync(jsonPath)) {
+    console.log('  ⚠ No data/insurance-knowledge.json — skipping guide page');
+    return null;
+  }
+  const data = JSON.parse(readFileSync(jsonPath, 'utf-8').replace(/^\uFEFF/, ''));
+  const meta = data.meta || {};
+  const title = `${meta.title || 'Insurance in India — A to Z'} | BimaNiti`;
+  const desc = meta.description || 'A plain-language guide to insurance in India.';
+
+  const body = `
+    <div class="guide-hero">
+        <div class="guide-hero-inner">
+            <span class="guide-hero-tag">Knowledge Base</span>
+            <h1>${htmlEscape(meta.title || 'Insurance in India — A to Z')}</h1>
+            <p class="guide-hero-sub">${htmlEscape(desc)}</p>
+        </div>
+    </div>
+    <div class="guide-shell">
+        <div class="guide-wrap">
+            <div id="guide-root"></div>
+        </div>
+    </div>`;
+
+  const guideShell = (bodyHtml) => `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${htmlEscape(title)}</title>
+    <meta name="description" content="${htmlEscape(desc)}">
+    <meta property="og:title" content="${htmlEscape(title)}">
+    <meta property="og:description" content="${htmlEscape(desc)}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bimaniti.in/insurance-guide.html">
+    <meta property="og:image" content="https://bimaniti.in/assets/og/default.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="${htmlEscape(title)}">
+    <meta name="twitter:description" content="${htmlEscape(desc)}">
+    <meta name="twitter:image" content="https://bimaniti.in/assets/og/default.svg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in; frame-src 'self'; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/guide.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <script defer src="https://analytics.bimaniti.in/script.js" data-website-id="XXXXXXXX"></script>
+    <noscript><img src="https://analytics.bimaniti.in/collect.gif" alt="" style="display:none"></noscript>
+    <link rel="alternate" type="application/rss+xml" title="BimaNiti Feed" href="feed.xml">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg></a>
+            <div class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="news.html" class="nav-link">News</a>
+                <a href="learn.html" class="nav-link">Learn</a>
+                <a href="insurance-guide.html" class="nav-link">Guide</a>
+                <a href="archives.html" class="nav-link">Archives</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="close-icon hidden"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+        </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <div class="mobile-nav-content">
+                <a href="index.html" class="mobile-nav-link">Home</a>
+                <a href="blog.html" class="mobile-nav-link">Blog</a>
+                <a href="news.html" class="mobile-nav-link">News</a>
+                <a href="learn.html" class="mobile-nav-link">Learn</a>
+                <a href="insurance-guide.html" class="mobile-nav-link">Guide</a>
+                <a href="archives.html" class="mobile-nav-link">Archives</a>
+                <a href="about.html" class="mobile-nav-link">About</a>
+                <a href="contact.html" class="mobile-nav-link">Contact</a>
+                <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main id="main-content">
+        ${bodyHtml}
+    </main>
+    <footer class="footer py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="footer-content">
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo footer-brand" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg>
+                    <p class="footer-desc">Independent Insurance Analysis · India</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="news.html" class="footer-link">News</a>
+                    <a href="learn.html" class="footer-link">Learn</a>
+                    <a href="insurance-guide.html" class="footer-link">Guide</a>
+                    <a href="archives.html" class="footer-link">Archives</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+            </div>
+            <p class="footer-copyright">© 2026 BimaNiti</p>
+            <p class="footer-disclaimer">Not investment advice. This site is for informational purposes only.</p>
+        </div>
+    </footer>
+    <script defer>
+    (function(){var s=localStorage.getItem('theme')||'light';if(s==='dark')document.documentElement.classList.add('dark')})();
+    document.querySelectorAll('.theme-toggle').forEach(function(t){t.addEventListener('click',function(){var h=document.documentElement;var d=h.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light')})});
+    (function(){var m=document.querySelector('.mobile-menu-btn'),n=document.querySelector('.mobile-nav'),i=document.querySelector('.menu-icon'),c=document.querySelector('.close-icon');if(m&&n)m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o);if(i)i.classList.toggle('hidden');if(c)c.classList.toggle('hidden')})})();
+    (function(){if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(function(){})})();
+    </script>
+    <script defer src="assets/js/script.min.js"></script>
+    <script defer src="assets/js/guide.js"></script>
+</body>
+</html>`;
+
+  writeFileSync(OUT('insurance-guide.html'), guideShell(body), 'utf-8');
+  console.log('  ✓ Generated insurance-guide.html');
+
+  return {
+    loc: 'https://bimaniti.in/insurance-guide.html',
+    priority: '0.7',
+    changefreq: 'monthly',
+    lastmod: new Date().toISOString().split('T')[0]
+  };
+}
+
 // Main
 console.log('Building static post pages...');
 const { allItems, sitemapUrls } = generatePostPages();
@@ -656,6 +797,9 @@ updatePostPage(allItems);
 console.log('\nGenerating learn pages...');
 const learnSitemap = generateLearnPages();
 sitemapUrls.push(...learnSitemap);
+console.log('\nGenerating guide page...');
+const guideSitemap = generateGuidePage();
+if (guideSitemap) sitemapUrls.push(guideSitemap);
 let learnSitemapXml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 sitemapUrls.forEach(u => {
   learnSitemapXml += `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod}</lastmod><priority>${u.priority}</priority><changefreq>${u.changefreq}</changefreq></url>\n`;

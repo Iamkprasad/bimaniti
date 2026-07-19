@@ -2582,6 +2582,321 @@
           ]
         }
       ]
+    },
+    {
+      "id": "foundations",
+      "title": "Insurance Foundations",
+      "tagline": "The A to Z of how insurance works in India — principles, history, the regulator, and who you can trust.",
+      "icon": "book",
+      "levels": [
+        {
+          "id": "basics",
+          "title": "Level 1 · What Insurance Is",
+          "intro": "The core idea: a pool of premiums that pays one person's loss. Plus the words you will meet on every policy.",
+          "scenes": [
+            {
+              "id": "f1",
+              "illustration": "pool",
+              "narrative": "Twenty neighbours each put ₹1,000 into a box. One year, Ravi's house floods and the box pays his ₹20,000 repair. The other nineteen barely notice the cost.",
+              "question": "What is this ₹1,000 each person pays called?",
+              "choices": [
+                { "text": "A premium — the price of staying in the risk pool", "next": "f1_right", "correct": true },
+                { "text": "A fine paid only if something goes wrong", "next": "f1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "f1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Not quite. Everyone pays the premium regularly (usually yearly) whether or not they claim. That steady stream is what lets the pool pay the unlucky few. It isn't a fine.",
+              "next": "f2"
+            },
+            {
+              "id": "f1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The premium is your membership fee in the shared pool. In return, the insurer promises to pay a much larger Sum Assured if a covered event hits you.",
+              "next": "f2"
+            },
+            {
+              "id": "f2",
+              "illustration": "split",
+              "narrative": "Your policy says 'Sum Assured ₹10 lakh'. You wonder if that is the same as the premium you paid.",
+              "question": "The 'Sum Assured' is:",
+              "choices": [
+                { "text": "The amount the insurer pays on a valid claim", "next": "f2_right", "correct": true },
+                { "text": "The amount you pay each year", "next": "f2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "f2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The premium is what you pay; the Sum Assured (or 'cover') is what you receive on a valid claim. They are very different numbers — the cover is usually far bigger than the premium.",
+              "next": "concept"
+            },
+            {
+              "id": "f2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Sum Assured = the payout on a valid claim. You pay a small premium; the insurer promises a large sum if the peril (the covered event) occurs.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The four words on every policy:",
+              "concept": {
+                "title": "The building blocks",
+                "points": [
+                  "Premium — what you pay to stay covered.",
+                  "Sum Assured / Cover — what the insurer pays on a claim.",
+                  "Peril — the event covered (fire, death, illness, accident).",
+                  "Underwriting — how the insurer decides to cover you and at what price."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "principles",
+          "title": "Level 2 · The Seven Principles",
+          "intro": "Every Indian insurance contract rests on seven ideas. Miss one and a claim can fail.",
+          "scenes": [
+            {
+              "id": "p1",
+              "illustration": "honesty",
+              "narrative": "You buy health insurance but don't mention your existing diabetes. Two years later you claim for a diabetes-related hospital stay.",
+              "question": "Because you hid a material fact, the insurer can:",
+              "choices": [
+                { "text": "Reject the claim and cancel the policy — the duty of Utmost Good Faith is strict", "next": "p1_right", "correct": true },
+                { "text": "Still pay, since you have paid premiums for two years", "next": "p1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "p1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Under Utmost Good Faith (Uberrima Fides), hiding a material fact lets the insurer void the policy — sometimes even years later. 'The agent filled the form' rarely saves you; the proposal is your responsibility.",
+              "next": "p2"
+            },
+            {
+              "id": "p1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Utmost Good Faith means both sides disclose everything material. Conceal a key fact and the contract can be torn up. Always declare pre-existing conditions.",
+              "next": "p2"
+            },
+            {
+              "id": "p2",
+              "illustration": "cause",
+              "narrative": "A rider falls off a horse and hits his head. He later catches pneumonia and dies. His family claims accidental death.",
+              "question": "What decides if this is a valid accident claim?",
+              "choices": [
+                { "text": "The proximate (dominant) cause — the fall, not the final pneumonia", "next": "p2_right", "correct": true },
+                { "text": "The last event that happened — the pneumonia", "next": "p2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "p2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Proximate Cause (Causa Proxima) looks at the dominant cause, not the last small event. If the dominant cause is covered, the claim usually stands — even if the final event isn't.",
+              "next": "concept"
+            },
+            {
+              "id": "p2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The fall (the accident) is the proximate cause, so the accidental-death claim holds — subject to policy wording. The principle stops insurers hiding behind the last link in the chain.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The seven principles:",
+              "concept": {
+                "title": "Seven principles of insurance",
+                "points": [
+                  "Utmost Good Faith — disclose everything material.",
+                  "Insurable Interest — you can only insure what you'd lose.",
+                  "Indemnity — put back, don't profit (except life).",
+                  "Subrogation — insurer recovers from the guilty party after paying you.",
+                  "Contribution — two policies share, you can't double-claim.",
+                  "Proximate Cause — the dominant cause decides the claim.",
+                  "Loss Minimization — you must try to limit the damage."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "regulator",
+          "title": "Level 3 · The Regulator & History",
+          "intro": "Who watches the insurers, and how did we get here? From 1818 Calcutta to IRDAI and 100% FDI.",
+          "scenes": [
+            {
+              "id": "h1",
+              "illustration": "history",
+              "narrative": "The first life insurer in India opened in Calcutta in 1818. By 1956, about 245 life insurers were merged into one state-owned company.",
+              "question": "That 1956 company is today known as:",
+              "choices": [
+                { "text": "LIC — Life Insurance Corporation of India", "next": "h1_right", "correct": true },
+                { "text": "GIC — General Insurance Corporation", "next": "h1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "h1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Not quite. GIC (1972) is the national RE-insurer for general business. The 1956 life nationalisation created LIC, which still dominates the life market.",
+              "next": "h2"
+            },
+            {
+              "id": "h1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The Life Insurance Corporation of India was formed in 1956 by merging ~245 insurers. General insurance was nationalised separately in 1972 under GIC.",
+              "next": "h2"
+            },
+            {
+              "id": "h2",
+              "illustration": "regulator",
+              "narrative": "Today a single body licenses insurers, protects policyholders, and watches claim settlement. It does NOT sell insurance itself.",
+              "question": "This regulator is:",
+              "choices": [
+                { "text": "IRDAI — Insurance Regulatory and Development Authority of India", "next": "h2_right", "correct": true },
+                { "text": "RBI — the central bank", "next": "h2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "h2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The RBI regulates banks. Insurance has its own regulator — IRDAI, set up in 2000 under the IRDA Act 1999, headquartered in Hyderabad.",
+              "next": "h3"
+            },
+            {
+              "id": "h2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. IRDAI licenses insurers and intermediaries, approves products, and runs grievance redressal (Bima Bharosa → Insurance Ombudsman). It regulates; it doesn't sell.",
+              "next": "h3"
+            },
+            {
+              "id": "h3",
+              "illustration": "reform",
+              "narrative": "Foreign ownership limits kept rising: 26% (2000), 49% (2015), 74% (2021). A big change arrived in 2025.",
+              "question": "As of the 2025 amendments, maximum foreign direct investment in insurers is:",
+              "choices": [
+                { "text": "100% — under the Sabka Bima Sabki Raksha reforms", "next": "h3_right", "correct": true },
+                { "text": "74% — that was the 2021 limit and it hasn't changed", "next": "h3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "h3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. 74% was the 2021 limit. The 2025 Sabka Bima Sabki Raksha Act raised FDI to 100% and launched Bima Sugam, Bima Vahak, and Bima Vistaar for 'Insurance for All by 2047'.",
+              "next": "concept"
+            },
+            {
+              "id": "h3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. 100% FDI is permitted from 2025. A common mix-up: 100% did NOT happen in Budget 2021 — that year only raised it to 74%.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The shape of the market:",
+              "concept": {
+                "title": "Regulator & history in one breath",
+                "points": [
+                  "1818 first insurer (Calcutta); 1956 LIC; 1972 GIC; 2000 IRDAI.",
+                  "IRDAI = the referee, not the seller.",
+                  "FDI: 26% → 49% → 74% (2021) → 100% (2025).",
+                  "Penetration is only ~3.7% of GDP — half the global average."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "choosing",
+          "title": "Level 4 · Who Can You Trust?",
+          "intro": "Agents, brokers, banks, aggregators — who actually works for YOU when you buy?",
+          "scenes": [
+            {
+              "id": "w1",
+              "illustration": "agent",
+              "narrative": "An agent knocks on your door selling one company's policies. He is warm, but you wonder whose side he is on.",
+              "question": "A regular insurance agent is authorised to sell:",
+              "choices": [
+                { "text": "The products of ONE insurer only", "next": "w1_right", "correct": true },
+                { "text": "Products from any insurer in the market", "next": "w1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "w1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. An agent represents a single insurer. If you want advice across many companies, you need a broker or web aggregator.",
+              "next": "w2"
+            },
+            {
+              "id": "w1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. An agent sells ONE insurer's products. The bank counter (bancassurance) is a 'corporate agent' doing the same for its partner(s).",
+              "next": "w2"
+            },
+            {
+              "id": "w2",
+              "illustration": "broker",
+              "narrative": "You want someone who compares insurers and recommends what fits YOU. Over a thousand such firms are licensed by IRDAI.",
+              "question": "The intermediary that works for the customer (not the insurer) is a:",
+              "choices": [
+                { "text": "Broker — licensed to place your risk across many insurers", "next": "w2_right", "correct": true },
+                { "text": "Corporate Agent — tied to one bank/insurer", "next": "w2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "w2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. A corporate agent (often a bank) represents the insurer. A broker is paid to serve YOU and can shop across insurers.",
+              "next": "concept"
+            },
+            {
+              "id": "w2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Brokers (1,000+ licensed) and web aggregators work for the buyer. For unbiased comparison, start there. Always check claim-settlement ratios on IRDAI before buying.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Who sells insurance:",
+              "concept": {
+                "title": "Channels at a glance",
+                "points": [
+                  "Agent — one insurer.",
+                  "Corporate Agent / Bancassurance — a bank or firm, tied.",
+                  "Broker — works for YOU, across insurers.",
+                  "Web Aggregator — online comparison (e.g. Policybazaar)."
+                ]
+              },
+              "next": null
+            }
+          ]
+        }
+      ]
     }
   ]
 }

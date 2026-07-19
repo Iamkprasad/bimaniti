@@ -1,4 +1,4 @@
-var CACHE = 'bimaniti-v5';
+var CACHE = 'bimaniti-v6';
 
 function getBasePath() {
   var scope = self.registration.scope;
@@ -19,16 +19,20 @@ function getPrecacheList() {
     'post.html',
     '404.html',
     'learn.html',
+    'insurance-guide.html',
     'assets/css/style.min.css',
     'assets/css/learn.css',
+    'assets/css/guide.css',
     'assets/js/script.min.js',
     'assets/js/learn.js',
+    'assets/js/guide.js',
     'logo.svg',
     'data/home-featured.json',
     'data/blogs.json',
     'data/news.json',
     'data/timeline.json',
-    'data/metrics.json'
+    'data/metrics.json',
+    'data/insurance-knowledge.json'
   ];
   return files.map(function(f) { return base + '/' + f; });
 }
