@@ -137,6 +137,9 @@
 .guide-filter:hover { border-color: var(--accent); color: var(--text-primary); }
 .guide-filter.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 .guide-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+@media (max-width: 560px) {
+  .guide-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+}
 .guide-table th, .guide-table td {
   text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border);
 }
