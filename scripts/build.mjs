@@ -45,7 +45,7 @@ function pageShell(title, desc, ogTitle, ogDesc, ogImage, canonical, jsonld, bod
     <meta property="og:url" content="${htmlEscape(canonical)}">
     <meta property="og:image" content="${htmlEscape(ogImage || 'https://bimaniti.in/logo.svg')}">
     <link rel="canonical" href="${htmlEscape(canonical)}">
-    <link rel="alternate" type="application/rss+xml" title="BimaNiti Feed" href="https://bimaniti.in/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="BimaNiti Feed" href="../feed.xml">
     <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;transition:background-color .25s ease,border-color .2s ease,color .15s ease}
 html{color-scheme:light}
@@ -138,7 +138,7 @@ html.dark .theme-toggle .icon-moon{display:none}
 .toc-list a{font-size:14px;color:var(--text-secondary);transition:color var(--transition)}
 .toc-list a:hover{color:var(--accent)}
     </style>
-    <link rel="icon" type="image/svg+xml" href="https://bimaniti.in/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="../logo.svg">
     <script defer src="https://analytics.bimaniti.in/script.js" data-website-id="XXXXXXXX"></script>
     <noscript><img src="https://analytics.bimaniti.in/collect.gif" alt="" style="display:none"></noscript>
     ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
@@ -148,14 +148,14 @@ html.dark .theme-toggle .icon-moon{display:none}
     <a href="#main-content" class="skip-link" style="position:absolute;top:-100%;left:16px;z-index:999;padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:500;border-radius:0 0 4px 4px;transition:top .2s ease">Skip to main content</a>
     <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="https://bimaniti.in/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg></a>
+            <a href="../" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg></a>
             <div class="desktop-nav">
-                <a href="https://bimaniti.in/" class="nav-link">Home</a>
-                <a href="https://bimaniti.in/blog.html" class="nav-link">Blog</a>
-                <a href="https://bimaniti.in/news.html" class="nav-link">News</a>
-                <a href="https://bimaniti.in/archives.html" class="nav-link">Archives</a>
-                <a href="https://bimaniti.in/about.html" class="nav-link">About</a>
-                <a href="https://bimaniti.in/contact.html" class="nav-link">Contact</a>
+                <a href="../" class="nav-link">Home</a>
+                <a href="../blog.html" class="nav-link">Blog</a>
+                <a href="../news.html" class="nav-link">News</a>
+                <a href="../archives.html" class="nav-link">Archives</a>
+                <a href="../about.html" class="nav-link">About</a>
+                <a href="../contact.html" class="nav-link">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
                     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -168,12 +168,12 @@ html.dark .theme-toggle .icon-moon{display:none}
         </div>
         <div class="mobile-nav" id="mobile-nav">
             <div class="mobile-nav-content">
-                <a href="https://bimaniti.in/" class="mobile-nav-link">Home</a>
-                <a href="https://bimaniti.in/blog.html" class="mobile-nav-link">Blog</a>
-                <a href="https://bimaniti.in/news.html" class="mobile-nav-link">News</a>
-                <a href="https://bimaniti.in/archives.html" class="mobile-nav-link">Archives</a>
-                <a href="https://bimaniti.in/about.html" class="mobile-nav-link">About</a>
-                <a href="https://bimaniti.in/contact.html" class="mobile-nav-link">Contact</a>
+                <a href="../" class="mobile-nav-link">Home</a>
+                <a href="../blog.html" class="mobile-nav-link">Blog</a>
+                <a href="../news.html" class="mobile-nav-link">News</a>
+                <a href="../archives.html" class="mobile-nav-link">Archives</a>
+                <a href="../about.html" class="mobile-nav-link">About</a>
+                <a href="../contact.html" class="mobile-nav-link">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
                     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
                     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -193,12 +193,12 @@ html.dark .theme-toggle .icon-moon{display:none}
                     <p class="footer-desc">Independent Insurance Analysis · India</p>
                 </div>
                 <div class="footer-links">
-                    <a href="https://bimaniti.in/" class="footer-link">Home</a>
-                    <a href="https://bimaniti.in/blog.html" class="footer-link">Blog</a>
-                    <a href="https://bimaniti.in/news.html" class="footer-link">News</a>
-                    <a href="https://bimaniti.in/archives.html" class="footer-link">Archives</a>
-                    <a href="https://bimaniti.in/about.html" class="footer-link">About</a>
-                    <a href="https://bimaniti.in/contact.html" class="footer-link">Contact</a>
+                    <a href="../" class="footer-link">Home</a>
+                    <a href="../blog.html" class="footer-link">Blog</a>
+                    <a href="../news.html" class="footer-link">News</a>
+                    <a href="../archives.html" class="footer-link">Archives</a>
+                    <a href="../about.html" class="footer-link">About</a>
+                    <a href="../contact.html" class="footer-link">Contact</a>
                 </div>
             </div>
             <div style="margin:2rem 0;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
@@ -218,9 +218,9 @@ html.dark .theme-toggle .icon-moon{display:none}
     document.querySelectorAll('.theme-toggle').forEach(function(t){t.addEventListener('click',function(){var h=document.documentElement;var d=h.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light')})});
     (function(){var b=document.querySelector('.progress-bar');if(b){window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;b.style.width=(h>0?(window.scrollY/h)*100:0)+'%'})}})();
     (function(){var m=document.querySelector('.mobile-menu-btn'),n=document.querySelector('.mobile-nav'),i=document.querySelector('.menu-icon'),c=document.querySelector('.close-icon');if(m&&n)m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o);if(i)i.classList.toggle('hidden');if(c)c.classList.toggle('hidden')})})();
-    (function(){if('serviceWorker'in navigator)navigator.serviceWorker.register('https://bimaniti.in/sw.js').catch(function(){})})();
+    (function(){if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catch(function(){})})();
     </script>
-    <script defer src="https://bimaniti.in/script.js"></script>
+    <script defer src="../script.js"></script>
 </body>
 </html>`;
 }
@@ -311,8 +311,8 @@ function generatePostPages() {
     <div class="post-body-wrapper">
         <div class="post-content" style="margin-top:0">
             <nav class="breadcrumb">
-                <a href="https://bimaniti.in/">Home</a><span>›</span>
-                <a href="https://bimaniti.in/${item.id.startsWith('BLG') ? 'blog' : 'news'}.html">${item.category}</a><span>›</span>
+                <a href="../">Home</a><span>›</span>
+                <a href="../${item.id.startsWith('BLG') ? 'blog' : 'news'}.html">${item.category}</a><span>›</span>
                 ${htmlEscape(item.title)}
             </nav>
             ${prevHtml}

@@ -7,6 +7,15 @@
 
 var ITEMS_PER_PAGE = 10;
 
+function slugify(id, title) {
+  if (!id) return '';
+  return id.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+function postUrl(item) {
+  return 'post/' + (item.slug || slugify(item.id, item.title)) + '.html';
+}
+
 function loadData(url) {
     return fetch(url, { mode: 'same-origin' }).then(function(r) { if (!r.ok) throw new Error('HTTP '+r.status); return r.json(); });
 }
@@ -152,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var featuredContainer = document.getElementById('featured-posts');
             if (featuredContainer && homeData && homeData.blogs) {
                 featuredContainer.innerHTML = homeData.blogs.map(function(blog) {
-                    return '<a href="post.html?id=' + escapeHtml(blog.id) + '" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + escapeHtml(blog.category) + '</span><h3 class="card-title">' + escapeHtml(blog.title) + '</h3><p class="card-excerpt">' + escapeHtml(blog.summary) + '</p><div class="card-meta"><span>' + escapeHtml(blog.published_date) + '</span><span>\u00B7</span><span>' + escapeHtml(blog.author) + '</span></div></div></article></a>';
+                    return '<a href="' + postUrl(blog) + '" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + escapeHtml(blog.category) + '</span><h3 class="card-title">' + escapeHtml(blog.title) + '</h3><p class="card-excerpt">' + escapeHtml(blog.summary) + '</p><div class="card-meta"><span>' + escapeHtml(blog.published_date) + '</span><span>\u00B7</span><span>' + escapeHtml(blog.author) + '</span></div></div></article></a>';
                 }).join('');
             }
 
@@ -160,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var latestNews = document.getElementById('latest-news');
             if (latestNews && homeData && homeData.news) {
                 latestNews.innerHTML = homeData.news.map(function(item) {
-                    return '<a href="post.html?id=' + escapeHtml(item.id) + '" class="post-card"><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem;"><span class="news-source">' + escapeHtml(item.source || item.author) + '</span><span style="font-size: 0.75rem; color: var(--text-muted); white-space: nowrap;">' + escapeHtml(item.published_date) + '</span></div><h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--text-primary); margin: 0.5rem 0;">' + escapeHtml(item.title) + '</h3><p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">' + escapeHtml(item.summary) + '</p></a>';
+                    return '<a href="' + postUrl(item) + '" class="post-card"><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem;"><span class="news-source">' + escapeHtml(item.source || item.author) + '</span><span style="font-size: 0.75rem; color: var(--text-muted); white-space: nowrap;">' + escapeHtml(item.published_date) + '</span></div><h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--text-primary); margin: 0.5rem 0;">' + escapeHtml(item.title) + '</h3><p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">' + escapeHtml(item.summary) + '</p></a>';
                 }).join('');
             }
 
@@ -473,13 +482,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 var ogImage = document.querySelector('meta[property="og:image"]');
                 var desc = document.querySelector('meta[name="description"]');
                 var canonical = document.querySelector('link[rel="canonical"]');
-                var postUrl = 'https://bimaniti.in/post.html?id=' + post.id;
+                var canonicalUrl = window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/') + postUrl(post);
                 if (desc) desc.setAttribute('content', post.summary);
                 if (ogTitle) ogTitle.setAttribute('content', post.title + ' | BimaNiti');
                 if (ogDesc) ogDesc.setAttribute('content', post.summary);
-                if (ogUrl) ogUrl.setAttribute('content', postUrl);
+                if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
                 if (ogImage && post.image) ogImage.setAttribute('content', 'https://bimaniti.in/' + post.image);
-                if (canonical) canonical.setAttribute('href', postUrl);
+                if (canonical) canonical.setAttribute('href', canonicalUrl);
 
                 var jsonld = document.createElement('script');
                 jsonld.type = 'application/ld+json';
@@ -514,7 +523,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var prevHtml = '';
                 if (post.previous_coverage) {
-                    prevHtml = '<div class="prev-coverage-banner">\uD83D\uDCCC Earlier coverage: <a href="post.html?id=' + escapeHtml(post.previous_coverage.id) + '">' + escapeHtml(post.previous_coverage.title) + '</a> \u2192</div>';
+                    prevHtml = '<div class="prev-coverage-banner">\uD83D\uDCCC Earlier coverage: <a href="' + postUrl(post.previous_coverage) + '">' + escapeHtml(post.previous_coverage.title) + '</a> \u2192</div>';
                 }
 
                 var relatedHtml = '';
@@ -523,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (relatedItems.length > 0) {
                         relatedHtml = '<div style="max-width:680px;margin:3rem auto 0;border-top:1px solid var(--border);padding-top:2rem;"><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">Related Coverage</div><div style="display:grid;gap:1rem;">';
                         relatedItems.forEach(function(r) {
-                            relatedHtml += '<a href="post.html?id=' + escapeHtml(r.id) + '" style="display:block;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;transition:border-color 0.15s;"><span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">' + escapeHtml(r.category) + '</span><div style="font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:4px;">' + escapeHtml(r.title) + '</div><div style="font-size:12px;color:var(--text-muted);">' + escapeHtml(r.published_date) + '</div></a>';
+                            relatedHtml += '<a href="' + postUrl(r) + '" style="display:block;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;transition:border-color 0.15s;"><span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">' + escapeHtml(r.category) + '</span><div style="font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:4px;">' + escapeHtml(r.title) + '</div><div style="font-size:12px;color:var(--text-muted);">' + escapeHtml(r.published_date) + '</div></a>';
                         });
                         relatedHtml += '</div></div>';
                     }
@@ -540,7 +549,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (relatedByTag.length > 0) {
                         relatedHtml = '<div style="max-width:680px;margin:3rem auto 0;border-top:1px solid var(--border);padding-top:2rem;"><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem;">Related Coverage</div><div style="display:grid;gap:1rem;">';
                         relatedByTag.forEach(function(r) {
-                            relatedHtml += '<a href="post.html?id=' + escapeHtml(r.id) + '" style="display:block;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;transition:border-color 0.15s;"><span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">' + escapeHtml(r.category) + '</span><div style="font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:4px;">' + escapeHtml(r.title) + '</div><div style="font-size:12px;color:var(--text-muted);">' + escapeHtml(r.published_date) + '</div></a>';
+                            relatedHtml += '<a href="' + postUrl(r) + '" style="display:block;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;transition:border-color 0.15s;"><span style="display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;background:var(--accent);color:#fff;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;">' + escapeHtml(r.category) + '</span><div style="font-family:var(--font-display);font-size:16px;color:var(--text-primary);margin-bottom:4px;">' + escapeHtml(r.title) + '</div><div style="font-size:12px;color:var(--text-muted);">' + escapeHtml(r.published_date) + '</div></a>';
                         });
                         relatedHtml += '</div></div>';
                     }
@@ -586,7 +595,7 @@ document.addEventListener('DOMContentLoaded', function() {
             monthKeys.forEach(function(key) {
                 html += '<div class="archive-section-title">' + grouped[key].label + '</div>';
                 grouped[key].items.forEach(function(item) {
-                    html += '<a href="post.html?id=' + escapeHtml(item.id) + '" class="archive-row" style="display: flex; justify-content: space-between; align-items: baseline;"><div class="archive-row-left"><span class="archive-row-tag">' + escapeHtml(item.category) + '</span><span class="archive-row-tag">' + escapeHtml(item.type) + '</span><span class="archive-row-title">' + escapeHtml(item.title) + '</span></div><span class="archive-row-date">' + escapeHtml(item.published_date) + '</span></a>';
+                    html += '<a href="' + postUrl(item) + '" class="archive-row" style="display: flex; justify-content: space-between; align-items: baseline;"><div class="archive-row-left"><span class="archive-row-tag">' + escapeHtml(item.category) + '</span><span class="archive-row-tag">' + escapeHtml(item.type) + '</span><span class="archive-row-title">' + escapeHtml(item.title) + '</span></div><span class="archive-row-date">' + escapeHtml(item.published_date) + '</span></a>';
                 });
             });
 
@@ -612,7 +621,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(blogs) {
                 var latest = blogs.slice(0, 3);
                 recentWritingContainer.innerHTML = latest.map(function(blog) {
-                    return '<a href="post.html?id=' + escapeHtml(blog.id) + '" class="post-row" style="display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border);"><div class="post-tag">' + escapeHtml(blog.category) + '</div><div class="post-info"><div class="post-title">' + escapeHtml(blog.title) + '</div><div class="post-meta">' + escapeHtml(blog.published_date) + ' \u00B7 ' + escapeHtml(blog.read_time) + '</div></div></a>';
+                    return '<a href="' + postUrl(blog) + '" class="post-row" style="display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--border);"><div class="post-tag">' + escapeHtml(blog.category) + '</div><div class="post-info"><div class="post-title">' + escapeHtml(blog.title) + '</div><div class="post-meta">' + escapeHtml(blog.published_date) + ' \u00B7 ' + escapeHtml(blog.read_time) + '</div></div></a>';
                 }).join('');
             })
             .catch(function() {

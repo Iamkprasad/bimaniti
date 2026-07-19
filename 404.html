@@ -122,7 +122,8 @@
             .then(function(data) {
                 if (!data.blogs) return;
                 container.innerHTML = data.blogs.map(function(blog) {
-                    return '<a href="post.html?id=' + blog.id + '" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + blog.category + '</span><h3 class="card-title">' + blog.title + '</h3><p class="card-excerpt">' + blog.summary + '</p><div class="card-meta"><span>' + blog.published_date + '</span><span>\u00B7</span><span>' + blog.author + '</span></div></div></article></a>';
+                    var slug = (blog.slug || blog.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    return '<a href="post/' + slug + '.html" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + blog.category + '</span><h3 class="card-title">' + blog.title + '</h3><p class="card-excerpt">' + blog.summary + '</p><div class="card-meta"><span>' + blog.published_date + '</span><span>\u00B7</span><span>' + blog.author + '</span></div></div></article></a>';
                 }).join('');
             })
             .catch(function() {});

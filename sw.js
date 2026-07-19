@@ -1,23 +1,36 @@
-var CACHE = 'bimaniti-v3';
-var PRECACHE = [
-  '/',
-  '/index.html',
-  '/blog.html',
-  '/news.html',
-  '/archives.html',
-  '/about.html',
-  '/contact.html',
-  '/post.html',
-  '/404.html',
-  '/style.css',
-  '/script.js',
-  '/logo.svg',
-  '/data/home-featured.json',
-  '/data/blogs.json',
-  '/data/news.json',
-  '/data/timeline.json',
-  '/data/metrics.json'
-];
+var CACHE = 'bimaniti-v4';
+
+function getBasePath() {
+  var scope = self.registration.scope;
+  var url = new URL(scope);
+  return url.pathname.replace(/\/$/, '');
+}
+
+function getPrecacheList() {
+  var base = getBasePath();
+  var files = [
+    '',
+    'index.html',
+    'blog.html',
+    'news.html',
+    'archives.html',
+    'about.html',
+    'contact.html',
+    'post.html',
+    '404.html',
+    'style.css',
+    'script.js',
+    'logo.svg',
+    'data/home-featured.json',
+    'data/blogs.json',
+    'data/news.json',
+    'data/timeline.json',
+    'data/metrics.json'
+  ];
+  return files.map(function(f) { return base + '/' + f; });
+}
+
+var PRECACHE = getPrecacheList();
 
 self.addEventListener('install', function(e) {
   self.skipWaiting();
@@ -70,7 +83,7 @@ self.addEventListener('fetch', function(e) {
         return r;
       }).catch(function() {
         return caches.match(e.request).then(function(cached) {
-          return cached || caches.match('/404.html');
+          return cached || caches.match(getBasePath() + '/404.html');
         });
       })
     );
