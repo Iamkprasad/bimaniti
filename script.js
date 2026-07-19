@@ -16,6 +16,22 @@ function postUrl(item) {
   return 'post/' + (item.slug || slugify(item.id, item.title)) + '.html';
 }
 
+function renderBlogCard(item, imageBase) {
+  var imgSrc = imageBase + (item.slug || item.id.toLowerCase()) + '.jpg';
+  var meta = item.author
+    ? '<strong>' + escapeHtml(item.author) + '</strong> · ' + escapeHtml(item.published_date) + ' · ' + escapeHtml(item.read_time)
+    : '<strong>' + escapeHtml(item.source || item.author) + '</strong> · ' + escapeHtml(item.published_date);
+  return '<a href="' + postUrl(item) + '" class="blog-card" style="display:flex;gap:20px;flex-wrap:wrap">' +
+    '<div style="flex:1;min-width:240px">' +
+      '<span class="blog-card-tag">' + escapeHtml(item.category) + '</span>' +
+      '<h2 class="blog-card-title">' + escapeHtml(item.title) + '</h2>' +
+      '<p class="blog-card-excerpt">' + escapeHtml(item.summary) + '</p>' +
+      '<div class="blog-card-footer"><div class="blog-card-meta">' + meta + '</div><span class="blog-card-more">Read more →</span></div>' +
+    '</div>' +
+    '<img src="' + imgSrc + '" alt="' + escapeHtml(item.title) + '" loading="lazy" width="180" height="120" style="border-radius:4px;object-fit:cover;flex-shrink:0" onerror="this.style.display=\'none\'">' +
+  '</a>';
+}
+
 function loadData(url) {
     return fetch(url, { mode: 'same-origin' }).then(function(r) { if (!r.ok) throw new Error('HTTP '+r.status); return r.json(); });
 }
@@ -336,8 +352,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var pageItems = posts.slice(start, start + ITEMS_PER_PAGE);
 
             blogFeedContainer.innerHTML = pageItems.map(function(item) {
-                var imgSrc = 'assets/images/blog/' + (item.slug || item.id.toLowerCase()) + '.jpg';
-                return '<a href="post/' + escapeHtml(item.slug) + '.html" class="blog-card" style="display:flex;gap:20px;flex-wrap:wrap"><div style="flex:1;min-width:240px"><span class="blog-card-tag">' + escapeHtml(item.category) + '</span><h2 class="blog-card-title">' + escapeHtml(item.title) + '</h2><p class="blog-card-excerpt">' + escapeHtml(item.summary) + '</p><div class="blog-card-footer"><div class="blog-card-meta"><strong>' + escapeHtml(item.author) + '</strong> \u00B7 ' + escapeHtml(item.published_date) + ' \u00B7 ' + escapeHtml(item.read_time) + '</div><span class="blog-card-more">Read more \u2192</span></div></div><img src="' + imgSrc + '" alt="' + escapeHtml(item.title) + '" loading="lazy" width="180" height="120" style="border-radius:4px;object-fit:cover;flex-shrink:0" onerror="this.style.display=\'none\'"></a>';
+                return renderBlogCard(item, 'assets/images/blog/');
             }).join('');
 
             if (totalPages > 1) {
@@ -422,8 +437,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var pageItems = items.slice(start, start + ITEMS_PER_PAGE);
 
             newsFeedContainer.innerHTML = pageItems.map(function(item) {
-                var imgSrc = 'assets/images/news/' + (item.slug || item.id.toLowerCase()) + '.jpg';
-                return '<a href="post/' + escapeHtml(item.slug) + '.html" class="blog-card" style="display:flex;gap:20px;flex-wrap:wrap"><div style="flex:1;min-width:240px"><span class="blog-card-tag">' + escapeHtml(item.category) + '</span><h2 class="blog-card-title">' + escapeHtml(item.title) + '</h2><p class="blog-card-excerpt">' + escapeHtml(item.summary) + '</p><div class="blog-card-footer"><div class="blog-card-meta"><strong>' + escapeHtml(item.source || item.author) + '</strong> \u00B7 ' + escapeHtml(item.published_date) + '</div><span class="blog-card-more">Read more \u2192</span></div></div><img src="' + imgSrc + '" alt="' + escapeHtml(item.title) + '" loading="lazy" width="180" height="120" style="border-radius:4px;object-fit:cover;flex-shrink:0" onerror="this.style.display=\'none\'"></a>';
+                return renderBlogCard(item, 'assets/images/news/');
             }).join('');
 
             if (totalPages > 1) {

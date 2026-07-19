@@ -1,0 +1,2587 @@
+{
+  "tracks": [
+    {
+      "id": "motor",
+      "title": "Motor Insurance",
+      "tagline": "From third-party to own-damage — what actually pays when you crash.",
+      "icon": "car",
+      "levels": [
+        {
+          "id": "basics",
+          "title": "Level 1 · Basics",
+          "intro": "What motor insurance is, why the law forces it on you, and the two parts that make up a policy.",
+          "scenes": [
+            {
+              "id": "s1",
+              "illustration": "scooter",
+              "narrative": "You walk into a showroom and buy a brand-new scooter. The dealer slides a form across the desk: 'Insurance?' You are tempted to skip it and 'save money'.",
+              "question": "In India, can you legally ride your new scooter home without any insurance?",
+              "choices": [
+                { "text": "Yes — insurance is optional for the first year", "next": "s1_wrong", "correct": false },
+                { "text": "No — at least third-party cover is mandatory before the vehicle hits the road", "next": "s1_right", "correct": true }
+              ]
+            },
+            {
+              "id": "s1_wrong",
+              "illustration": "warning",
+              "narrative": "You ride off uninsured. Two weeks later you clip a pedestrian. The hospital bill and the legal claim land entirely on YOU.",
+              "reveal": true,
+              "feedback": "Wrong. Under the Motor Vehicles Act, every motor vehicle on Indian roads must have at least Third-Party (TP) liability insurance. Riding without it is a fine and can mean jail. TP cover pays the OTHER person's injury/death/damage — not yours.",
+              "next": "s2"
+            },
+            {
+              "id": "s1_right",
+              "illustration": "check",
+              "narrative": "You buy the mandatory cover. Now if you hurt someone, the insurer steps in.",
+              "reveal": true,
+              "feedback": "Correct. Third-Party (TP) liability insurance is compulsory. It covers the other person's death, injury, or property damage. It does NOT cover your own vehicle or your own injuries — that needs the 'Own Damage' part.",
+              "next": "s2"
+            },
+            {
+              "id": "s2",
+              "illustration": "split",
+              "narrative": "Your policy document has two distinct halves. One pays the stranger you hit. The other pays for dents on your own scooter.",
+              "question": "What is the part that covers damage to YOUR OWN vehicle called?",
+              "choices": [
+                { "text": "Third-Party (TP) cover", "next": "s2_wrong", "correct": false },
+                { "text": "Own Damage (OD) cover", "next": "s2_right", "correct": true }
+              ]
+            },
+            {
+              "id": "s2_wrong",
+              "illustration": "warning",
+              "narrative": "You assumed TP covers your scooter. It doesn't — and the repair bill is yours.",
+              "reveal": true,
+              "feedback": "Wrong. Third-Party cover only pays the other party. To repair your own vehicle you need Own Damage (OD) cover, which is optional but strongly recommended.",
+              "next": "s3"
+            },
+            {
+              "id": "s2_right",
+              "illustration": "check",
+              "narrative": "You got it. OD is the optional half that repairs your own bike.",
+              "reveal": true,
+              "feedback": "Correct. Own Damage (OD) cover handles repairs to your own vehicle from accidents, fire, theft, or natural calamities. A 'comprehensive' policy = TP + OD bundled together.",
+              "next": "s3"
+            },
+            {
+              "id": "s3",
+              "illustration": "bundle",
+              "narrative": "The agent offers you a 'Comprehensive' policy. You pause — isn't that just TP and OD sold together?",
+              "question": "A Comprehensive motor policy is best described as:",
+              "choices": [
+                { "text": "Only third-party cover, the legal minimum", "next": "s3_wrong", "correct": false },
+                { "text": "Third-Party + Own Damage combined", "next": "s3_right", "correct": true }
+              ]
+            },
+            {
+              "id": "s3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Not quite. That describes a standalone TP policy. Comprehensive = TP + OD, so both the other person AND your own vehicle are covered.",
+              "next": "s4"
+            },
+            {
+              "id": "s3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Comprehensive = Third-Party + Own Damage. It's the most common choice for owned vehicles because it protects both sides.",
+              "next": "s4"
+            },
+            {
+              "id": "s4",
+              "illustration": "idv",
+              "narrative": "You notice a number called 'IDV' on the quote — ₹62,000 for your scooter. The agent says it decides your payout if the scooter is stolen or written off.",
+              "question": "What does IDV (Insured Declared Value) represent?",
+              "choices": [
+                { "text": "The maximum the insurer will pay for total loss or theft of your vehicle", "next": "s4_right", "correct": true },
+                { "text": "The annual premium you must pay", "next": "s4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "s4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. IDV is not your premium. It's the agreed market value of the vehicle — the ceiling the insurer pays if it's stolen or beyond repair. Higher IDV = higher premium.",
+              "next": "concept"
+            },
+            {
+              "id": "s4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. IDV is the vehicle's current market value — the max payout for theft or total loss. It falls slightly each year as the vehicle depreciates, and a lower IDV means a cheaper premium but a smaller payout.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Here is the principle you just learned:",
+              "concept": {
+                "title": "The two halves of every motor policy",
+                "points": [
+                  "Third-Party (TP) cover is MANDATORY and pays the other person — their injury, death, or property damage.",
+                  "Own Damage (OD) cover is OPTIONAL and repairs YOUR vehicle.",
+                  "Comprehensive = TP + OD bundled.",
+                  "IDV is the vehicle's agreed value — the ceiling paid on theft or total loss."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "claims",
+          "title": "Level 2 · How Claims Work",
+          "intro": "You crashed. Now what? Walk through a real claim from scene of accident to settlement.",
+          "scenes": [
+            {
+              "id": "c1",
+              "illustration": "crash",
+              "narrative": "You rear-end a car at a signal. Your bumper is cracked and the other driver's tail-light is smashed. Adrenaline is high.",
+              "question": "Step one, before arguing about fault, should be:",
+              "choices": [
+                { "text": "Drive away quickly before anyone notes your plate", "next": "c1_wrong", "correct": false },
+                { "text": "Ensure safety, note details, and inform the insurer (and police if needed)", "next": "c1_right", "correct": true }
+              ]
+            },
+            {
+              "id": "c1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong — and risky. Hitting-and-running can void your cover and is a criminal offence. Always secure the scene, exchange details, and notify the insurer promptly (most require intimation within 24–48h for certain claims).",
+              "next": "c2"
+            },
+            {
+              "id": "c1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Secure the scene, gather the other party's details and photos, file an FIR if there's injury/serious damage, and intimate the insurer early. Delays are a top reason claims get questioned.",
+              "next": "c2"
+            },
+            {
+              "id": "c2",
+              "illustration": "survey",
+              "narrative": "The insurer assigns a surveyor to assess the damage. You are told to get the scooter repaired first and submit the bill.",
+              "question": "Is it wise to repair the vehicle BEFORE the surveyor inspects it?",
+              "choices": [
+                { "text": "Yes, always repair first then claim", "next": "c2_wrong", "correct": false },
+                { "text": "No — get the surveyor's assessment / cashless network approval first", "next": "c2_right", "correct": true }
+              ]
+            },
+            {
+              "id": "c2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. If you repair before inspection, the insurer may reject costs they couldn't verify. Use a network garage for 'cashless' settlement, or get the surveyor's report before paying out of pocket.",
+              "next": "c3"
+            },
+            {
+              "id": "c2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Either use a network garage (cashless — the garage bills the insurer directly) or wait for the surveyor's assessment. That protects your claim amount.",
+              "next": "c3"
+            },
+            {
+              "id": "c3",
+              "illustration": "cashless",
+              "narrative": "The agent mentions 'cashless' garages. You assume it means the repair is free.",
+              "question": "In a cashless motor claim, who ultimately pays the garage?",
+              "choices": [
+                { "text": "The insurer pays the network garage directly; you may still owe deductibles/declined items", "next": "c3_right", "correct": true },
+                { "text": "The repair is 100% free, the insurer pays everything", "next": "c3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "c3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Not quite. 'Cashless' means you don't pay the garage upfront — the insurer settles the bill directly. But you still pay the compulsory deductible and any item the surveyor declines (e.g. wear-and-tear, cosmetic).",
+              "next": "c4"
+            },
+            {
+              "id": "c3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Cashless = no upfront payment to the network garage. You still bear the compulsory deductible and any non-admissible costs. Reimbursement claims (non-network) mean you pay first, then get repaid.",
+              "next": "c4"
+            },
+            {
+              "id": "c4",
+              "illustration": "deductible",
+              "narrative": "Your claim is approved but ₹1,000 is deducted. 'Compulsory deductible,' they say. You had assumed insurance meant zero cost to you.",
+              "question": "A 'deductible' (excess) in motor insurance means:",
+              "choices": [
+                { "text": "A fixed amount YOU pay per claim before the insurer pays the rest", "next": "c4_right", "correct": true },
+                { "text": "A bonus the insurer adds to your payout", "next": "c4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "c4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. A deductible is money OUT of your pocket, not a bonus. It exists so small claims don't get filed and to share risk.",
+              "next": "concept"
+            },
+            {
+              "id": "c4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The deductible (excess) is the fixed amount you bear per claim. A higher voluntary deductible lowers your premium but raises your out-of-pocket at claim time. It's a conscious trade-off.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The claims lifecycle in one breath:",
+              "concept": {
+                "title": "How a motor claim actually moves",
+                "points": [
+                  "Intimate early + secure the scene (FIR if injury/serious damage).",
+                  "Let the surveyor assess before repairing — or use a cashless network garage.",
+                  "Cashless = insurer pays garage directly; you still owe deductible + declined items.",
+                  "Deductible (excess) = your fixed share per claim; raise it to cut premium."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "edge",
+          "title": "Level 3 · Edge Cases",
+          "intro": "The fine print that decides real outcomes. These are the stories people argue about.",
+          "scenes": [
+            {
+              "id": "e1",
+              "illustration": "riverbed",
+              "narrative": "A man rides his horse near a riverbed, slips, hits his head, is found unconscious, and is taken to a hospital. He survives the fall but contracts pneumonia and dies days later. His family files a personal-accident claim.",
+              "question": "Is the death covered under a personal-accident / motor policy?",
+              "choices": [
+                { "text": "No — pneumonia, not the fall, is the cause of death", "next": "e1_wrong", "correct": false },
+                { "text": "Yes — the fall set the chain in motion; proximate cause is the accident", "next": "e1_right", "correct": true }
+              ]
+            },
+            {
+              "id": "e1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "This is the trap. Many policies use the 'proximate cause' doctrine: if the accident (the fall) is the efficient, dominating cause, the later pneumonia is a consequence and the claim stands. But if the policy excludes illness and the fall was merely the setting, it could be denied. The KEY is the policy wording + which cause is 'proximate'.",
+              "next": "e2"
+            },
+            {
+              "id": "e1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Mostly right — and this is the famous 'proximate cause' principle. Courts often hold that when an accident sets off an unbroken chain ending in death, the accident is the proximate cause and the claim is payable. The twist: it depends entirely on the policy's wording and whether the intervening illness breaks the chain. Always read the exclusions.",
+              "next": "e2"
+            },
+            {
+              "id": "e2",
+              "illustration": "drink",
+              "narrative": "A rider crashes his bike after a few drinks. Blood alcohol is over the legal limit. He files an OD claim for the smashed bike.",
+              "question": "Will the Own Damage claim likely be paid?",
+              "choices": [
+                { "text": "Yes, intoxication is irrelevant", "next": "e2_wrong", "correct": false },
+                { "text": "No — driving under influence is a standard exclusion", "next": "e2_right", "correct": true }
+              ]
+            },
+            {
+              "id": "e2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Driving under the influence of alcohol/drugs is a standard exclusion in virtually every motor policy. The claim is denied and the person may also face criminal charges.",
+              "next": "e3"
+            },
+            {
+              "id": "e2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. DUI is a near-universal exclusion. The policy won't pay for damage caused while intoxicated. TP liability to the third party can still arise (that's a statutory question), but your OD certainly won't.",
+              "next": "e3"
+            },
+            {
+              "id": "e3",
+              "illustration": "locks",
+              "narrative": "Your parked scooter is stolen. You claim under OD. The insurer asks for the police FIR and the original keys. You admit you left it running outside a shop with the key in the ignition.",
+              "question": "How does leaving the key in the ignition affect a theft claim?",
+              "choices": [
+                { "text": "No effect — theft is theft", "next": "e3_wrong", "correct": false },
+                { "text": "It can be treated as negligence and the claim reduced or denied", "next": "e3_right", "correct": true }
+              ]
+            },
+            {
+              "id": "e3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Policies require reasonable care. Leaving keys in the ignition / vehicle unlocked is often a 'carelessness' exclusion and can lead to rejection or a reduced payout. Always lock up and keep keys safe.",
+              "next": "concept"
+            },
+            {
+              "id": "e3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Insurers expect you to take reasonable care of the vehicle. Leaving keys in the ignition is a classic ' negligence' trigger that can cut or kill a theft claim. Secure parking + keys in hand protects you.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The three edge cases that decide real arguments:",
+              "concept": {
+                "title": "Where policies win or deny",
+                "points": [
+                  "Proximate cause: the EFFICIENT cause (often the accident) decides, not the last event.",
+                  "DUI and other illegal-act exclusions void your OD cover instantly.",
+                  "Reasonable care matters — careless storage (keys in ignition) can deny theft claims."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "pro",
+          "title": "Level 4 · Product Knowledge",
+          "intro": "Become the person who picks the right policy instead of the cheap one.",
+          "scenes": [
+            {
+              "id": "p1",
+              "illustration": "addons",
+              "narrative": "The agent offers 'add-ons': Zero Depreciation, Engine Protect, Return-to-Invoice, Roadside Assistance. Each costs extra.",
+              "question": "A 'Zero Depreciation' add-on mainly does what?",
+              "choices": [
+                { "text": "Pays the full cost of parts without deducting depreciation", "next": "p1_right", "correct": true },
+                { "text": "Waives the third-party premium", "next": "p1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "p1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Zero-Dep doesn't touch TP. It removes the depreciation deduction on plastic/metal parts in an OD claim, so you get a fuller repair payout. Very popular on new cars.",
+              "next": "p2"
+            },
+            {
+              "id": "p1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Zero Depreciation (bumper-to-bumper) pays the claim without subtracting the age-based depreciation on parts. Without it, a 3-year-old car's plastic parts may be depreciated 50%+, hurting your payout.",
+              "next": "p2"
+            },
+            {
+              "id": "p2",
+              "illustration": "rti",
+              "narrative": "Your 2-year-old car is stolen. IDV was ₹7 lakh but a new one now costs ₹9 lakh. You feel short-changed.",
+              "question": "Which add-on would have paid the FULL current showroom price (minus deductible) instead of just IDV?",
+              "choices": [
+                { "text": "Return-to-Invoice (RTI) cover", "next": "p2_right", "correct": true },
+                { "text": "No-Claim Bonus protector", "next": "p2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "p2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. NCB protector preserves your discount; it doesn't top up a theft payout. RTI is the add-on that bridges IDV to the invoice price on total loss or theft.",
+              "next": "p3"
+            },
+            {
+              "id": "p2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Return-to-Invoice pays the original invoice value (or current ex-showroom, depending on wording) on total loss/theft — closing the gap between low IDV and today's price. Usually capped to the first few years.",
+              "next": "p3"
+            },
+            {
+              "id": "p3",
+              "illustration": "ncb",
+              "narrative": "You haven't claimed for 5 years. The renewal shows a 50% discount. You almost file a tiny scratch claim.",
+              "question": "That renewal discount is called:",
+              "choices": [
+                { "text": "No-Claim Bonus (NCB) — and one claim resets it", "next": "p3_right", "correct": true },
+                { "text": "Loyalty penalty — claims increase it", "next": "p3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "p3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It's a No-Claim Bonus — a reward for claim-free years, up to 50%. A single claim usually resets it to zero, so tiny repairs are often cheaper paid yourself.",
+              "next": "p4"
+            },
+            {
+              "id": "p3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. NCB is a claim-free discount (max 50%) and a claim typically wipes it. An 'NCB protector' add-on preserves it even after one claim. Smart players self-pay small dents to keep NCB alive.",
+              "next": "p4"
+            },
+            {
+              "id": "p4",
+              "illustration": "compare",
+              "narrative": "Two quotes: Policy A is ₹3,000 cheaper but excludes engine-protect and has a 4-year-old garage network. Policy B costs more but covers flood/engine damage and has a large cashless network.",
+              "question": "The financially smarter pick usually depends on:",
+              "choices": [
+                { "text": "Your risk profile (flood zone, new car, claim service) — not just the cheapest premium", "next": "p4_right", "correct": true },
+                { "text": "Always the cheapest premium", "next": "p4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "p4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Risky. Cheapest often means thinner cover and a weak garage network. A ₹3,000 saving can cost lakhs in a flood if engine cover is excluded.",
+              "next": "concept"
+            },
+            {
+              "id": "p4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Price is one variable. Match cover to your reality: flood-prone area → engine/return-to-invoice; new car → zero-dep; value claim service and network size. Cheapest ≠ best.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. You can now shop like a pro:",
+              "concept": {
+                "title": "Picking the right motor policy",
+                "points": [
+                  "Zero Depreciation → fuller OD payouts on repairs.",
+                  "Return-to-Invoice → closes the IDV gap on theft/total loss.",
+                  "NCB → up to 50% off for claim-free years; protect it.",
+                  "Buy cover for YOUR risks, not the lowest premium."
+                ]
+              },
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "health",
+      "title": "Health Insurance",
+      "tagline": "The policy that pays the hospital — if you read it right.",
+      "icon": "health",
+      "levels": [
+        {
+          "id": "basics",
+          "title": "Level 1 · Basics",
+          "intro": "What health insurance is and the words that decide whether your hospital bill gets paid.",
+          "scenes": [
+            {
+              "id": "h1",
+              "illustration": "hospital",
+              "narrative": "You get a ₹4 lakh hospital bill after appendix surgery. You 'have health insurance' — but you never checked the sum insured.",
+              "question": "The 'sum insured' is:",
+              "choices": [
+                { "text": "The maximum the insurer pays for your medical costs in a year", "next": "h1_right", "correct": true },
+                { "text": "The premium you pay the insurer", "next": "h1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "h1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Sum insured is the payout ceiling, not your premium. If your bill exceeds it, YOU pay the rest. Premium is what you pay to buy the cover.",
+              "next": "h2"
+            },
+            {
+              "id": "h1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Sum insured = the max the insurer pays per year. A ₹4 lakh bill against a ₹3 lakh sum insured leaves ₹1 lakh to you. Size it to real hospital costs in your city.",
+              "next": "h2"
+            },
+            {
+              "id": "h2",
+              "illustration": "waiting",
+              "narrative": "You buy a policy in January and need a knee surgery in March. The insurer declines, citing a 'waiting period'.",
+              "question": "A 'waiting period' means:",
+              "choices": [
+                { "text": "A set time after purchase before certain claims are payable", "next": "h2_right", "correct": true },
+                { "text": "How long the hospital keeps you", "next": "h2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "h2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Waiting period is a clock on the POLICY, not the hospital stay. Pre-existing diseases often have 2–4 year waits; some specifics have shorter ones.",
+              "next": "h3"
+            },
+            {
+              "id": "h2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Waiting periods delay cover — commonly 30 days for general, 2–4 years for pre-existing conditions, 1–2 years for specified ailments. Buy early, before you need it.",
+              "next": "h3"
+            },
+            {
+              "id": "h3",
+              "illustration": "ped",
+              "narrative": "You have managed diabetes for years and declare it. The policy loads the premium and applies a PED wait.",
+              "question": "PED stands for Pre-Existing Disease — it means:",
+              "choices": [
+                { "text": "A condition you had before buying the policy, subject to a waiting period", "next": "h3_right", "correct": true },
+                { "text": "A disease caught after the policy started", "next": "h3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "h3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. A post-purchase illness isn't 'pre-existing'. PED = conditions present before the cover began, and hiding them can void future claims.",
+              "next": "concept"
+            },
+            {
+              "id": "h3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. PED = a condition you had BEFORE buying. Always declare it honestly — non-disclosure lets the insurer reject related claims later. PED waits are now capped (often 36 months under IRDAI norms).",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The three words that decide your payout:",
+              "concept": {
+                "title": "Health insurance basics",
+                "points": [
+                  "Sum insured = the annual payout ceiling; size it to real costs.",
+                  "Waiting period = time before certain claims are payable.",
+                  "PED = pre-existing disease; declare it, or claims get rejected."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "claims",
+          "title": "Level 2 · How Claims Work",
+          "intro": "Cashless vs reimbursement, pre-auth, and the paperwork that gets your bill paid.",
+          "scenes": [
+            {
+              "id": "hc1",
+              "illustration": "cashless",
+              "narrative": "You're admitted for appendix surgery at a network hospital. The desk says 'cashless, just sign here'.",
+              "question": "In a cashless health claim, the settlement happens between:",
+              "choices": [
+                { "text": "The insurer and the hospital directly — you pay only non-covered items", "next": "hc1_right", "correct": true },
+                { "text": "You pay the hospital, then chase the insurer for refund", "next": "hc1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hc1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. That's reimbursement, not cashless. Cashless means the insurer settles the eligible bill with the network hospital directly. You still pay deductibles, non-medical items, and room-limit excess.",
+              "next": "hc2"
+            },
+            {
+              "id": "hc1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Cashless = insurer pays the network hospital directly for admissible costs. You settle only the inadmissible portion (certain consumables, room-cap breaches, deductibles). For non-network hospitals you pay first and claim reimbursement.",
+              "next": "hc2"
+            },
+            {
+              "id": "hc2",
+              "illustration": "survey",
+              "narrative": "The hospital asks for a 'pre-authorisation' form before surgery. You think it's optional bureaucracy.",
+              "question": "Pre-authorisation is:",
+              "choices": [
+                { "text": "A required approval from the insurer BEFORE planned/large treatments for cashless", "next": "hc2_right", "correct": true },
+                { "text": "A marketing survey you can skip", "next": "hc2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hc2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Pre-auth is the insurer's go-ahead on admissibility and limits. Skipping it risks the cashless facility being denied and you paying upfront. Emergencies have a shorter intimation window.",
+              "next": "hc3"
+            },
+            {
+              "id": "hc2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Pre-authorisation locks in cashless approval and the admissible amount. For planned procedures get it in advance; for emergencies notify within the policy's window (often 24–48h). Keep the claim number safe.",
+              "next": "hc3"
+            },
+            {
+              "id": "hc3",
+              "illustration": "card",
+              "narrative": "Your bill lists 'non-medical items' — gloves, syringes, tonics — that the insurer refuses.",
+              "question": "Why are some items called 'non-medical' and excluded?",
+              "choices": [
+                { "text": "They're deemed not part of active treatment and excluded by policy", "next": "hc3_right", "correct": true },
+                { "text": "The hospital is overcharging and the insurer is being lazy", "next": "hc3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hc3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Not quite. Many exclusions are defined in the policy (a published list of non-payable items). It's not always 'laziness' — but some hospitals do mark borderline items. Read your policy's exclusion list before a planned admission.",
+              "next": "hc4"
+            },
+            {
+              "id": "hc3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Policies list 'non-medical' consumables excluded from cover. You pay those out of pocket. Knowing the list upfront avoids surprises — some insurers now cover a portion, so check your wording.",
+              "next": "hc4"
+            },
+            {
+              "id": "hc4",
+              "illustration": "hospital",
+              "narrative": "Your policy caps the room rent at ₹5,000/day but you took a ₹9,000 ICU room. The insurer deducts the difference and more.",
+              "question": "Exceeding the room-rent limit can also reduce your:",
+              "choices": [
+                { "text": "Overall claim, because many linked costs are paid as a proportion", "next": "hc4_right", "correct": true },
+                { "text": "Premium for next year only", "next": "hc4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hc4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It hits the current claim, not just next year's premium. Room-limit breaches often proportionately cut doctor/surgery fees too.",
+              "next": "concept"
+            },
+            {
+              "id": "hc4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. If you breach the room-rent cap, many policies reduce ALL linked expenses (doctor, OT, medicine) in the same proportion. Pick a room within limit, or buy a 'room-rent waiver' add-on. Small choice, big impact.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The claims machinery:",
+              "concept": {
+                "title": "How a health claim moves",
+                "points": [
+                  "Cashless = insurer pays the network hospital directly; you pay inadmissible items.",
+                  "Pre-authorisation approves admissibility and limits — get it before planned care.",
+                  "Non-medical items are excluded; room-limit breaches cut the whole claim proportionally."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "edge",
+          "title": "Level 3 · Edge Cases",
+          "intro": "Maternity, mental health, alternative medicine, and the fine print people forget.",
+          "scenes": [
+            {
+              "id": "he1",
+              "illustration": "ped",
+              "narrative": "You plan a family and assume maternity is covered from day one. The insurer says there's a 2–4 year wait.",
+              "question": "Maternity cover in most Indian health policies is:",
+              "choices": [
+                { "text": "Subject to a long waiting period (often 2–4 years) and sub-limits", "next": "he1_right", "correct": true },
+                { "text": "Always covered immediately with no limit", "next": "he1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "he1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Maternity is one of the most commonly deferred benefits — long waits and a cap on the payout. Buy early if you plan kids, or pick a policy with shorter maternity waiting.",
+              "next": "he2"
+            },
+            {
+              "id": "he1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Maternity usually carries a 2–4 year waiting period and a sub-limit (sometimes excluding certain costs). Plan ahead — the best time to buy is years before you need it.",
+              "next": "he2"
+            },
+            {
+              "id": "he2",
+              "illustration": "hospital",
+              "narrative": "Your policy excludes 'psychiatric and mental health'. You're diagnosed with clinical depression needing treatment.",
+              "question": "Under modern IRDAI norms, mental illness treatment is:",
+              "choices": [
+                { "text": "Required to be covered — excluding it is not allowed", "next": "he2_right", "correct": true },
+                { "text": "Still freely excludable by every insurer", "next": "he2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "he2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The Mental Healthcare Act 2017, reinforced by IRDAI, requires insurers to cover mental illness on par with physical illness. A blanket mental-health exclusion is invalid. Check your specific sub-limits.",
+              "next": "he3"
+            },
+            {
+              "id": "he2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Mental-health treatment must be covered. Older policies may have had exclusions, but current norms forbid blanket mental-illness exclusions. You can claim for inpatient psychiatric care like any other illness.",
+              "next": "he3"
+            },
+            {
+              "id": "he3",
+              "illustration": "card",
+              "narrative": "You want Ayurveda treatment for a chronic condition at a recognised centre. The insurer hesitates.",
+              "question": "AYUSH (Ayurveda/Yoga/Unani/Siddha/Homeopathy) treatment is:",
+              "choices": [
+                { "text": "Covered if at a recognised/registered facility, per policy terms", "next": "he3_right", "correct": true },
+                { "text": "Never covered under any health policy", "next": "he3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "he3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. AYUSH inpatient care at recognised centres is covered under most modern health policies. The catch is the facility must qualify — verify it's in the recognised list.",
+              "next": "concept"
+            },
+            {
+              "id": "he3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Inpatient AYUSH treatment at a registered facility is a covered benefit in most current policies. Documentation and recognised-provider rules still apply, so confirm before admission.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The fine print that surprises people:",
+              "concept": {
+                "title": "Health edge cases",
+                "points": [
+                  "Maternity = long wait + sub-limit; buy early.",
+                  "Mental illness MUST be covered — blanket exclusions are invalid.",
+                  "AYUSH inpatient care at recognised centres is covered."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "pro",
+          "title": "Level 4 · Product Knowledge",
+          "intro": "Restore, top-up, port, and the add-ons that turn a basic policy into real protection.",
+          "scenes": [
+            {
+              "id": "hp1",
+              "illustration": "ncb",
+              "narrative": "You didn't claim for 5 years and your sum insured grew by 50% — no extra premium. The agent calls it a 'bonus'.",
+              "question": "This no-claim increase in cover is called:",
+              "choices": [
+                { "text": "Cumulative bonus (no-claim bonus) — extra sum insured, not cash", "next": "hp1_right", "correct": true },
+                { "text": "A cash refund paid to you", "next": "hp1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hp1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It's not cash-out. Cumulative bonus adds to your sum insured (up to ~100–150% on some plans) for each claim-free year. It boosts cover, not your bank balance.",
+              "next": "hp2"
+            },
+            {
+              "id": "hp1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Cumulative (no-claim) bonus raises your sum insured each claim-free year — free extra cover. Some plans even let you 'protect' it with an add-on so one claim doesn't wipe it.",
+              "next": "hp2"
+            },
+            {
+              "id": "hp2",
+              "illustration": "umbrella",
+              "narrative": "Your ₹5 lakh cover feels thin. A broker offers a ₹15 lakh 'top-up' at a fraction of a full policy's cost.",
+              "question": "A top-up/super-top-up health plan mainly:",
+              "choices": [
+                { "text": "Adds large extra cover cheaply, kicking in above a threshold", "next": "hp2_right", "correct": true },
+                { "text": "Replaces your base policy entirely", "next": "hp2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hp2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It layers ON TOP of your base policy, not instead of it. Top-ups need a base policy and pay only after the deductible/threshold is crossed — that's why they're cheap.",
+              "next": "hp3"
+            },
+            {
+              "id": "hp2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. A top-up/super-top-up gives big additional cover that activates above a deductible (e.g. after ₹5 lakh). Super-top-up counts aggregate claims in a year, making it even better for multiple smaller hospitalisations. Cheap, powerful layering.",
+              "next": "hp3"
+            },
+            {
+              "id": "hp3",
+              "illustration": "compare",
+              "narrative": "You want to switch insurers for better service but fear losing your PED wait and bonus.",
+              "question": "Portability lets you:",
+              "choices": [
+                { "text": "Move to another insurer keeping credit for waiting periods and bonus", "next": "hp3_right", "correct": true },
+                { "text": "Restart all waiting periods from zero", "next": "hp3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hp3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. That defeats the point of porting. IRDAI portability credits your already-served waiting periods and accumulated bonus when you move — you don't start over.",
+              "next": "hp4"
+            },
+            {
+              "id": "hp3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Porting to another insurer preserves your PED/waiting credit and cumulative bonus (subject to the new plan's caps). Apply before renewal; gaps can forfeit the benefit.",
+              "next": "hp4"
+            },
+            {
+              "id": "hp4",
+              "illustration": "addons",
+              "narrative": "You're offered 'restoration of sum insured' and 'critical illness' add-ons. Restoration sounds like free money.",
+              "question": "Restore (reinstatement) benefit does what?",
+              "choices": [
+                { "text": "Refills your sum insured after it's exhausted by a claim, for later claims", "next": "hp4_right", "correct": true },
+                { "text": "Doubles your premium automatically every year", "next": "hp4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hp4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It doesn't touch your premium. Restore replenishes the used-up sum insured so a second illness in the same year is still covered — hugely valuable for families.",
+              "next": "concept"
+            },
+            {
+              "id": "hp4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Restoration reinstates your sum insured after a claim so later claims in the same year remain covered. Pair it with a critical-illness lump-sum rider for serious diagnoses. That's a pro-level health stack.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Shop like a pro:",
+              "concept": {
+                "title": "Health product knowledge",
+                "points": [
+                  "Cumulative bonus = free extra sum insured for claim-free years.",
+                  "Top-up/super-top-up = cheap large cover above a threshold.",
+                  "Portability preserves waiting credit and bonus when you switch.",
+                  "Restore benefit refills cover after a claim — vital for families."
+                ]
+              },
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life",
+      "title": "Life Insurance",
+      "tagline": "Protecting people, not things — the promise paid on death.",
+      "icon": "life",
+      "levels": [
+        {
+          "id": "basics",
+          "title": "Level 1 · Basics",
+          "intro": "Term, endowment, ULIP — and why 'protection' is not 'investment'.",
+          "scenes": [
+            {
+              "id": "l1",
+              "illustration": "umbrella",
+              "narrative": "You want 'insurance' and are shown a plan that also 'gives returns'. It costs ₹8,000/month. A friend shows you a term plan at ₹800/month for the same cover.",
+              "question": "The ₹800/month term plan's main job is:",
+              "choices": [
+                { "text": "Pure protection — pays your family if you die, nothing if you survive", "next": "l1_right", "correct": true },
+                { "text": "An investment that matures with a big payout", "next": "l1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "l1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. That describes an endowment/ULIP, not term. Term = pure risk cover, cheapest per rupee of cover, but no maturity payout if you survive.",
+              "next": "l2"
+            },
+            {
+              "id": "l1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Term insurance is pure protection — high cover at low cost, pays only on death. For protection needs, it's the efficient choice; invest the savings separately.",
+              "next": "l2"
+            },
+            {
+              "id": "l2",
+              "illustration": "sumassured",
+              "narrative": "The agent asks for the 'sum assured'. You confuse it with the premium.",
+              "question": "Sum assured in life insurance is:",
+              "choices": [
+                { "text": "The amount paid to your nominee on your death", "next": "l2_right", "correct": true },
+                { "text": "The monthly amount you pay", "next": "l2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "l2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Sum assured is the death benefit, not your premium. A common rule: aim for ~10–15× your annual income in cover.",
+              "next": "l3"
+            },
+            {
+              "id": "l2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Sum assured = the payout to your nominee on death. Premium is the cost. The 'human-life value' approach sizes it to your income and dependants' needs.",
+              "next": "l3"
+            },
+            {
+              "id": "l3",
+              "illustration": "nominee",
+              "narrative": "You name your spouse as nominee. Years later you divorce but forget to update it.",
+              "question": "A nominee in life insurance is:",
+              "choices": [
+                { "text": "The person who RECEIVES the payout (and you should keep it updated)", "next": "l3_right", "correct": true },
+                { "text": "The person who decides how the money is invested", "next": "l3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "l3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The nominee receives the money; they don't control investments. Update nominees after marriage, divorce, or birth — it's a common and painful oversight.",
+              "next": "concept"
+            },
+            {
+              "id": "l3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The nominee is the recipient of the claim amount. Keep it current — major life events should trigger an update, or the payout may go to the 'wrong' person legally.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Life insurance in three lines:",
+              "concept": {
+                "title": "Life insurance basics",
+                "points": [
+                  "Term = pure protection, cheapest cover per rupee.",
+                  "Sum assured = death payout to your nominee.",
+                  "Keep your nominee updated through life changes."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "claims",
+          "title": "Level 2 · How Claims Work",
+          "intro": "What your family must do when you're gone — and the paperwork that pays out.",
+          "scenes": [
+            {
+              "id": "lc1",
+              "illustration": "nominee",
+              "narrative": "The policyholder dies. His wife, the nominee, assumes the money is automatically deposited. Months pass with silence.",
+              "question": "A death claim requires the nominee to:",
+              "choices": [
+                { "text": "File a claim with the death certificate and policy documents", "next": "lc1_right", "correct": true },
+                { "text": "Do nothing — payout is automatic", "next": "lc1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "lc1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Insurers don't auto-pay. The nominee must intimate the insurer, submit the death certificate, policy copy, and claim form. Delays only hurt the family's cash flow.",
+              "next": "lc2"
+            },
+            {
+              "id": "lc1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The nominee files the claim with documents (death certificate, policy, ID, discharge form). Most insurers now have expedited 'early claim settlement' for term claims with eKYC. Keep documents accessible for your family.",
+              "next": "lc2"
+            },
+            {
+              "id": "lc2",
+              "illustration": "card",
+              "narrative": "The insurer asks whether the death was within the first year — and whether the proposal hid anything.",
+              "question": "Why do insurers scrutinise early (first-year) death claims?",
+              "choices": [
+                { "text": "To check for non-disclosure / misrepresentation at proposal stage", "next": "lc2_right", "correct": true },
+                { "text": "Because they never pay in the first year", "next": "lc2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "lc2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. They DO pay in year one if the proposal was honest. The extra scrutiny is anti-fraud — verifying the cause and the original health disclosures. Hiding smoking or illness can void even a year-one claim.",
+              "next": "lc3"
+            },
+            {
+              "id": "lc2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Early claims get deeper checks for misrepresentation. If disclosures were truthful, the claim pays. This is why honest proposals matter more than anything else.",
+              "next": "lc3"
+            },
+            {
+              "id": "lc3",
+              "illustration": "umbrella",
+              "narrative": "The policy had a 'suicide clause'. The holder dies by suicide in month 10.",
+              "question": "Most Indian life policies on suicide within the first year:",
+              "choices": [
+                { "text": "Exclude the death benefit (only premiums may be refunded after 12 months)", "next": "lc3_right", "correct": true },
+                { "text": "Always pay the full sum assured regardless", "next": "lc3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "lc3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Suicide within 12 months is typically excluded; some policies refund premiums after a year of continuous coverage. It's a standard exclusion meant to prevent moral hazard.",
+              "next": "concept"
+            },
+            {
+              "id": "lc3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Suicide in the first year is excluded; under the Act, premiums paid are often returned after 12 months of cover. The clause protects insurers from induced suicide while still being humane over time.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The claim path:",
+              "concept": {
+                "title": "How a life claim moves",
+                "points": [
+                  "Nominee must file — payouts aren't automatic.",
+                  "Early claims are scrutinised for misrepresentation, not denied by default.",
+                  "Suicide clause excludes year-one deaths (premiums may refund later)."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "edge",
+          "title": "Level 3 · Edge Cases",
+          "intro": "Nominee vs legal heir, assignment, and the disputes that tear families apart.",
+          "scenes": [
+            {
+              "id": "le1",
+              "illustration": "nominee",
+              "narrative": "The policyholder dies. His nominee is his ex-wife (never updated), though he remarried and wanted his current wife to get the money.",
+              "question": "Who receives the claim amount per the policy?",
+              "choices": [
+                { "text": "The recorded NOMINEE (ex-wife), unless the nomination was changed", "next": "le1_right", "correct": true },
+                { "text": "Whoever the deceased 'intended' — the nominee is ignored", "next": "le1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "le1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The nominee in the policy records gets the money — intention alone doesn't override it. This is why updating nominations at every life event is critical; a will doesn't automatically change the policy nominee.",
+              "next": "le2"
+            },
+            {
+              "id": "le1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The nominee named in the policy receives the claim; a will doesn't override a nomination. Update nominations on marriage, divorce, or death of a nominee. Multiple nominees with % splits are allowed.",
+              "next": "le2"
+            },
+            {
+              "id": "le2",
+              "illustration": "card",
+              "narrative": "You want to gift your policy to your child as collateral for a loan. The insurer asks for an 'assignment'.",
+              "question": "Assigning a policy means:",
+              "choices": [
+                { "text": "Transferring rights/interest to another person (e.g. lender) by endorsement", "next": "le2_right", "correct": true },
+                { "text": "Just renaming the nominee", "next": "le2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "le2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Assignment is broader than nomination — it transfers the policy's rights/interest, often for a loan. Nomination only says who receives the death benefit. They're different legal acts.",
+              "next": "le3"
+            },
+            {
+              "id": "le2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Assignment transfers the policy interest (common as loan collateral). It must be registered/endorsed. A nominee and an assignee can be different people with different rights — know which you're dealing with.",
+              "next": "le3"
+            },
+            {
+              "id": "le3",
+              "illustration": "umbrella",
+              "narrative": "A joint-life policy covers husband and wife. One dies; the survivor wonders if cover continues for them.",
+              "question": "In a 'first-death' joint-life policy, the payout happens on:",
+              "choices": [
+                { "text": "The death of the FIRST insured; the policy then usually ends", "next": "le3_right", "correct": true },
+                { "text": "The death of the SECOND insured only", "next": "le3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "le3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. 'First-death' pays on the first to die and typically terminates. 'Second-death' (survivorship) pays only when both have died. Know which structure you bought.",
+              "next": "concept"
+            },
+            {
+              "id": "le3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. A first-death joint policy pays on the first death and usually ends; a second-death pays only when both are gone (useful for estate planning). Structure decides what your family actually receives.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The disputes that hurt:",
+              "concept": {
+                "title": "Life insurance edge cases",
+                "points": [
+                  "The recorded nominee gets the money — a will doesn't override it.",
+                  "Assignment transfers policy rights (e.g. to a lender), unlike nomination.",
+                  "Joint-life 'first-death' pays once and ends; 'second-death' pays later."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "pro",
+          "title": "Level 4 · Product Knowledge",
+          "intro": "Term vs endowment vs ULIP, riders, and return-of-premium tricks.",
+          "scenes": [
+            {
+              "id": "lp1",
+              "illustration": "compare",
+              "narrative": "An agent pushes an endowment plan: '₹8,000/month, you get ₹25 lakh at maturity AND cover'. A term plan gives ₹1 crore for ₹900/month.",
+              "question": "Compared to term, endowment plans typically have:",
+              "choices": [
+                { "text": "Much lower cover per rupee and blend insurance with savings", "next": "lp1_right", "correct": true },
+                { "text": "Identical cover at the same cost", "next": "lp1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "lp1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Endowments cost far more per rupee of cover because part funds savings. For pure protection, term is dramatically cheaper. Buy term for cover, invest separately for returns.",
+              "next": "lp2"
+            },
+            {
+              "id": "lp1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Endowment = insurance + forced savings, so cover per premium is low. Term gives maximum protection cheaply. The 'right' choice depends on whether you want protection (term) or a saving product (endowment/ULIP).",
+              "next": "lp2"
+            },
+            {
+              "id": "lp2",
+              "illustration": "addons",
+              "narrative": "You add an 'accidental death benefit' rider to your term plan for a tiny extra premium.",
+              "question": "A rider like accidental-death benefit:",
+              "choices": [
+                { "text": "Pays an EXTRA sum assured on death by accident, on top of base cover", "next": "lp2_right", "correct": true },
+                { "text": "Replaces the base cover entirely", "next": "lp2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "lp2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. A rider layers ON TOP of the base plan; it doesn't substitute it. It's cheap because it's attached to the main policy. Wise buyers add riders for specific risks (accident, critical illness, waiver).",
+              "next": "lp3"
+            },
+            {
+              "id": "lp2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Riders add targeted benefits (accidental death, disability, critical illness, premium waiver) at low cost on top of base cover. They're a cost-efficient way to customise a plain term plan.",
+              "next": "lp3"
+            },
+            {
+              "id": "lp3",
+              "illustration": "umbrella",
+              "narrative": "A 'Return of Premium' term plan costs 3× a normal term plan, promising all premiums back if you survive.",
+              "question": "Return-of-Premium (RoP) term plans are worth it mainly if:",
+              "choices": [
+                { "text": "You'd otherwise struggle to save the difference elsewhere", "next": "lp3_right", "correct": true },
+                { "text": "They always beat investing the premium difference yourself", "next": "lp3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "lp3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. RoP returns premiums with zero interest — often a poor deal versus buying cheap term and investing the difference. It suits those who won't otherwise save, not the mathematically optimal buyer.",
+              "next": "lp4"
+            },
+            {
+              "id": "lp3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. RoP gives back premiums (no growth) if you survive — typically costlier than term + self-investing. Buy it only for behavioural discipline, not for returns. For pure efficiency, plain term wins.",
+              "next": "lp4"
+            },
+            {
+              "id": "lp4",
+              "illustration": "sumassured",
+              "narrative": "You calculate your need: outstanding home loan ₹60 lakh + 10 years of family expenses ₹1.2 cr + kids' education ₹40 lakh.",
+              "question": "This 'need-based' sizing points to a sum assured around:",
+              "choices": [
+                { "text": "The total of debts + future obligations (≈ ₹2.2 cr here)", "next": "lp4_right", "correct": true },
+                { "text": "Whatever the agent's minimum plan is", "next": "lp4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "lp4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Size cover to your liabilities and dependants' future needs, not the agent's quota. Under-insuring leaves your family exposed. The income-replacement and need-based methods both start from your obligations.",
+              "next": "concept"
+            },
+            {
+              "id": "lp4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Cover = debts + future income replacement + goals (education, marriage). Reassess on major life events (home loan, child, income jump). Term makes a ₹2 cr cover affordable.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Pick the right life product:",
+              "concept": {
+                "title": "Life product knowledge",
+                "points": [
+                  "Term = max cover per rupee; endowment blends savings (low cover).",
+                  "Riders add targeted benefits cheaply on top of base cover.",
+                  "RoP returns premiums without growth — buy for discipline, not returns.",
+                  "Size sum assured to debts + future family obligations."
+                ]
+              },
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "title": "Home Insurance",
+      "tagline": "India's biggest protection gap — your walls and what's inside them.",
+      "icon": "home",
+      "levels": [
+        {
+          "id": "basics",
+          "title": "Level 1 · Basics",
+          "intro": "Structure vs contents, and why a fire can wipe out more than the building.",
+          "scenes": [
+            {
+              "id": "ho1",
+              "illustration": "house",
+              "narrative": "A short circuit burns your kitchen. The walls survive but your fridge, TV, and sofa are destroyed. You have a 'home insurance' policy.",
+              "question": "Which part covers the damaged FRIDGE and TV (your belongings)?",
+              "choices": [
+                { "text": "Contents cover", "next": "ho1_right", "correct": true },
+                { "text": "Structure / building cover", "next": "ho1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "ho1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Structure cover pays for the building (walls, roof). Your fridge/TV are 'contents' — a separate section. Many buyers insure only the structure and lose their belongings in a claim.",
+              "next": "ho2"
+            },
+            {
+              "id": "ho1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Contents (or 'household items') cover pays for belongings inside — appliances, furniture, valuables. Structure cover is only the building shell. Insure both for real protection.",
+              "next": "ho2"
+            },
+            {
+              "id": "ho2",
+              "illustration": "fire",
+              "narrative": "A neighbour's Diwali cracker lands on your roof and starts a fire. You assume only YOUR policy matters.",
+              "question": "Damage from a neighbour's stray fire is typically:",
+              "choices": [
+                { "text": "Covered under YOUR fire perils in a standard home policy", "next": "ho2_right", "correct": true },
+                { "text": "Never covered — you must sue the neighbour", "next": "ho2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "ho2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. You don't have to sue first. Standard home policies cover 'fire and allied perils' regardless of the source. You can still pursue the neighbour separately, but your insurer pays you.",
+              "next": "ho3"
+            },
+            {
+              "id": "ho2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Fire (including external sources) is a core peril in home insurance. The insurer settles your loss; subrogation lets them recover from the neighbour if liable. You're made whole either way.",
+              "next": "ho3"
+            },
+            {
+              "id": "ho3",
+              "illustration": "flood",
+              "narrative": "Your ground-floor flat floods during monsoon. You discover 'act of God' exclusions.",
+              "question": "Flood/rain damage is usually:",
+              "choices": [
+                { "text": "Covered under 'natural calamities' peril if your policy includes it", "next": "ho3_right", "correct": true },
+                { "text": "Always excluded as 'act of God'", "next": "ho3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "ho3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. 'Act of God' is not a blanket escape. Flood, storm, and cyclone are standard covered perils in most home policies — the insurer still pays. Exclusions are specific, not 'anything natural'.",
+              "next": "concept"
+            },
+            {
+              "id": "ho3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Flood/storm/cyclone are named perils in home policies. 'Act of God' doesn't auto-deny claims — only the listed exclusions do. Read the peril list, not the myth.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Home cover decoded:",
+              "concept": {
+                "title": "Home insurance basics",
+                "points": [
+                  "Structure cover = the building; Contents cover = your belongings.",
+                  "Fire from any source is covered — you needn't sue first.",
+                  "Flood/storm are standard perils; 'act of God' isn't a blanket exclusion."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "claims",
+          "title": "Level 2 · How Claims Work",
+          "intro": "From FIR to surveyor to settlement — what your home claim actually needs.",
+          "scenes": [
+            {
+              "id": "hoc1",
+              "illustration": "fire",
+              "narrative": "A cylinder blast guts your kitchen. You call the insurer, who asks for an FIR from the police.",
+              "question": "An FIR (police report) is generally required for:",
+              "choices": [
+                { "text": "Theft, burglary, and sometimes fire — to verify the event", "next": "hoc1_right", "correct": true },
+                { "text": "Never — insurers don't involve police", "next": "hoc1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hoc1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. For theft/burglary an FIR is essential; for fire it's often asked to confirm cause. Without it, theft claims are routinely denied. File it promptly with full details.",
+              "next": "hoc2"
+            },
+            {
+              "id": "hoc1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. FIR supports theft/burglary claims and helps establish fire cause. Pair it with photos and the surveyor's report. Delays in reporting can dent your claim's credibility.",
+              "next": "hoc2"
+            },
+            {
+              "id": "hoc2",
+              "illustration": "survey",
+              "narrative": "The surveyor inspects and values your destroyed sofa at ₹8,000, though you paid ₹25,000 two years ago.",
+              "question": "Why did the payout reflect ₹8,000 and not your purchase price?",
+              "choices": [
+                { "text": "Depreciation — payouts are based on current/indemnity value, not original cost", "next": "hoc2_right", "correct": true },
+                { "text": "The surveyor made a random guess", "next": "hoc2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hoc2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It's not arbitrary. Home/contents claims are indemnity-based — you get the item's depreciated (current) value, not what you paid new. Receipts help but don't override depreciation.",
+              "next": "hoc3"
+            },
+            {
+              "id": "hoc2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Contents are indemnity-covered: payout = current value after depreciation, not purchase price. Keep invoices to prove existence/age; consider 'without depreciation' options for valuables if available.",
+              "next": "hoc3"
+            },
+            {
+              "id": "hoc3",
+              "illustration": "card",
+              "narrative": "Your gold jewellery was stolen. The policy has a sub-limit of ₹50,000 on jewellery, but yours was worth ₹3 lakh.",
+              "question": "A sub-limit means:",
+              "choices": [
+                { "text": "The max payable for that category, even if the loss is larger", "next": "hoc3_right", "correct": true },
+                { "text": "The minimum you must lose before claiming", "next": "hoc3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hoc3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It's a ceiling, not a threshold. Valuables (jewellery, artwork, electronics) often have sub-limits; schedule them separately ('valued items') if you want full cover.",
+              "next": "hoc4"
+            },
+            {
+              "id": "hoc3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Sub-limits cap payouts per category. For high-value jewellery/art, use a 'schedule of valuables' with agreed value so a theft doesn't leave you massively short.",
+              "next": "hoc4"
+            },
+            {
+              "id": "hoc4",
+              "illustration": "flood",
+              "narrative": "You forgot to maintain the sum insured and under-insured the house by 40%. A partial fire loss occurs.",
+              "question": "Under-insurance can trigger:",
+              "choices": [
+                { "text": "Average/clause application — your payout is reduced proportionally", "next": "hoc4_right", "correct": true },
+                { "text": "Full payout regardless of the gap", "next": "hoc4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hoc4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Under-insuring doesn't save much and can cost you at claim time. The 'average clause' scales down partial-loss payouts in proportion to the shortfall.",
+              "next": "concept"
+            },
+            {
+              "id": "hoc4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. If your sum insured is below the property's value, the average clause reduces claims proportionally. Insure to (re)build cost, not market/land value, and index it yearly.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The home claims path:",
+              "concept": {
+                "title": "How a home claim moves",
+                "points": [
+                  "FIR supports theft/burglary (and fire cause) — file it fast.",
+                  "Contents payouts are indemnity (depreciated), not purchase price.",
+                  "Sub-limits cap valuables; schedule them for full cover.",
+                  "Under-insurance triggers the average clause — insure to rebuild cost."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "edge",
+          "title": "Level 3 · Edge Cases",
+          "intro": "Tenants, vacant homes, and the exclusions that surprise flat-owners.",
+          "scenes": [
+            {
+              "id": "hoe1",
+              "illustration": "house",
+              "narrative": "You rent a flat. The landlord's insurance covers the building, but your laptop and sofa aren't his concern.",
+              "question": "As a tenant, your belongings are covered by:",
+              "choices": [
+                { "text": "Your OWN contents/tenant policy — the landlord's covers only the structure", "next": "hoe1_right", "correct": true },
+                { "text": "The landlord's building policy automatically", "next": "hoe1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hoe1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The landlord's policy insures the building, not your stuff. Tenants need a contents policy for belongings and possibly liability. Don't assume the lease protects your possessions.",
+              "next": "hoe2"
+            },
+            {
+              "id": "hoe1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Tenants buy a contents policy for their goods and may add tenant liability. India under-insures tenants badly — a fire can wipe out years of savings with no recourse to the landlord's policy.",
+              "next": "hoe2"
+            },
+            {
+              "id": "hoe2",
+              "illustration": "locks",
+              "narrative": "Your flat was empty for 4 months (you were abroad) and a burglary happened. The insurer cites 'unoccupied' exclusion.",
+              "question": "Long vacancy (unoccupancy) typically:",
+              "choices": [
+                { "text": "Reduces or voids cover unless you notified and paid an endorsement", "next": "hoe2_right", "correct": true },
+                { "text": "Has no effect whatsoever on the claim", "next": "hoe2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hoe2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Most policies restrict cover after 30/60/90 days of continuous vacancy (higher theft/fire risk). Notify the insurer and pay the unoccupied-premium endorsement to stay protected.",
+              "next": "hoe3"
+            },
+            {
+              "id": "hoe2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Unoccupancy beyond the grace period can cut or nullify cover. For long trips, inform the insurer and buy the unoccupied-risks endorsement. Empty homes are a classic claim-denial trap.",
+              "next": "hoe3"
+            },
+            {
+              "id": "hoe3",
+              "illustration": "flood",
+              "narrative": "Your ground-floor flat floods, but the policy lists 'gradually operating causes' as excluded. You argue it was a sudden cloudburst.",
+              "question": "The 'gradually operating cause' exclusion targets:",
+              "choices": [
+                { "text": "Slow, cumulative damage (rising damp, seepage) — not sudden floods", "next": "hoe3_right", "correct": true },
+                { "text": "Any water, sudden or slow", "next": "hoe3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hoe3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The exclusion is for slow, progressive damage (damp, rust, seepage) — not a sudden storm flood. Keep evidence the event was abrupt to counter a wrongful denial.",
+              "next": "concept"
+            },
+            {
+              "id": "hoe3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. 'Gradually operating causes' exclude creeping damage like seepage/mould, not a sudden cloudburst. Document timing and weather reports so a sudden flood claim isn't mislabelled as gradual.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Home edge cases:",
+              "concept": {
+                "title": "Home insurance edge cases",
+                "points": [
+                  "Tenants need their own contents policy — landlord covers only structure.",
+                  "Long vacancy can void cover unless endorsed.",
+                  "'Gradually operating cause' = slow damage, not sudden floods."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "pro",
+          "title": "Level 4 · Product Knowledge",
+          "intro": "Building vs contents sums, add-ons, and insuring to rebuild cost not market value.",
+          "scenes": [
+            {
+              "id": "hop1",
+              "illustration": "house",
+              "narrative": "Your flat's market value is ₹1.2 cr but rebuilding the structure would cost ₹40 lakh. You're unsure what to insure.",
+              "question": "For the BUILDING, you should insure based on:",
+              "choices": [
+                { "text": "Reinstatement/rebuild cost (structure only), not land+market value", "next": "hop1_right", "correct": true },
+                { "text": "Full market value including land", "next": "hop1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hop1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Land doesn't burn. Insure the rebuild cost of the structure; over-insuring on market value wastes premium and still pays only reinstatement at claim. Get the construction cost right.",
+              "next": "hop2"
+            },
+            {
+              "id": "hop1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Structure sum insured = cost to rebuild (materials + labour), excluding land. Under-insure and the average clause bites; over-insure and you waste premium. Re-index yearly for inflation.",
+              "next": "hop2"
+            },
+            {
+              "id": "hop2",
+              "illustration": "addons",
+              "narrative": "You're offered 'burglary & theft', 'all-risk portable equipment', and 'loss of rent' add-ons.",
+              "question": "The 'loss of rent' add-on pays you when:",
+              "choices": [
+                { "text": "The home is uninhabitable after an insured peril and you lose rental income", "next": "hop2_right", "correct": true },
+                { "text": "You simply choose not to rent it out", "next": "hop2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hop2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It compensates lost rental income only when an insured event makes the property unlettable. It's a landlord's friend — not a top-up for voluntary vacancy.",
+              "next": "hop3"
+            },
+            {
+              "id": "hop2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Loss-of-rent covers income you'd have earned while the home is repaired after a covered peril. Landlords with tenants should seriously consider it; owner-occupiers can skip it.",
+              "next": "hop3"
+            },
+            {
+              "id": "hop3",
+              "illustration": "compare",
+              "narrative": "Two quotes: one bundles structure+contents cheaply; another lets you independently size each sum insured.",
+              "question": "Independently sizing structure and contents sums is better because:",
+              "choices": [
+                { "text": "They inflate at different rates and your real exposure differs per part", "next": "hop3_right", "correct": true },
+                { "text": "It's always more expensive for no reason", "next": "hop3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hop3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Independent sums aren't a gimmick — building and contents costs move differently, and a flat 80% contents default may leave you over- or under-insured. Size each to reality.",
+              "next": "hop4"
+            },
+            {
+              "id": "hop3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Structure and contents should be insured to their own rebuild/replacement values. A one-size percentage rarely fits; tailor both to avoid average-clause shortfalls and wasted premium.",
+              "next": "hop4"
+            },
+            {
+              "id": "hop4",
+              "illustration": "umbrella",
+              "narrative": "A friend suggests a 'bundled home + contents + personal liability' policy from one insurer for a discount.",
+              "question": "Bundling home cover with personal-liability is smart mainly because:",
+              "choices": [
+                { "text": "It covers third-party injury/damage at your premises and simplifies renewal", "next": "hop4_right", "correct": true },
+                { "text": "Liability is never needed for a home", "next": "hop4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "hop4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Personal liability is real — a visitor slipping on your wet floor can sue you. Bundling adds that protection and eases single-renewal management. Don't skip liability.",
+              "next": "concept"
+            },
+            {
+              "id": "hop4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Personal-liability covers third-party injury/damage at your home (e.g. a guest's accident). Bundling with structure+contents gives full household protection and one renewal to track.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Build a pro home stack:",
+              "concept": {
+                "title": "Home product knowledge",
+                "points": [
+                  "Insure structure to REBUILD cost, not market/land value.",
+                  "Loss-of-rent add-on helps landlords after an insured peril.",
+                  "Size structure and contents sums independently.",
+                  "Add personal liability — guests' accidents are your risk too."
+                ]
+              },
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "travel",
+      "title": "Travel Insurance",
+      "tagline": "The policy for when the trip goes wrong — abroad or at home.",
+      "icon": "travel",
+      "levels": [
+        {
+          "id": "basics",
+          "title": "Level 1 · Basics",
+          "intro": "Medical, cancellation, baggage — and why 'non-medical' claims dominate.",
+          "scenes": [
+            {
+              "id": "t1",
+              "illustration": "plane",
+              "narrative": "You're in Europe and break a leg skiing. The hospital bill is ₹12 lakh. You skipped travel insurance to 'save ₹1,500'.",
+              "question": "The single biggest reason to buy travel insurance is usually:",
+              "choices": [
+                { "text": "Overseas medical emergencies — bills can be enormous", "next": "t1_right", "correct": true },
+                { "text": "Free airport lounge access", "next": "t1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "t1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Lounges are a bank-card perk, not insurance. The core value is overseas medical cover — foreign hospital bills can bankrupt a trip. Many countries even require proof of cover for visas.",
+              "next": "t2"
+            },
+            {
+              "id": "t1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Emergency medical + evacuation is the headline benefit. A ₹1,500 saving isn't worth a ₹12 lakh bill. Some destinations mandate proof of cover at visa time.",
+              "next": "t2"
+            },
+            {
+              "id": "t2",
+              "illustration": "bag",
+              "narrative": "The airline loses your checked bag with ₹60,000 of clothes. You file a travel claim.",
+              "question": "Loss of checked baggage is typically:",
+              "choices": [
+                { "text": "A covered benefit (up to a sub-limit) under travel insurance", "next": "t2_right", "correct": true },
+                { "text": "Not covered — only the airline handles it", "next": "t2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "t2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Travel policies cover baggage loss/delay (often you claim from BOTH the airline and insurer, with the insurer topping up). Know the sub-limits and keep the PIR (property irregularity report).",
+              "next": "t3"
+            },
+            {
+              "id": "t2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Baggage loss/delay is a standard travel benefit, usually with a per-bag sub-limit. File the airline's PIR immediately — the insurer will ask for it. You may recover from both up to actual loss.",
+              "next": "t3"
+            },
+            {
+              "id": "t3",
+              "illustration": "cancel",
+              "narrative": "You cancel a ₹80,000 trip because your parent is hospitalised. You wonder if the policy refunds it.",
+              "question": "Trip cancellation is covered only when:",
+              "choices": [
+                { "text": "The reason falls within the policy's covered cancellation triggers", "next": "t3_right", "correct": true },
+                { "text": "You simply change your mind", "next": "t3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "t3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. 'I changed my mind' isn't a claim. Covered reasons include illness, death of a family member, visa rejection, or severe weather — each defined in the policy. Read the trigger list.",
+              "next": "concept"
+            },
+            {
+              "id": "t3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Cancellation pays only for listed reasons (medical emergency, bereavement, visa denial, etc.). 'Changed my mind' is excluded. Document the cause — a doctor's certificate is gold.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Travel cover in three points:",
+              "concept": {
+                "title": "Travel insurance basics",
+                "points": [
+                  "Overseas medical is the core value — foreign bills are huge.",
+                  "Baggage loss/delay is covered (keep the airline's PIR).",
+                  "Cancellation pays only for listed reasons, not 'changed my mind'."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "claims",
+          "title": "Level 2 · How Claims Work",
+          "intro": "Emergency assistance, cashless hospitalisation abroad, and getting your money back.",
+          "scenes": [
+            {
+              "id": "tc1",
+              "illustration": "hospital",
+              "narrative": "Abroad, you're hospitalised. The local hospital wants payment guarantees. You call the number on your policy — it's a 24×7 assistance desk, not a claim form.",
+              "question": "The travel insurer's 'assistance company' mainly does:",
+              "choices": [
+                { "text": "Coordinates emergency care, guarantees payment, and arranges evacuation", "next": "tc1_right", "correct": true },
+                { "text": "Just processes paperwork after you pay everything", "next": "tc1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "tc1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The assistance desk is active — it arranges and often guarantees hospital payment and medical evacuation. Call it FIRST; paying out of pocket abroad is risky and slow to recover.",
+              "next": "tc2"
+            },
+            {
+              "id": "tc1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The assistance provider coordinates care, issues guarantees of payment to hospitals, and organises evacuation/repatriation. Save that number offline before you fly — it's your lifeline.",
+              "next": "tc2"
+            },
+            {
+              "id": "tc2",
+              "illustration": "bag",
+              "narrative": "Your bag is delayed 2 days. You buy essentials and keep receipts, then file a 'delay' claim.",
+              "question": "Baggage DELAY cover pays for:",
+              "choices": [
+                { "text": "Reasonable emergency purchases after a waiting period, up to a limit", "next": "tc2_right", "correct": true },
+                { "text": "The full value of everything you packed", "next": "tc2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "tc2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Delay cover reimburses emergency buys (toiletries, clothes) after a set delay hours, within a sub-limit. It's not the value of your lost bag — that's 'loss', a different benefit.",
+              "next": "tc3"
+            },
+            {
+              "id": "tc2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Baggage delay reimburses essential purchases once the delay exceeds the policy's hours (e.g. 6–12h), up to a cap. Keep every receipt; loss is a separate, higher-limit claim needing the PIR.",
+              "next": "tc3"
+            },
+            {
+              "id": "tc3",
+              "illustration": "card",
+              "narrative": "You fly home early for a family emergency. The return ticket cost extra; you wonder if the insurer refunds it.",
+              "question": "A 'trip curtailment' benefit covers:",
+              "choices": [
+                { "text": "Non-refundable costs of cutting the trip short for a covered reason", "next": "tc3_right", "correct": true },
+                { "text": "Any early return, even for a holiday you simply disliked", "next": "tc3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "tc3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Curtailment pays only for covered reasons (serious illness/death of a relative, etc.) and the unused, non-refundable portion. 'Didn't enjoy it' isn't covered.",
+              "next": "tc4"
+            },
+            {
+              "id": "tc3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Trip curtailment reimburses non-recoverable costs when you return early for a listed reason, with proof (doctor's cert, death cert). Document thoroughly or the claim shrinks.",
+              "next": "tc4"
+            },
+            {
+              "id": "tc4",
+              "illustration": "plane",
+              "narrative": "You didn't call the assistance desk and paid a foreign hospital ₹4 lakh yourself, then claimed reimbursement.",
+              "question": "Reimbursement claims require you to:",
+              "choices": [
+                { "text": "Submit original bills, reports, and proof you informed the insurer in time", "next": "tc4_right", "correct": true },
+                { "text": "Just state the amount — no documents needed", "next": "tc4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "tc4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Reimbursement needs original itemised bills, medical reports, and evidence of timely intimation. Lost receipts = lost money. Photograph everything abroad.",
+              "next": "concept"
+            },
+            {
+              "id": "tc4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. For reimbursement keep originals: itemised bills, discharge summary, prescriptions, and proof of intimation. Many policies also require the assistance desk to be informed within a window even for reimbursement.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The travel claims path:",
+              "concept": {
+                "title": "How a travel claim moves",
+                "points": [
+                  "Call the 24×7 assistance desk FIRST — they guarantee payment/evacuation.",
+                  "Baggage delay = emergency purchases after a wait, within a cap.",
+                  "Trip curtailment covers non-refundable costs for covered early returns.",
+                  "Reimbursement needs original bills + proof of timely intimation."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "edge",
+          "title": "Level 3 · Edge Cases",
+          "intro": "Pre-existing conditions, adventure sports, and the clauses that void trips.",
+          "scenes": [
+            {
+              "id": "te1",
+              "illustration": "hospital",
+              "narrative": "You have controlled hypertension and have a cardiac episode abroad. The insurer says it's a 'pre-existing condition' and questions cover.",
+              "question": "Most standard travel policies treat pre-existing conditions as:",
+              "choices": [
+                { "text": "Excluded unless you bought a PED/declaration waiver add-on", "next": "te1_right", "correct": true },
+                { "text": "Always fully covered like any other illness", "next": "te1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "te1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Standard travel medical excludes pre-existing conditions unless declared and covered via a waiver/add-on. Don't assume your daily medication is included — declare it.",
+              "next": "te2"
+            },
+            {
+              "id": "te1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Pre-existing conditions are typically excluded unless you disclose them and buy the PED waiver. For chronic illnesses, this add-on is the difference between a paid and a denied overseas claim.",
+              "next": "te2"
+            },
+            {
+              "id": "te2",
+              "illustration": "cancel",
+              "narrative": "You skydive on holiday and break a leg. The policy has an 'adventure sports' exclusion you didn't notice.",
+              "question": "Adventure/high-risk activities are commonly:",
+              "choices": [
+                { "text": "Excluded unless you add an adventure-sports rider", "next": "te2_right", "correct": true },
+                { "text": "Always covered no matter what you do", "next": "te2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "te2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Skiing, diving, skydiving, trekking are often excluded or sub-limited. Buy the adventure rider if your trip includes them, or the claim gets denied on a technicality.",
+              "next": "te3"
+            },
+            {
+              "id": "te2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Hazardous activities need an adventure-sports endorsement. Definitions vary (some include hiking above a altitude). Read the activity list before booking thrill experiences.",
+              "next": "te3"
+            },
+            {
+              "id": "te3",
+              "illustration": "warning",
+              "narrative": "You travelled to a country with a known active travel advisory/war zone and got caught in unrest. The insurer refuses the claim.",
+              "question": "Travelling against a standing government travel advisory usually:",
+              "choices": [
+                { "text": "Voids cover for that destination's related claims", "next": "te3_right", "correct": true },
+                { "text": "Has no effect on the policy at all", "next": "te3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "te3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Travelling to a place under a formal advisory/war/riot exclusion typically voids related claims. Check advisories before you book; 'I didn't know' isn't a defence.",
+              "next": "concept"
+            },
+            {
+              "id": "te3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Most policies exclude losses from travel to countries under a government advisory, war, or civil unrest. Verify before departure — and consider specialised cover if you must go.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Travel edge cases:",
+              "concept": {
+                "title": "Travel insurance edge cases",
+                "points": [
+                  "Pre-existing conditions excluded unless a PED waiver is bought.",
+                  "Adventure sports need a specific rider or they're excluded.",
+                  "Travel against a formal advisory can void related claims."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "pro",
+          "title": "Level 4 · Product Knowledge",
+          "intro": "Single-trip vs annual, geo-zones, deductibles, and matching cover to your trip.",
+          "scenes": [
+            {
+              "id": "tp1",
+              "illustration": "plane",
+              "narrative": "You take 5 trips a year. Buying separate single-trip policies each time adds up. A broker suggests 'multi-trip'.",
+              "question": "An annual/multi-trip policy is better than single-trip when you travel:",
+              "choices": [
+                { "text": "Multiple times a year — one premium covers all trips (with per-trip day limits)", "next": "tp1_right", "correct": true },
+                { "text": "Only once every few years", "next": "tp1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "tp1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. For rare travel, single-trip is cheaper. Multi-trip shines when you fly several times a year — but watch the max-days-per-trip limit; overstayers lose cover.",
+              "next": "tp2"
+            },
+            {
+              "id": "tp1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Annual multi-trip = one premium, many trips, each within a day-cap (e.g. 30/60/90 days). Frequent travellers save money and hassle. Confirm the per-trip limit fits your longest journey.",
+              "next": "tp2"
+            },
+            {
+              "id": "tp2",
+              "illustration": "umbrella",
+              "narrative": "Your 'Asia' policy didn't cover your side trip to Australia. You assumed one world price.",
+              "question": "Travel policies are usually priced by:",
+              "choices": [
+                { "text": "Geographical zone (e.g. Asia, Europe, Worldwide) — pick the right one", "next": "tp2_right", "correct": true },
+                { "text": "A single global price regardless of destination", "next": "tp2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "tp2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Zones matter and so does the USA/Canada surcharge (high medical costs). A wrong zone = no cover for that leg. List every country you'll touch, including stopovers.",
+              "next": "tp3"
+            },
+            {
+              "id": "tp2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Premiums scale by zone, with USA/Canada typically costliest due to medical bills. Cover the highest zone you'll visit; even a transit stop in an uncovered country can void that segment.",
+              "next": "tp3"
+            },
+            {
+              "id": "tp3",
+              "illustration": "deductible",
+              "narrative": "You choose a policy with a ₹5,000 deductible to cut the premium. Later a ₹6,000 claim arrives.",
+              "question": "With a deductible, you receive:",
+              "choices": [
+                { "text": "The claim minus the deductible (₹1,000 here)", "next": "tp3_right", "correct": true },
+                { "text": "The full ₹6,000 — deductible is just a label", "next": "tp3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "tp3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. The deductible is subtracted from every payable claim. A high deductible lowers premium but means you eat small losses yourself — fine if you only fear big ones.",
+              "next": "tp4"
+            },
+            {
+              "id": "tp3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Deductible = your share per claim, so a ₹6,000 claim with ₹5,000 deductible pays ₹1,000. Raise it to cheapen premium if you self-insure minor losses; keep it low if you want small claims paid.",
+              "next": "tp4"
+            },
+            {
+              "id": "tp4",
+              "illustration": "compare",
+              "narrative": "Two policies: one is ₹400 cheaper but only ₹30,000 medical; the other is ₹2.5 lakh medical for a US trip where an ER visit can hit ₹8 lakh.",
+              "question": "The smart pick for a US trip is driven by:",
+              "choices": [
+                { "text": "Medical sum insured sized to US healthcare costs, not just price", "next": "tp4_right", "correct": true },
+                { "text": "Always the cheapest premium", "next": "tp4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "tp4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. In the US, a single ER visit can exceed a tiny medical limit. The ₹400 saving is nothing against a ₹8 lakh bill. Size medical cover to destination costs, especially USA/Canada/Schengen.",
+              "next": "concept"
+            },
+            {
+              "id": "tp4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Medical sum insured must match destination reality — USA/Canada and Schengen (€30k minimum) need high limits. Cheap policies with low medical caps are false economy abroad.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Shop travel like a pro:",
+              "concept": {
+                "title": "Travel product knowledge",
+                "points": [
+                  "Annual multi-trip suits frequent flyers (watch per-trip day caps).",
+                  "Premium depends on zone — USA/Canada costs most.",
+                  "Deductible lowers premium but you eat small claims.",
+                  "Size medical cover to destination costs, not just price."
+                ]
+              },
+              "next": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cyber",
+      "title": "Cyber Insurance",
+      "tagline": "The newest cover — for when your data, not your car, is stolen.",
+      "icon": "cyber",
+      "levels": [
+        {
+          "id": "basics",
+          "title": "Level 1 · Basics",
+          "intro": "Ransomware, fraud, and identity theft — what a cyber policy actually shields.",
+          "scenes": [
+            {
+              "id": "cy1",
+              "illustration": "laptop",
+              "narrative": "A hacker locks your laptop with ransomware and demands ₹2 lakh. You have 'cyber insurance' from your bank add-on.",
+              "question": "Ransomware extortion costs are typically:",
+              "choices": [
+                { "text": "Covered under the extortion/cyber-response benefit (subject to limits)", "next": "cy1_right", "correct": true },
+                { "text": "Never covered — you must always pay the hacker", "next": "cy1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cy1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Most cyber policies include extortion/cyber-response cover — they may even guide you to a negotiator and reimburse the ransom within limits. (Paying hackers is controversial, but cover exists.)",
+              "next": "cy2"
+            },
+            {
+              "id": "cy1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Cyber policies commonly cover extortion costs and the response (forensics, negotiation) up to a limit. They also often help with notification and credit monitoring after a breach.",
+              "next": "cy2"
+            },
+            {
+              "id": "cy2",
+              "illustration": "fraud",
+              "narrative": "A scammer drains ₹90,000 from your account via a fake UPI link. You report it within hours.",
+              "question": "Financial loss from social-engineering fraud is:",
+              "choices": [
+                { "text": "Often covered if you reported promptly and followed the policy's security duties", "next": "cy2_right", "correct": true },
+                { "text": "Always excluded as 'your own foolishness'", "next": "cy2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cy2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Cyber/financial-fraud cover exists, but it's conditional — you must report fast and meet 'security duties' (updated software, not sharing OTPs). Negligence clauses still apply.",
+              "next": "cy3"
+            },
+            {
+              "id": "cy2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Many cyber policies cover fraud loss if you act fast and met basic security hygiene. Never share OTPs — doing so can void the claim as 'gross negligence'.",
+              "next": "cy3"
+            },
+            {
+              "id": "cy3",
+              "illustration": "identity",
+              "narrative": "Your Aadhaar and PAN are leaked in a breach. You worry about years of misuse.",
+              "question": "Identity-theft monitoring/restoration is typically:",
+              "choices": [
+                { "text": "A standard cyber benefit — monitoring + restoration costs are covered", "next": "cy3_right", "correct": true },
+                { "text": "Something only the government handles, never insurers", "next": "cy3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cy3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Insurers actively cover identity-theft restoration — credit monitoring, legal help, and the cost of fixing fraudulent accounts. It's a growing, real benefit.",
+              "next": "concept"
+            },
+            {
+              "id": "cy3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Identity-theft cover funds monitoring and restoration after a leak. Given India's DPDP Act and rising breaches, it's one of the fastest-growing cyber benefits.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Cyber cover, demystified:",
+              "concept": {
+                "title": "Cyber insurance basics",
+                "points": [
+                  "Ransomware/extortion costs are covered up to limits.",
+                  "Fraud loss is covered if you report fast and meet security duties.",
+                  "Identity-theft monitoring + restoration is a standard benefit."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "claims",
+          "title": "Level 2 · How Claims Work",
+          "intro": "Incident response, forensics, and the clock that decides your payout.",
+          "scenes": [
+            {
+              "id": "cyc1",
+              "illustration": "fraud",
+              "narrative": "You realise you were phished at 9am but only report it to the insurer at 9pm. The fraud window in your policy was 'within 12 hours'.",
+              "question": "Late reporting of a cyber incident typically:",
+              "choices": [
+                { "text": "Can reduce or void the claim if it breaches the policy's time limit", "next": "cyc1_right", "correct": true },
+                { "text": "Never matters as long as the loss is real", "next": "cyc1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cyc1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Cyber policies impose strict notification windows. Missing them canjeopardise the claim. Report the moment you suspect an incident — speed is a condition, not a courtesy.",
+              "next": "cyc2"
+            },
+            {
+              "id": "cyc1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Timely notification (often within hours/days) is a policy condition. Delayed reporting can let the insurer decline. Many policies also require using their appointed response team.",
+              "next": "cyc2"
+            },
+            {
+              "id": "cyc2",
+              "illustration": "laptop",
+              "narrative": "The insurer's response team wants to investigate BEFORE you pay any ransom or wipe the device.",
+              "question": "Why does the insurer require using its cyber-response/forensic team?",
+              "choices": [
+                { "text": "To contain the breach, evidence the loss, and control payout validity", "next": "cyc2_right", "correct": true },
+                { "text": "Just to upsell you more software", "next": "cyc2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cyc2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It's about control and proof. Unapproved actions (paying ransom, rebuilding without forensics) can void cover. The appointed team documents the incident so the claim is valid and contained.",
+              "next": "cyc3"
+            },
+            {
+              "id": "cyc2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. The response team contains the attack, preserves evidence, and validates the loss — all required for a clean claim. Going rogue (paying ransom solo, wiping devices) can forfeit cover.",
+              "next": "cyc3"
+            },
+            {
+              "id": "cyc3",
+              "illustration": "card",
+              "narrative": "You paid a ₹2 lakh ransom without insurer approval, then asked to be reimbursed. They decline.",
+              "question": "Paying ransom without authorisation usually:",
+              "choices": [
+                { "text": "Isn't reimbursed — approval and negotiation must go through the insurer", "next": "cyc3_right", "correct": true },
+                { "text": "Is always repaid no questions asked", "next": "cyc3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cyc3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Unauthorised ransom payments are typically excluded. The policy expects you to use their negotiator. Paying solo removes their control and your reimbursement.",
+              "next": "cyc4"
+            },
+            {
+              "id": "cyc3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Extortion payouts require going through the insurer's process. Independent payments are excluded. (Note: paying hackers also raises legal/ethical issues — many policies now guide against it.)",
+              "next": "cyc4"
+            },
+            {
+              "id": "cyc4",
+              "illustration": "identity",
+              "narrative": "After the breach you need to notify affected customers — legally. The insurer questions whether that cost is covered.",
+              "question": "Breach-notification and legal costs are typically:",
+              "choices": [
+                { "text": "Covered as part of the 'breach response' suite of benefits", "next": "cyc4_right", "correct": true },
+                { "text": "Always excluded as a business expense", "next": "cyc4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cyc4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Under DPDP and global norms, notification is often mandatory — and cyber policies cover those costs (legal, notification, credit monitoring). It's a core part of breach response, not excluded.",
+              "next": "concept"
+            },
+            {
+              "id": "cyc4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Breach-response covers notification, legal counsel, and credit/identity monitoring after a data incident. With India's DPDP Act penalties, this benefit is increasingly valuable for businesses and individuals alike.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. The cyber claims clock:",
+              "concept": {
+                "title": "How a cyber claim moves",
+                "points": [
+                  "Notify FAST — strict time windows can void late claims.",
+                  "Use the insurer's response/forensic team; rogue action voids cover.",
+                  "Unauthorised ransom payments aren't reimbursed.",
+                  "Breach notification + legal costs are covered response benefits."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "edge",
+          "title": "Level 3 · Edge Cases",
+          "intro": "War exclusions, social engineering, and the fine print that denies cyber claims.",
+          "scenes": [
+            {
+              "id": "cye1",
+              "illustration": "warning",
+              "narrative": "A state-sponsored attack from a foreign government hits your systems. The insurer cites a 'cyber war / nation-state' exclusion.",
+              "question": "Most cyber policies treat large-scale nation-state/war attacks as:",
+              "choices": [
+                { "text": "Excluded or sub-limited under a war/cyber-war clause", "next": "cye1_right", "correct": true },
+                { "text": "Always fully covered like any hack", "next": "cye1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cye1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. War and nation-state exclusions are standard (post-2022 Lloyd's mandates). A widespread state attack may fall outside cover, though 'non-war' hacks by criminals are covered. Definitions are fiercely debated.",
+              "next": "cye2"
+            },
+            {
+              "id": "cye1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Cyber-war/nation-state exclusions limit or exclude state-backed attacks. Pure criminal ransomware is covered. The line is blurry and disputed — read the exact wording before relying on it.",
+              "next": "cye2"
+            },
+            {
+              "id": "cye2",
+              "illustration": "fraud",
+              "narrative": "An employee is tricked by a fake-CEO email into transferring ₹50 lakh. No malware involved — just manipulation.",
+              "question": "This 'social engineering' fraud is usually covered only if:",
+              "choices": [
+                { "text": "The policy includes a social-engineering/funds-transfer fraud extension", "next": "cye2_right", "correct": true },
+                { "text": "It's always covered under basic malware cover", "next": "cye2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cye2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Basic cyber cover often focuses on technical breaches; 'human-hack' fraud needs a specific funds-transfer/social-engineering extension. Without it, the transfer may be uninsured.",
+              "next": "cye3"
+            },
+            {
+              "id": "cye2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Social-engineering fraud (fakeCEO, invoice redirection) requires an explicit extension. Given it's a top cause of loss, businesses should add it. Call-back verification processes also help claims.",
+              "next": "cye3"
+            },
+            {
+              "id": "cye3",
+              "illustration": "laptop",
+              "narrative": "You reused the same password everywhere and got breached. The insurer alleges 'failure to maintain reasonable security'.",
+              "question": "Most cyber policies require you to meet certain:",
+              "choices": [
+                { "text": "Security duties (updates, MFA, patching) — failure can reduce/deny claims", "next": "cye3_right", "correct": true },
+                { "text": "No obligations at all — any breach pays", "next": "cye3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cye3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Cyber policies impose security warranties (MFA, patching, backups). Gross negligence or ignored duties can void the claim. Cover is conditional on basic hygiene.",
+              "next": "concept"
+            },
+            {
+              "id": "cye3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Security duties are conditions — MFA, timely patching, offline backups. Ignore them and the insurer can deny. Good hygiene is both prevention and claim-protective.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Cyber edge cases:",
+              "concept": {
+                "title": "Cyber insurance edge cases",
+                "points": [
+                  "Nation-state/war attacks are excluded or sub-limited.",
+                  "Social-engineering fraud needs its own extension.",
+                  "Security duties are conditions — neglect can void the claim."
+                ]
+              },
+              "next": null
+            }
+          ]
+        },
+        {
+          "id": "pro",
+          "title": "Level 4 · Product Knowledge",
+          "intro": "First-party vs third-party, aggregates, and building a real cyber stack.",
+          "scenes": [
+            {
+              "id": "cyp1",
+              "illustration": "split",
+              "narrative": "Your policy lists 'first-party' and 'third-party' covers. You're unsure which pays for YOUR own data restoration.",
+              "question": "Restoring YOUR OWN systems/data after an attack is a:",
+              "choices": [
+                { "text": "First-party cost — covered under first-party benefits", "next": "cyp1_right", "correct": true },
+                { "text": "Third-party cost — someone else's claim against you", "next": "cyp1_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cyp1_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Third-party is when OTHERS sue you (e.g. customers whose data leaked). Your own recovery — data, business interruption — is first-party. Both matter; many cheap policies skimp on one.",
+              "next": "cyp2"
+            },
+            {
+              "id": "cyp1_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. First-party = your own losses (restoration, BI, extortion). Third-party = liability to others (breach of privacy, notification suits). A balanced cyber policy covers both; check the split.",
+              "next": "cyp2"
+            },
+            {
+              "id": "cyp2",
+              "illustration": "umbrella",
+              "narrative": "Your policy has a ₹5 lakh limit for 'business interruption' but the outage cost you ₹20 lakh over 3 weeks.",
+              "question": "The policy limit (sub-limit/aggregate) means:",
+              "choices": [
+                { "text": "The maximum payable for that benefit, even if your loss is larger", "next": "cyp2_right", "correct": true },
+                { "text": "A meaningless number — you get the full loss", "next": "cyp2_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cyp2_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. Sub-limits cap each benefit. Business interruption, notification, and extortion often have separate caps under an aggregate. Size them to your real outage risk — BI is usually the biggest cost.",
+              "next": "cyp3"
+            },
+            {
+              "id": "cyp2_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Each cyber benefit has its own limit within an aggregate. BI (lost income during downtime) is frequently the largest loss — set that sub-limit high. Don't let a low cap strangle recovery.",
+              "next": "cyp3"
+            },
+            {
+              "id": "cyp3",
+              "illustration": "addons",
+              "narrative": "You run a small business storing customer data. The insurer offers 'privacy liability' and 'regulatory defence' add-ons.",
+              "question": "Regulatory-defence cover helps with:",
+              "choices": [
+                { "text": "Legal costs of defending DPDP/regulatory actions after a breach", "next": "cyp3_right", "correct": true },
+                { "text": "Paying your normal annual licence fees", "next": "cyp3_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cyp3_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. It's for defending regulatory penalties/proceedings (e.g. under DPDP Act), not routine fees. With India's data-protection regime now active, this add-on is increasingly essential.",
+              "next": "cyp4"
+            },
+            {
+              "id": "cyp3_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Regulatory-defence covers legal costs responding to data-protection investigations/penalties. Pair it with privacy liability (third-party suits). Together they address the legal fallout of a breach.",
+              "next": "cyp4"
+            },
+            {
+              "id": "cyp4",
+              "illustration": "compare",
+              "narrative": "Two quotes: a cheap standalone 'personal cyber' add-on vs a fuller policy with BI, extortion, and third-party liability.",
+              "question": "For meaningful protection you should prioritise:",
+              "choices": [
+                { "text": "The benefits matching your actual risk (BI/extortion/liability), not just price", "next": "cyp4_right", "correct": true },
+                { "text": "Always the cheapest sticker price", "next": "cyp4_wrong", "correct": false }
+              ]
+            },
+            {
+              "id": "cyp4_wrong",
+              "illustration": "warning",
+              "reveal": true,
+              "feedback": "Wrong. A cheap bare-bones policy may omit BI or third-party liability — the costliest parts of a breach. Match coverage to your exposure; cheapest often means hollow.",
+              "next": "concept"
+            },
+            {
+              "id": "cyp4_right",
+              "illustration": "check",
+              "reveal": true,
+              "feedback": "Correct. Build a cyber stack around YOUR risks: individuals need extortion+identity+fraud; businesses need first+third party, BI, and regulatory defence. Price is secondary to the right benefit mix.",
+              "next": "concept"
+            },
+            {
+              "id": "concept",
+              "illustration": "card",
+              "narrative": "Level complete. Construct a pro cyber stack:",
+              "concept": {
+                "title": "Cyber product knowledge",
+                "points": [
+                  "First-party = your losses; third-party = liability to others.",
+                  "Sub-limits cap each benefit — size business interruption high.",
+                  "Regulatory-defence covers DPDP/legal defence costs.",
+                  "Match the benefit mix to your real risk, not just price."
+                ]
+              },
+              "next": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

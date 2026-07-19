@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in; frame-src 'self'; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests">
     <title>BimaNiti — Insurance & Market Insights</title>
     <meta name="description" content="Insurance analysis and market insights.">
     <meta property="og:title" content="BimaNiti — Insurance & Market Insights">
@@ -15,7 +16,7 @@
     <meta name="twitter:description" content="Insurance analysis and market insights from BimaNiti.">
     <meta name="twitter:image" content="https://bimaniti.in/logo.svg">
     <link rel="canonical" href="https://bimaniti.in/post.html">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -44,6 +45,7 @@
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="news.html" class="nav-link">News</a>
                 <a href="archives.html" class="nav-link">Archives</a>
+                <a href="learn.html" class="nav-link">Learn</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -62,6 +64,7 @@
                 <a href="blog.html" class="mobile-nav-link">Blog</a>
                 <a href="news.html" class="mobile-nav-link">News</a>
                 <a href="archives.html" class="mobile-nav-link">Archives</a>
+                <a href="learn.html" class="mobile-nav-link">Learn</a>
                 <a href="about.html" class="mobile-nav-link">About</a>
                 <a href="contact.html" class="mobile-nav-link">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -105,7 +108,7 @@
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="assets/js/script.min.js" defer></script>
     <script defer>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js').catch(function() {});

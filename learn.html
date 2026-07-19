@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in; frame-src 'self'; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests">
-    <title>Archives — BimaNiti | Insurance & Market Insights</title>
-    <meta name="description" content="Browse the complete archive of articles, analysis, and news on insurance and market insights by BimaNiti.">
-    <meta property="og:title" content="Archives — BimaNiti | Insurance & Market Insights">
-    <meta property="og:description" content="Complete archive of insurance and market insights articles.">
+    <title>Learn Insurance — BimaNiti</title>
+    <meta name="description" content="Learn insurance from basic to product knowledge through interactive scenarios. Motor, Health, Life, Home, Travel, and Cyber — explained with stories.">
+    <meta property="og:title" content="Learn Insurance — BimaNiti">
+    <meta property="og:description" content="An interactive insurance learning programme. Pick a track, make choices, and watch the fine print decide the ending.">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://bimaniti.in/archives.html">
-    <meta property="og:url" content="https://bimaniti.in/archives.html">
+    <meta property="og:url" content="https://bimaniti.in/learn.html">
     <meta property="og:image" content="https://bimaniti.in/assets/og/default.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Archives — BimaNiti | Insurance & Market Insights">
-    <meta name="twitter:description" content="Browse all insurance analysis, market insights, and regulatory coverage from BimaNiti.">
-    <meta name="twitter:image" content="https://bimaniti.in/logo.svg">
+    <meta name="twitter:title" content="Learn Insurance — BimaNiti">
+    <meta name="twitter:description" content="Learn insurance through interactive scenarios — from basics to product knowledge.">
+    <meta name="twitter:image" content="https://bimaniti.in/assets/og/default.svg">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in; frame-src 'self'; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests">
     <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/learn.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,8 +34,8 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="news.html" class="nav-link">News</a>
-                <a href="archives.html" class="nav-link active">Archives</a>
-                <a href="learn.html" class="nav-link">Learn</a>
+                <a href="learn.html" class="nav-link active">Learn</a>
+                <a href="archives.html" class="nav-link">Archives</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -53,8 +53,8 @@
                 <a href="index.html" class="mobile-nav-link">Home</a>
                 <a href="blog.html" class="mobile-nav-link">Blog</a>
                 <a href="news.html" class="mobile-nav-link">News</a>
-                <a href="archives.html" class="mobile-nav-link active">Archives</a>
-                <a href="learn.html" class="mobile-nav-link">Learn</a>
+                <a href="learn.html" class="mobile-nav-link active">Learn</a>
+                <a href="archives.html" class="mobile-nav-link">Archives</a>
                 <a href="about.html" class="mobile-nav-link">About</a>
                 <a href="contact.html" class="mobile-nav-link">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -66,21 +66,19 @@
     </nav>
 
     <main id="main-content">
-        <section class="page-header" style="padding-bottom: 32px; padding-left: 1.5rem; padding-right: 1.5rem; background: var(--bg-primary);">
+        <section class="page-header" style="background: var(--bg-primary);">
             <div class="max-w-5xl mx-auto text-center">
-                <div class="page-eyebrow">Complete archive</div>
-                <h1 class="text-3xl" style="margin-bottom: 10px;">Archives</h1>
-                <p style="color: var(--text-muted); max-width: 36rem; margin: 0 auto; font-size: 14px; font-weight: 300;">
-                    Browse all articles, analysis, and market updates organised by category.
+                <div class="page-eyebrow">Interactive Learning</div>
+                <h1 class="text-3xl" style="margin-bottom: 10px;">Learn Insurance</h1>
+                <p style="color: var(--text-muted); max-width: 40rem; margin: 0 auto; font-size: 15px; font-weight: 300;">
+                    From basics to product knowledge — six tracks, each a story where your choices reveal how insurance really works.
                 </p>
             </div>
         </section>
 
-        <section style="background: var(--bg-primary); padding: 0 1.5rem 6rem;">
-            <div class="max-w-3xl mx-auto">
-                <div id="archives-container">
-                    <p class="text-center" style="color: var(--text-muted); padding: 3rem 0;">Loading archives...</p>
-                </div>
+        <section style="background: var(--bg-primary); padding: 0 1.5rem 5rem;">
+            <div class="max-w-5xl mx-auto">
+                <div id="learn-root"></div>
             </div>
         </section>
     </main>
@@ -96,18 +94,11 @@
                     <a href="index.html" class="footer-link">Home</a>
                     <a href="blog.html" class="footer-link">Blog</a>
                     <a href="news.html" class="footer-link">News</a>
+                    <a href="learn.html" class="footer-link">Learn</a>
                     <a href="archives.html" class="footer-link">Archives</a>
                     <a href="about.html" class="footer-link">About</a>
                     <a href="contact.html" class="footer-link">Contact</a>
                 </div>
-            </div>
-            <div style="margin: 2rem 0; padding: 1.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-                <p style="font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--text-primary); margin-bottom: 10px; text-align: center;">Stay Updated</p>
-                <p style="font-family: var(--font-body); font-size: 12px; color: var(--text-muted); font-weight: 300; text-align: center; margin-bottom: 14px;">Get the latest analysis and market insights delivered to your inbox.</p>
-                <form style="display: flex; gap: 8px; max-width: 400px; margin: 0 auto;" onsubmit="var e=this.querySelector('input');e.value='Subscribed!';setTimeout(function(){e.value='';},3000);return false;">
-                    <input type="email" placeholder="Your email address" required style="flex:1;padding:8px 14px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text-secondary);font-family:var(--font-body);font-size:13px;outline:none;">
-                    <button type="submit" class="btn-primary" style="padding:8px 18px;font-size:12px;">Subscribe</button>
-                </form>
             </div>
             <p class="footer-copyright">© <span id="currentYear"></span> BimaNiti</p>
             <p class="footer-disclaimer">Not investment advice. This site is for informational purposes only.</p>
@@ -115,10 +106,6 @@
     </footer>
 
     <script src="assets/js/script.min.js" defer></script>
-    <script defer>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js').catch(function() {});
-    }
-    </script>
+    <script src="assets/js/learn.js" defer></script>
 </body>
 </html>

@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in; frame-src 'self'; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests">
     <title>404 — Page Not Found | BimaNiti</title>
     <meta name="description" content="The page you are looking for does not exist.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://bimaniti.in/404.html">
     <meta property="og:url" content="https://bimaniti.in/404.html">
-    <meta property="og:image" content="https://bimaniti.in/logo.svg">
+    <meta property="og:image" content="https://bimaniti.in/assets/og/default.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Page Not Found — BimaNiti">
     <meta name="twitter:description" content="The page you're looking for doesn't exist.">
     <meta name="twitter:image" content="https://bimaniti.in/logo.svg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -32,6 +33,7 @@
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="news.html" class="nav-link">News</a>
                 <a href="archives.html" class="nav-link">Archives</a>
+                <a href="learn.html" class="nav-link">Learn</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -50,6 +52,7 @@
                 <a href="blog.html" class="mobile-nav-link">Blog</a>
                 <a href="news.html" class="mobile-nav-link">News</a>
                 <a href="archives.html" class="mobile-nav-link">Archives</a>
+                <a href="learn.html" class="mobile-nav-link">Learn</a>
                 <a href="about.html" class="mobile-nav-link">About</a>
                 <a href="contact.html" class="mobile-nav-link">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -109,7 +112,7 @@
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="assets/js/script.min.js" defer></script>
     <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js').catch(function() {});
@@ -117,13 +120,19 @@
     (function() {
         var container = document.getElementById('error-recent-posts');
         if (!container) return;
+        function escapeHtml(str) {
+            if (!str) return '';
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
         fetch('data/home-featured.json', { mode: 'same-origin' })
             .then(function(r) { return r.json(); })
             .then(function(data) {
                 if (!data.blogs) return;
                 container.innerHTML = data.blogs.map(function(blog) {
                     var slug = (blog.slug || blog.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-                    return '<a href="post/' + slug + '.html" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + blog.category + '</span><h3 class="card-title">' + blog.title + '</h3><p class="card-excerpt">' + blog.summary + '</p><div class="card-meta"><span>' + blog.published_date + '</span><span>\u00B7</span><span>' + blog.author + '</span></div></div></article></a>';
+                    return '<a href="post/' + slug + '.html" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + escapeHtml(blog.category) + '</span><h3 class="card-title">' + escapeHtml(blog.title) + '</h3><p class="card-excerpt">' + escapeHtml(blog.summary) + '</p><div class="card-meta"><span>' + escapeHtml(blog.published_date) + '</span><span>\u00B7</span><span>' + escapeHtml(blog.author) + '</span></div></div></article></a>';
                 }).join('');
             })
             .catch(function() {});

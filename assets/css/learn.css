@@ -1,0 +1,339 @@
+/* ===== BimaNiti Learn — interactive insurance learning programme ===== */
+
+.learn-landing { max-width: 980px; margin: 0 auto; }
+.learn-lead {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 38rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.learn-tracks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.learn-track-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.learn-track-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+.learn-track-icon {
+  width: 64px; height: 48px;
+  margin-bottom: 1rem;
+}
+.learn-track-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.learn-track-card p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+.learn-track-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.learn-pill {
+  background: var(--bg-secondary);
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-weight: 500;
+}
+.learn-mini-bar {
+  height: 5px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+.learn-mini-bar > div {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.learn-resume {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Track header + level nav */
+.learn-back {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.learn-back:hover { color: var(--accent); }
+#learn-header h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin: 0.5rem 0 0.25rem;
+}
+#learn-header p {
+  color: var(--text-muted);
+  font-weight: 300;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+.learn-levelnav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.learn-level-chip {
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+.learn-level-chip:hover { border-color: var(--accent); color: var(--accent); }
+.learn-level-chip.active { background: var(--text-primary); border-color: var(--text-primary); color: var(--card-bg); }
+.learn-level-chip.done { border-color: var(--accent); }
+
+/* Level grid */
+.learn-levelgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.learn-level-card {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.learn-level-card:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+.learn-level-card.done { border-left-color: var(--accent); }
+.learn-level-status {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.learn-level-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+.learn-level-card p {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Scene player */
+.learn-progress {
+  height: 5px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+  max-width: 680px;
+  margin: 0 auto 1rem;
+}
+.learn-progress-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+.learn-step {
+  text-align: center;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.learn-illus {
+  width: 120px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+}
+.learn-narrative {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.learn-question {
+  max-width: 600px;
+  margin: 0 auto 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  text-align: center;
+}
+.learn-choices {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.learn-choice {
+  text-align: left;
+  padding: 1rem 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.learn-choice:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+.learn-choice:disabled { cursor: default; }
+.learn-choice.picked-correct {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--text-primary);
+  font-weight: 500;
+}
+.learn-choice.picked-wrong {
+  border-color: var(--alert);
+  background: color-mix(in srgb, var(--alert) 10%, transparent);
+  color: var(--text-primary);
+}
+.learn-feedback {
+  max-width: 600px;
+  margin: 1.25rem auto 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.7;
+  border-left: 3px solid var(--border);
+  background: var(--bg-secondary);
+}
+.learn-feedback.correct { border-left-color: var(--accent); }
+.learn-feedback.wrong { border-left-color: var(--alert); }
+.learn-actions {
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.learn-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.learn-btn:hover { background: var(--accent-hover); }
+.learn-btn.ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+.learn-btn.ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Concept card */
+.learn-concept {
+  max-width: 600px;
+  margin: 1.5rem auto 0;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+}
+.learn-concept h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.learn-concept ul { padding-left: 1.25rem; }
+.learn-concept li {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0.6rem;
+}
+
+/* Completion */
+.learn-complete {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.learn-complete h2 {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--text-primary);
+  margin: 1rem 0 0.5rem;
+}
+.learn-complete p { color: var(--text-muted); font-weight: 300; }
+.learn-track-progress {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 640px) {
+  .learn-tracks, .learn-levelgrid { grid-template-columns: 1fr; }
+  .learn-narrative { font-size: 1rem; }
+}

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in https://formspree.io; frame-src 'self'; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests">
 <title>Contact — BimaNiti | Insurance & Market Insights</title>
     <meta name="description" content="Get in touch with BimaNiti for insurance analysis, market research, and collaboration opportunities.">
     <meta property="og:title" content="Contact — BimaNiti | Insurance & Market Insights">
@@ -10,12 +11,12 @@
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://bimaniti.in/contact.html">
     <meta property="og:url" content="https://bimaniti.in/contact.html">
-    <meta property="og:image" content="https://bimaniti.in/logo.svg">
+    <meta property="og:image" content="https://bimaniti.in/assets/og/default.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Contact — BimaNiti | Insurance & Market Insights">
     <meta name="twitter:description" content="Get in touch with BimaNiti for insurance analysis and market research inquiries.">
     <meta name="twitter:image" content="https://bimaniti.in/logo.svg">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -43,6 +44,7 @@
                 <a href="blog.html" class="nav-link">Blog</a>
                 <a href="news.html" class="nav-link">News</a>
                 <a href="archives.html" class="nav-link">Archives</a>
+                <a href="learn.html" class="nav-link">Learn</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link active">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -61,6 +63,7 @@
                 <a href="blog.html" class="mobile-nav-link">Blog</a>
                 <a href="news.html" class="mobile-nav-link">News</a>
                 <a href="archives.html" class="mobile-nav-link">Archives</a>
+                <a href="learn.html" class="mobile-nav-link">Learn</a>
                 <a href="about.html" class="mobile-nav-link">About</a>
                 <a href="contact.html" class="mobile-nav-link active">Contact</a>
                 <button class="theme-toggle" aria-label="Toggle dark mode">
@@ -154,12 +157,15 @@
     }
     </script>
     <script>
-        function handleContactSubmit() {
+        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+        async function handleContactSubmit() {
             const status = document.getElementById('contact-status');
-            const name = document.getElementById('contact-name').value;
-            const email = document.getElementById('contact-email').value;
-            const subject = document.getElementById('contact-subject').value;
-            const message = document.getElementById('contact-message').value;
+            const form = document.getElementById('contact-form');
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const subject = document.getElementById('contact-subject').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
 
             if (!name || !email || !message) {
                 status.textContent = 'Please fill in all required fields.';
@@ -169,17 +175,41 @@
                 return;
             }
 
-            const mailto = `mailto:contact@bimaniti.in?subject=${encodeURIComponent(subject || 'Contact from Website')}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
-            window.location.href = mailto;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                status.textContent = 'Please enter a valid email address.';
+                status.style.color = 'var(--alert)';
+                status.style.display = 'block';
+                setTimeout(() => { status.style.display = 'none'; }, 4000);
+                return;
+            }
 
-            status.textContent = 'Thank you! Your message has been sent.';
-            status.style.color = 'var(--accent)';
+            status.textContent = 'Sending...';
+            status.style.color = 'var(--text-secondary)';
             status.style.display = 'block';
 
-            document.getElementById('contact-name').value = '';
-            document.getElementById('contact-email').value = '';
-            document.getElementById('contact-subject').value = '';
-            document.getElementById('contact-message').value = '';
+            const payload = { name, email, subject: subject || 'Contact from Website', message };
+
+            try {
+                const res = await fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                if (res.ok) {
+                    status.textContent = 'Thank you! Your message has been sent.';
+                    status.style.color = 'var(--accent)';
+                    form.reset();
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (err) {
+                // Graceful fallback to mailto if Formspree is not configured
+                const mailto = `mailto:contact@bimaniti.in?subject=${encodeURIComponent(subject || 'Contact from Website')}&body=${encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message)}`;
+                window.location.href = mailto;
+                status.textContent = 'Could not submit online. Opening your email client instead.';
+                status.style.color = 'var(--accent)';
+            }
 
             setTimeout(() => { status.style.display = 'none'; }, 5000);
         }
