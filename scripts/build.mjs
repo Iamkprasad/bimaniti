@@ -37,6 +37,8 @@ function pageShell(title, desc, ogTitle, ogDesc, ogImage, canonical, jsonld, bod
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
     <title>${htmlEscape(title)}</title>
     <meta name="description" content="${htmlEscape(desc)}">
     <meta property="og:title" content="${htmlEscape(ogTitle || title)}">
@@ -506,11 +508,12 @@ function generateLearnPages() {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
     <title>${htmlEscape(title)}</title>
     <meta name="description" content="${htmlEscape(desc)}">
     <meta property="og:title" content="${htmlEscape(title)}">
-    <meta property="og:description" content="${htmlEscape(desc)}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bimaniti.in/learn.html">
     <meta property="og:image" content="https://bimaniti.in/assets/og/default.svg">
@@ -677,11 +680,12 @@ function generateGuidePage() {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
     <title>${htmlEscape(title)}</title>
     <meta name="description" content="${htmlEscape(desc)}">
     <meta property="og:title" content="${htmlEscape(title)}">
-    <meta property="og:description" content="${htmlEscape(desc)}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bimaniti.in/insurance-guide.html">
     <meta property="og:image" content="https://bimaniti.in/assets/og/default.svg">
