@@ -123,7 +123,7 @@
   padding: 0.85rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: var(--bg-primary);
+  background: var(--card-bg);
   text-decoration: none;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }

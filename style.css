@@ -1,10 +1,8 @@
 html { color-scheme: light; }
 html.dark { color-scheme: dark; }
 
-/* Transitions applied only to elements that need them */
-a, button, .card, .blog-card, .archive-row, .post-card,
-.nav-link, .filter-btn, .btn-primary, .btn-outline, .theme-toggle,
-.timeline-dot, .share-btn {
+/* Transitions — scoped to interactive elements only */
+.nav-link, .filter-btn, .btn-primary, .btn-outline, .theme-toggle, .share-btn {
   transition: background-color 0.25s ease, border-color 0.2s ease, color 0.15s ease;
 }
 
@@ -45,11 +43,11 @@ a, button, .card, .blog-card, .archive-row, .post-card,
 
 /* Page header offset â€” prevents fixed navbar from cropping content */
 .page-header {
-  padding-top: 80px;
+  padding: 80px 1.5rem 2rem;
   scroll-margin-top: 96px;
 }
 @media (max-width: 768px) {
-  .page-header { padding-top: 64px; scroll-margin-top: 80px; }
+  .page-header { padding: 64px 1.25rem 1.5rem; scroll-margin-top: 80px; }
 }
 
 /* Page section eyebrow label â€” e.g. "Insurance analysis" */
@@ -945,10 +943,11 @@ textarea.contact-input {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.hero .fade-in { transition-delay: 0.1s; }
-.hero .fade-in-up { transition-delay: 0.2s; }
-.hero .hero-desc.fade-in { transition-delay: 0.35s; }
-.hero .hero-actions.fade-in-up { transition-delay: 0.5s; }
+.hero .fade-in,
+.hero .fade-in-up {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .fade-in.visible,
 .fade-in-up.visible {
