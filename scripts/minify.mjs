@@ -6,11 +6,26 @@ import * as esbuild from 'esbuild';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 async function minifyCSS() {
-  const src = join(ROOT, 'style.css');
   const out = join(ROOT, 'assets', 'css', 'style.min.css');
-  if (!existsSync(src)) return;
 
-  let css = readFileSync(src, 'utf-8');
+  const parts = [
+    'style.css',
+    'assets/css/nav.css',
+    'assets/css/cards.css',
+    'assets/css/footer.css',
+    'assets/css/post.css',
+    'assets/css/home.css',
+    'assets/css/learn.css',
+    'assets/css/guide.css'
+  ];
+
+  let css = '';
+  for (const part of parts) {
+    const src = join(ROOT, part);
+    if (!existsSync(src)) continue;
+    css += readFileSync(src, 'utf-8') + '\n';
+  }
+
   // Basic minification: strip comments, collapse whitespace
   css = css.replace(/\/\*[\s\S]*?\*\//g, '');
   css = css.replace(/\s*([{}:;,])\s*/g, '$1');
