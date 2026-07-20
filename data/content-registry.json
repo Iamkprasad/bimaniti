@@ -1,6 +1,74 @@
 {
     "news": [
         {
+            "id": "NWS-043",
+            "slug": "irdai-consultation-paper-pepf-rs-800-crore-policyholder-fund",
+            "title": "IRDAI Seeks Comments on Rs 800 Crore Policyholders' Education and Protection Fund Regulations",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "PEPF",
+                "Policyholder",
+                "IRDAI/Regulatory"
+            ],
+            "published_date": "2026-07-20",
+            "summary": "IRDAI issued a consultation paper on the proposed regulatory framework for the Rs 800 crore Policyholders' Education and Protection Fund.",
+            "status": "published",
+            "file_path": "news/irdai-consultation-paper-pepf-rs-800-crore-policyholder-fund.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "NWS-002"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-042",
+            "slug": "life-insurance-sector-fy27-nbp-growth-16-percent",
+            "title": "Life Insurance Sector Begins FY27 with 16.6% NBP Growth",
+            "category": "Life Insurance",
+            "tags": [
+                "NBP",
+                "FY27",
+                "Private Insurers",
+                "Retail",
+                "Life Insurance"
+            ],
+            "published_date": "2026-07-17",
+            "summary": "India's life insurance sector began FY27 with robust new business premiums growing 16.6%, with private insurers' share nearing 40%.",
+            "status": "published",
+            "file_path": "news/life-insurance-sector-fy27-nbp-growth-16-percent.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "NWS-012",
+                "BLG-011"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "NWS-041",
+            "slug": "icici-lombard-q1-fy27-profit-slumps-fire-claims-motor-tp",
+            "title": "ICICI Lombard Q1 FY27: Profit Slumps 46% on Large Fire Claims, Motor TP Verdict",
+            "category": "General Insurance",
+            "tags": [
+                "ICICI Lombard",
+                "Q1 FY27",
+                "PAT",
+                "Fire Claims",
+                "Motor TP",
+                "General Insurance"
+            ],
+            "published_date": "2026-07-16",
+            "summary": "ICICI Lombard reported a 46% YoY decline in Q1 FY27 net profit to Rs 403 crore, hit by large fire claims and the Supreme Court's Motor TP verdict.",
+            "status": "published",
+            "file_path": "news/icici-lombard-q1-fy27-profit-slumps-fire-claims-motor-tp.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "NWS-018",
+                "NWS-011"
+            ],
+            "superseded_by": null
+        },
+        {
             "id": "NWS-026",
             "slug": "hdfc-life-icici-pru-q1-fy27-double-digit-profit-growth",
             "title": "HDFC Life & ICICI Pru Q1 FY27: Double-Digit Profit Growth",
@@ -810,6 +878,53 @@
     ],
     "blogs": [
         {
+            "id": "BLG-033",
+            "slug": "bima-sugam-countdown-full-launch-nears",
+            "title": "Bima Sugam Countdown: What to Expect as Full Launch Nears",
+            "category": "IRDAI/Regulatory",
+            "tags": [
+                "IRDAI",
+                "Bima Sugam",
+                "Digital",
+                "Marketplace",
+                "DPI"
+            ],
+            "published_date": "2026-07-20",
+            "summary": "Bima Sugam's full transactional launch is expected by end-September 2026. The zero-commission digital marketplace could reshape insurance distribution.",
+            "status": "published",
+            "file_path": "blogs/bima-sugam-countdown-full-launch-nears.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "BLG-014",
+                "BLG-003"
+            ],
+            "superseded_by": null
+        },
+        {
+            "id": "BLG-032",
+            "slug": "icici-lombard-q1-fy27-fire-losses-motor-reserves-profit-squeeze",
+            "title": "ICICI Lombard Q1 FY27: Fire Losses, Motor Reserves, and the Profit Squeeze",
+            "category": "General Insurance",
+            "tags": [
+                "ICICI Lombard",
+                "Q1 FY27",
+                "Fire Claims",
+                "Motor TP",
+                "Combined Ratio",
+                "General Insurance"
+            ],
+            "published_date": "2026-07-19",
+            "summary": "ICICI Lombard's Q1 profit slumped 46% as large fire claims and the Supreme Court's Motor TP verdict hit earnings. Analysis of whether this is a one-off or a warning sign.",
+            "status": "published",
+            "file_path": "blogs/icici-lombard-q1-fy27-fire-losses-motor-reserves-profit-squeeze.md",
+            "previous_coverage_id": null,
+            "related_ids": [
+                "NWS-041",
+                "BLG-018"
+            ],
+            "superseded_by": null
+        },
+        {
             "id": "BLG-028",
             "slug": "gst-itc-impact-on-insurers-10-months-on",
             "title": "GST ITC Impact on Insurers: 10 Months On",
@@ -1449,5 +1564,5 @@
             "superseded_by": null
         }
     ],
-    "last_updated": "2026-07-18"
+    "last_updated": "2026-07-20"
 }
