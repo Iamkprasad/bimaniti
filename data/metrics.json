@@ -34,7 +34,7 @@
     "unit": "%",
     "maxValue": 60,
     "data": [
-      { "label": "Life Insurance", "value": 52, "color": "var(--accent)" },
+      { "label": "Life Insurance", "value": 52, "color": "#4a6741" },
       { "label": "Health Insurance", "value": 22, "color": "#b94040" },
       { "label": "Motor Insurance", "value": 15, "color": "#7A4000" },
       { "label": "Other Lines", "value": 11, "color": "#3A1A6E" }
