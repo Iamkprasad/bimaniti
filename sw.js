@@ -1,4 +1,4 @@
-var CACHE = 'bimaniti-v6';
+var CACHE = 'bimaniti-v7';
 
 function getBasePath() {
   var scope = self.registration.scope;
@@ -20,6 +20,17 @@ function getPrecacheList() {
     '404.html',
     'learn.html',
     'insurance-guide.html',
+    'privacy.html',
+    'terms.html',
+    'disclaimer.html',
+    'editorial.html',
+    'learn/foundations.html',
+    'learn/motor.html',
+    'learn/health.html',
+    'learn/life.html',
+    'learn/home.html',
+    'learn/travel.html',
+    'learn/cyber.html',
     'assets/css/style.min.css',
     'assets/css/learn.css',
     'assets/css/guide.css',
