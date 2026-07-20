@@ -501,6 +501,7 @@
             "published_date": "2026-04-01",
             "summary": "IRDAI granted a 12-month forbearance period for insurers transitioning to Ind AS, requiring quarterly proforma financials and parallel reporting for two years.",
             "status": "published",
+            "previous_coverage_id": null,
             "file_path": "news/irdai-grants-12-month-ind-as-forbearance-to-insurers.md",
             "related_ids": [
                 "BLG-009"
@@ -558,6 +559,7 @@
             "published_date": "2026-03-26",
             "summary": "Allianz Jio Reinsurance has formally commenced operations after receiving final IRDAI approval on March 12, 2026.",
             "status": "published",
+            "previous_coverage_id": null,
             "file_path": "news/allianz-jio-reinsurance-commences-operations.md",
             "related_ids": [
                 "BLG-030"
