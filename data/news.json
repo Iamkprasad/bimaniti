@@ -734,7 +734,7 @@
         "slug": "swiss-re-forecasts-india-as-fastest-growing-major-insurance-market-at-69-cagr-ov",
         "title": "Swiss Re Forecasts India as Fastest-Growing Major Insurance Market at 6.9% CAGR Over 2026-2030",
         "category": "General Insurance",
-        "tags": "General Insurance",
+        "tags": ["General Insurance"],
         "author": "BimaNiti",
         "source": "Swiss Re",
         "published_date": "2026-01-19",
