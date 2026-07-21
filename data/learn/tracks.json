@@ -38,7 +38,6 @@
             },
             {
               "id": "i4",
-              "type": "step",
               "illustration": "card",
               "concept": {
                 "title": "IDV Calculation \u2014 Key Rules",
@@ -85,7 +84,6 @@
             },
             {
               "id": "t4",
-              "type": "step",
               "illustration": "card",
               "concept": {
                 "title": "Third-Party Premium \u2014 Key Rules",
@@ -132,7 +130,6 @@
             },
             {
               "id": "o4",
-              "type": "step",
               "illustration": "card",
               "concept": {
                 "title": "Own Damage Premium \u2014 Key Rules",
@@ -186,7 +183,6 @@
             },
             {
               "id": "n5",
-              "type": "step",
               "illustration": "card",
               "concept": {
                 "title": "NCB & Discounts \u2014 Key Rules",
@@ -241,7 +237,6 @@
             },
             {
               "id": "a5",
-              "type": "step",
               "illustration": "card",
               "concept": {
                 "title": "Add-ons \u2014 Key Rules",
