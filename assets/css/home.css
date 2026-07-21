@@ -20,7 +20,7 @@
   pointer-events: none;
 }
 @media (max-width: 768px) {
-  .home .hero { min-height: auto; padding: 3rem 1.25rem 2.5rem; }
+  .home .hero { min-height: auto; padding: 4rem 1.25rem 2.5rem; }
 }
 .home .hero-content { max-width: 44rem; }
 .home .hero-wordmark {
