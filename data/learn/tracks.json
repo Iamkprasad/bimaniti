@@ -1,6 +1,276 @@
 {
   "tracks": [
     {
+      "id": "motor-premium-calculator",
+      "title": "Motor Premium Calculator",
+      "tagline": "Calculate motor premiums from scratch \u2014 IDV to final price.",
+      "icon": "calculator",
+      "levels": [
+        {
+          "id": "idv",
+          "title": "Level 1 \u00b7 IDV Calculation",
+          "intro": "Learn how Insured Declared Value is calculated \u2014 the foundation of your motor premium.",
+          "scenes": [
+            {
+              "id": "i1",
+              "type": "step",
+              "illustration": "idv",
+              "narrative": "IDV (Insured Declared Value) is the maximum amount your insurer will pay if your car is stolen or damaged beyond repair (total loss). It is NOT the ex-showroom price \u2014 it is the current market value after depreciation.",
+              "formula": "IDV = Ex-showroom Price \u00d7 (1 \u2212 Depreciation %)",
+              "result": "Higher IDV = higher premium but better payout. Lower IDV = cheaper premium but lower claim amount."
+            },
+            {
+              "id": "i2",
+              "type": "step",
+              "illustration": "formula",
+              "narrative": "IRDAI prescribes a standard depreciation table for cars based on age. The depreciation % increases every year up to 50%, after which it stays flat.",
+              "formula": "Depreciation % by age:\n0-6 months: 5% | 6-12 months: 10%\n1-2 years: 15% | 2-3 years: 20%\n3-4 years: 25% | 4-5 years: 30%\n5-10 years: 40% | 10+ years: 50%",
+              "result": "A car that is 3 years old has 25% depreciation applied to its ex-showroom price."
+            },
+            {
+              "id": "i3",
+              "type": "step",
+              "illustration": "result",
+              "narrative": "Let us calculate IDV for a Maruti Suzuki Baleno Zeta (ex-showroom \u20b98,27,000) that is 1 year old.",
+              "formula": "IDV = \u20b98,27,000 \u00d7 (1 \u2212 0.15)\nIDV = \u20b98,27,000 \u00d7 0.85\nIDV = \u20b97,02,950",
+              "example": "1 year old \u2192 15% depreciation.\nDepreciation amount: \u20b98,27,000 \u00d7 15% = \u20b91,24,050\nIDV = \u20b98,27,000 \u2212 \u20b91,24,050 = \u20b97,02,950",
+              "result": "The IDV for this 1-year-old Baleno is approximately \u20b97,03,000 (rounded)."
+            },
+            {
+              "id": "i4",
+              "type": "step",
+              "illustration": "card",
+              "concept": {
+                "title": "IDV Calculation \u2014 Key Rules",
+                "points": [
+                  "IDV = Ex-showroom price minus depreciation as per IRDAI age-based table.",
+                  "Depreciation ranges from 5% (new) to 50% (10+ years).",
+                  "Insurers may offer a higher IDV (up to 10% above calculated) at extra premium.",
+                  "For add-ons like Zero Dep, IDV stays the same \u2014 the add-on changes claim payout, not the premium base."
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "tp",
+          "title": "Level 2 \u00b7 Third-Party Premium",
+          "intro": "The mandatory part of every motor policy \u2014 how TP premium is set by IRDAI.",
+          "scenes": [
+            {
+              "id": "t1",
+              "type": "step",
+              "illustration": "car",
+              "narrative": "Third-Party (TP) liability insurance is mandatory for every motor vehicle in India. It covers your legal liability for death or injury to a third person and damage to third-party property (up to \u20b97.5 lakh).",
+              "formula": "TP Premium = Fixed rate set by IRDAI based on engine capacity",
+              "result": "You cannot reduce TP premium \u2014 it is fixed, not based on IDV or your driving history."
+            },
+            {
+              "id": "t2",
+              "type": "step",
+              "illustration": "formula",
+              "narrative": "IRDAI sets different TP premium rates for private cars based on engine cubic capacity (cc). These are revised periodically.",
+              "formula": "Private Car TP Rates (FY26-27):\nUp to 1000 cc: \u20b92,349 per year\n1001 to 1500 cc: \u20b93,703 per year\nAbove 1500 cc: \u20b98,585 per year",
+              "example": "A Baleno with 1197 cc engine falls in the 1001-1500 cc bracket.\nAnnual TP premium: \u20b93,703",
+              "result": "The TP premium is the same for all cars in the same cc bracket regardless of car price."
+            },
+            {
+              "id": "t3",
+              "type": "step",
+              "illustration": "result",
+              "narrative": "For new cars, you can buy a long-term TP policy (3 years for cars) at the time of purchase. This is mandatory for new vehicle registrations.",
+              "formula": "3-Year TP Premium = Year 1 + Year 2 + Year 3\n= \u20b93,703 + \u20b92,963 + \u20b92,963 = \u20b99,629",
+              "example": "Year 1: full rate (\u20b93,703)\nYear 2: 80% of Year 1 (\u20b92,963)\nYear 3: 80% of Year 1 (\u20b92,963)\nTotal for 3 years: \u20b99,629 + GST",
+              "result": "Long-term TP gives 3 years of coverage and protects against premium hikes."
+            },
+            {
+              "id": "t4",
+              "type": "step",
+              "illustration": "card",
+              "concept": {
+                "title": "Third-Party Premium \u2014 Key Rules",
+                "points": [
+                  "TP premium is fixed by IRDAI based on engine capacity \u2014 you cannot negotiate or reduce it.",
+                  "Current rates (FY27): \u20b92,349 / \u20b93,703 / \u20b98,585 for private cars by cc bracket.",
+                  "Long-term TP (3 years) is mandatory for new cars and protects against rate revisions.",
+                  "GST at 18% is added to the TP premium."
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "od",
+          "title": "Level 3 \u00b7 Own Damage Premium",
+          "intro": "The optional but crucial part \u2014 how OD premium is calculated as a percentage of IDV.",
+          "scenes": [
+            {
+              "id": "o1",
+              "type": "step",
+              "illustration": "split",
+              "narrative": "Own Damage (OD) covers damage to YOUR car from accidents, fire, theft, natural calamities, and vandalism. Unlike TP, OD is optional but recommended.",
+              "formula": "OD Premium = IDV \u00d7 OD Rate (%)",
+              "result": "OD premium depends on your car's IDV and the OD rate applied by the insurer."
+            },
+            {
+              "id": "o2",
+              "type": "step",
+              "illustration": "formula",
+              "narrative": "The OD rate varies by engine capacity and is set by IRDAI as a base rate. Insurers can load or discount within a band.",
+              "formula": "Base OD Rates for Private Cars (FY27):\nUp to 1000 cc: 3.37% of IDV\n1001 to 1500 cc: 3.14% of IDV\nAbove 1500 cc: 2.91% of IDV",
+              "example": "Baleno IDV = \u20b97,02,950, cc = 1197 (1001-1500 bracket)\nOD Premium = \u20b97,02,950 \u00d7 3.14%\nOD Premium = \u20b97,02,950 \u00d7 0.0314 = \u20b922,073",
+              "result": "The base OD premium for this car is \u20b922,073 before any discounts or loads."
+            },
+            {
+              "id": "o3",
+              "type": "step",
+              "illustration": "discount",
+              "narrative": "You can reduce your OD premium by choosing a higher voluntary deductible. A deductible is the amount you pay per claim before the insurer pays.",
+              "formula": "Voluntary Deductible Discounts:\n\u20b92,000 deductible \u2192 ~15% off OD premium\n\u20b95,000 deductible \u2192 ~30% off OD premium\n\u20b910,000 deductible \u2192 ~45% off OD premium",
+              "example": "With \u20b95,000 voluntary deductible:\nOD Premium = \u20b922,073 \u2212 30% = \u20b915,451",
+              "result": "Higher deductible = lower premium but more out-of-pocket at claim time."
+            },
+            {
+              "id": "o4",
+              "type": "step",
+              "illustration": "card",
+              "concept": {
+                "title": "Own Damage Premium \u2014 Key Rules",
+                "points": [
+                  "OD premium = IDV \u00d7 OD rate (typically 2.9% to 3.37% based on cc).",
+                  "You can reduce OD premium with a voluntary deductible.",
+                  "Fitting anti-theft devices and AIS (Automated Inspection System) also qualify for small discounts.",
+                  "Combined OD + TP = Comprehensive policy."
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "ncb",
+          "title": "Level 4 \u00b7 NCB & Discounts",
+          "intro": "Your reward for not making claims \u2014 No Claim Bonus can cut your OD premium by up to 50%.",
+          "scenes": [
+            {
+              "id": "n1",
+              "type": "step",
+              "illustration": "ncb",
+              "narrative": "No Claim Bonus (NCB) is a discount on your OD premium for every claim-free year. It is your reward for safe driving. NCB applies ONLY to the OD portion, NOT to TP.",
+              "formula": "NCB Discount = OD Premium \u00d7 NCB %\nFinal OD = OD Premium \u2212 NCB Discount",
+              "result": "NCB is the single biggest discount available on motor insurance."
+            },
+            {
+              "id": "n2",
+              "type": "step",
+              "illustration": "discount",
+              "narrative": "NCB accumulates over claim-free years. The scale is set by IRDAI and is transferable if you switch insurers.",
+              "formula": "NCB Scale (private cars):\n0 claim-free years: 0%\n1 year: 20% | 2 years: 25%\n3 years: 35% | 4 years: 45%\n5+ years: 50% (maximum)",
+              "result": "After 5 claim-free years, you get the maximum 50% discount on OD premium."
+            },
+            {
+              "id": "n3",
+              "type": "step",
+              "illustration": "result",
+              "narrative": "Let us apply NCB to our Baleno example.",
+              "formula": "OD Premium: \u20b922,073\nNCB at 50% (5 claim-free years): \u20b922,073 \u00d7 50% = \u20b911,037\nNet OD Premium: \u20b922,073 \u2212 \u20b911,037 = \u20b911,036",
+              "example": "Without NCB: OD = \u20b922,073\nWith 50% NCB: OD = \u20b911,036\nYou save \u20b911,037 per year just by being claim-free.",
+              "result": "NCB alone can halve your OD premium. Protect it wisely."
+            },
+            {
+              "id": "n4",
+              "type": "step",
+              "illustration": "discount",
+              "narrative": "Other discounts you may qualify for include voluntary deductible (already covered), anti-theft device discount (~2.5% of OD), and AIS (Automated Inspection System) discount.",
+              "formula": "Total OD Discount = NCB % + Voluntary Deductible %\n(Most discounts apply to the base OD premium, not cumulatively to the reduced amount.)",
+              "result": "Always ask your insurer about all applicable discounts \u2014 they add up."
+            },
+            {
+              "id": "n5",
+              "type": "step",
+              "illustration": "card",
+              "concept": {
+                "title": "NCB & Discounts \u2014 Key Rules",
+                "points": [
+                  "NCB applies only to OD premium, not TP.",
+                  "NCB ranges from 20% (1 year) to 50% (5+ years).",
+                  "Making a claim resets NCB to 0% \u2014 weigh small claims against losing NCB.",
+                  "NCB is transferable when switching insurers (with valid NCB certificate).",
+                  "NCB Protection add-on preserves your NCB after 1 claim."
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "addons",
+          "title": "Level 5 \u00b7 Add-ons",
+          "intro": "Optional covers that enhance your policy \u2014 each with a specific cost and use case.",
+          "scenes": [
+            {
+              "id": "a1",
+              "type": "step",
+              "illustration": "addons",
+              "narrative": "Add-ons are optional covers you can buy to enhance your comprehensive policy. Each has a fixed or percentage-based cost. Pick based on your car and usage, not what the agent suggests.",
+              "formula": "Total Add-on Cost = Sum of individual add-on premiums",
+              "result": "Add-ons typically add \u20b95,000 to \u20b910,000 to your total premium."
+            },
+            {
+              "id": "a2",
+              "type": "step",
+              "illustration": "discount",
+              "narrative": "Zero Depreciation (Nil Dep) is the most popular add-on. It waives the depreciation deduction on replaced parts at claim time. Without it, plastic/rubber parts get 50% depreciation, metal parts get 10-30%.",
+              "formula": "Zero Depreciation Cover = ~0.5% to 0.7% of IDV per year",
+              "example": "At \u20b97,02,950 IDV: Zero Dep add-on \u2248 \u20b93,600 per year.\nWithout Zero Dep: a \u20b910,000 plastic bumper replacement pays only \u20b95,000.\nWith Zero Dep: pays full \u20b910,000.",
+              "result": "Zero Dep is highly recommended for new cars up to 5 years old."
+            },
+            {
+              "id": "a3",
+              "type": "step",
+              "illustration": "addons",
+              "narrative": "Other important add-ons and their typical costs:",
+              "formula": "Engine & Gearbox Protect: ~\u20b91,500 \u2014 covers engine, gearbox, hybrid battery repairs.\nRoadside Assistance (RSA): ~\u20b9750 \u2014 towing, flat tire, fuel delivery.\nNCB Protection: ~\u20b9800 \u2014 preserves your NCB after one claim.\nUnnamed Passenger Cover: ~\u20b9550 \u2014 covers injury to occupants.",
+              "result": "Pick add-ons based on your risk profile, not because the agent suggests them."
+            },
+            {
+              "id": "a4",
+              "type": "step",
+              "illustration": "result",
+              "narrative": "Let us combine all add-ons for our Baleno example.",
+              "formula": "Zero Dep: \u20b93,600\nEngine Protect: \u20b91,500\nRoadside Assistance: \u20b9750\nNCB Protection: \u20b9800\nUnnamed Passenger: \u20b9550\nTotal Add-ons: \u20b97,200",
+              "result": "Add-ons add \u20b97,200 to the annual premium. In practice, pick only the ones you need."
+            },
+            {
+              "id": "a5",
+              "type": "step",
+              "illustration": "card",
+              "concept": {
+                "title": "Add-ons \u2014 Key Rules",
+                "points": [
+                  "Zero Dep is the most valuable add-on for cars under 5 years.",
+                  "Engine Protect is critical in flood-prone areas.",
+                  "NCB Protection saves your accumulated NCB after one claim.",
+                  "Unnamed Passenger Cover is cheap and covers fellow occupants.",
+                  "Roadside Assistance is useful for highway commuters."
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "calculator",
+          "title": "Level 6 \u00b7 Interactive Calculator",
+          "intro": "Put it all together \u2014 calculate a complete premium in real time.",
+          "scenes": [
+            {
+              "id": "c1",
+              "type": "calculator",
+              "illustration": "calculator"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "motor",
       "title": "Motor Insurance",
       "tagline": "From third-party to own-damage — what actually pays when you crash.",
