@@ -105,9 +105,6 @@
         </div>
     </footer>
     <script defer>
-    (function(){var s=localStorage.getItem('theme')||'light';if(s==='dark')document.documentElement.classList.add('dark')})();
-    document.querySelectorAll('.theme-toggle').forEach(function(t){t.addEventListener('click',function(){var h=document.documentElement;var d=h.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light')})});
-    (function(){var m=document.querySelector('.mobile-menu-btn'),n=document.querySelector('.mobile-nav'),i=document.querySelector('.menu-icon'),c=document.querySelector('.close-icon');if(m&&n)m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o);if(i)i.classList.toggle('hidden');if(c)c.classList.toggle('hidden')})})();
     (function(){if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(function(){})})();
     </script>
     <script defer src="assets/js/script.min.js"></script>

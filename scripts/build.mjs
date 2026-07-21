@@ -222,10 +222,7 @@ html.dark .theme-toggle .icon-moon{display:none}
         </div>
     </footer>
     <script defer>
-    (function(){var s=localStorage.getItem('theme')||'light';if(s==='dark')document.documentElement.classList.add('dark')})();
-    document.querySelectorAll('.theme-toggle').forEach(function(t){t.addEventListener('click',function(){var h=document.documentElement;var d=h.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light')})});
     (function(){var b=document.querySelector('.progress-bar');if(b){window.addEventListener('scroll',function(){var h=document.documentElement.scrollHeight-window.innerHeight;b.style.width=(h>0?(window.scrollY/h)*100:0)+'%'})}})();
-    (function(){var m=document.querySelector('.mobile-menu-btn'),n=document.querySelector('.mobile-nav'),i=document.querySelector('.menu-icon'),c=document.querySelector('.close-icon');if(m&&n)m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o);if(i)i.classList.toggle('hidden');if(c)c.classList.toggle('hidden')})})();
     (function(){if('serviceWorker'in navigator)navigator.serviceWorker.register('../sw.js').catch(function(){})})();
     </script>
     <script defer src="../script.js"></script>
@@ -617,11 +614,6 @@ function generateLearnPages() {
             <p class="footer-disclaimer">Not investment advice. This site is for informational purposes only.</p>
         </div>
     </footer>
-    <script defer>
-    (function(){var s=localStorage.getItem('theme')||'light';if(s==='dark')document.documentElement.classList.add('dark')})();
-    document.querySelectorAll('.theme-toggle').forEach(function(t){t.addEventListener('click',function(){var h=document.documentElement;var d=h.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light')})});
-    (function(){var m=document.querySelector('.mobile-menu-btn'),n=document.querySelector('.mobile-nav'),i=document.querySelector('.menu-icon'),c=document.querySelector('.close-icon');if(m&&n)m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o);if(i)i.classList.toggle('hidden');if(c)c.classList.toggle('hidden')})})();
-    </script>
     <script defer src="../assets/js/script.min.js"></script>
     <script defer src="../assets/js/learn.js"></script>
 </body>
@@ -780,9 +772,6 @@ function generateGuidePage() {
         </div>
     </footer>
     <script defer>
-    (function(){var s=localStorage.getItem('theme')||'light';if(s==='dark')document.documentElement.classList.add('dark')})();
-    document.querySelectorAll('.theme-toggle').forEach(function(t){t.addEventListener('click',function(){var h=document.documentElement;var d=h.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light')})});
-    (function(){var m=document.querySelector('.mobile-menu-btn'),n=document.querySelector('.mobile-nav'),i=document.querySelector('.menu-icon'),c=document.querySelector('.close-icon');if(m&&n)m.addEventListener('click',function(){var o=n.classList.toggle('open');m.setAttribute('aria-expanded',o);if(i)i.classList.toggle('hidden');if(c)c.classList.toggle('hidden')})})();
     (function(){if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(function(){})})();
     </script>
     <script defer src="assets/js/script.min.js"></script>

@@ -141,12 +141,14 @@
             div.appendChild(document.createTextNode(str));
             return div.innerHTML;
         }
-        fetch('data/home-featured.json', { mode: 'same-origin' })
+        fetch('data/blogs.json', { mode: 'same-origin' })
             .then(function(r) { return r.json(); })
             .then(function(data) {
-                if (!data.blogs) return;
-                container.innerHTML = data.blogs.map(function(blog) {
-                    var slug = (blog.slug || blog.id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                if (!data || !data.length) return;
+                var sorted = data.slice().sort(function(a, b) { return a.published_date < b.published_date ? 1 : -1; });
+                var latest = sorted.slice(0, 3);
+                container.innerHTML = latest.map(function(blog) {
+                    var slug = blog.slug || blog.id.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
                     return '<a href="post/' + slug + '.html" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + escapeHtml(blog.category) + '</span><h3 class="card-title">' + escapeHtml(blog.title) + '</h3><p class="card-excerpt">' + escapeHtml(blog.summary) + '</p><div class="card-meta"><span>' + escapeHtml(blog.published_date) + '</span><span>\u00B7</span><span>' + escapeHtml(blog.author) + '</span></div></div></article></a>';
                 }).join('');
             })

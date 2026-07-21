@@ -38,7 +38,6 @@ function getPrecacheList() {
     'assets/js/learn.js',
     'assets/js/guide.js',
     'logo.svg',
-    'data/home-featured.json',
     'data/blogs.json',
     'data/news.json',
     'data/timeline.json',

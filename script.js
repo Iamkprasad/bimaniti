@@ -165,26 +165,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (isHomepage) {
         Promise.all([
-            loadData('data/home-featured.json'),
+            loadData('data/blogs.json'),
+            loadData('data/news.json'),
             loadData('data/timeline.json'),
             loadData('data/metrics.json')
         ]).then(function(results) {
-            var homeData = results[0];
-            var timelineData = results[1];
-            var metricsData = results[2];
+            var blogs = results[0] || [];
+            var news = results[1] || [];
+            var timelineData = results[2];
+            var metricsData = results[3];
+
+            // Sort blogs by date descending, take latest 3
+            blogs.sort(function(a, b) { return a.published_date < b.published_date ? 1 : -1; });
+            var latestBlogs = blogs.slice(0, 3);
+
+            // Sort news by date descending, take latest 3
+            news.sort(function(a, b) { return a.published_date < b.published_date ? 1 : -1; });
+            var latestNewsItems = news.slice(0, 3);
 
             // Featured blog posts (lightweight)
             var featuredContainer = document.getElementById('featured-posts');
-            if (featuredContainer && homeData && homeData.blogs) {
-                featuredContainer.innerHTML = homeData.blogs.map(function(blog) {
+            if (featuredContainer && latestBlogs.length) {
+                featuredContainer.innerHTML = latestBlogs.map(function(blog) {
                     return '<a href="' + postUrl(blog) + '" class="card-link"><article class="card"><div class="card-body"><span class="card-label">' + escapeHtml(blog.category) + '</span><h3 class="card-title">' + escapeHtml(blog.title) + '</h3><p class="card-excerpt">' + escapeHtml(blog.summary) + '</p><div class="card-meta"><span>' + escapeHtml(blog.published_date) + '</span><span>\u00B7</span><span>' + escapeHtml(blog.author) + '</span></div></div></article></a>';
                 }).join('');
             }
 
             // Latest news (lightweight)
             var latestNews = document.getElementById('latest-news');
-            if (latestNews && homeData && homeData.news) {
-                latestNews.innerHTML = homeData.news.map(function(item) {
+            if (latestNews && latestNewsItems.length) {
+                latestNews.innerHTML = latestNewsItems.map(function(item) {
                     return '<a href="' + postUrl(item) + '" class="post-card"><div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem;"><span class="news-source">' + escapeHtml(item.source || item.author) + '</span><span style="font-size: 0.75rem; color: var(--text-muted); white-space: nowrap;">' + escapeHtml(item.published_date) + '</span></div><h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--text-primary); margin: 0.5rem 0;">' + escapeHtml(item.title) + '</h3><p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">' + escapeHtml(item.summary) + '</p></a>';
                 }).join('');
             }
