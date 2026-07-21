@@ -39,7 +39,11 @@
     fraud: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#b94040" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="34" y="26" width="52" height="32" rx="3"/><path d="M34 34 h52" stroke="#8a8a84"/><path d="M44 44 h22" stroke-dasharray="4 4"/><circle cx="84" cy="50" r="8"/></svg>',
     identity: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#4a6741" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="48" cy="34" r="10"/><path d="M32 62 q16 -20 32 0"/><rect x="70" y="26" width="28" height="30" rx="3"/><path d="M76 36 h16 M76 44 h12" stroke="#8a8a84"/></svg>',
     card: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#4a6741" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="24" y="22" width="72" height="40" rx="5"/><path d="M24 34 h72" stroke="#8a8a84"/><rect x="32" y="42" width="14" height="10" rx="2" stroke="#8a8a84"/><path d="M82 46 h8"/></svg>',
-    ped: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#4a6741" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18 v22 l-10 10 M60 40 l10 14"/><circle cx="60" cy="60" r="12"/><path d="M60 14 a4 4 0 0 1 0 8" stroke="#8a8a84"/></svg>'
+    ped: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#4a6741" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M60 18 v22 l-10 10 M60 40 l10 14"/><circle cx="60" cy="60" r="12"/><path d="M60 14 a4 4 0 0 1 0 8" stroke="#8a8a84"/></svg>',
+    calculator: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#4a6741" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="26" y="18" width="68" height="48" rx="4"/><text x="36" y="38" font-family="monospace" font-size="14" fill="#4a6741" stroke="none">123</text><text x="36" y="54" font-family="monospace" font-size="10" fill="#8a8a84" stroke="none">456</text><line x1="60" y1="44" x2="82" y2="44" stroke="#8a8a84"/></svg>',
+    discount: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#4a6741" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="38" cy="38" r="14"/><path d="M48 48 L72 24" stroke="#b94040"/><circle cx="76" cy="52" r="10"/><path d="M34 34 l8 8 M74 26 h8 l-4 8" stroke="#8a8a84"/></svg>',
+    formula: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#4a6741" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="20" y="20" width="80" height="40" rx="3"/><text x="30" y="44" font-family="monospace" font-size="14" fill="#4a6741" stroke="none">IDV = Price \u00d7 (1 \u2212 Dep%)</text><line x1="28" y1="48" x2="90" y2="48" stroke="#8a8a84"/></svg>',
+    result: '<svg viewBox="0 0 120 80" width="100%" height="100%" fill="none" stroke="#4a6741" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="60" cy="40" r="26"/><path d="M46 40 L56 50 L76 30"/><text x="48" y="20" font-family="monospace" font-size="10" fill="#4a6741" stroke="none">₹</text></svg>'
   };
 
   // ---- helpers ----
@@ -88,12 +92,43 @@
   }
 
   // ---- rendering ----
+  function renderStepScene(stepNum, total) {
+    var scene = current.levelScenes[current.sceneIndex];
+    var illus = ILLUS[scene.illustration] || ILLUS.card;
+    var html = '';
+    html += '<div class="learn-progress"><div class="learn-progress-bar" style="width:' + Math.round((stepNum / total) * 100) + '%"></div></div>';
+    html += '<p class="learn-step">Step ' + stepNum + ' of ' + total + '</p>';
+    html += '<div class="learn-illus">' + illus + '</div>';
+    html += '<div class="learn-step-content">';
+    if (scene.formula) html += '<div class="learn-formula">' + escapeHtml(scene.formula) + '</div>';
+    html += '<div class="learn-narrative">' + escapeHtml(scene.narrative) + '</div>';
+    if (scene.example) html += '<div class="learn-example">' + escapeHtml(scene.example) + '</div>';
+    if (scene.result) html += '<div class="learn-result">' + escapeHtml(scene.result) + '</div>';
+    html += '</div>';
+    html += '<div class="learn-actions"><button class="learn-btn" id="learn-next">Next Step \u2192</button></div>';
+    return html;
+  }
+
   function renderScene() {
     var root = document.getElementById('learn-root');
     if (!root) return;
     var scene = current.levelScenes[current.sceneIndex];
     var total = current.levelScenes.length;
     var step = current.sceneIndex + 1;
+
+    if (scene.type === 'step') {
+      root.innerHTML = renderStepScene(step, total);
+      root.scrollTop = 0;
+      document.getElementById('learn-next').addEventListener('click', nextScene);
+      return;
+    }
+
+    if (scene.type === 'calculator') {
+      root.innerHTML = renderCalculatorScene();
+      root.scrollTop = 0;
+      attachCalculatorEvents();
+      return;
+    }
 
     var illus = ILLUS[scene.illustration] || ILLUS.card;
     var html = '';
@@ -108,10 +143,10 @@
       html += '<h3>' + escapeHtml(scene.concept.title) + '</h3><ul>';
       scene.concept.points.forEach(function (p) { html += '<li>' + escapeHtml(p) + '</li>'; });
       html += '</ul></div>';
-      html += '<div class="learn-actions"><button class="learn-btn" id="learn-next">Finish Level ✓</button></div>';
+      html += '<div class="learn-actions"><button class="learn-btn" id="learn-next">Finish Level \u2713</button></div>';
     } else if (scene.reveal) {
       html += '<div class="learn-feedback" id="learn-feedback">' + escapeHtml(scene.feedback) + '</div>';
-      html += '<div class="learn-actions"><button class="learn-btn" id="learn-next">Continue →</button></div>';
+      html += '<div class="learn-actions"><button class="learn-btn" id="learn-next">Continue \u2192</button></div>';
     } else {
       html += '<p class="learn-question">' + escapeHtml(scene.question) + '</p>';
       html += '<div class="learn-choices" id="learn-choices">';
@@ -129,7 +164,7 @@
       document.getElementById('learn-next').addEventListener('click', finishLevel);
     } else if (scene.reveal) {
       document.getElementById('learn-next').addEventListener('click', nextScene);
-    } else {
+    } else if (!scene.type) {
       var choices = root.querySelectorAll('.learn-choice');
       choices.forEach(function (btn) {
         btn.addEventListener('click', function () { onChoice(parseInt(btn.getAttribute('data-i'), 10)); });
@@ -180,6 +215,90 @@
       if (current.levelScenes[i].id === id) { current.sceneIndex = i; renderScene(); return; }
     }
     nextScene();
+  }
+
+  function renderCalculatorScene() {
+    return '<div class="learn-calculator">' +
+      '<div class="learn-illus">' + ILLUS.calculator + '</div>' +
+      '<h2>Interactive Premium Calculator</h2>' +
+      '<p style="color:var(--text-muted);margin-bottom:1.5rem;">Enter your vehicle details below to calculate the total premium step by step.</p>' +
+      '<div class="learn-calc-form">' +
+      '<label>Ex-showroom Price (\u20b9)<input type="number" id="calc-price" class="learn-calc-input" value="800000" min="100000" max="5000000"></label>' +
+      '<label>Engine Capacity<select id="calc-cc" class="learn-calc-input">' +
+      '<option value="1000">Up to 1000 cc</option>' +
+      '<option value="1500" selected>1001 - 1500 cc</option>' +
+      '<option value="2500">Above 1500 cc</option>' +
+      '</select></label>' +
+      '<label>Vehicle Age (years)<input type="number" id="calc-age" class="learn-calc-input" value="1" min="0" max="15"></label>' +
+      '<label>NCB Claim-Free Years<input type="number" id="calc-ncb" class="learn-calc-input" value="5" min="0" max="10"></label>' +
+      '<fieldset><legend>Add-ons</legend>' +
+      '<label class="learn-calc-check"><input type="checkbox" id="calc-zerodep" checked> Zero Depreciation (\u20b93,600)</label>' +
+      '<label class="learn-calc-check"><input type="checkbox" id="calc-engine"> Engine Protect (\u20b91,500)</label>' +
+      '<label class="learn-calc-check"><input type="checkbox" id="calc-rsa"> Roadside Assistance (\u20b9750)</label>' +
+      '<label class="learn-calc-check"><input type="checkbox" id="calc-ncbprot"> NCB Protection (\u20b9800)</label>' +
+      '<label class="learn-calc-check"><input type="checkbox" id="calc-passenger"> Unnamed Passenger Cover (\u20b9550)</label>' +
+      '</fieldset>' +
+      '</div>' +
+      '<div class="learn-calc-output" id="calc-output"></div>' +
+      '<div class="learn-actions"><button class="learn-btn" id="learn-finish" style="display:none;">Finish Level \u2713</button></div>' +
+      '</div>';
+  }
+
+  function calcPremium() {
+    var price = parseFloat(document.getElementById('calc-price').value) || 800000;
+    var cc = parseInt(document.getElementById('calc-cc').value);
+    var age = parseInt(document.getElementById('calc-age').value) || 0;
+    var ncbYrs = parseInt(document.getElementById('calc-ncb').value) || 0;
+
+    var depPct = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 50, 50, 50, 50, 50];
+    var dep = depPct[Math.min(age, 15)] || 50;
+    var idv = Math.round(price * (100 - dep) / 100);
+
+    var odRate = cc <= 1000 ? 0.0337 : (cc <= 1500 ? 0.0314 : 0.0291);
+    var odPremium = Math.round(idv * odRate);
+
+    var ncbPct = [0, 20, 25, 35, 45, 50, 50, 50, 50, 50, 50];
+    var ncb = ncbPct[Math.min(ncbYrs, 10)];
+    var ncbDiscount = Math.round(odPremium * ncb / 100);
+
+    var tpPremium = cc <= 1000 ? 2349 : (cc <= 1500 ? 3703 : 8585);
+
+    var addons = 0;
+    if (document.getElementById('calc-zerodep').checked) addons += 3600;
+    if (document.getElementById('calc-engine').checked) addons += 1500;
+    if (document.getElementById('calc-rsa').checked) addons += 750;
+    if (document.getElementById('calc-ncbprot').checked) addons += 800;
+    if (document.getElementById('calc-passenger').checked) addons += 550;
+
+    var subtotal = odPremium - ncbDiscount + tpPremium + addons;
+    var gst = Math.round(subtotal * 0.18);
+    var total = subtotal + gst;
+
+    document.getElementById('calc-output').innerHTML =
+      '<table class="learn-calc-table">' +
+      '<tr><td>Ex-showroom Price</td><td class="num">\u20b9 ' + price.toLocaleString('en-IN') + '</td></tr>' +
+      '<tr><td>Depreciation (' + dep + '%)</td><td class="num">\u2212 \u20b9 ' + Math.round(price * dep / 100).toLocaleString('en-IN') + '</td></tr>' +
+      '<tr><td><strong>IDV (Insured Declared Value)</strong></td><td class="num strong">\u20b9 ' + idv.toLocaleString('en-IN') + '</td></tr>' +
+      '<tr class="sep"><td>OD Rate (' + (odRate * 100).toFixed(2) + '%)</td><td class="num">\u20b9 ' + odPremium.toLocaleString('en-IN') + '</td></tr>' +
+      '<tr><td>NCB Discount (' + ncb + '%)</td><td class="num">\u2212 \u20b9 ' + ncbDiscount.toLocaleString('en-IN') + '</td></tr>' +
+      '<tr><td>Net OD Premium</td><td class="num">\u20b9 ' + (odPremium - ncbDiscount).toLocaleString('en-IN') + '</td></tr>' +
+      '<tr><td>Third-Party Premium</td><td class="num">\u20b9 ' + tpPremium.toLocaleString('en-IN') + '</td></tr>' +
+      '<tr><td>Add-ons Total</td><td class="num">\u20b9 ' + addons.toLocaleString('en-IN') + '</td></tr>' +
+      '<tr class="sep"><td>Subtotal</td><td class="num">\u20b9 ' + subtotal.toLocaleString('en-IN') + '</td></tr>' +
+      '<tr><td>GST @ 18%</td><td class="num">\u20b9 ' + gst.toLocaleString('en-IN') + '</td></tr>' +
+      '<tr class="total"><td><strong>Total Premium</strong></td><td class="num strong">\u20b9 ' + total.toLocaleString('en-IN') + '</td></tr>' +
+      '</table>';
+  }
+
+  function attachCalculatorEvents() {
+    var inputs = document.querySelectorAll('.learn-calc-input, .learn-calc-check input');
+    inputs.forEach(function (el) {
+      el.addEventListener('input', calcPremium);
+      el.addEventListener('change', calcPremium);
+    });
+    calcPremium();
+    document.getElementById('learn-finish').style.display = '';
+    document.getElementById('learn-finish').addEventListener('click', finishLevel);
   }
 
   function nextScene() {
