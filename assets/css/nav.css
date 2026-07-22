@@ -32,7 +32,7 @@
 .logo-img { height: 36px; width: auto; display: block; }
 .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
 .logo-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 20px; color: #1F1F1F; }
-.logo-title .logo-niti { color: #355E3B; }
+.logo-title .logo-niti { color: #355E3B; font: inherit; }
 .logo-sub { font-family: 'DM Sans', system-ui, sans-serif; font-weight: 600; font-size: 7.5px; letter-spacing: 2.2px; color: #5A5A5A; }
 html.dark .logo-title { color: #E8E4DC; }
 html.dark .logo-title .logo-niti { color: #8AAA7A; }
