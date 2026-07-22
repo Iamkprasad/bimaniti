@@ -37,7 +37,7 @@
 html.dark .logo-title { color: #E8E4DC; }
 html.dark .logo-title .logo-niti { color: #8AAA7A; }
 html.dark .logo-sub { color: #A0A09A; }
-html.dark .logo-img { opacity: .85; }
+html.dark .logo-img { filter: brightness(1.3); outline: 1px solid rgba(245,243,238,0.15); }
 
 .site-logo { height: 36px; width: auto; }
 .site-logo.footer-brand { height: 32px; }
