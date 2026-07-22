@@ -2,7 +2,7 @@
 # GitHub Pages does not support this file — CSP is applied via <meta http-equiv> in each HTML page.
 
 /*
-  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in; frame-src 'self' https://www.youtube.com; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formsubmit.co; frame-src 'self' https://www.youtube.com; base-uri 'self'; form-action 'self' mailto: https://formsubmit.co; object-src 'none'; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin

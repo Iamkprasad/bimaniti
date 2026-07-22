@@ -7,7 +7,9 @@
   align-items: center;
   justify-content: center;
   padding: 8rem 1.5rem 5rem;
-  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+  background:
+    radial-gradient(ellipse at 50% 30%, color-mix(in srgb, var(--accent) 6%, transparent) 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
   overflow: hidden;
 }
 .home .hero::before {
@@ -15,7 +17,7 @@
   position: absolute;
   inset: 0;
   background-image: radial-gradient(circle, var(--text-muted) 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-size: 32px 32px;
   opacity: 0.1;
   pointer-events: none;
 }
@@ -23,6 +25,8 @@
   .home .hero { min-height: auto; padding: 6rem 1.25rem 3rem; }
 }
 .home .hero-content { max-width: 44rem; }
+
+/* wordmark */
 .home .hero-wordmark {
   font-family: var(--font-body);
   font-size: 0.95rem;
@@ -30,14 +34,34 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 2.5rem;
+  margin-bottom: 0.75rem;
 }
+
+/* accent bar between wordmark and title */
+.home .hero-accent-bar {
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 0 auto 1.5rem;
+}
+
+/* title */
 .home .hero-title { font-size: 3.4rem; line-height: 1.2; margin-bottom: 1.5rem; }
-.home .hero-desc { font-size: 1.15rem; max-width: 34rem; margin-top: 0.5rem; }
+
+/* description */
+.home .hero-desc { font-size: 1.15rem; max-width: 34rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+
+/* CTA buttons below hero description */
+.home .hero-content .hero-actions { margin-top: 1.5rem; }
+
 @media (max-width: 900px) {
   .home .hero-title { font-size: 2.4rem; }
-  .home .hero-wordmark { font-size: 0.85rem; margin-bottom: 1.25rem; }
+  .home .hero-wordmark { font-size: 0.85rem; margin-bottom: 0.5rem; }
+  .home .hero-accent-bar { width: 36px; height: 2px; margin-bottom: 1.25rem; }
   .home .hero-desc { font-size: 1rem; }
+  .home .hero-content .hero-actions { margin-top: 1rem; }
 }
 
 /* grouped block sections */

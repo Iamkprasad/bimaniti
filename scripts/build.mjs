@@ -141,8 +141,6 @@ html.dark .theme-toggle .icon-moon{display:none}
 .toc-list a:hover{color:var(--accent)}
     </style>
     <link rel="icon" type="image/svg+xml" href="../logo.svg">
-    <script defer src="https://analytics.bimaniti.in/script.js" data-website-id="XXXXXXXX"></script>
-    <noscript><img src="https://analytics.bimaniti.in/collect.gif" alt="" style="display:none"></noscript>
     ${jsonld ? `<script type="application/ld+json">${JSON.stringify(jsonld)}</script>` : ''}
     ${breadcrumbJsonLd ? `<script type="application/ld+json">${JSON.stringify(breadcrumbJsonLd)}</script>` : ''}
 </head>
@@ -196,7 +194,7 @@ html.dark .theme-toggle .icon-moon{display:none}
             <div class="footer-content">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo footer-brand" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg>
-                    <p class="footer-desc">Independent Insurance Analysis · India</p>
+                    <p class="footer-desc">Independent Insurance Analysis Ã‚Â· India</p>
                 </div>
                 <div class="footer-links">
                     <a href="../" class="footer-link">Home</a>
@@ -211,13 +209,13 @@ html.dark .theme-toggle .icon-moon{display:none}
             </div>
             <div style="margin:2rem 0;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
                 <p style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:10px;text-align:center">Stay Updated</p>
-                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:14px">Get the latest analysis delivered to your inbox.</p>
-                <form style="display:flex;gap:8px;max-width:400px;margin:0 auto" onsubmit="var e=this.querySelector('input');e.value='Subscribed!';setTimeout(function(){e.value=''},3000);return false">
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:14px">Get the latest analysis and market insights delivered to your inbox.</p>
+                <form style="display:flex;gap:8px;max-width:400px;margin:0 auto" onsubmit="var e=this.querySelector('input');e.value='Subscribed!';setTimeout(function(){e.value='';},3000);return false">
                     <input type="email" placeholder="Your email address" required style="flex:1;padding:8px 14px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text-secondary);font-family:var(--font-body);font-size:13px;outline:none">
                     <button type="submit" class="btn-primary" style="padding:8px 18px;font-size:12px">Subscribe</button>
                 </form>
             </div>
-            <p class="footer-copyright">© 2026 BimaNiti</p>
+            <p class="footer-copyright">&copy; <span id="currentYear"></span> BimaNiti</p>
             <p class="footer-disclaimer">Not investment advice. This site is for informational purposes only.</p>
         </div>
     </footer>
@@ -289,7 +287,7 @@ function generateOGImage(slug, title, category) {
   <rect width="1200" height="630" fill="#f5f3ef"/>
   <rect x="0" y="0" width="12" height="630" fill="#4a6741"/>
   <text x="80" y="120" font-family="Outfit, system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="3" fill="#4a6741">${htmlEscape(category || 'BimaNiti')}</text>
-  <text x="80" y="160" font-family="Outfit, system-ui, sans-serif" font-size="26" font-weight="300" fill="#6a6a6a">BimaNiti — Insurance &amp; Market Insights</text>
+  <text x="80" y="160" font-family="Outfit, system-ui, sans-serif" font-size="26" font-weight="300" fill="#6a6a6a">BimaNiti Ã¢â‚¬â€ Insurance &amp; Market Insights</text>
 ${titleSvg}
   <text x="80" y="560" font-family="Outfit, system-ui, sans-serif" font-size="22" font-weight="400" fill="#4a6741">bimaniti.in</text>
 </svg>`;
@@ -337,7 +335,7 @@ function generatePostPages() {
 
     let prevHtml = '';
     if (item.previous_coverage) {
-      prevHtml = `<div class="prev-coverage-banner">📌 Earlier coverage: <a href="${postUrl}">${item.previous_coverage.title}</a> →</div>`;
+      prevHtml = `<div class="prev-coverage-banner">Ã°Å¸â€œÅ’ Earlier coverage: <a href="${postUrl}">${item.previous_coverage.title}</a> Ã¢â€ â€™</div>`;
     }
 
     const tocHtml = generateTOC(item.content || '');
@@ -347,14 +345,14 @@ function generatePostPages() {
         <div class="post-hero-inner">
             <span class="post-hero-tag">${item.category}</span>
             <h1>${item.title}</h1>
-            <div class="post-hero-byline"><strong>${item.author || 'BimaNiti'}</strong> · ${item.published_date} · ${item.read_time || '6 min read'}</div>
+            <div class="post-hero-byline"><strong>${item.author || 'BimaNiti'}</strong> Ã‚Â· ${item.published_date} Ã‚Â· ${item.read_time || '6 min read'}</div>
         </div>
     </div>
     <div class="post-body-wrapper">
         <div class="post-content" style="margin-top:0">
             <nav class="breadcrumb">
-                <a href="../">Home</a><span>›</span>
-                <a href="../${item.id.startsWith('BLG') ? 'blog' : 'news'}.html">${item.category}</a><span>›</span>
+                <a href="../">Home</a><span>Ã¢â‚¬Âº</span>
+                <a href="../${item.id.startsWith('BLG') ? 'blog' : 'news'}.html">${item.category}</a><span>Ã¢â‚¬Âº</span>
                 ${htmlEscape(item.title)}
             </nav>
             ${prevHtml}
@@ -398,7 +396,7 @@ function generatePostPages() {
     );
 
     writeFileSync(join(postDir, `${slug}.html`), html, 'utf-8');
-    console.log(`  ✓ Generated post/${slug}.html`);
+    console.log(`  Ã¢Å“â€œ Generated post/${slug}.html`);
 
     generateOGImage(slug, item.title, item.category);
 
@@ -426,13 +424,13 @@ function generatePostPages() {
   });
   sitemap += '</urlset>';
   writeFileSync(OUT('sitemap.xml'), sitemap, 'utf-8');
-  console.log(`  ✓ Generated sitemap.xml (${sitemapUrls.length} URLs)`);
+  console.log(`  Ã¢Å“â€œ Generated sitemap.xml (${sitemapUrls.length} URLs)`);
 
   // Generate RSS feed
   rssItems.sort((a, b) => b.pubDate.localeCompare(a.pubDate));
   const top20 = rssItems.slice(0, 20);
   let rss = '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n';
-  rss += '  <title>BimaNiti — Insurance &amp; Market Insights</title>\n';
+  rss += '  <title>BimaNiti Ã¢â‚¬â€ Insurance &amp; Market Insights</title>\n';
   rss += '  <link>https://bimaniti.in/</link>\n';
   rss += '  <description>Analysing markets, decoding insurance, and sharing insights that matter.</description>\n';
   rss += '  <language>en</language>\n';
@@ -443,7 +441,7 @@ function generatePostPages() {
   });
   rss += '</channel>\n</rss>';
    writeFileSync(OUT('feed.xml'), rss, 'utf-8');
-   console.log(`  ✓ Generated feed.xml (${top20.length} items)`);
+   console.log(`  Ã¢Å“â€œ Generated feed.xml (${top20.length} items)`);
 
    // Generate redirect map for script.js update
    return { allItems, sitemapUrls };
@@ -477,7 +475,7 @@ function updatePostPage(items) {
 
   html = html.replace('</head>', redirectScript.trim() + '\n</head>');
   writeFileSync(postPath, html, 'utf-8');
-  console.log('  ✓ Updated post.html with redirect to static URLs');
+  console.log('  Ã¢Å“â€œ Updated post.html with redirect to static URLs');
 }
 
 // Update script.js links (literal post.html?id=XXX only)
@@ -493,14 +491,14 @@ function updateScriptLinks(items) {
   });
 
   writeFileSync(scriptPath, js, 'utf-8');
-  console.log('  ✓ Updated script.js literal links to static URLs');
+  console.log('  Ã¢Å“â€œ Updated script.js literal links to static URLs');
 }
 
 // Generate per-track learn pages so each track is a crawlable static URL
 function generateLearnPages() {
   const tracksFile = join(ROOT, 'data', 'learn', 'tracks.json');
   if (!existsSync(tracksFile)) {
-    console.log('  ⚠ No data/learn/tracks.json — skipping learn pages');
+    console.log('  Ã¢Å¡Â  No data/learn/tracks.json Ã¢â‚¬â€ skipping learn pages');
     return;
   }
   const tracks = JSON.parse(readFileSync(tracksFile, 'utf-8').replace(/^\uFEFF/, '')).tracks;
@@ -524,15 +522,13 @@ function generateLearnPages() {
     <meta name="twitter:title" content="${htmlEscape(title)}">
     <meta name="twitter:description" content="${htmlEscape(desc)}">
     <meta name="twitter:image" content="https://bimaniti.in/assets/og/default.svg">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in; frame-src 'self'; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; upgrade-insecure-requests">
     <link rel="stylesheet" href="../assets/css/style.min.css">
     <link rel="stylesheet" href="../assets/css/learn.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="../logo.svg">
-    <script defer src="https://analytics.bimaniti.in/script.js" data-website-id="XXXXXXXX"></script>
-    <noscript><img src="https://analytics.bimaniti.in/collect.gif" alt="" style="display:none"></noscript>
     <link rel="alternate" type="application/rss+xml" title="BimaNiti Feed" href="../feed.xml">
 </head>
 <body>
@@ -597,7 +593,7 @@ function generateLearnPages() {
             <div class="footer-content">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo footer-brand" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg>
-                    <p class="footer-desc">Independent Insurance Analysis · India</p>
+                    <p class="footer-desc">Independent Insurance Analysis Ã‚Â· India</p>
                 </div>
                 <div class="footer-links">
                     <a href="../" class="footer-link">Home</a>
@@ -610,7 +606,15 @@ function generateLearnPages() {
                     <a href="../contact.html" class="footer-link">Contact</a>
                 </div>
             </div>
-            <p class="footer-copyright">© 2026 BimaNiti</p>
+            <div style="margin:2rem 0;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+                <p style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:10px;text-align:center">Stay Updated</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:14px">Get the latest analysis and market insights delivered to your inbox.</p>
+                <form style="display:flex;gap:8px;max-width:400px;margin:0 auto" onsubmit="var e=this.querySelector('input');e.value='Subscribed!';setTimeout(function(){e.value='';},3000);return false">
+                    <input type="email" placeholder="Your email address" required style="flex:1;padding:8px 14px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text-secondary);font-family:var(--font-body);font-size:13px;outline:none">
+                    <button type="submit" class="btn-primary" style="padding:8px 18px;font-size:12px">Subscribe</button>
+                </form>
+            </div>
+            <p class="footer-copyright">&copy; <span id="currentYear"></span> BimaNiti</p>
             <p class="footer-disclaimer">Not investment advice. This site is for informational purposes only.</p>
         </div>
     </footer>
@@ -625,12 +629,12 @@ function generateLearnPages() {
   tracks.forEach(track => {
     const body = '';
     const html = learnShell(
-      `${track.title} — Learn Insurance | BimaNiti`,
+      `${track.title} Ã¢â‚¬â€ Learn Insurance | BimaNiti`,
       track.tagline,
       body
     );
     writeFileSync(join(learnDir, `${track.id}.html`), html, 'utf-8');
-    console.log(`  ✓ Generated learn/${track.id}.html`);
+    console.log(`  Ã¢Å“â€œ Generated learn/${track.id}.html`);
 
     learnSitemap.push({
       loc: `https://bimaniti.in/learn/${track.id}.html`,
@@ -655,19 +659,19 @@ function generateLearnPages() {
 function generateGuidePage() {
   const jsonPath = join(ROOT, 'data', 'insurance-knowledge.json');
   if (!existsSync(jsonPath)) {
-    console.log('  ⚠ No data/insurance-knowledge.json — skipping guide page');
+    console.log('  Ã¢Å¡Â  No data/insurance-knowledge.json Ã¢â‚¬â€ skipping guide page');
     return null;
   }
   const data = JSON.parse(readFileSync(jsonPath, 'utf-8').replace(/^\uFEFF/, ''));
   const meta = data.meta || {};
-  const title = `${meta.title || 'Insurance in India — A to Z'} | BimaNiti`;
+  const title = `${meta.title || 'Insurance in India Ã¢â‚¬â€ A to Z'} | BimaNiti`;
   const desc = meta.description || 'A plain-language guide to insurance in India.';
 
   const body = `
     <div class="guide-hero">
         <div class="guide-hero-inner">
             <span class="guide-hero-tag">Knowledge Base</span>
-            <h1>${htmlEscape(meta.title || 'Insurance in India — A to Z')}</h1>
+            <h1>${htmlEscape(meta.title || 'Insurance in India Ã¢â‚¬â€ A to Z')}</h1>
             <p class="guide-hero-sub">${htmlEscape(desc)}</p>
         </div>
     </div>
@@ -694,15 +698,13 @@ function generateGuidePage() {
     <meta name="twitter:title" content="${htmlEscape(title)}">
     <meta name="twitter:description" content="${htmlEscape(desc)}">
     <meta name="twitter:image" content="https://bimaniti.in/assets/og/default.svg">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://analytics.bimaniti.in 'unsafe-inline'; connect-src 'self' https://analytics.bimaniti.in; frame-src 'self'; base-uri 'self'; form-action 'self' mailto: https://formspree.io; object-src 'none'; upgrade-insecure-requests">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src 'self'; base-uri 'self'; form-action 'self' mailto:; object-src 'none'; upgrade-insecure-requests">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/guide.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="logo.svg">
-    <script defer src="https://analytics.bimaniti.in/script.js" data-website-id="XXXXXXXX"></script>
-    <noscript><img src="https://analytics.bimaniti.in/collect.gif" alt="" style="display:none"></noscript>
     <link rel="alternate" type="application/rss+xml" title="BimaNiti Feed" href="feed.xml">
 </head>
 <body>
@@ -754,7 +756,7 @@ function generateGuidePage() {
             <div class="footer-content">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo footer-brand" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg>
-                    <p class="footer-desc">Independent Insurance Analysis · India</p>
+                    <p class="footer-desc">Independent Insurance Analysis Ã‚Â· India</p>
                 </div>
                 <div class="footer-links">
                     <a href="index.html" class="footer-link">Home</a>
@@ -767,7 +769,15 @@ function generateGuidePage() {
                     <a href="contact.html" class="footer-link">Contact</a>
                 </div>
             </div>
-            <p class="footer-copyright">© 2026 BimaNiti</p>
+            <div style="margin:2rem 0;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+                <p style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:10px;text-align:center">Stay Updated</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:14px">Get the latest analysis and market insights delivered to your inbox.</p>
+                <form style="display:flex;gap:8px;max-width:400px;margin:0 auto" onsubmit="var e=this.querySelector('input');e.value='Subscribed!';setTimeout(function(){e.value='';},3000);return false">
+                    <input type="email" placeholder="Your email address" required style="flex:1;padding:8px 14px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text-secondary);font-family:var(--font-body);font-size:13px;outline:none">
+                    <button type="submit" class="btn-primary" style="padding:8px 18px;font-size:12px">Subscribe</button>
+                </form>
+            </div>
+            <p class="footer-copyright">&copy; <span id="currentYear"></span> BimaNiti</p>
             <p class="footer-disclaimer">Not investment advice. This site is for informational purposes only.</p>
         </div>
     </footer>
@@ -780,7 +790,7 @@ function generateGuidePage() {
 </html>`;
 
   writeFileSync(OUT('insurance-guide.html'), guideShell(body), 'utf-8');
-  console.log('  ✓ Generated insurance-guide.html');
+  console.log('  Ã¢Å“â€œ Generated insurance-guide.html');
 
   return {
     loc: 'https://bimaniti.in/insurance-guide.html',
@@ -808,5 +818,5 @@ sitemapUrls.forEach(u => {
 });
 learnSitemapXml += '</urlset>';
 writeFileSync(OUT('sitemap.xml'), learnSitemapXml, 'utf-8');
-console.log(`  ✓ Regenerated sitemap.xml (${sitemapUrls.length} URLs incl. learn)`);
+console.log(`  Ã¢Å“â€œ Regenerated sitemap.xml (${sitemapUrls.length} URLs incl. learn)`);
 console.log('\nBuild complete!');
