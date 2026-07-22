@@ -25,17 +25,19 @@
 .logo {
   display: flex;
   align-items: center;
+  gap: 10px;
   flex-shrink: 0;
-  overflow: visible;
-  line-height: 0;
 }
 
-.logo img {
-  height: 36px;
-  width: auto;
-  display: block;
-  flex-shrink: 0;
-}
+.logo-img { height: 36px; width: auto; display: block; }
+.logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 20px; color: #1F1F1F; }
+.logo-title .logo-niti { color: #355E3B; }
+.logo-sub { font-family: 'DM Sans', system-ui, sans-serif; font-weight: 600; font-size: 7.5px; letter-spacing: 2.2px; color: #5A5A5A; }
+html.dark .logo-title { color: #E8E4DC; }
+html.dark .logo-title .logo-niti { color: #8AAA7A; }
+html.dark .logo-sub { color: #A0A09A; }
+html.dark .logo-img { opacity: .85; }
 
 .site-logo { height: 36px; width: auto; }
 .site-logo.footer-brand { height: 32px; }
@@ -47,7 +49,6 @@
 html.dark .logo-bima { fill: #e8e4dc; }
 html.dark .logo-niti { fill: #8aaa7a; }
 html.dark .logo-tag { fill: #8a8a84; }
-html.dark .logo img { opacity: .85; }
 
 .desktop-nav { display: none; align-items: center; gap: 28px; }
 @media (min-width: 768px) { .desktop-nav { display: flex; } }
