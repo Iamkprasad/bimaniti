@@ -33,40 +33,21 @@
 .logo img {
   height: 36px;
   width: auto;
-  max-width: none;
-  min-width: 120px;
   display: block;
   flex-shrink: 0;
-  background: none;
 }
-
-/* Logo handles dark mode via SVG @media query */
 
 .site-logo { height: 36px; width: auto; }
 .site-logo.footer-brand { height: 32px; }
+
+/* Footer brand text logotype */
 .logo-bima { font-family: 'Outfit', system-ui, sans-serif; font-size: 34px; font-weight: 600; fill: #1a1a1a; }
 .logo-niti { font-family: 'Lora', Georgia, serif; font-size: 34px; font-weight: 500; fill: #4a6741; }
 .logo-tag { font-family: 'Outfit', system-ui, sans-serif; font-size: 8.5px; font-weight: 400; fill: #6a6a6a; letter-spacing: 2.5px; }
 html.dark .logo-bima { fill: #e8e4dc; }
 html.dark .logo-niti { fill: #8aaa7a; }
 html.dark .logo-tag { fill: #8a8a84; }
-
-/* Navbar inline logo — title text and subtitle */
-.logo-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 32px; fill: #1F1F1F; }
-.logo-title .logo-niti { fill: #355E3B; font-family: inherit; font-size: inherit; font-weight: inherit; }
-.logo-sub { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 9.5px; fill: #5A5A5A; letter-spacing: 2.2px; }
-
-html.dark .logo-title { fill: #E8E4DC; }
-html.dark .logo-title .logo-niti { fill: #8AAA7A; }
-html.dark .logo-sub { fill: #A0A09A; }
-
-/* Navbar inline logo — BN monogram */
-.logo-bg-box { fill: #355E3B; }
-.logo-b-white { fill: #FFFFFF; }
-.logo-n-stroke { stroke: #355E3B; stroke-width: 5.5; stroke-linecap: square; fill: none; }
-
-html.dark .logo-bg-box { fill: #5A7A4A; }
-html.dark .logo-n-stroke { stroke: #8AAA7A; }
+html.dark .logo img { opacity: .85; }
 
 .desktop-nav { display: none; align-items: center; gap: 28px; }
 @media (min-width: 768px) { .desktop-nav { display: flex; } }
