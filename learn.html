@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+(function(){try{var t=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();
+</script>
+<style>
+html{background-color:#F7F6F2}
+html.dark{background-color:#141410!important;color:#E8E4DC}
+</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -30,7 +37,7 @@
     <a href="#main-content" class="skip-link">Skip to content</a>
     <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="index.html" class="logo" aria-label="BimaNiti — Insurance & Market Analysis"><img src="logo.svg" alt="BimaNiti" class="site-logo" width="220" height="42"></a>
+            <a href="index.html" class="logo" aria-label="BimaNiti — Insurance &amp; Market Analysis"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 58" class="site-logo"><g transform="translate(4, 6.5)"><rect class="bg-box" x="0" y="0" width="54" height="45" rx="4" fill="#355E3B"/><path class="b-white" fill="#FFFFFF" d="M 8,8 L 24,8 C 29,8 32,10.5 32,14.5 C 32,17.5 30,19.5 27,20.5 C 31,21.5 33,24 33,28.5 C 33,33 29.5,37 24,37 L 8,37 Z M 14,13 L 14,19 L 23,19 C 25.5,19 27,17.8 27,16 C 27,14.2 25.5,13 23,13 Z M 14,24 L 14,32 L 24,32 C 26.8,32 28.5,30.5 28.5,28 C 28.5,25.5 26.8,24 24,24 Z"/><rect class="b-white" fill="#FFFFFF" x="38" y="8" width="6" height="29"/><path class="n-stroke" d="M 39,10 L 73,36.5" stroke="#355E3B" stroke-width="5.5" stroke-linecap="square" fill="none"/><path class="n-stroke" d="M 73,8 L 73,37" stroke="#355E3B" stroke-width="5.5" stroke-linecap="square" fill="none"/></g><text x="96" y="35" class="logo-title">Bima<tspan class="logo-niti">Niti</tspan></text><text x="96" y="50" class="logo-sub">INSURANCE &amp; MARKET ANALYSIS</text></svg></a>
             <div class="desktop-nav">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="blog.html" class="nav-link">Blog</a>

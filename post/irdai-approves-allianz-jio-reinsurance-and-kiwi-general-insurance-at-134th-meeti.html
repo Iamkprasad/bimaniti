@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>(function(){try{var t=localStorage.getItem('theme'),p=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(!t&&p)){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();</script>
+    <style>html{background-color:#F7F6F2}html.dark{background-color:#141410!important;color:#E8E4DC}</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -14,16 +16,19 @@
     <meta property="og:image" content="https://bimaniti.in/assets/og/irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti.svg">
     <link rel="canonical" href="https://bimaniti.in/post/irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti.html">
     <link rel="alternate" type="application/rss+xml" title="BimaNiti Feed" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;transition:background-color .25s ease,border-color .2s ease,color .15s ease}
 html{color-scheme:light}
 html.dark{color-scheme:dark}
-:root{--font-display:'Lora',Georgia,serif;--font-body:'Outfit',system-ui,sans-serif;--bg-primary:#f5f3ef;--bg-secondary:#ede9e3;--text-primary:#1a1a1a;--text-secondary:#4a4a4a;--text-muted:#6a6a6a;--accent:#4a6741;--accent-hover:#3a5232;--border:#d6d0c8;--card-bg:#ffffff;--nav-bg:#f5f3ef;--alert:#b94040;--max-w:1160px;--article-w:680px;--radius:4px;--transition:200ms ease}
-.dark{--bg-primary:#141410;--bg-secondary:#1c1c18;--text-primary:#e8e4dc;--text-secondary:#c0bab0;--text-muted:#8a8a84;--accent:#8aaa7a;--accent-hover:#a0be90;--border:#2e2e28;--card-bg:#1e1e1a;--nav-bg:#141410}
-body{background:var(--bg-primary);color:var(--text-secondary);font-family:var(--font-body);font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden}
+:root{--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',system-ui,sans-serif;--bg-primary:#F7F6F2;--bg-secondary:#EFECE6;--text-primary:#1F1F1F;--text-secondary:#3D3D3D;--text-muted:#666666;--accent:#355E3B;--accent-hover:#29492E;--accent-gold:#B08D57;--border:#D8D4CB;--card-bg:#FFFFFF;--nav-bg:#F7F6F2;--alert:#B94040;--max-w:1160px;--article-w:680px;--radius:4px;--transition:200ms ease}
+.dark{--bg-primary:#141410;--bg-secondary:#1C1C18;--text-primary:#E8E4DC;--text-secondary:#C0BAB0;--text-muted:#8A8A84;--accent:#8AAA7A;--accent-hover:#A0BE90;--accent-gold:#D4AF37;--border:#2E2E28;--card-bg:#1E1E1A;--nav-bg:#141410}
+body{background:var(--bg-primary);color:var(--text-secondary);font-family:var(--font-body);font-size:16px;font-weight:400;-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 h1,h2,h3,h4,h5,h6{font-family:var(--font-display);font-weight:400;line-height:1.2;color:var(--text-primary)}
-::selection{background:rgba(92,110,58,.2);color:var(--text-primary)}
+::selection{background:rgba(53,94,59,.2);color:var(--text-primary)}
 img{max-width:100%;height:auto}
 .navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:58px;background:var(--bg-primary);border-bottom:1px solid var(--border)}
 .nav-container{max-width:var(--max-w);margin:0 auto;padding:0 32px;height:58px;display:flex;align-items:center;justify-content:space-between}
@@ -31,12 +36,13 @@ img{max-width:100%;height:auto}
 .logo img{height:36px;width:auto;max-width:none;min-width:120px;display:block;flex-shrink:0;background:none}
 .site-logo{height:36px;width:auto}
 .site-logo.footer-brand{height:32px}
-.logo-bima{font-family:'Outfit',system-ui,sans-serif;font-size:34px;font-weight:600;fill:#1a1a1a}
-.logo-niti{font-family:'Lora',Georgia,serif;font-size:34px;font-weight:500;fill:#4a6741}
-.logo-tag{font-family:'Outfit',system-ui,sans-serif;font-size:8.5px;font-weight:400;fill:#6a6a6a;letter-spacing:2.5px}
-html.dark .logo-bima{fill:#e8e4dc}
-html.dark .logo-niti{fill:#8aaa7a}
-html.dark .logo-tag{fill:#8a8a84}
+.logo-title{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:32px;fill:#1F1F1F}
+.logo-niti{fill:#355E3B}
+.logo-sub{font-family:'DM Sans',system-ui,sans-serif;font-weight:600;font-size:9.5px;fill:#5A5A5A;letter-spacing:2.2px}
+html.dark .logo-title{fill:#E8E4DC}
+html.dark .logo-niti{fill:#8AAA7A}
+html.dark .logo-sub{fill:#A0A09A}
+html.dark .n-stroke{stroke:#8AAA7A!important}
 .desktop-nav{display:none;align-items:center;gap:28px}
 @media(min-width:768px){.desktop-nav{display:flex}}
 .nav-link{font-family:var(--font-body);font-size:13px;font-weight:400;color:var(--text-muted);transition:color 150ms ease}
@@ -64,12 +70,12 @@ html.dark .theme-toggle .icon-moon{display:none}
 .post-hero-byline{font-family:var(--font-body);font-size:13px;font-weight:300;color:var(--text-muted)}
 .post-hero-byline strong{font-weight:400;color:var(--text-secondary)}
 .post-body-wrapper{background:var(--card-bg);padding:0 24px 64px}
-.post-content{max-width:680px;margin:0 auto;font-family:var(--font-body);font-size:16px;font-weight:300;line-height:1.85;color:var(--text-secondary)}
+.post-content{max-width:680px;margin:0 auto;font-family:var(--font-body);font-size:16px;font-weight:400;line-height:1.7;color:var(--text-secondary)}
 .post-content h2{font-family:var(--font-display);font-size:1.5rem;font-weight:400;color:var(--text-primary);margin-top:2.5rem;margin-bottom:1rem}
 .post-content h3{font-family:var(--font-display);font-size:1.25rem;font-weight:400;color:var(--text-primary);margin-top:2rem;margin-bottom:.75rem}
 .post-content p{margin-bottom:1.25rem;margin-top:20px}
 .post-content p:first-of-type{margin-top:0}
-.post-content>p:first-of-type::first-letter{font-family:'Lora',serif;font-size:52px;font-weight:500;color:var(--accent-hover);float:left;line-height:.82;margin:6px 10px 0 0}
+.post-content>p:first-of-type::first-letter{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--accent);float:left;line-height:.82;margin:6px 10px 0 0}
 @media(max-width:640px){.post-content>p:first-of-type::first-letter{font-size:36px;margin:4px 8px 0 0}}
 .post-content ul,.post-content ol{margin-bottom:1.25rem;padding-left:1.5rem}
 .post-content li{margin-bottom:.5rem}
@@ -106,7 +112,7 @@ html.dark .theme-toggle .icon-moon{display:none}
 .toc-list a{font-size:14px;color:var(--text-secondary);transition:color var(--transition)}
 .toc-list a:hover{color:var(--accent)}
     </style>
-    <link rel="icon" type="image/svg+xml" href="../logo.svg">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"IRDAI Approves Allianz Jio Reinsurance and Kiwi General Insurance at 134th Meeting","description":"IRDAI granted certificates of registration to Allianz Jio Reinsurance (50:50 JV between Jio Financial and Allianz) and Kiwi General Insurance.","author":{"@type":"Person","name":"BimaNiti"},"datePublished":"2026-03-09","dateModified":"2026-03-09","url":"https://bimaniti.in/post/irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti.html","image":"https://bimaniti.in/assets/og/irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://bimaniti.in/post/irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti.html"}}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bimaniti.in/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://bimaniti.in/post/irdai-approves-allianz-jio-reinsurance-and-kiwi-general-insurance-at-134th-meeti.html"},{"@type":"ListItem","position":3,"name":"IRDAI Approves Allianz Jio Reinsurance and Kiwi General Insurance at 134th Meeting | BimaNiti"}]}</script>
 </head>
@@ -114,7 +120,7 @@ html.dark .theme-toggle .icon-moon{display:none}
     <a href="#main-content" class="skip-link" style="position:absolute;top:-100%;left:16px;z-index:999;padding:.75rem 1.5rem;background:var(--accent);color:#fff;font-weight:500;border-radius:0 0 4px 4px;transition:top .2s ease">Skip to main content</a>
     <nav class="navbar" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="../" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58" class="site-logo" aria-label="BimaNiti" role="img"><text x="4" y="34" class="logo-bima">Bima</text><text x="83" y="34" class="logo-niti">Niti</text><text x="4" y="50" class="logo-tag">INSURANCE &amp; MARKET ANALYSIS</text></svg></a>
+            <a href="../" class="logo" aria-label="BimaNiti — Insurance &amp; Market Analysis"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 58" class="site-logo"><g transform="translate(4, 6.5)"><rect class="bg-box" x="0" y="0" width="54" height="45" rx="4" fill="#355E3B"/><path class="b-white" fill="#FFFFFF" d="M 8,8 L 24,8 C 29,8 32,10.5 32,14.5 C 32,17.5 30,19.5 27,20.5 C 31,21.5 33,24 33,28.5 C 33,33 29.5,37 24,37 L 8,37 Z M 14,13 L 14,19 L 23,19 C 25.5,19 27,17.8 27,16 C 27,14.2 25.5,13 23,13 Z M 14,24 L 14,32 L 24,32 C 26.8,32 28.5,30.5 28.5,28 C 28.5,25.5 26.8,24 24,24 Z"/><rect class="b-white" fill="#FFFFFF" x="38" y="8" width="6" height="29"/><path class="n-stroke" d="M 39,10 L 73,36.5" stroke="#355E3B" stroke-width="5.5" stroke-linecap="square" fill="none"/><path class="n-stroke" d="M 73,8 L 73,37" stroke="#355E3B" stroke-width="5.5" stroke-linecap="square" fill="none"/></g><text x="96" y="35" class="logo-title">Bima<tspan class="logo-niti">Niti</tspan></text><text x="96" y="50" class="logo-sub">INSURANCE &amp; MARKET ANALYSIS</text></svg></a>
             <div class="desktop-nav">
                 <a href="../" class="nav-link">Home</a>
                 <a href="../blog.html" class="nav-link">Blog</a>
