@@ -164,13 +164,13 @@ html.dark .theme-toggle .icon-moon{display:none}
     <div class="post-body-wrapper">
         <div class="post-content" style="margin-top:0">
             <nav class="breadcrumb">
-                <a href="../">Home</a><span>Ã¢â‚¬Âº</span>
-                <a href="../blog.html">IRDAI/Regulatory</a><span>Ã¢â‚¬Âº</span>
+                <a href="../">Home</a><span>”º</span>
+                <a href="../blog.html">IRDAI/Regulatory</a><span>”º</span>
                 Ind AS 117: The Accounting Revolution Reshaping Indian Insurance
             </nav>
             
             <nav class="toc"><div class="toc-title">Table of Contents</div><ul class="toc-list"><li><a href="#what-changes">What Changes?</a></li><li><a href="#implementation-framework">Implementation Framework</a></li></ul></nav>
-            <p>Ind AS 117 (Insurance Contracts), the Indian equivalent of IFRS 17, came into effect from April 1, 2026, marking one of the most significant changes to insurance financial reporting in decades. Notified by the Ministry of Corporate Affairs in August 2024, the standard fundamentally changes how insurance profits are recognised and reported.</p><h2 id="what-changes">What Changes?</h2><p>The most fundamental change is profit recognition. Under the previous framework, insurance profits could be recognised upfront upon premium booking. Under Ind AS 117, profits must emerge over the period of service Ã¢â‚¬â€ fundamentally changing earnings visibility and comparability across insurers.</p><p>Insurers must now measure insurance contract liabilities using current discount rates (based on the CCIL zero-coupon yield curve from G-Secs) rather than historical assumptions. This introduces a new layer of volatility to reported earnings, as changes in interest rates directly affect liability valuations.</p><h2 id="implementation-framework">Implementation Framework</h2><p>IRDAI has mandated a structured transition. All insurers Ã¢â‚¬â€ life, general, health, and reinsurers Ã¢â‚¬â€ must adopt Ind AS from April 1, 2026. A parallel reporting requirement (Ind AS + IGAAP) is in place for the first two years. During the first year, insurers must obtain independent validation of Ind AS financial statements from IRDAI-empanelled auditors.</p><p>Insurers not ready for implementation can apply for a one-year forbearance with a board-approved action plan and monthly progress reporting.</p><p><em>Sources: IRDAI Exposure Draft on Ind AS Implementation, IRDAI Circular (April 1, 2026), TaxGuru Analysis</em></p>
+            <p>Ind AS 117 (Insurance Contracts), the Indian equivalent of IFRS 17, came into effect from April 1, 2026, marking one of the most significant changes to insurance financial reporting in decades. Notified by the Ministry of Corporate Affairs in August 2024, the standard fundamentally changes how insurance profits are recognised and reported.</p><h2 id="what-changes">What Changes?</h2><p>The most fundamental change is profit recognition. Under the previous framework, insurance profits could be recognised upfront upon premium booking. Under Ind AS 117, profits must emerge over the period of service — fundamentally changing earnings visibility and comparability across insurers.</p><p>Insurers must now measure insurance contract liabilities using current discount rates (based on the CCIL zero-coupon yield curve from G-Secs) rather than historical assumptions. This introduces a new layer of volatility to reported earnings, as changes in interest rates directly affect liability valuations.</p><h2 id="implementation-framework">Implementation Framework</h2><p>IRDAI has mandated a structured transition. All insurers — life, general, health, and reinsurers — must adopt Ind AS from April 1, 2026. A parallel reporting requirement (Ind AS + IGAAP) is in place for the first two years. During the first year, insurers must obtain independent validation of Ind AS financial statements from IRDAI-empanelled auditors.</p><p>Insurers not ready for implementation can apply for a one-year forbearance with a board-approved action plan and monthly progress reporting.</p><p><em>Sources: IRDAI Exposure Draft on Ind AS Implementation, IRDAI Circular (April 1, 2026), TaxGuru Analysis</em></p>
         </div>
         <div class="post-sources">
             <span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem">Share this article</span>
@@ -203,10 +203,13 @@ html.dark .theme-toggle .icon-moon{display:none}
             </div>
             <div style="margin:2rem 0;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
                 <p style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:10px;text-align:center">Stay Updated</p>
-                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:14px">Get the latest analysis delivered to your inbox.</p>
-                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:0">Newsletter â€” coming soon.</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:14px">Get the latest analysis and market insights delivered to your inbox.</p>
+                <form style="display:flex;gap:8px;max-width:400px;margin:0 auto" onsubmit="var e=this.querySelector('input');e.value='Subscribed!';setTimeout(function(){e.value='';},3000);return false">
+                    <input type="email" placeholder="Your email address" required style="flex:1;padding:8px 14px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text-secondary);font-family:var(--font-body);font-size:13px;outline:none">
+                    <button type="submit" class="btn-primary" style="padding:8px 18px;font-size:12px">Subscribe</button>
+                </form>
             </div>
-            <p class="footer-copyright">Ã‚Â© 2026 BimaNiti</p>
+            <p class="footer-copyright">&copy; <span id="currentYear"></span> BimaNiti</p>
             <p class="footer-disclaimer">Not investment advice. This site is for informational purposes only.</p>
         </div>
     </footer>

@@ -1,14 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 58">
-  <style>
-    .t { font-family: 'Outfit', system-ui, sans-serif; font-size: 34px; font-weight: 600; fill: #1a1a1a; }
-    .n { font-family: 'Lora', Georgia, serif; font-size: 34px; font-weight: 500; fill: #4a6741; }
-    .tag { font-family: 'Outfit', system-ui, sans-serif; font-size: 8.5px; font-weight: 400; fill: #6a6a6a; letter-spacing: 2.5px; }
-    @media (prefers-color-scheme: dark) {
-      .t { fill: #e8e4dc; }
-      .n { fill: #8aaa7a; }
-      .tag { fill: #8a8a84; }
-    }
-  </style>
-  <text x="4" y="34" class="t">Bima</text><text x="83" y="34" class="n">Niti</text>
-  <text x="4" y="50" class="tag">INSURANCE &amp; MARKET ANALYSIS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 58" width="340" height="58">
+  <defs>
+    <style>
+      .bg-box { fill: #355E3B; }
+      .b-white { fill: #FFFFFF; }
+      .n-stroke { stroke: #355E3B; stroke-width: 5.5; stroke-linecap: square; fill: none; }
+      .n-fill-inside { fill: #FFFFFF; }
+      .logo-title { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 32px; fill: #1F1F1F; }
+      .logo-niti { fill: #355E3B; }
+      .logo-sub { font-family: 'DM Sans', system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 9.5px; fill: #5A5A5A; letter-spacing: 2.2px; }
+      
+      @media (prefers-color-scheme: dark) {
+        .logo-title { fill: #F7F6F2; }
+        .logo-niti { fill: #8AAA7A; }
+        .logo-sub { fill: #A0A09A; }
+        .n-stroke { stroke: #8AAA7A; }
+      }
+    </style>
+  </defs>
+
+  <!-- BN Monogram Group -->
+  <g transform="translate(4, 6.5)">
+    <!-- Forest Green Background Box -->
+    <rect class="bg-box" x="0" y="0" width="54" height="45" rx="3" />
+    
+    <!-- Letter B (Solid White) -->
+    <!-- Stem & loops -->
+    <path class="b-white" d="M 8,8 L 24,8 C 29,8 32,10.5 32,14.5 C 32,17.5 30,19.5 27,20.5 C 31,21.5 33,24 33,28.5 C 33,33 29.5,37 24,37 L 8,37 Z M 14,13 L 14,19 L 23,19 C 25.5,19 27,17.8 27,16 C 27,14.2 25.5,13 23,13 Z M 14,24 L 14,32 L 24,32 C 26.8,32 28.5,30.5 28.5,28 C 28.5,25.5 26.8,24 24,24 Z" />
+
+    <!-- Letter N Left Stem inside Green Box (Solid White) -->
+    <rect class="b-white" x="38" y="8" width="6" height="29" />
+
+    <!-- Letter N Diagonal & Right Stem (Outlined) -->
+    <!-- Diagonal -->
+    <path class="n-stroke" d="M 39,10 L 73,36.5" />
+    <!-- Right Vertical Stem -->
+    <path class="n-stroke" d="M 73,8 L 73,37" />
+  </g>
+
+  <!-- Brand Logotype Text -->
+  <text x="96" y="35" class="logo-title">Bima<tspan class="logo-niti">Niti</tspan></text>
+  <text x="96" y="50" class="logo-sub">INSURANCE &amp; MARKET ANALYSIS</text>
 </svg>

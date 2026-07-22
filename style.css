@@ -7,19 +7,20 @@ html.dark { color-scheme: dark; }
 }
 
 :root {
-  --font-display: 'Lora', Georgia, serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
-  --bg-primary: #f5f3ef;
-  --bg-secondary: #ede9e3;
-  --text-primary: #1a1a1a;
-  --text-secondary: #4a4a4a;
-  --text-muted: #6a6a6a;
-  --accent: #4a6741;
-  --accent-hover: #3a5232;
-  --border: #d6d0c8;
-  --card-bg: #ffffff;
-  --nav-bg: #f5f3ef;
-  --alert: #b94040;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --bg-primary: #F7F6F2;
+  --bg-secondary: #EFECE6;
+  --text-primary: #1F1F1F;
+  --text-secondary: #3D3D3D;
+  --text-muted: #666666;
+  --accent: #355E3B;
+  --accent-hover: #29492E;
+  --accent-gold: #B08D57;
+  --border: #D8D4CB;
+  --card-bg: #FFFFFF;
+  --nav-bg: #F7F6F2;
+  --alert: #B94040;
   --max-w: 1160px;
   --article-w: 680px;
   --radius: 4px;
@@ -28,14 +29,15 @@ html.dark { color-scheme: dark; }
 
 .dark {
   --bg-primary: #141410;
-  --bg-secondary: #1c1c18;
-  --text-primary: #e8e4dc;
-  --text-secondary: #c0bab0;
-  --text-muted: #8a8a84;
-  --accent: #8aaa7a;
-  --accent-hover: #a0be90;
-  --border: #2e2e28;
-  --card-bg: #1e1e1a;
+  --bg-secondary: #1C1C18;
+  --text-primary: #E8E4DC;
+  --text-secondary: #C0BAB0;
+  --text-muted: #8A8A84;
+  --accent: #8AAA7A;
+  --accent-hover: #A0BE90;
+  --accent-gold: #D4AF37;
+  --border: #2E2E28;
+  --card-bg: #1E1E1A;
   --nav-bg: #141410;
 }
 
@@ -66,9 +68,10 @@ body {
   background: var(--bg-primary);
   color: var(--text-secondary);
   font-family: var(--font-body);
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  line-height: 1.6;
+  line-height: 1.7;
   overflow-x: hidden;
 }
 

@@ -164,13 +164,13 @@ html.dark .theme-toggle .icon-moon{display:none}
     <div class="post-body-wrapper">
         <div class="post-content" style="margin-top:0">
             <nav class="breadcrumb">
-                <a href="../">Home</a><span>Ã¢â‚¬Âº</span>
-                <a href="../news.html">Life Insurance</a><span>Ã¢â‚¬Âº</span>
+                <a href="../">Home</a><span>”º</span>
+                <a href="../news.html">Life Insurance</a><span>”º</span>
                 SBI Life FY26: NBP Grows 20% to Rs 42,550 Crore, VNB Margin Holds at 27.5%
             </nav>
             
             
-            <p>SBI Life Insurance delivered a steady FY26 performance, with New Business Premium (NBP) growing 20% YoY to Rs 42,550 crore. Gross Written Premium (GWP) crossed the Rs 1 lakh crore milestone at Rs 1,01,290 crore, up 19%.</p><p>Key Highlights: APE grew 13% to Rs 24,270 crore; VNB grew 12% to Rs 6,670 crore. VNB margin at 27.5% Ã¢â‚¬â€ upper end of guidance. IEV grew 15% to Rs 80,790 crore. 13th month persistency improved 53 bps to 87.9%.</p><p><em>Sources: SBI Life Press Release (April 22, 2026), ICICI Direct Research (April 23, 2026)</em></p>
+            <p>SBI Life Insurance delivered a steady FY26 performance, with New Business Premium (NBP) growing 20% YoY to Rs 42,550 crore. Gross Written Premium (GWP) crossed the Rs 1 lakh crore milestone at Rs 1,01,290 crore, up 19%.</p><p>Key Highlights: APE grew 13% to Rs 24,270 crore; VNB grew 12% to Rs 6,670 crore. VNB margin at 27.5% — upper end of guidance. IEV grew 15% to Rs 80,790 crore. 13th month persistency improved 53 bps to 87.9%.</p><p><em>Sources: SBI Life Press Release (April 22, 2026), ICICI Direct Research (April 23, 2026)</em></p>
         </div>
         <div class="post-sources">
             <span style="display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:1rem">Share this article</span>
@@ -203,10 +203,13 @@ html.dark .theme-toggle .icon-moon{display:none}
             </div>
             <div style="margin:2rem 0;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
                 <p style="font-family:var(--font-body);font-size:13px;font-weight:500;color:var(--text-primary);margin-bottom:10px;text-align:center">Stay Updated</p>
-                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:14px">Get the latest analysis delivered to your inbox.</p>
-                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:0">Newsletter â€” coming soon.</p>
+                <p style="font-family:var(--font-body);font-size:12px;color:var(--text-muted);font-weight:300;text-align:center;margin-bottom:14px">Get the latest analysis and market insights delivered to your inbox.</p>
+                <form style="display:flex;gap:8px;max-width:400px;margin:0 auto" onsubmit="var e=this.querySelector('input');e.value='Subscribed!';setTimeout(function(){e.value='';},3000);return false">
+                    <input type="email" placeholder="Your email address" required style="flex:1;padding:8px 14px;border:1px solid var(--border);border-radius:4px;background:var(--card-bg);color:var(--text-secondary);font-family:var(--font-body);font-size:13px;outline:none">
+                    <button type="submit" class="btn-primary" style="padding:8px 18px;font-size:12px">Subscribe</button>
+                </form>
             </div>
-            <p class="footer-copyright">Ã‚Â© 2026 BimaNiti</p>
+            <p class="footer-copyright">&copy; <span id="currentYear"></span> BimaNiti</p>
             <p class="footer-disclaimer">Not investment advice. This site is for informational purposes only.</p>
         </div>
     </footer>

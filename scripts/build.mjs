@@ -287,7 +287,7 @@ function generateOGImage(slug, title, category) {
   <rect width="1200" height="630" fill="#f5f3ef"/>
   <rect x="0" y="0" width="12" height="630" fill="#4a6741"/>
   <text x="80" y="120" font-family="Outfit, system-ui, sans-serif" font-size="20" font-weight="600" letter-spacing="3" fill="#4a6741">${htmlEscape(category || 'BimaNiti')}</text>
-  <text x="80" y="160" font-family="Outfit, system-ui, sans-serif" font-size="26" font-weight="300" fill="#6a6a6a">BimaNiti Ã¢â‚¬â€ Insurance &amp; Market Insights</text>
+  <text x="80" y="160" font-family="Outfit, system-ui, sans-serif" font-size="26" font-weight="300" fill="#6a6a6a">BimaNiti — Insurance &amp; Market Insights</text>
 ${titleSvg}
   <text x="80" y="560" font-family="Outfit, system-ui, sans-serif" font-size="22" font-weight="400" fill="#4a6741">bimaniti.in</text>
 </svg>`;
@@ -351,8 +351,8 @@ function generatePostPages() {
     <div class="post-body-wrapper">
         <div class="post-content" style="margin-top:0">
             <nav class="breadcrumb">
-                <a href="../">Home</a><span>Ã¢â‚¬Âº</span>
-                <a href="../${item.id.startsWith('BLG') ? 'blog' : 'news'}.html">${item.category}</a><span>Ã¢â‚¬Âº</span>
+                <a href="../">Home</a><span>”º</span>
+                <a href="../${item.id.startsWith('BLG') ? 'blog' : 'news'}.html">${item.category}</a><span>”º</span>
                 ${htmlEscape(item.title)}
             </nav>
             ${prevHtml}
@@ -430,7 +430,7 @@ function generatePostPages() {
   rssItems.sort((a, b) => b.pubDate.localeCompare(a.pubDate));
   const top20 = rssItems.slice(0, 20);
   let rss = '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n<channel>\n';
-  rss += '  <title>BimaNiti Ã¢â‚¬â€ Insurance &amp; Market Insights</title>\n';
+  rss += '  <title>BimaNiti — Insurance &amp; Market Insights</title>\n';
   rss += '  <link>https://bimaniti.in/</link>\n';
   rss += '  <description>Analysing markets, decoding insurance, and sharing insights that matter.</description>\n';
   rss += '  <language>en</language>\n';
@@ -498,7 +498,7 @@ function updateScriptLinks(items) {
 function generateLearnPages() {
   const tracksFile = join(ROOT, 'data', 'learn', 'tracks.json');
   if (!existsSync(tracksFile)) {
-    console.log('  Ã¢Å¡Â  No data/learn/tracks.json Ã¢â‚¬â€ skipping learn pages');
+    console.log('  Ã¢Å¡Â  No data/learn/tracks.json — skipping learn pages');
     return;
   }
   const tracks = JSON.parse(readFileSync(tracksFile, 'utf-8').replace(/^\uFEFF/, '')).tracks;
@@ -629,7 +629,7 @@ function generateLearnPages() {
   tracks.forEach(track => {
     const body = '';
     const html = learnShell(
-      `${track.title} Ã¢â‚¬â€ Learn Insurance | BimaNiti`,
+      `${track.title} — Learn Insurance | BimaNiti`,
       track.tagline,
       body
     );
@@ -659,19 +659,19 @@ function generateLearnPages() {
 function generateGuidePage() {
   const jsonPath = join(ROOT, 'data', 'insurance-knowledge.json');
   if (!existsSync(jsonPath)) {
-    console.log('  Ã¢Å¡Â  No data/insurance-knowledge.json Ã¢â‚¬â€ skipping guide page');
+    console.log('  Ã¢Å¡Â  No data/insurance-knowledge.json — skipping guide page');
     return null;
   }
   const data = JSON.parse(readFileSync(jsonPath, 'utf-8').replace(/^\uFEFF/, ''));
   const meta = data.meta || {};
-  const title = `${meta.title || 'Insurance in India Ã¢â‚¬â€ A to Z'} | BimaNiti`;
+  const title = `${meta.title || 'Insurance in India — A to Z'} | BimaNiti`;
   const desc = meta.description || 'A plain-language guide to insurance in India.';
 
   const body = `
     <div class="guide-hero">
         <div class="guide-hero-inner">
             <span class="guide-hero-tag">Knowledge Base</span>
-            <h1>${htmlEscape(meta.title || 'Insurance in India Ã¢â‚¬â€ A to Z')}</h1>
+            <h1>${htmlEscape(meta.title || 'Insurance in India — A to Z')}</h1>
             <p class="guide-hero-sub">${htmlEscape(desc)}</p>
         </div>
     </div>
